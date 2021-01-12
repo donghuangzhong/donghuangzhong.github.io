@@ -310,8 +310,8 @@ var _hmt = _hmt || [];
       
         
   <h2 class="title">
-    <a href="/2020/03/14/%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E6%AF%94/">
-      基础练习 字符串对比
+    <a href="/2020/03/10/POJ-1511-Invitation-Cards/">
+      POJ-1511-Invitation Cards
     </a>
   </h2>
 
@@ -341,7 +341,7 @@ var _hmt = _hmt || [];
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-03-14</p>
+    <p>2020-03-10</p>
   </a>
 </div>
 
@@ -351,253 +351,9 @@ var _hmt = _hmt || [];
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/ACM/%E9%80%BB%E8%BE%91/' rel="nofollow">
+    <a href='/categories/ACM/SPFA/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>ACM&nbsp;/&nbsp;逻辑</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-  
-    <div class="new-meta-item wordcount">
-      <a class='notlink'>
-        <i class="fas fa-keyboard" aria-hidden="true"></i>
-        <p>字数统计:</p>
-        <p>514字</p>
-      </a>
-    </div>
-    <div class="new-meta-item readtime">
-      <a class='notlink'>
-        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
-        <p>阅读时长≈</p>
-        <p>2分</p>
-      </a>
-    </div>
-  
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>首先1很好判断，并且1和234对立(一组if else)，再看2，需要全部对比完才能；而34只要一个不满足就可以输出，所以34的判断在2的前面，根据题目逻辑，4要在三的前面。于是逻辑就清楚了。</p>
-      
-        <div class="readmore">
-          <a href="/2020/03/14/%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E6%AF%94/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/%E5%88%A4%E6%96%AD%E6%9D%A1%E4%BB%B6%E7%9A%84%E5%85%88%E5%90%8E/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 判断条件的先后</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2020/03/14/%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0-%E5%AE%8C%E7%BE%8E%E7%9A%84%E4%BB%A3%E4%BB%B7/">
-      基础练习 完美的代价
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="https://donghuangzhong.github.io" rel="nofollow">
-        
-          <i class="fas fa-user" aria-hidden="true"></i>
-        
-        <p>东皇钟</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-03-14</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/ACM/%E5%9B%9E%E6%96%87/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>ACM&nbsp;/&nbsp;回文</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-  
-    <div class="new-meta-item wordcount">
-      <a class='notlink'>
-        <i class="fas fa-keyboard" aria-hidden="true"></i>
-        <p>字数统计:</p>
-        <p>554字</p>
-      </a>
-    </div>
-    <div class="new-meta-item readtime">
-      <a class='notlink'>
-        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
-        <p>阅读时长≈</p>
-        <p>2分</p>
-      </a>
-    </div>
-  
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>注意交换方式是相邻互换，每次处理的范围都是[i,j]，k=j,k&gt;=i,k–。从j往前找和i一样的字符，找到了就k,j交换，记录交换次数，j–,i++；找不到则判断总数奇偶，偶则直接输出不可能，奇则做一个标记(因为总数是奇数可以允许一个字符不成对，但这个字符必须在中间)，然后记录将i移动到中间的步数(注意只是记录而不移动，因为移动了也会被再次打乱)，i++，继续从下一个找,如果有遇到一个找不到的，直接输出不可能</p>
-      
-        <div class="readmore">
-          <a href="/2020/03/14/%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0-%E5%AE%8C%E7%BE%8E%E7%9A%84%E4%BB%A3%E4%BB%B7/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/%E7%A7%BB%E5%8A%A8%E6%88%90%E5%9B%9E%E6%96%87%E6%9C%80%E7%9F%AD/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 移动成回文最短</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2020/03/14/%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0-%E6%95%B0%E7%9A%84%E8%AF%BB%E6%B3%95/">
-      基础练习 数的读法
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="https://donghuangzhong.github.io" rel="nofollow">
-        
-          <i class="fas fa-user" aria-hidden="true"></i>
-        
-        <p>东皇钟</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-03-14</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/ACM/%E9%80%BB%E8%BE%91/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>ACM&nbsp;/&nbsp;逻辑</p>
+      <p>ACM&nbsp;/&nbsp;SPFA</p>
     </a>
   </div>
 
@@ -640,10 +396,10 @@ var _hmt = _hmt || [];
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>先看题目的规模，最大到十亿的单位。中文的数字单位有个特点，个十百千一组，万一组，亿一组。也就是读一个数先读亿前面的个十百千读法，然后加上亿，然后再读亿到万的个十百千读法，然后再读万，然后再读个十百千。比如12 3456 7890，先读亿前面的数字，十二，然后加上亿，在读亿和万之间的数字，三千四百五十六，然后加上万，然后读七千八百九十，最终读十二亿三千四百五十六万七千八百九十。还有一些其他的一些细节。</p>
+      <p>这个用Bellman一直超时，后来用了spfa，邻接表简直就是为spfa量身打造的，不过此题中的指针换成了变得索引，此题中由于要翻转边，所以需要把边的信息全部记下来，spfa开始的时候翻转，然后交换边的起点和终点，然后再调用一次spfa</p>
       
         <div class="readmore">
-          <a href="/2020/03/14/%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0-%E6%95%B0%E7%9A%84%E8%AF%BB%E6%B3%95/" class="flat-box">
+          <a href="/2020/03/10/POJ-1511-Invitation-Cards/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             Read More
           </a>
@@ -653,7 +409,9 @@ var _hmt = _hmt || [];
     
       <div class="full-width auto-padding tags">
         
-          <a href="/tags/%E8%AF%BB%E6%95%B0%E5%AD%97/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 读数字</a>
+          <a href="/tags/%E7%BF%BB%E8%BD%AC%E8%BE%B9/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 翻转边</a>
+        
+          <a href="/tags/%E6%9D%A5%E5%9B%9E%E6%80%BB%E5%92%8C%E6%9C%80%E7%9F%AD/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 来回总和最短</a>
         
       </div>
     
@@ -676,8 +434,8 @@ var _hmt = _hmt || [];
       
         
   <h2 class="title">
-    <a href="/2020/03/14/%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0-%E6%97%B6%E9%97%B4%E8%BD%AC%E6%8D%A2/">
-      基础练习 时间转换
+    <a href="/2020/03/09/HDU-1217-POJ-2240-Arbitrage/">
+      HDU-1217-POJ-2240-Arbitrage
     </a>
   </h2>
 
@@ -707,7 +465,7 @@ var _hmt = _hmt || [];
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-03-14</p>
+    <p>2020-03-09</p>
   </a>
 </div>
 
@@ -717,9 +475,9 @@ var _hmt = _hmt || [];
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/ACM/%E8%BF%9B%E5%88%B6/' rel="nofollow">
+    <a href='/categories/ACM/Bellman/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>ACM&nbsp;/&nbsp;进制</p>
+      <p>ACM&nbsp;/&nbsp;Bellman</p>
     </a>
   </div>
 
@@ -733,14 +491,14 @@ var _hmt = _hmt || [];
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>275字</p>
+        <p>1.8k字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>1分</p>
+        <p>8分</p>
       </a>
     </div>
   
@@ -762,10 +520,10 @@ var _hmt = _hmt || [];
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>十进制转六十进制的倒数第三位</p>
+      <p>HDU和POJ的数据都很水，这个题没说第一个货币一定在环中，但以第一种货币一定在环中的算法却都能AC，不信试试我给的测试数据，不得不说Bellman真的强，本文给出这个题的严谨证明和算法！！！不可转载谢谢！</p>
       
         <div class="readmore">
-          <a href="/2020/03/14/%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0-%E6%97%B6%E9%97%B4%E8%BD%AC%E6%8D%A2/" class="flat-box">
+          <a href="/2020/03/09/HDU-1217-POJ-2240-Arbitrage/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             Read More
           </a>
@@ -775,7 +533,7 @@ var _hmt = _hmt || [];
     
       <div class="full-width auto-padding tags">
         
-          <a href="/tags/%E6%B0%B4%E9%A2%98/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 水题</a>
+          <a href="/tags/%E6%AD%A3%E7%8E%AF/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 正环</a>
         
       </div>
     
@@ -798,8 +556,8 @@ var _hmt = _hmt || [];
       
         
   <h2 class="title">
-    <a href="/2020/03/14/%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0-%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95/">
-      基础练习 矩阵乘法
+    <a href="/2020/03/07/POJ-3660-Cow-Contest/">
+      POJ-3660-Cow Contest
     </a>
   </h2>
 
@@ -829,7 +587,7 @@ var _hmt = _hmt || [];
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-03-14</p>
+    <p>2020-03-07</p>
   </a>
 </div>
 
@@ -839,9 +597,9 @@ var _hmt = _hmt || [];
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/ACM/%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95/' rel="nofollow">
+    <a href='/categories/ACM/Floyd/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>ACM&nbsp;/&nbsp;矩阵乘法</p>
+      <p>ACM&nbsp;/&nbsp;Floyd</p>
     </a>
   </div>
 
@@ -855,14 +613,14 @@ var _hmt = _hmt || [];
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>462字</p>
+        <p>1k字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>2分</p>
+        <p>4分</p>
       </a>
     </div>
   
@@ -884,10 +642,10 @@ var _hmt = _hmt || [];
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>整数的乘法初始化为1，矩阵的乘法初始化为大小相同单位矩阵(只有对角线全是1)。必须由第三个变量保存结果。for循环不仅控制次数还控制积和被乘数每次的变换。</p>
+      <p>技巧：<code>map[i][j]=map[i][j]||(map[i][k]&amp;&amp;map[k][j]);</code>利用逻辑短路，如果<code>map[i][i]==1</code>说明i到j已经存在通路，直接返回1,否则判断<code>map[i][k]&amp;&amp;map[k][j]==1</code>，可达为1,不可达为0。</p>
       
         <div class="readmore">
-          <a href="/2020/03/14/%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0-%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95/" class="flat-box">
+          <a href="/2020/03/07/POJ-3660-Cow-Contest/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             Read More
           </a>
@@ -897,7 +655,9 @@ var _hmt = _hmt || [];
     
       <div class="full-width auto-padding tags">
         
-          <a href="/tags/%E5%A6%99%E7%94%A8%E4%B8%8B%E6%A0%87%E5%92%8C/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 妙用下标和</a>
+          <a href="/tags/%E6%8E%92%E5%90%8D/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 排名</a>
+        
+          <a href="/tags/%E9%80%BB%E8%BE%91%E8%B7%AF%E5%BE%84/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 逻辑路径</a>
         
       </div>
     
@@ -920,8 +680,8 @@ var _hmt = _hmt || [];
       
         
   <h2 class="title">
-    <a href="/2020/03/14/%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0-%E7%9F%A9%E5%BD%A2%E9%9D%A2%E7%A7%AF%E4%BA%A4/">
-      基础练习 矩形面积交
+    <a href="/2020/03/07/POJ-1502-MPI-Maelstrom/">
+      POJ-1502-MPI Maelstrom
     </a>
   </h2>
 
@@ -951,7 +711,7 @@ var _hmt = _hmt || [];
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-03-14</p>
+    <p>2020-03-07</p>
   </a>
 </div>
 
@@ -961,9 +721,9 @@ var _hmt = _hmt || [];
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/ACM/%E7%BA%BF%E6%AE%B5%E4%BA%A4/' rel="nofollow">
+    <a href='/categories/ACM/dij/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>ACM&nbsp;/&nbsp;线段交</p>
+      <p>ACM&nbsp;/&nbsp;dij</p>
     </a>
   </div>
 
@@ -977,14 +737,14 @@ var _hmt = _hmt || [];
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>441字</p>
+        <p>1.3k字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>1分</p>
+        <p>5分</p>
       </a>
     </div>
   
@@ -1006,10 +766,10 @@ var _hmt = _hmt || [];
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>如果判断一个线段跟另一个线段相交的长度的话，起点就是两个线段起点的最大值，终点就是两个线段的终点的最小值。然后判断一下终点是不是比起点大，如果终点比起点小的话就不相交。但因为我们通常不知道线段的起点和终点，所以要进行比较。所以这个方法也可以推广到n维。</p>
+      <p><code>atoi(char *)</code>把字符串转换成整形，还有一个string参数的方法是<code>stoi</code>但是在帮助文档里搜不到，但可以用<code>s.c_str()</code>将string转换成<code>char *</code>,当然也可用字符数组，但是我觉得字符数组有长度限制不大好。dij算法中邻接矩阵<code>map[i][i]</code>不用管，只需<code>d[起点]=0</code>，因为不可能访问到<code>d[i][i]</code>。</p>
       
         <div class="readmore">
-          <a href="/2020/03/14/%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0-%E7%9F%A9%E5%BD%A2%E9%9D%A2%E7%A7%AF%E4%BA%A4/" class="flat-box">
+          <a href="/2020/03/07/POJ-1502-MPI-Maelstrom/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             Read More
           </a>
@@ -1019,7 +779,7 @@ var _hmt = _hmt || [];
     
       <div class="full-width auto-padding tags">
         
-          <a href="/tags/n%E7%BB%B4%E4%BA%A4/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> n维交</a>
+          <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 最短路径</a>
         
       </div>
     
@@ -1042,8 +802,8 @@ var _hmt = _hmt || [];
       
         
   <h2 class="title">
-    <a href="/2020/03/14/%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0-%E5%88%86%E8%A7%A3%E8%B4%A8%E5%9B%A0%E6%95%B0/">
-      基础练习 分解质因数
+    <a href="/2020/03/07/POJ-3259-Wormholes/">
+      POJ-3259-Wormholes
     </a>
   </h2>
 
@@ -1073,7 +833,7 @@ var _hmt = _hmt || [];
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-03-14</p>
+    <p>2020-03-07</p>
   </a>
 </div>
 
@@ -1083,9 +843,9 @@ var _hmt = _hmt || [];
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/ACM/%E8%B4%A8%E5%9B%A0%E6%95%B0/' rel="nofollow">
+    <a href='/categories/ACM/Bellman/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>ACM&nbsp;/&nbsp;质因数</p>
+      <p>ACM&nbsp;/&nbsp;Bellman</p>
     </a>
   </div>
 
@@ -1099,375 +859,7 @@ var _hmt = _hmt || [];
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>323字</p>
-      </a>
-    </div>
-    <div class="new-meta-item readtime">
-      <a class='notlink'>
-        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
-        <p>阅读时长≈</p>
-        <p>1分</p>
-      </a>
-    </div>
-  
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>有好多种做法，最快的应该是从小到大打印素数表，然后挨个除。但是我觉得打印素数表太麻烦，于是就从2开始挨个除然后输出。</p>
-      
-        <div class="readmore">
-          <a href="/2020/03/14/%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0-%E5%88%86%E8%A7%A3%E8%B4%A8%E5%9B%A0%E6%95%B0/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/%E5%88%86%E8%A7%A3%E8%B4%A8%E5%9B%A0%E6%95%B0/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 分解质因数</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2020/03/14/%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0-Sine%E4%B9%8B%E8%88%9E/">
-      基础练习 Sine之舞
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="https://donghuangzhong.github.io" rel="nofollow">
-        
-          <i class="fas fa-user" aria-hidden="true"></i>
-        
-        <p>东皇钟</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-03-14</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/ACM/%E9%80%92%E5%BD%92/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>ACM&nbsp;/&nbsp;递归</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-  
-    <div class="new-meta-item wordcount">
-      <a class='notlink'>
-        <i class="fas fa-keyboard" aria-hidden="true"></i>
-        <p>字数统计:</p>
-        <p>389字</p>
-      </a>
-    </div>
-    <div class="new-meta-item readtime">
-      <a class='notlink'>
-        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
-        <p>阅读时长≈</p>
-        <p>1分</p>
-      </a>
-    </div>
-  
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>仔细观察，嵌套方式，然后写出来就行</p>
-      
-        <div class="readmore">
-          <a href="/2020/03/14/%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0-Sine%E4%B9%8B%E8%88%9E/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/%E9%80%BB%E8%BE%91/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 逻辑</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2020/03/14/%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0-FJ%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-      基础练习 FJ的字符串
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="https://donghuangzhong.github.io" rel="nofollow">
-        
-          <i class="fas fa-user" aria-hidden="true"></i>
-        
-        <p>东皇钟</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-03-14</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/ACM/%E9%80%92%E5%BD%92/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>ACM&nbsp;/&nbsp;递归</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-  
-    <div class="new-meta-item wordcount">
-      <a class='notlink'>
-        <i class="fas fa-keyboard" aria-hidden="true"></i>
-        <p>字数统计:</p>
-        <p>220字</p>
-      </a>
-    </div>
-    <div class="new-meta-item readtime">
-      <a class='notlink'>
-        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
-        <p>阅读时长≈</p>
-        <p>1分</p>
-      </a>
-    </div>
-  
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>仔细观察就是二叉树的中序遍历</p>
-      
-        <div class="readmore">
-          <a href="/2020/03/14/%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0-FJ%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/%E9%80%BB%E8%BE%91/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 逻辑</a>
-        
-          <a href="/tags/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 中序遍历</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2020/03/12/%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0-%E9%BE%9F%E5%85%94%E8%B5%9B%E8%B7%91%E9%A2%84%E6%B5%8B/">
-      基础练习 龟兔赛跑预测
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="https://donghuangzhong.github.io" rel="nofollow">
-        
-          <i class="fas fa-user" aria-hidden="true"></i>
-        
-        <p>东皇钟</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-03-12</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/ACM/%E9%80%BB%E8%BE%91/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>ACM&nbsp;/&nbsp;逻辑</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-  
-    <div class="new-meta-item wordcount">
-      <a class='notlink'>
-        <i class="fas fa-keyboard" aria-hidden="true"></i>
-        <p>字数统计:</p>
-        <p>838字</p>
+        <p>882字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
@@ -1496,10 +888,10 @@ var _hmt = _hmt || [];
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>结果一定是一个整数，题中说是两个速度的公倍数。必须一秒一秒的走，当兔子领先t米时，后退v1*s米就行，这样再经过s秒之后回到后退前的位置</p>
+      <p>负环，注意输入时输入的是正数，要变成负数存起来。这样可能两点之间存在三条边，但bellman对边没有要求，也可以只留两条边，但我觉得没有必要，还得搜索更改。</p>
       
         <div class="readmore">
-          <a href="/2020/03/12/%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0-%E9%BE%9F%E5%85%94%E8%B5%9B%E8%B7%91%E9%A2%84%E6%B5%8B/" class="flat-box">
+          <a href="/2020/03/07/POJ-3259-Wormholes/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             Read More
           </a>
@@ -1509,7 +901,1237 @@ var _hmt = _hmt || [];
     
       <div class="full-width auto-padding tags">
         
-          <a href="/tags/%E9%BE%9F%E5%85%94%E8%B5%9B%E8%B7%91/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 龟兔赛跑</a>
+          <a href="/tags/%E8%B4%9F%E7%8E%AF/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 负环</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2020/03/07/POJ-1860-Currency-Exchange/">
+      POJ-1860-Currency Exchange
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://donghuangzhong.github.io" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>东皇钟</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-03-07</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/ACM/Bellman/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>ACM&nbsp;/&nbsp;Bellman</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item wordcount">
+      <a class='notlink'>
+        <i class="fas fa-keyboard" aria-hidden="true"></i>
+        <p>字数统计:</p>
+        <p>1.1k字</p>
+      </a>
+    </div>
+    <div class="new-meta-item readtime">
+      <a class='notlink'>
+        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+        <p>阅读时长≈</p>
+        <p>4分</p>
+      </a>
+    </div>
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>dij算法不能处理负边，因为如果有负边就不能确定最小的那个是最优解了。Bellman-<em>Ford</em>可以处理负边，但在结束之前都不是最优解，并且可以处理闭环，因为i次循环可以算出走i步的最优解，所以必须循环n-1次，才能得到最优解，如果要判断是不是有环，需要再循环一次，如果最终的结果有被更改，则代表有环。正负环的初始化不同。</p>
+      
+        <div class="readmore">
+          <a href="/2020/03/07/POJ-1860-Currency-Exchange/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/%E6%AD%A3%E7%8E%AF/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 正环</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2020/03/06/POJ-3268-Silver-Cow-Party/">
+      POJ-3268-Silver Cow Party
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://donghuangzhong.github.io" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>东皇钟</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-03-06</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/ACM/dij/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>ACM&nbsp;/&nbsp;dij</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item wordcount">
+      <a class='notlink'>
+        <i class="fas fa-keyboard" aria-hidden="true"></i>
+        <p>字数统计:</p>
+        <p>867字</p>
+      </a>
+    </div>
+    <div class="new-meta-item readtime">
+      <a class='notlink'>
+        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+        <p>阅读时长≈</p>
+        <p>4分</p>
+      </a>
+    </div>
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>上来一看觉得这个题很简单，写出来测试结果也对，一提交，超时。于是我又把<code>cin</code>改成<code>scanf</code>,<code>cin</code>比<code>scanf</code>慢太多了，结果还是超时。这就不是细节问题了，是算法本身的问题，后来把矩阵翻转了一下就可以解决，复杂度从n^3变成n^2，这样一想刚开始的算法太愚蠢了！</p>
+      
+        <div class="readmore">
+          <a href="/2020/03/06/POJ-3268-Silver-Cow-Party/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/%E6%9C%89%E5%90%91%E5%9B%BE%E7%BB%95%E5%9C%88/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 有向图绕圈</a>
+        
+          <a href="/tags/%E7%BF%BB%E8%BD%AC%E7%9F%A9%E9%98%B5/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 翻转矩阵</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2020/03/06/POJ-1797-Heavy-Transportation/">
+      POJ-1797-Heavy Transportation
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://donghuangzhong.github.io" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>东皇钟</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-03-06</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/ACM/dij/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>ACM&nbsp;/&nbsp;dij</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item wordcount">
+      <a class='notlink'>
+        <i class="fas fa-keyboard" aria-hidden="true"></i>
+        <p>字数统计:</p>
+        <p>809字</p>
+      </a>
+    </div>
+    <div class="new-meta-item readtime">
+      <a class='notlink'>
+        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+        <p>阅读时长≈</p>
+        <p>3分</p>
+      </a>
+    </div>
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>dij用途还是很广的，稍微分析一下可行性就可以。可行性主要表现在两部分，第一部分筛选最优解，第二部分更新当前状态。只要这两点可行就可以。注意不能图省事两个循环同时计算和求最优解。</p>
+      
+        <div class="readmore">
+          <a href="/2020/03/06/POJ-1797-Heavy-Transportation/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/%E6%9C%80%E5%A4%A7%E6%9C%80%E5%B0%8F%E8%B7%9D%E7%A6%BB/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 最大最小距离</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2020/03/05/POJ-2253-Frogger/">
+      POJ-2253-Frogger
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://donghuangzhong.github.io" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>东皇钟</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-03-05</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/ACM/dij/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>ACM&nbsp;/&nbsp;dij</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item wordcount">
+      <a class='notlink'>
+        <i class="fas fa-keyboard" aria-hidden="true"></i>
+        <p>字数统计:</p>
+        <p>1.1k字</p>
+      </a>
+    </div>
+    <div class="new-meta-item readtime">
+      <a class='notlink'>
+        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+        <p>阅读时长≈</p>
+        <p>4分</p>
+      </a>
+    </div>
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>跟dij算法的可行性一样，分为两个集合，一个是处理完的集合a(a中存在起点s),一个是待处理的集合b，取b中所求量(一般为最短型，可以是总路径，也可以是组内路径)最小的那个点c，那么s到c的最优解就能够确定下来，c的上一个点p，要么在a中，要么在b中，在b中不可能，因为b中除了c点别的点都要比c大(我们之前的取得C是最小的)，所以p点只能在a中。如果a中只有起点s，那么s到c的最小值就是s到c的距离，把c加入a集合，同时更新b集合中的点到s的距离，这样就能保证每次保留的都是b集合中每一个点到a集合的距离，再取最小值……</p>
+      
+        <div class="readmore">
+          <a href="/2020/03/05/POJ-2253-Frogger/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/%E7%BB%84%E5%86%85%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 组内最短路径</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2020/03/05/POJ-2387-Til-the-Cows-Come-Home/">
+      POJ-2387-Til the Cows Come Home
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://donghuangzhong.github.io" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>东皇钟</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-03-05</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/ACM/dij/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>ACM&nbsp;/&nbsp;dij</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item wordcount">
+      <a class='notlink'>
+        <i class="fas fa-keyboard" aria-hidden="true"></i>
+        <p>字数统计:</p>
+        <p>663字</p>
+      </a>
+    </div>
+    <div class="new-meta-item readtime">
+      <a class='notlink'>
+        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+        <p>阅读时长≈</p>
+        <p>3分</p>
+      </a>
+    </div>
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>dijkstra算法，非简单可达路径不要用DFS；如果要输出路径保存在标志数组中，递归输出；变与不变的情况最好不用三目运算符</p>
+      
+        <div class="readmore">
+          <a href="/2020/03/05/POJ-2387-Til-the-Cows-Come-Home/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 最短路径</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2020/03/03/HDU-2102-A%E8%AE%A1%E5%88%92/">
+      HDU-2102-A计划
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://donghuangzhong.github.io" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>东皇钟</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-03-03</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/ACM/BFS/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>ACM&nbsp;/&nbsp;BFS</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item wordcount">
+      <a class='notlink'>
+        <i class="fas fa-keyboard" aria-hidden="true"></i>
+        <p>字数统计:</p>
+        <p>883字</p>
+      </a>
+    </div>
+    <div class="new-meta-item readtime">
+      <a class='notlink'>
+        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+        <p>阅读时长≈</p>
+        <p>4分</p>
+      </a>
+    </div>
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>两层迷宫，‘#’代表瞬时传送装置，如果传送后是墙则撞死，如果传送后是‘#’，则一直在传送，必须考虑这两种情况。</p>
+      
+        <div class="readmore">
+          <a href="/2020/03/03/HDU-2102-A%E8%AE%A1%E5%88%92/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/%E6%98%93%E9%94%99%E9%A2%98/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 易错题</a>
+        
+          <a href="/tags/%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84%E5%81%9A%E8%AE%B0%E5%BD%95/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 标志数组做记录</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2020/03/03/HDU-2181-%E5%93%88%E5%AF%86%E9%A1%BF%E7%BB%95%E8%A1%8C%E9%97%AE%E9%A2%98/">
+      HDU-2181-哈密顿绕行问题
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://donghuangzhong.github.io" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>东皇钟</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-03-03</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/ACM/DFS/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>ACM&nbsp;/&nbsp;DFS</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item wordcount">
+      <a class='notlink'>
+        <i class="fas fa-keyboard" aria-hidden="true"></i>
+        <p>字数统计:</p>
+        <p>1.8k字</p>
+      </a>
+    </div>
+    <div class="new-meta-item readtime">
+      <a class='notlink'>
+        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+        <p>阅读时长≈</p>
+        <p>10分</p>
+      </a>
+    </div>
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>DFS遍历所有可能性</p>
+      
+        <div class="readmore">
+          <a href="/2020/03/03/HDU-2181-%E5%93%88%E5%AF%86%E9%A1%BF%E7%BB%95%E8%A1%8C%E9%97%AE%E9%A2%98/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/%E9%81%8D%E5%8E%86%E6%89%80%E6%9C%89%E5%8F%AF%E8%83%BD%E6%80%A7/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 遍历所有可能性</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2020/03/02/HDU-2612/">
+      HDU-2612
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://donghuangzhong.github.io" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>东皇钟</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-03-02</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/ACM/BFS/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>ACM&nbsp;/&nbsp;BFS</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item wordcount">
+      <a class='notlink'>
+        <i class="fas fa-keyboard" aria-hidden="true"></i>
+        <p>字数统计:</p>
+        <p>793字</p>
+      </a>
+    </div>
+    <div class="new-meta-item readtime">
+      <a class='notlink'>
+        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+        <p>阅读时长≈</p>
+        <p>3分</p>
+      </a>
+    </div>
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>两个标志数组，两次BFS，不是双BFS，双BFS应该是双入口BFS，是一次BFS，两个入口而已，<a href="https://donghuangzhong.github.io/2020/02/23/UVA-11624/">UVA-11624</a>这才是双入口BFS。二维数组对应的函数形参必须声明第二维，并且不能对传进函数的形参用memset,因为sizeof(数组)不对，这样只能自行指定memset的大小了。</p>
+      
+        <div class="readmore">
+          <a href="/2020/03/02/HDU-2612/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/%E4%B8%A4%E6%AC%A1BFS/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 两次BFS</a>
+        
+          <a href="/tags/%E5%87%BD%E6%95%B0%E6%95%B0%E7%BB%84%E5%BD%A2%E5%8F%82/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 函数数组形参</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2020/02/29/HDU-1495/">
+      HDU-1495
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://donghuangzhong.github.io" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>东皇钟</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-02-29</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/ACM/BFS/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>ACM&nbsp;/&nbsp;BFS</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item wordcount">
+      <a class='notlink'>
+        <i class="fas fa-keyboard" aria-hidden="true"></i>
+        <p>字数统计:</p>
+        <p>863字</p>
+      </a>
+    </div>
+    <div class="new-meta-item readtime">
+      <a class='notlink'>
+        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+        <p>阅读时长≈</p>
+        <p>4分</p>
+      </a>
+    </div>
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>搜索所有的状态，标志数组同时用于记录次数，最后减一，用i!=j的方式遍历倒法，用3-i-j得到剩余的被子杯子的可乐。网上有一份数论的做法，极为精简，以后再研究吧。路漫漫其修远兮！</p>
+      
+        <div class="readmore">
+          <a href="/2020/02/29/HDU-1495/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/%E5%80%92%E6%B0%B4/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 倒水</a>
+        
+          <a href="/tags/%E6%95%B0%E8%AE%BA/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 数论</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2020/02/23/HDU-1241/">
+      HDU-1241
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://donghuangzhong.github.io" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>东皇钟</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-02-23</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/ACM/BFS/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>ACM&nbsp;/&nbsp;BFS</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item wordcount">
+      <a class='notlink'>
+        <i class="fas fa-keyboard" aria-hidden="true"></i>
+        <p>字数统计:</p>
+        <p>705字</p>
+      </a>
+    </div>
+    <div class="new-meta-item readtime">
+      <a class='notlink'>
+        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+        <p>阅读时长≈</p>
+        <p>3分</p>
+      </a>
+    </div>
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>简单BFS，找到一个入队点将所有可达的区域置为不可达</p>
+      
+        <div class="readmore">
+          <a href="/2020/02/23/HDU-1241/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/%E5%9B%BE%E7%9A%84%E8%BF%9E%E9%80%9A%E5%8C%BA%E5%9F%9F/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 图的连通区域</a>
+        
+          <a href="/tags/%E6%B0%B4%E9%A2%98/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 水题</a>
         
       </div>
     
@@ -1534,7 +2156,7 @@ var _hmt = _hmt || [];
             </a>
           
           <p class="current">
-            4 / 9
+            4 / 6
           </p>
           
             <a class="next" rel="next" href="/categories/ACM/page/5/">
