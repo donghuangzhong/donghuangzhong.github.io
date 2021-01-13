@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>hexo便捷图片解决方案</title>
+      <link href="/2021/01/13/hexo%E4%BE%BF%E6%8D%B7%E5%9B%BE%E7%89%87%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+      <url>/2021/01/13/hexo%E4%BE%BF%E6%8D%B7%E5%9B%BE%E7%89%87%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+      
+        <content type="html"><![CDATA[<p>我们需要将md文件中用到的图片放在同名文件夹中，并且需要适当修改图片链接，这种方式往往非常麻烦，要么本地无法查看，要么网站上无法显示。这里有一种更好、更便捷的解决方案！</p><ol><li><p>使图片在本地和网站上都能显示正常</p></li><li><p>win+s截图，在Typora上粘贴即可，不需要做任何操作</p><a id="more"></a></li></ol><h1 id="1-安装图片插件"><a href="#1-安装图片插件" class="headerlink" title="1.安装图片插件"></a>1.安装图片插件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure><h1 id="2-配置文件-config-yml-里post-asset-folder-选项设置为true"><a href="#2-配置文件-config-yml-里post-asset-folder-选项设置为true" class="headerlink" title="2.配置文件_config.yml 里post_asset_folder:选项设置为true"></a>2.配置文件<code>_config.yml</code> 里<code>post_asset_folder:</code>选项设置为<code>true</code></h1><p>这样每次hexo n “xxx”时就会一起生成同名文件夹</p><h1 id="3-更改Typora设置"><a href="#3-更改Typora设置" class="headerlink" title="3.更改Typora设置"></a>3.更改Typora设置</h1><h2 id="1-文件-gt-偏好设置-gt-图像"><a href="#1-文件-gt-偏好设置-gt-图像" class="headerlink" title="1.文件-&gt;偏好设置-&gt;图像"></a>1.文件-&gt;偏好设置-&gt;图像</h2><h2 id="2-点击下拉框，选择复制到指定路径，如下图设置"><a href="#2-点击下拉框，选择复制到指定路径，如下图设置" class="headerlink" title="2.点击下拉框，选择复制到指定路径，如下图设置"></a>2.点击下拉框，选择复制到指定路径，如下图设置</h2><p><img src="/2021/01/13/hexo%E4%BE%BF%E6%8D%B7%E5%9B%BE%E7%89%87%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/D:%5Cprogramming%5Cblog%5Cdonghuangzhong%5Csource_posts%5Chexo%E4%BE%BF%E6%8D%B7%E5%9B%BE%E7%89%87%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%5Cimage-20210113120747680.png" alt="image-20210113120747680"></p><h2 id="3-随便截图，粘贴到Typora中即可"><a href="#3-随便截图，粘贴到Typora中即可" class="headerlink" title="3.随便截图，粘贴到Typora中即可"></a>3.随便截图，粘贴到Typora中即可</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 图片 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java_JDBC连接池&amp;JDBCTemplate</title>
       <link href="/2021/01/13/Java-JDBC%E8%BF%9E%E6%8E%A5%E6%B1%A0-JDBCTemplate/"/>
       <url>/2021/01/13/Java-JDBC%E8%BF%9E%E6%8E%A5%E6%B1%A0-JDBCTemplate/</url>
