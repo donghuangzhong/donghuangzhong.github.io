@@ -379,14 +379,14 @@ var _hmt = _hmt || [];
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>2.1k字</p>
+        <p>1.8k字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>9分</p>
+        <p>8分</p>
       </a>
     </div>
   
@@ -408,207 +408,146 @@ var _hmt = _hmt || [];
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><pre><code>1. JDBC基本概念
-2. 快速入门
-3. 对JDBC中各个接口和类详解</code></pre><a id="more"></a>
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ol>
+<li>JDBC基本概念</li>
+<li>快速入门</li>
+<li>对JDBC中各个接口和类详解</li>
+</ol>
+<a id="more"></a>
 
-<h2 id="JDBC："><a href="#JDBC：" class="headerlink" title="JDBC："></a>JDBC：</h2><pre><code>1. 概念：Java DataBase Connectivity  Java 数据库连接， Java语言操作数据库
-    * JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。
+<h1 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h1><ul>
+<li><p>Java DataBase Connectivity  Java 数据库连接， Java语言操作数据库</p>
+</li>
+<li><p>JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。</p>
+</li>
+</ul>
+<h1 id="2-快速入门"><a href="#2-快速入门" class="headerlink" title="2. 快速入门"></a>2. 快速入门</h1><h2 id="1-步骤："><a href="#1-步骤：" class="headerlink" title="1.步骤："></a>1.步骤：</h2><ol>
+<li><p>导入驱动jar包 mysql-connector-java-5.1.37-bin.jar</p>
+<pre><code>1.复制mysql-connector-java-5.1.37-bin.jar到项目的libs目录下
+2.右键--&gt;Add As Library</code></pre></li>
+<li><p>注册驱动</p>
+</li>
+<li><p>获取数据库连接对象 Connection</p>
+</li>
+<li><p>定义sql</p>
+</li>
+<li><p>获取执行sql语句的对象 Statement</p>
+</li>
+<li><p>执行sql，接受返回结果</p>
+</li>
+<li><p>处理结果</p>
+</li>
+<li><p>释放资源</p>
+</li>
+</ol>
+<h2 id="2-代码实现"><a href="#2-代码实现" class="headerlink" title="2. 代码实现"></a>2. 代码实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;1. 导入驱动jar包</span><br><span class="line">&#x2F;&#x2F;2.注册驱动</span><br><span class="line">Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span><br><span class="line">&#x2F;&#x2F;3.获取数据库连接对象</span><br><span class="line">Connection conn &#x3D; DriverManager.getConnection(&quot;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;db3&quot;, &quot;root&quot;, &quot;root&quot;);</span><br><span class="line">&#x2F;&#x2F;4.定义sql语句</span><br><span class="line">String sql &#x3D; &quot;update account set balance &#x3D; 500 where id &#x3D; 1&quot;;</span><br><span class="line">&#x2F;&#x2F;5.获取执行sql的对象 Statement</span><br><span class="line">Statement stmt &#x3D; conn.createStatement();</span><br><span class="line">&#x2F;&#x2F;6.执行sql</span><br><span class="line">int count &#x3D; stmt.executeUpdate(sql);</span><br><span class="line">&#x2F;&#x2F;7.处理结果</span><br><span class="line">System.out.println(count);</span><br><span class="line">&#x2F;&#x2F;8.释放资源</span><br><span class="line">stmt.close();</span><br><span class="line">conn.close();</span><br></pre></td></tr></table></figure>
 
-2. 快速入门：
-    * 步骤：
-        1. 导入驱动jar包 mysql-connector-java-5.1.37-bin.jar
-            1.复制mysql-connector-java-5.1.37-bin.jar到项目的libs目录下
-            2.右键--&gt;Add As Library
-        2. 注册驱动
-        3. 获取数据库连接对象 Connection
-        4. 定义sql
-        5. 获取执行sql语句的对象 Statement
-        6. 执行sql，接受返回结果
-        7. 处理结果
-        8. 释放资源
+<h1 id="3-详解各个对象"><a href="#3-详解各个对象" class="headerlink" title="3. 详解各个对象"></a>3. 详解各个对象</h1><h2 id="1-DriverManager：驱动管理对象"><a href="#1-DriverManager：驱动管理对象" class="headerlink" title="1.DriverManager：驱动管理对象"></a>1.DriverManager：驱动管理对象</h2><ol>
+<li><h5 id="注册驱动：告诉程序该使用哪一个数据库驱动jar"><a href="#注册驱动：告诉程序该使用哪一个数据库驱动jar" class="headerlink" title="注册驱动：告诉程序该使用哪一个数据库驱动jar"></a>注册驱动：告诉程序该使用哪一个数据库驱动jar</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">static void registerDriver(Driver driver) :注册与给定的驱动程序 DriverManager 。 </span><br><span class="line">		写代码使用：  Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span><br><span class="line">		通过查看源码发现：在com.mysql.jdbc.Driver类中存在静态代码块</span><br><span class="line">		 static &#123;</span><br><span class="line">		        try &#123;</span><br><span class="line">		            java.sql.DriverManager.registerDriver(new Driver());</span><br><span class="line">		        &#125; catch (SQLException E) &#123;</span><br><span class="line">		            throw new RuntimeException(&quot;Can&#39;t register driver!&quot;);</span><br><span class="line">		        &#125;</span><br><span class="line">			&#125;</span><br></pre></td></tr></table></figure>
 
-    * 代码实现：
-          //1. 导入驱动jar包
-        //2.注册驱动
-        Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
-        //3.获取数据库连接对象
-        Connection conn = DriverManager.getConnection(&quot;jdbc:mysql://localhost:3306/db3&quot;, &quot;root&quot;, &quot;root&quot;);
-        //4.定义sql语句
-        String sql = &quot;update account set balance = 500 where id = 1&quot;;
-        //5.获取执行sql的对象 Statement
-        Statement stmt = conn.createStatement();
-        //6.执行sql
-        int count = stmt.executeUpdate(sql);
-        //7.处理结果
-        System.out.println(count);
-        //8.释放资源
-        stmt.close();
-        conn.close();
+<ul>
+<li>注意：mysql5之后的驱动jar包可以省略注册驱动的步骤。</li>
+</ul>
+</li>
+<li><h5 id="获取数据库连接"><a href="#获取数据库连接" class="headerlink" title="获取数据库连接"></a>获取数据库连接</h5></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">static Connection getConnection(String url, String user, String password)</span><br></pre></td></tr></table></figure>
 
-3. 详解各个对象：
-    1. DriverManager：驱动管理对象
-        * 功能：
-            1. 注册驱动：告诉程序该使用哪一个数据库驱动jar
-                static void registerDriver(Driver driver) :注册与给定的驱动程序 DriverManager 。 
-                写代码使用：  Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
-                通过查看源码发现：在com.mysql.jdbc.Driver类中存在静态代码块
-                 static {
-                        try {
-                            java.sql.DriverManager.registerDriver(new Driver());
-                        } catch (SQLException E) {
-                            throw new RuntimeException(&quot;Can&apos;t register driver!&quot;);
-                        }
-                    }
-
-                注意：mysql5之后的驱动jar包可以省略注册驱动的步骤。
-            2. 获取数据库连接：
-                * 方法：static Connection getConnection(String url, String user, String password) 
-                * 参数：
-                    * url：指定连接的路径
-                        * 语法：jdbc:mysql://ip地址(域名):端口号/数据库名称
-                        * 例子：jdbc:mysql://localhost:3306/db3
-                        * 细节：如果连接的是本机mysql服务器，并且mysql服务默认端口是3306，则url可以简写为：jdbc:mysql:///数据库名称
-                    * user：用户名
-                    * password：密码 
-    2. Connection：数据库连接对象
-        1. 功能：
-            1. 获取执行sql 的对象
-                * Statement createStatement()
-                * PreparedStatement prepareStatement(String sql)  
-            2. 管理事务：
-                * 开启事务：setAutoCommit(boolean autoCommit) ：调用该方法设置参数为false，即开启事务
-                * 提交事务：commit() 
-                * 回滚事务：rollback() 
-    3. Statement：执行sql的对象
-        1. 执行sql
-            1. boolean execute(String sql) ：可以执行任意的sql 了解 
-            2. int executeUpdate(String sql) ：执行DML（insert、update、delete）语句、DDL(create，alter、drop)语句
-                * 返回值：影响的行数，可以通过这个影响的行数判断DML语句是否执行成功 返回值&gt;0的则执行成功，反之，则失败。
-            3. ResultSet executeQuery(String sql)  ：执行DQL（select)语句
-        2. 练习：
-            1. account表 添加一条记录
-            2. account表 修改记录
-            3. account表 删除一条记录
-
-            代码：
-                Statement stmt = null;
-                Connection conn = null;
-                try {
-                    //1. 注册驱动
-                    Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
-                    //2. 定义sql
-                    String sql = &quot;insert into account values(null,&apos;王五&apos;,3000)&quot;;
-                    //3.获取Connection对象
-                    conn = DriverManager.getConnection(&quot;jdbc:mysql:///db3&quot;, &quot;root&quot;, &quot;root&quot;);
-                    //4.获取执行sql的对象 Statement
-                    stmt = conn.createStatement();
-                    //5.执行sql
-                    int count = stmt.executeUpdate(sql);//影响的行数
-                    //6.处理结果
-                    System.out.println(count);
-                    if(count &gt; 0){
-                        System.out.println(&quot;添加成功！&quot;);
-                    }else{
-                        System.out.println(&quot;添加失败！&quot;);
-                    }
-
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }finally {
-                    //stmt.close();
-                    //7. 释放资源
-                    //避免空指针异常
-                    if(stmt != null){
-                        try {
-                            stmt.close();
-                        } catch (SQLException e) {
-                            e.printStackTrace();
-                        }
-                    }
-
-                    if(conn != null){
-                        try {
-                            conn.close();
-                        } catch (SQLException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-
-    4. ResultSet：结果集对象,封装查询结果
-        * boolean next(): 游标向下移动一行，判断当前行是否是最后一行末尾(是否有数据)，如果是，则返回false，如果不是则返回true
-        * getXxx(参数):获取数据
-            * Xxx：代表数据类型   如： int getInt() ,    String getString()
-            * 参数：
-                1. int：代表列的编号,从1开始   如： getString(1)
-                2. String：代表列名称。 如： getDouble(&quot;balance&quot;)
-
-        * 注意：
-            * 使用步骤：
-                1. 游标向下移动一行
-                2. 判断是否有数据
-                3. 获取数据
-
-               //循环判断游标是否是最后一行末尾。
-                while(rs.next()){
-                    //获取数据
-                    //6.2 获取数据
-                    int id = rs.getInt(1);
-                    String name = rs.getString(&quot;name&quot;);
-                    double balance = rs.getDouble(3);
-
-                    System.out.println(id + &quot;---&quot; + name + &quot;---&quot; + balance);
-                }
-
-        * 练习：
-            * 定义一个方法，查询emp表的数据将其封装为对象，然后装载集合，返回。
-                1. 定义Emp类
-                2. 定义方法 public List&lt;Emp&gt; findAll(){}
-                3. 实现方法 select * from emp;
-
-    5. PreparedStatement：执行sql的对象
-        1. SQL注入问题：在拼接sql时，有一些sql的特殊关键字参与字符串的拼接。会造成安全性问题
-            1. 输入用户随便，输入密码：a&apos; or &apos;a&apos; = &apos;a
-            2. sql：select * from user where username = &apos;fhdsjkf&apos; and password = &apos;a&apos; or &apos;a&apos; = &apos;a&apos; 
-
-        2. 解决sql注入问题：使用PreparedStatement对象来解决
-        3. 预编译的SQL：参数使用?作为占位符
-        4. 步骤：
-            1. 导入驱动jar包 mysql-connector-java-5.1.37-bin.jar
-            2. 注册驱动
-            3. 获取数据库连接对象 Connection
-            4. 定义sql
-                * 注意：sql的参数使用？作为占位符。 如：select * from user where username = ? and password = ?;
-            5. 获取执行sql语句的对象 PreparedStatement  Connection.prepareStatement(String sql) 
-            6. 给？赋值：
-                * 方法： setXxx(参数1,参数2)
-                    * 参数1：？的位置编号 从1 开始
-                    * 参数2：？的值
-            7. 执行sql，接受返回结果，不需要传递sql语句
-            8. 处理结果
-            9. 释放资源
-
-        5. 注意：后期都会使用PreparedStatement来完成增删改查的所有操作
-            1. 可以防止SQL注入
-            2. 效率更高</code></pre><h2 id="抽取JDBC工具类-：-JDBCUtils"><a href="#抽取JDBC工具类-：-JDBCUtils" class="headerlink" title="抽取JDBC工具类 ： JDBCUtils"></a>抽取JDBC工具类 ： JDBCUtils</h2><pre><code>* 目的：简化书写
-* 分析：
-    1. 注册驱动也抽取
-    2. 抽取一个方法获取连接对象
-        * 需求：不想传递参数（麻烦），还得保证工具类的通用性。
-        * 解决：配置文件
-            jdbc.properties
-                url=
-                user=
-                password=
+<ol>
+<li>url：指定连接的路径<ul>
+<li>例子：jdbc:mysql://localhost:3306/db3</li>
+<li>细节：如果连接的是本机mysql服务器，并且mysql服务默认端口是3306，则url可以简写为：jdbc:mysql:///数据库名称</li>
+</ul>
+</li>
+<li>user：用户名</li>
+<li>password：密码 </li>
+</ol>
+<h2 id="2-Statement：执行sql的对象"><a href="#2-Statement：执行sql的对象" class="headerlink" title="2. Statement：执行sql的对象"></a>2. Statement：执行sql的对象</h2><ol>
+<li><h5 id="boolean-execute-String-sql"><a href="#boolean-execute-String-sql" class="headerlink" title="boolean execute(String sql)"></a>boolean execute(String sql)</h5><ul>
+<li>可以执行任意的sql 了解 </li>
+</ul>
+</li>
+<li><h5 id="int-executeUpdate-String-sql"><a href="#int-executeUpdate-String-sql" class="headerlink" title="int executeUpdate(String sql)"></a>int executeUpdate(String sql)</h5><ul>
+<li>执行DML（insert、update、delete）语句、DDL(create，alter、drop)语句</li>
+<li>返回值：影响的行数，可以通过这个影响的行数判断DML语句是否执行成功 返回值&gt;0的则执行成功，反之，则失败，</li>
+</ul>
+</li>
+<li><h5 id="ResultSet-executeQuery-String-sql"><a href="#ResultSet-executeQuery-String-sql" class="headerlink" title="ResultSet executeQuery(String sql)"></a>ResultSet executeQuery(String sql)</h5><ul>
+<li>执行DQL（select)语句</li>
+</ul>
+</li>
+</ol>
+<h2 id="3-PreparedStatement-防SQL注入、执行sql的对象"><a href="#3-PreparedStatement-防SQL注入、执行sql的对象" class="headerlink" title="3.PreparedStatement  防SQL注入、执行sql的对象"></a>3.PreparedStatement  防SQL注入、执行sql的对象</h2><ul>
+<li>后期都会使用PreparedStatement来完成增删改查的所有操作<ol>
+<li>可以防止SQL注入<ol start="2">
+<li>效率更高</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<ol>
+<li><h5 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h5><p>输入用户随便，输入密码：<code>a&#39; or &#39;a&#39; = &#39;a</code></p>
+<p>sql：select * from user where username = ‘fhdsjkf’ and password = ‘a’ or ‘a’ = ‘a’ </p>
+<p>在拼接sql时，有一些sql的特殊关键字参与字符串的拼接。会造成安全性问题</p>
+</li>
+<li><h5 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h5><ol>
+<li><p>定义sql，”？”作为占位符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如：String sql&#x3D;&quot;select * from user where username &#x3D; ? and password &#x3D; ?&quot;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取执行sql语句的对象 PreparedStatement  Connection.prepareStatement(String sql) </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PreparedStatement  ps&#x3D;connection.prepareStatement(sql)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>给？赋值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">setXxx(参数1,参数2)</span><br><span class="line">参数1：？的位置编号 从1 开始</span><br><span class="line">参数2：？的值</span><br><span class="line"></span><br><span class="line">ps.setString(1,&quot;张三&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行sql，接受返回结果，不需要传递sql语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ResultSet rs&#x3D;ps.executeQuery();</span><br></pre></td></tr></table></figure>
 
 
-    3. 抽取一个方法释放资源
 
-* 代码实现：
-public class JDBCUtils {
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="4-ResultSet：结果集对象-封装查询结果"><a href="#4-ResultSet：结果集对象-封装查询结果" class="headerlink" title="4.ResultSet：结果集对象,封装查询结果"></a>4.ResultSet：结果集对象,封装查询结果</h2><ol>
+<li><h5 id="boolean-next"><a href="#boolean-next" class="headerlink" title="boolean next()"></a>boolean next()</h5><ul>
+<li>游标向下移动一行，判断当前行是否是最后一行末尾(是否有数据)，如果是，则返回false，如果不是则返回true</li>
+</ul>
+</li>
+<li><h5 id="getXxx-参数-获取数据"><a href="#getXxx-参数-获取数据" class="headerlink" title="getXxx(参数):获取数据"></a>getXxx(参数):获取数据</h5><ul>
+<li>Xxx：代表数据类型   如： int getInt() ,    String getString()</li>
+<li>参数：<ul>
+<li>int：代表列的编号,从1开始   如： getString(1)</li>
+<li>String：代表列名称。 如： getDouble(“balance”)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">while(rs.next())&#123;</span><br><span class="line">                &#x2F;&#x2F;获取数据</span><br><span class="line">                &#x2F;&#x2F;6.2 获取数据</span><br><span class="line">                int id &#x3D; rs.getInt(1);</span><br><span class="line">                String name &#x3D; rs.getString(&quot;name&quot;);</span><br><span class="line">                double balance &#x3D; rs.getDouble(3);</span><br><span class="line"></span><br><span class="line">                System.out.println(id + &quot;---&quot; + name + &quot;---&quot; + balance);</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<h1 id="4-抽取JDBC工具类-：-JDBCUtils"><a href="#4-抽取JDBC工具类-：-JDBCUtils" class="headerlink" title="4.抽取JDBC工具类 ： JDBCUtils"></a>4.抽取JDBC工具类 ： JDBCUtils</h1><ul>
+<li><strong>目的：简化书写</strong></li>
+</ul>
+<h2 id="1-分析"><a href="#1-分析" class="headerlink" title="1.分析"></a>1.分析</h2><ol>
+<li><p>注册驱动也抽取</p>
+</li>
+<li><p>抽取一个方法获取连接对象</p>
+<ul>
+<li><p>需求：不想传递参数（麻烦），还得保证工具类的通用性。</p>
+</li>
+<li><p>解决：配置文件jdbc.properties</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url&#x3D;</span><br><span class="line">user&#x3D;</span><br><span class="line">password&#x3D;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>抽取一个方法释放资源</p>
+</li>
+</ol>
+<h2 id="2-代码"><a href="#2-代码" class="headerlink" title="2.代码"></a>2.代码</h2><pre><code>public class JDBCUtils {
     private static String url;
     private static String user;
     private static String password;
@@ -684,9 +623,23 @@ public class JDBCUtils {
         System.out.println(url+&quot;---数据库关闭成功&quot;);
     }
 }</code></pre><p>​                            </p>
-<h2 id="JDBC控制事务："><a href="#JDBC控制事务：" class="headerlink" title="JDBC控制事务："></a>JDBC控制事务：</h2><pre><code>1. 事务：一个包含多个步骤的业务操作。如果这个业务操作被事务管理，则这多个步骤要么同时成功，要么同时失败。
+<h1 id="5-JDBC控制事务："><a href="#5-JDBC控制事务：" class="headerlink" title="5.JDBC控制事务："></a>5.JDBC控制事务：</h1><p>事务：一个包含多个步骤的业务操作。如果这个业务操作被事务管理，则这多个步骤要么同时成功，要么同时失败。</p>
+<h2 id="1-开启事务"><a href="#1-开启事务" class="headerlink" title="1. 开启事务"></a>1. 开启事务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setAutoCommit(boolean autoCommit) ：调用该方法设置参数为false，即开启事务</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>注意：在执行sql之前开启事务</li>
+</ul>
+<h2 id="2-提交事务"><a href="#2-提交事务" class="headerlink" title="2.提交事务"></a>2.提交事务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">commit()        &#x2F;&#x2F;当所有sql都执行完提交事务</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-回滚事务"><a href="#3-回滚事务" class="headerlink" title="3.回滚事务"></a>3.回滚事务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rollback()     &#x2F;&#x2F;在catch中回滚事务</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-代码示例"><a href="#4-代码示例" class="headerlink" title="4.代码示例"></a>4.代码示例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">public class JDBCDemo10 &#123;</span><br><span class="line">	    public static void main(String[] args) &#123;</span><br><span class="line">	        Connection conn &#x3D; null;</span><br><span class="line">	        PreparedStatement pstmt1 &#x3D; null;</span><br><span class="line">	        PreparedStatement pstmt2 &#x3D; null;</span><br><span class="line">	</span><br><span class="line">	        try &#123;</span><br><span class="line">	            &#x2F;&#x2F;1.获取连接</span><br><span class="line">	            conn &#x3D; JDBCUtils.getConnection();</span><br><span class="line">	            &#x2F;&#x2F;开启事务</span><br><span class="line">	            conn.setAutoCommit(false);</span><br><span class="line">	</span><br><span class="line">	            &#x2F;&#x2F;2.定义sql</span><br><span class="line">	            &#x2F;&#x2F;2.1 张三 - 500</span><br><span class="line">	            String sql1 &#x3D; &quot;update account set balance &#x3D; balance - ? where id &#x3D; ?&quot;;</span><br><span class="line">	            &#x2F;&#x2F;2.2 李四 + 500</span><br><span class="line">	            String sql2 &#x3D; &quot;update account set balance &#x3D; balance + ? where id &#x3D; ?&quot;;</span><br><span class="line">	            &#x2F;&#x2F;3.获取执行sql对象</span><br><span class="line">	            pstmt1 &#x3D; conn.prepareStatement(sql1);</span><br><span class="line">	            pstmt2 &#x3D; conn.prepareStatement(sql2);</span><br><span class="line">	            &#x2F;&#x2F;4. 设置参数</span><br><span class="line">	            pstmt1.setDouble(1,500);</span><br><span class="line">	            pstmt1.setInt(2,1);</span><br><span class="line">	</span><br><span class="line">	            pstmt2.setDouble(1,500);</span><br><span class="line">	            pstmt2.setInt(2,2);</span><br><span class="line">	            &#x2F;&#x2F;5.执行sql</span><br><span class="line">	            pstmt1.executeUpdate();</span><br><span class="line">	            &#x2F;&#x2F; 手动制造异常</span><br><span class="line">	            int i &#x3D; 3&#x2F;0;</span><br><span class="line">	</span><br><span class="line">	            pstmt2.executeUpdate();</span><br><span class="line">	            &#x2F;&#x2F;提交事务</span><br><span class="line">	            conn.commit();</span><br><span class="line">	        &#125; catch (Exception e) &#123;</span><br><span class="line">	            &#x2F;&#x2F;事务回滚</span><br><span class="line">	            try &#123;</span><br><span class="line">	                if(conn !&#x3D; null) &#123;</span><br><span class="line">	                    conn.rollback();</span><br><span class="line">	                &#125;</span><br><span class="line">	            &#125; catch (SQLException e1) &#123;</span><br><span class="line">	                e1.printStackTrace();</span><br><span class="line">	            &#125;</span><br><span class="line">	            e.printStackTrace();</span><br><span class="line">	        &#125;finally &#123;</span><br><span class="line">	            JDBCUtils.close(pstmt1,conn);</span><br><span class="line">	            JDBCUtils.close(pstmt2,null);</span><br><span class="line">	        &#125;</span><br><span class="line">	    &#125;</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<pre><code>1. 
 2. 操作：
-    1. 开启事务
+    1.
     2. 提交事务
     3. 回滚事务
 3. 使用Connection对象来管理事务
@@ -697,59 +650,7 @@ public class JDBCUtils {
     * 回滚事务：rollback() 
         * 在catch中回滚事务
 
-4. 代码：
-    public class JDBCDemo10 {
-
-        public static void main(String[] args) {
-            Connection conn = null;
-            PreparedStatement pstmt1 = null;
-            PreparedStatement pstmt2 = null;
-
-            try {
-                //1.获取连接
-                conn = JDBCUtils.getConnection();
-                //开启事务
-                conn.setAutoCommit(false);
-
-                //2.定义sql
-                //2.1 张三 - 500
-                String sql1 = &quot;update account set balance = balance - ? where id = ?&quot;;
-                //2.2 李四 + 500
-                String sql2 = &quot;update account set balance = balance + ? where id = ?&quot;;
-                //3.获取执行sql对象
-                pstmt1 = conn.prepareStatement(sql1);
-                pstmt2 = conn.prepareStatement(sql2);
-                //4. 设置参数
-                pstmt1.setDouble(1,500);
-                pstmt1.setInt(2,1);
-
-                pstmt2.setDouble(1,500);
-                pstmt2.setInt(2,2);
-                //5.执行sql
-                pstmt1.executeUpdate();
-                // 手动制造异常
-                int i = 3/0;
-
-                pstmt2.executeUpdate();
-                //提交事务
-                conn.commit();
-            } catch (Exception e) {
-                //事务回滚
-                try {
-                    if(conn != null) {
-                        conn.rollback();
-                    }
-                } catch (SQLException e1) {
-                    e1.printStackTrace();
-                }
-                e.printStackTrace();
-            }finally {
-                JDBCUtils.close(pstmt1,conn);
-                JDBCUtils.close(pstmt2,null);
-            }
-        }
-
-    }</code></pre><p>​        </p>
+4. 代码：</code></pre><p>​        </p>
 <p>​            </p>
 
       </div>
@@ -763,10 +664,10 @@ public class JDBCUtils {
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-11T19:42:21+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-22T12:36:31+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>updated at Jan 11, 2021</p>
+    <p>updated at Jan 22, 2021</p>
   </a>
 </div>
 
@@ -788,9 +689,11 @@ public class JDBCUtils {
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://donghuangzhong.github.io/2021/01/11/Java_JDBC/&title=Java_idea生成类和方法注释 | DHZ'S BLOG&summary=概述1. JDBC基本概念
-2. 快速入门
-3. 对JDBC中各个接口和类详解"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://donghuangzhong.github.io/2021/01/11/Java_JDBC/&title=Java_idea生成类和方法注释 | DHZ'S BLOG&summary=概述
+JDBC基本概念
+快速入门
+对JDBC中各个接口和类详解
+"
           
           >
           
@@ -802,9 +705,11 @@ public class JDBCUtils {
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://donghuangzhong.github.io/2021/01/11/Java_JDBC/&title=Java_idea生成类和方法注释 | DHZ'S BLOG&summary=概述1. JDBC基本概念
-2. 快速入门
-3. 对JDBC中各个接口和类详解"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://donghuangzhong.github.io/2021/01/11/Java_JDBC/&title=Java_idea生成类和方法注释 | DHZ'S BLOG&summary=概述
+JDBC基本概念
+快速入门
+对JDBC中各个接口和类详解
+"
           
           >
           
@@ -816,9 +721,11 @@ public class JDBCUtils {
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://donghuangzhong.github.io/2021/01/11/Java_JDBC/&title=Java_idea生成类和方法注释 | DHZ'S BLOG&summary=概述1. JDBC基本概念
-2. 快速入门
-3. 对JDBC中各个接口和类详解"
+          href="http://service.weibo.com/share/share.php?url=https://donghuangzhong.github.io/2021/01/11/Java_JDBC/&title=Java_idea生成类和方法注释 | DHZ'S BLOG&summary=概述
+JDBC基本概念
+快速入门
+对JDBC中各个接口和类详解
+"
           
           >
           
@@ -1094,7 +1001,7 @@ public class JDBCUtils {
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JDBC："><span class="toc-text">JDBC：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#抽取JDBC工具类-：-JDBCUtils"><span class="toc-text">抽取JDBC工具类 ： JDBCUtils</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JDBC控制事务："><span class="toc-text">JDBC控制事务：</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-概念"><span class="toc-text">1.概念</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-快速入门"><span class="toc-text">2. 快速入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-步骤："><span class="toc-text">1.步骤：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-代码实现"><span class="toc-text">2. 代码实现</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-详解各个对象"><span class="toc-text">3. 详解各个对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-DriverManager：驱动管理对象"><span class="toc-text">1.DriverManager：驱动管理对象</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#注册驱动：告诉程序该使用哪一个数据库驱动jar"><span class="toc-text">注册驱动：告诉程序该使用哪一个数据库驱动jar</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#获取数据库连接"><span class="toc-text">获取数据库连接</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Statement：执行sql的对象"><span class="toc-text">2. Statement：执行sql的对象</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#boolean-execute-String-sql"><span class="toc-text">boolean execute(String sql)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#int-executeUpdate-String-sql"><span class="toc-text">int executeUpdate(String sql)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ResultSet-executeQuery-String-sql"><span class="toc-text">ResultSet executeQuery(String sql)</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-PreparedStatement-防SQL注入、执行sql的对象"><span class="toc-text">3.PreparedStatement  防SQL注入、执行sql的对象</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#SQL注入"><span class="toc-text">SQL注入</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用步骤"><span class="toc-text">使用步骤</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-ResultSet：结果集对象-封装查询结果"><span class="toc-text">4.ResultSet：结果集对象,封装查询结果</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#boolean-next"><span class="toc-text">boolean next()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#getXxx-参数-获取数据"><span class="toc-text">getXxx(参数):获取数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#示例"><span class="toc-text">示例</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-抽取JDBC工具类-：-JDBCUtils"><span class="toc-text">4.抽取JDBC工具类 ： JDBCUtils</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-分析"><span class="toc-text">1.分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-代码"><span class="toc-text">2.代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-JDBC控制事务："><span class="toc-text">5.JDBC控制事务：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-开启事务"><span class="toc-text">1. 开启事务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-提交事务"><span class="toc-text">2.提交事务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-回滚事务"><span class="toc-text">3.回滚事务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-代码示例"><span class="toc-text">4.代码示例</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -1333,15 +1240,17 @@ public class JDBCUtils {
         
           <li><a class="flat-box child" title="/categories/Java/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" href="/categories/Java/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"><div class='name'>配置文件</div><div class='badge'>(1)</div></a></li>
         
+          <li><a class="flat-box" title="/categories/TersorFlow/" href="/categories/TersorFlow/"><div class='name'>TersorFlow</div><div class='badge'>(1)</div></a></li>
+        
           <li><a class="flat-box" title="/categories/VM/" href="/categories/VM/"><div class='name'>VM</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/category1/" href="/categories/category1/"><div class='name'>category1</div><div class='badge'>(7)</div></a></li>
+          <li><a class="flat-box" title="/categories/category1/" href="/categories/category1/"><div class='name'>category1</div><div class='badge'>(8)</div></a></li>
         
-          <li><a class="flat-box child" title="/categories/category1/category2/" href="/categories/category1/category2/"><div class='name'>category2</div><div class='badge'>(7)</div></a></li>
+          <li><a class="flat-box child" title="/categories/category1/category2/" href="/categories/category1/category2/"><div class='name'>category2</div><div class='badge'>(8)</div></a></li>
         
           <li><a class="flat-box" title="/categories/hexo/" href="/categories/hexo/"><div class='name'>hexo</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/python/" href="/categories/python/"><div class='name'>python</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/python/" href="/categories/python/"><div class='name'>python</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box child" title="/categories/python/%E7%88%AC%E8%99%AB/" href="/categories/python/%E7%88%AC%E8%99%AB/"><div class='name'>爬虫</div><div class='badge'>(1)</div></a></li>
         
@@ -1354,6 +1263,8 @@ public class JDBCUtils {
           <li><a class="flat-box child" title="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"><div class='name'>博客搭建</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box" title="/categories/%E5%B7%A5%E5%85%B7/" href="/categories/%E5%B7%A5%E5%85%B7/"><div class='name'>工具</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"><div class='name'>深度学习</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box" title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/"><div class='name'>计算机图形学</div><div class='badge'>(1)</div></a></li>
         
@@ -1408,7 +1319,7 @@ public class JDBCUtils {
 </header>
 
     <div class='content pure'>
-      <a href="/tags/01%E5%8F%AF%E4%B8%8D%E6%BB%A1%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">01可不满背包</a> <a href="/tags/BFS/" style="font-size: 14px; color: #999">BFS</a> <a href="/tags/C-%E6%96%87%E4%BB%B6%E4%BB%A3%E6%9B%BF%E6%89%8B%E5%B7%A5%E8%BE%93%E5%85%A5/" style="font-size: 14px; color: #999">C++文件代替手工输入</a> <a href="/tags/DFS/" style="font-size: 14px; color: #999">DFS</a> <a href="/tags/Dilworth%E5%AE%9A%E7%90%86/" style="font-size: 14px; color: #999">Dilworth定理</a> <a href="/tags/EOF/" style="font-size: 14px; color: #999">EOF</a> <a href="/tags/Idea/" style="font-size: 14px; color: #999">Idea</a> <a href="/tags/JDBC/" style="font-size: 17.33px; color: #828282">JDBC</a> <a href="/tags/Java/" style="font-size: 20.67px; color: #6c6c6c">Java</a> <a href="/tags/MFC/" style="font-size: 14px; color: #999">MFC</a> <a href="/tags/Properties/" style="font-size: 14px; color: #999">Properties</a> <a href="/tags/SQL%E7%BA%A6%E6%9D%9F/" style="font-size: 14px; color: #999">SQL约束</a> <a href="/tags/ST/" style="font-size: 14px; color: #999">ST</a> <a href="/tags/STL/" style="font-size: 14px; color: #999">STL</a> <a href="/tags/SpringTemplate/" style="font-size: 14px; color: #999">SpringTemplate</a> <a href="/tags/VM/" style="font-size: 14px; color: #999">VM</a> <a href="/tags/W/" style="font-size: 14px; color: #999">W</a> <a href="/tags/github-pages/" style="font-size: 14px; color: #999">github_pages</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/map/" style="font-size: 17.33px; color: #828282">map</a> <a href="/tags/n%E7%BB%B4%E4%BA%A4/" style="font-size: 14px; color: #999">n维交</a> <a href="/tags/tag1/" style="font-size: 24px; color: #555">tag1</a> <a href="/tags/tag2/" style="font-size: 24px; color: #555">tag2</a> <a href="/tags/vector/" style="font-size: 14px; color: #999">vector</a> <a href="/tags/wallpapers/" style="font-size: 14px; color: #999">wallpapers</a> <a href="/tags/%E4%B8%A4%E4%B8%AA%E6%9C%80%E5%B0%8F%E5%80%BC/" style="font-size: 14px; color: #999">两个最小值</a> <a href="/tags/%E4%B8%A4%E6%AC%A1BFS/" style="font-size: 14px; color: #999">两次BFS</a> <a href="/tags/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/" style="font-size: 14px; color: #999">中序遍历</a> <a href="/tags/%E4%B8%B4%E7%95%8C%E6%9C%80%E4%BC%98/" style="font-size: 14px; color: #999">临界最优</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE-%E5%A4%A7%E5%B0%8F%E4%BA%8E/" style="font-size: 17.33px; color: #828282">二分查找(大小于)</a> <a href="/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">二进制优化</a> <a href="/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E5%8D%81%E8%BF%9B%E5%88%B6/" style="font-size: 14px; color: #999">二进制表示十进制</a> <a href="/tags/%E4%BB%A3%E6%95%B0%E5%BC%8F%E6%9C%80%E5%A4%A7%E5%8C%96%E9%83%A8%E5%88%86%E6%BA%A2%E5%87%BA/" style="font-size: 14px; color: #999">代数式最大化部分溢出</a> <a href="/tags/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/" style="font-size: 14px; color: #999">优先队列</a> <a href="/tags/%E5%80%92%E6%B0%B4/" style="font-size: 14px; color: #999">倒水</a> <a href="/tags/%E5%85%94%E5%AD%90%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">兔子问题</a> <a href="/tags/%E5%85%AB%E7%9A%87%E5%90%8E%E7%AE%80%E5%8C%96%E7%89%88/" style="font-size: 14px; color: #999">八皇后简化版</a> <a href="/tags/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">八皇后问题</a> <a href="/tags/%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6/" style="font-size: 14px; color: #999">共享文件</a> <a href="/tags/%E5%87%BD%E6%95%B0%E6%95%B0%E7%BB%84%E5%BD%A2%E5%8F%82/" style="font-size: 14px; color: #999">函数数组形参</a> <a href="/tags/%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF/" style="font-size: 14px; color: #999">函数模板</a> <a href="/tags/%E5%88%86%E8%A7%A3%E8%B4%A8%E5%9B%A0%E6%95%B0/" style="font-size: 14px; color: #999">分解质因数</a> <a href="/tags/%E5%88%A4%E6%96%AD%E6%9D%A1%E4%BB%B6%E7%9A%84%E5%85%88%E5%90%8E/" style="font-size: 14px; color: #999">判断条件的先后</a> <a href="/tags/%E5%8A%A8%E6%80%81%E4%BA%8C%E8%BF%9B%E5%88%B6/" style="font-size: 14px; color: #999">动态二进制</a> <a href="/tags/%E5%8A%A8%E6%80%81%E5%91%A8%E6%9C%9F/" style="font-size: 14px; color: #999">动态周期</a> <a href="/tags/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/" style="font-size: 14px; color: #999">双向链表</a> <a href="/tags/%E5%90%8C%E4%BD%99%E5%AE%9A%E7%90%86/" style="font-size: 14px; color: #999">同余定理</a> <a href="/tags/%E5%9B%9E%E5%BD%A2%E5%8F%96%E6%95%B0/" style="font-size: 14px; color: #999">回形取数</a> <a href="/tags/%E5%9B%9E%E6%BA%AF/" style="font-size: 14px; color: #999">回溯</a> <a href="/tags/%E5%9B%BE%E7%89%87/" style="font-size: 14px; color: #999">图片</a> <a href="/tags/%E5%9B%BE%E7%9A%84%E8%BF%9E%E9%80%9A%E5%8C%BA%E5%9F%9F/" style="font-size: 14px; color: #999">图的连通区域</a> <a href="/tags/%E5%A3%81%E7%BA%B8/" style="font-size: 14px; color: #999">壁纸</a> <a href="/tags/%E5%A4%9A%E5%85%A5%E5%8F%A3BFS/" style="font-size: 14px; color: #999">多入口BFS</a> <a href="/tags/%E5%A4%9A%E6%95%B0%E7%BB%84DP/" style="font-size: 14px; color: #999">多数组DP</a> <a href="/tags/%E5%A4%A7%E6%95%B0/" style="font-size: 14px; color: #999">大数</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E5%8A%A0%E6%B3%95/" style="font-size: 14px; color: #999">大数加法</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E9%98%B6%E4%B9%98/" style="font-size: 14px; color: #999">大数阶乘</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E9%99%B7%E9%98%B1/" style="font-size: 17.33px; color: #828282">大数陷阱</a> <a href="/tags/%E5%A6%99%E7%94%A8%E4%B8%8B%E6%A0%87%E5%92%8C/" style="font-size: 14px; color: #999">妙用下标和</a> <a href="/tags/%E5%A6%99%E7%94%A8%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84/" style="font-size: 17.33px; color: #828282">妙用标志数组</a> <a href="/tags/%E5%AD%97%E5%85%B8/" style="font-size: 17.33px; color: #828282">字典</a> <a href="/tags/%E5%AD%97%E6%AF%8D/" style="font-size: 14px; color: #999">字母</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">字符串数组</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83/" style="font-size: 14px; color: #999">字符串比较</a> <a href="/tags/%E5%B1%8F%E8%94%BD%E7%BB%86%E8%8A%82/" style="font-size: 14px; color: #999">屏蔽细节</a> <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" style="font-size: 14px; color: #999">拓扑排序</a> <a href="/tags/%E6%8C%89%E5%BA%8F%E5%88%97%E7%B4%AF%E9%99%A4/" style="font-size: 14px; color: #999">按序列累除</a> <a href="/tags/%E6%8E%92%E5%90%8D/" style="font-size: 14px; color: #999">排名</a> <a href="/tags/%E6%91%84%E6%B0%8F%E5%8D%8E%E6%B0%8F%E6%B8%A9%E5%BA%A6%E8%BD%AC%E6%8D%A2/" style="font-size: 14px; color: #999">摄氏华氏温度转换</a> <a href="/tags/%E6%95%B0%E5%A1%94/" style="font-size: 14px; color: #999">数塔</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/" style="font-size: 14px; color: #999">数据库连接池</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E8%A7%84%E6%A8%A1/" style="font-size: 14px; color: #999">数据规模</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 14px; color: #999">数论</a> <a href="/tags/%E6%95%B4%E9%99%A42/" style="font-size: 14px; color: #999">整除2</a> <a href="/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91/" style="font-size: 14px; color: #999">斐波那契</a> <a href="/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%8F%96%E4%BD%99%E7%89%88/" style="font-size: 14px; color: #999">斐波那契取余版</a> <a href="/tags/%E6%97%A0%E9%99%90%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">无限背包</a> <a href="/tags/%E6%98%93%E9%94%99%E9%A2%98/" style="font-size: 14px; color: #999">易错题</a> <a href="/tags/%E6%9C%80%E5%A4%A7%E6%9C%80%E5%B0%8F%E8%B7%9D%E7%A6%BB/" style="font-size: 14px; color: #999">最大最小距离</a> <a href="/tags/%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最大连续子序列</a> <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" style="font-size: 17.33px; color: #828282">最短路径</a> <a href="/tags/%E6%9C%80%E9%95%BF-%E9%9D%9E-%E5%8D%95%E8%B0%83%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最长(非)单调子序列</a> <a href="/tags/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最长上升子序列</a> <a href="/tags/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最长公共子序列</a> <a href="/tags/%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%9B%A0%E6%95%B0/" style="font-size: 14px; color: #999">最长连续因数</a> <a href="/tags/%E6%9C%89%E5%90%91%E5%9B%BE%E7%BB%95%E5%9C%88/" style="font-size: 14px; color: #999">有向图绕圈</a> <a href="/tags/%E6%9D%A5%E5%9B%9E%E6%80%BB%E5%92%8C%E6%9C%80%E7%9F%AD/" style="font-size: 14px; color: #999">来回总和最短</a> <a href="/tags/%E6%9E%81%E5%BA%A6%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">极度优化</a> <a href="/tags/%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84%E5%81%9A%E8%AE%B0%E5%BD%95/" style="font-size: 14px; color: #999">标志数组做记录</a> <a href="/tags/%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84%E5%A6%99%E7%94%A8/" style="font-size: 17.33px; color: #828282">标志数组妙用</a> <a href="/tags/%E6%AD%A3%E5%8F%8D%E5%90%91%E6%80%9D%E8%80%83/" style="font-size: 14px; color: #999">正反向思考</a> <a href="/tags/%E6%AD%A3%E5%90%91DP/" style="font-size: 14px; color: #999">正向DP</a> <a href="/tags/%E6%AD%A3%E7%8E%AF/" style="font-size: 17.33px; color: #828282">正环</a> <a href="/tags/%E6%B0%B4%E9%A2%98/" style="font-size: 20.67px; color: #6c6c6c">水题</a> <a href="/tags/%E6%B2%99%E6%BC%8F/" style="font-size: 14px; color: #999">沙漏</a> <a href="/tags/%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">泛型编程</a> <a href="/tags/%E6%BA%A2%E5%87%BA%E9%99%B7%E9%98%B1/" style="font-size: 14px; color: #999">溢出陷阱</a> <a href="/tags/%E6%BB%9A%E5%8A%A8%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">滚动数组</a> <a href="/tags/%E7%81%AB%E5%9C%BA%E9%80%83%E7%94%9F/" style="font-size: 14px; color: #999">火场逃生</a> <a href="/tags/%E7%89%B9%E6%AE%8A%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">特殊标志数组</a> <a href="/tags/%E7%94%B5%E6%A2%AF/" style="font-size: 14px; color: #999">电梯</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E6%88%90%E5%9B%9E%E6%96%87%E6%9C%80%E7%9F%AD/" style="font-size: 14px; color: #999">移动成回文最短</a> <a href="/tags/%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97/" style="font-size: 14px; color: #999">等差数列</a> <a href="/tags/%E7%AE%80%E5%8D%95DP/" style="font-size: 14px; color: #999">简单DP</a> <a href="/tags/%E7%B4%A0%E6%95%B0%E6%89%93%E8%A1%A8/" style="font-size: 14px; color: #999">素数打表</a> <a href="/tags/%E7%B4%A0%E6%95%B0%E7%8E%AF/" style="font-size: 14px; color: #999">素数环</a> <a href="/tags/%E7%B4%A2%E5%BC%95%E8%A1%A8/" style="font-size: 14px; color: #999">索引表</a> <a href="/tags/%E7%BB%84%E5%86%85%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" style="font-size: 14px; color: #999">组内最短路径</a> <a href="/tags/%E7%BB%9F%E8%AE%A1%E6%95%B0%E5%AD%97%E7%9A%84%E4%B8%AA%E6%95%B0/" style="font-size: 14px; color: #999">统计数字的个数</a> <a href="/tags/%E7%BC%96%E7%A0%81/" style="font-size: 14px; color: #999">编码</a> <a href="/tags/%E7%BF%BB%E8%BD%AC%E6%B8%B8%E6%88%8F/" style="font-size: 14px; color: #999">翻转游戏</a> <a href="/tags/%E7%BF%BB%E8%BD%AC%E7%9F%A9%E9%98%B5/" style="font-size: 14px; color: #999">翻转矩阵</a> <a href="/tags/%E7%BF%BB%E8%BD%AC%E8%BE%B9/" style="font-size: 14px; color: #999">翻转边</a> <a href="/tags/%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">背包</a> <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF2020%E6%A8%A1%E6%8B%9F%E8%B5%9B/" style="font-size: 14px; color: #999">蓝桥杯2020模拟赛</a> <a href="/tags/%E8%A1%A5%E7%A0%81/" style="font-size: 14px; color: #999">补码</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E8%BF%90%E7%AE%97%E8%BF%87%E7%A8%8B/" style="font-size: 14px; color: #999">计算机中运算过程</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" style="font-size: 14px; color: #999">计算机图形学</a> <a href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96dfs/" style="font-size: 14px; color: #999">记忆化dfs</a> <a href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96%E9%80%92%E5%BD%92/" style="font-size: 14px; color: #999">记忆化递归</a> <a href="/tags/%E8%AE%BE%E7%8A%B6%E6%80%81/" style="font-size: 14px; color: #999">设状态</a> <a href="/tags/%E8%AF%BB%E6%95%B0%E5%AD%97/" style="font-size: 14px; color: #999">读数字</a> <a href="/tags/%E8%B4%9F%E7%8E%AF/" style="font-size: 14px; color: #999">负环</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 14px; color: #999">贪心</a> <a href="/tags/%E8%BD%AC%E7%A7%BB%E6%96%B9%E7%A8%8B%E7%9A%84%E6%9E%84%E9%80%A0/" style="font-size: 14px; color: #999">转移方程的构造</a> <a href="/tags/%E8%BE%93%E5%87%BA%E8%B7%AF%E5%BE%84/" style="font-size: 14px; color: #999">输出路径</a> <a href="/tags/%E9%80%92%E5%BD%92%E8%8C%83%E5%9B%B4/" style="font-size: 14px; color: #999">递归范围</a> <a href="/tags/%E9%80%BB%E8%BE%91/" style="font-size: 17.33px; color: #828282">逻辑</a> <a href="/tags/%E9%80%BB%E8%BE%91%E7%9B%B8%E5%8A%A0%E5%A6%99%E7%94%A8/" style="font-size: 14px; color: #999">逻辑相加妙用</a> <a href="/tags/%E9%80%BB%E8%BE%91%E8%B7%AF%E5%BE%84/" style="font-size: 14px; color: #999">逻辑路径</a> <a href="/tags/%E9%81%8D%E5%8E%86%E6%89%80%E6%9C%89%E5%8F%AF%E8%83%BD%E6%80%A7/" style="font-size: 14px; color: #999">遍历所有可能性</a> <a href="/tags/%E9%82%BB%E6%8E%A5%E8%A1%A8/" style="font-size: 14px; color: #999">邻接表</a> <a href="/tags/%E9%A3%9F%E7%89%A9%E9%93%BE/" style="font-size: 14px; color: #999">食物链</a> <a href="/tags/%E9%AB%98%E7%BA%A7dfs/" style="font-size: 14px; color: #999">高级dfs</a> <a href="/tags/%E9%AB%98%E9%98%B601%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">高阶01背包</a> <a href="/tags/%E9%BB%91%E7%99%BD%E5%AD%90/" style="font-size: 14px; color: #999">黑白子</a> <a href="/tags/%E9%BE%9F%E5%85%94%E8%B5%9B%E8%B7%91/" style="font-size: 14px; color: #999">龟兔赛跑</a>
+      <a href="/tags/01%E5%8F%AF%E4%B8%8D%E6%BB%A1%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">01可不满背包</a> <a href="/tags/AlexNet/" style="font-size: 14px; color: #999">AlexNet</a> <a href="/tags/BFS/" style="font-size: 14px; color: #999">BFS</a> <a href="/tags/C-%E6%96%87%E4%BB%B6%E4%BB%A3%E6%9B%BF%E6%89%8B%E5%B7%A5%E8%BE%93%E5%85%A5/" style="font-size: 14px; color: #999">C++文件代替手工输入</a> <a href="/tags/DFS/" style="font-size: 14px; color: #999">DFS</a> <a href="/tags/Dilworth%E5%AE%9A%E7%90%86/" style="font-size: 14px; color: #999">Dilworth定理</a> <a href="/tags/EOF/" style="font-size: 14px; color: #999">EOF</a> <a href="/tags/GeForce940MX/" style="font-size: 14px; color: #999">GeForce940MX</a> <a href="/tags/Idea/" style="font-size: 14px; color: #999">Idea</a> <a href="/tags/JDBC/" style="font-size: 17.33px; color: #828282">JDBC</a> <a href="/tags/Java/" style="font-size: 20.67px; color: #6c6c6c">Java</a> <a href="/tags/MFC/" style="font-size: 14px; color: #999">MFC</a> <a href="/tags/Properties/" style="font-size: 14px; color: #999">Properties</a> <a href="/tags/SQL%E7%BA%A6%E6%9D%9F/" style="font-size: 14px; color: #999">SQL约束</a> <a href="/tags/ST/" style="font-size: 14px; color: #999">ST</a> <a href="/tags/STL/" style="font-size: 14px; color: #999">STL</a> <a href="/tags/SpringTemplate/" style="font-size: 14px; color: #999">SpringTemplate</a> <a href="/tags/VM/" style="font-size: 14px; color: #999">VM</a> <a href="/tags/W/" style="font-size: 14px; color: #999">W</a> <a href="/tags/keras/" style="font-size: 14px; color: #999">_keras</a> <a href="/tags/github-pages/" style="font-size: 14px; color: #999">github_pages</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/jupyter/" style="font-size: 14px; color: #999">jupyter</a> <a href="/tags/map/" style="font-size: 17.33px; color: #828282">map</a> <a href="/tags/n%E7%BB%B4%E4%BA%A4/" style="font-size: 14px; color: #999">n维交</a> <a href="/tags/tag1/" style="font-size: 24px; color: #555">tag1</a> <a href="/tags/tag2/" style="font-size: 24px; color: #555">tag2</a> <a href="/tags/vector/" style="font-size: 14px; color: #999">vector</a> <a href="/tags/wallpapers/" style="font-size: 14px; color: #999">wallpapers</a> <a href="/tags/%E4%B8%A4%E4%B8%AA%E6%9C%80%E5%B0%8F%E5%80%BC/" style="font-size: 14px; color: #999">两个最小值</a> <a href="/tags/%E4%B8%A4%E6%AC%A1BFS/" style="font-size: 14px; color: #999">两次BFS</a> <a href="/tags/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/" style="font-size: 14px; color: #999">中序遍历</a> <a href="/tags/%E4%B8%B4%E7%95%8C%E6%9C%80%E4%BC%98/" style="font-size: 14px; color: #999">临界最优</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE-%E5%A4%A7%E5%B0%8F%E4%BA%8E/" style="font-size: 17.33px; color: #828282">二分查找(大小于)</a> <a href="/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">二进制优化</a> <a href="/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E5%8D%81%E8%BF%9B%E5%88%B6/" style="font-size: 14px; color: #999">二进制表示十进制</a> <a href="/tags/%E4%BB%A3%E6%95%B0%E5%BC%8F%E6%9C%80%E5%A4%A7%E5%8C%96%E9%83%A8%E5%88%86%E6%BA%A2%E5%87%BA/" style="font-size: 14px; color: #999">代数式最大化部分溢出</a> <a href="/tags/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/" style="font-size: 14px; color: #999">优先队列</a> <a href="/tags/%E5%80%92%E6%B0%B4/" style="font-size: 14px; color: #999">倒水</a> <a href="/tags/%E5%85%94%E5%AD%90%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">兔子问题</a> <a href="/tags/%E5%85%AB%E7%9A%87%E5%90%8E%E7%AE%80%E5%8C%96%E7%89%88/" style="font-size: 14px; color: #999">八皇后简化版</a> <a href="/tags/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">八皇后问题</a> <a href="/tags/%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6/" style="font-size: 14px; color: #999">共享文件</a> <a href="/tags/%E5%87%BD%E6%95%B0%E6%95%B0%E7%BB%84%E5%BD%A2%E5%8F%82/" style="font-size: 14px; color: #999">函数数组形参</a> <a href="/tags/%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF/" style="font-size: 14px; color: #999">函数模板</a> <a href="/tags/%E5%88%86%E8%A7%A3%E8%B4%A8%E5%9B%A0%E6%95%B0/" style="font-size: 14px; color: #999">分解质因数</a> <a href="/tags/%E5%88%A4%E6%96%AD%E6%9D%A1%E4%BB%B6%E7%9A%84%E5%85%88%E5%90%8E/" style="font-size: 14px; color: #999">判断条件的先后</a> <a href="/tags/%E5%8A%A8%E6%80%81%E4%BA%8C%E8%BF%9B%E5%88%B6/" style="font-size: 14px; color: #999">动态二进制</a> <a href="/tags/%E5%8A%A8%E6%80%81%E5%91%A8%E6%9C%9F/" style="font-size: 14px; color: #999">动态周期</a> <a href="/tags/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/" style="font-size: 14px; color: #999">双向链表</a> <a href="/tags/%E5%90%8C%E4%BD%99%E5%AE%9A%E7%90%86/" style="font-size: 14px; color: #999">同余定理</a> <a href="/tags/%E5%9B%9E%E5%BD%A2%E5%8F%96%E6%95%B0/" style="font-size: 14px; color: #999">回形取数</a> <a href="/tags/%E5%9B%9E%E6%BA%AF/" style="font-size: 14px; color: #999">回溯</a> <a href="/tags/%E5%9B%BE%E7%89%87/" style="font-size: 14px; color: #999">图片</a> <a href="/tags/%E5%9B%BE%E7%9A%84%E8%BF%9E%E9%80%9A%E5%8C%BA%E5%9F%9F/" style="font-size: 14px; color: #999">图的连通区域</a> <a href="/tags/%E5%A3%81%E7%BA%B8/" style="font-size: 14px; color: #999">壁纸</a> <a href="/tags/%E5%A4%9A%E5%85%A5%E5%8F%A3BFS/" style="font-size: 14px; color: #999">多入口BFS</a> <a href="/tags/%E5%A4%9A%E6%95%B0%E7%BB%84DP/" style="font-size: 14px; color: #999">多数组DP</a> <a href="/tags/%E5%A4%A7%E6%95%B0/" style="font-size: 14px; color: #999">大数</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E5%8A%A0%E6%B3%95/" style="font-size: 14px; color: #999">大数加法</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E9%98%B6%E4%B9%98/" style="font-size: 14px; color: #999">大数阶乘</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E9%99%B7%E9%98%B1/" style="font-size: 17.33px; color: #828282">大数陷阱</a> <a href="/tags/%E5%A6%99%E7%94%A8%E4%B8%8B%E6%A0%87%E5%92%8C/" style="font-size: 14px; color: #999">妙用下标和</a> <a href="/tags/%E5%A6%99%E7%94%A8%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84/" style="font-size: 17.33px; color: #828282">妙用标志数组</a> <a href="/tags/%E5%AD%97%E5%85%B8/" style="font-size: 17.33px; color: #828282">字典</a> <a href="/tags/%E5%AD%97%E6%AF%8D/" style="font-size: 14px; color: #999">字母</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">字符串数组</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83/" style="font-size: 14px; color: #999">字符串比较</a> <a href="/tags/%E5%B1%8F%E8%94%BD%E7%BB%86%E8%8A%82/" style="font-size: 14px; color: #999">屏蔽细节</a> <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" style="font-size: 14px; color: #999">拓扑排序</a> <a href="/tags/%E6%8C%89%E5%BA%8F%E5%88%97%E7%B4%AF%E9%99%A4/" style="font-size: 14px; color: #999">按序列累除</a> <a href="/tags/%E6%8E%92%E5%90%8D/" style="font-size: 14px; color: #999">排名</a> <a href="/tags/%E6%91%84%E6%B0%8F%E5%8D%8E%E6%B0%8F%E6%B8%A9%E5%BA%A6%E8%BD%AC%E6%8D%A2/" style="font-size: 14px; color: #999">摄氏华氏温度转换</a> <a href="/tags/%E6%95%B0%E5%A1%94/" style="font-size: 14px; color: #999">数塔</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/" style="font-size: 14px; color: #999">数据库连接池</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E8%A7%84%E6%A8%A1/" style="font-size: 14px; color: #999">数据规模</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 14px; color: #999">数论</a> <a href="/tags/%E6%95%B4%E9%99%A42/" style="font-size: 14px; color: #999">整除2</a> <a href="/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91/" style="font-size: 14px; color: #999">斐波那契</a> <a href="/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%8F%96%E4%BD%99%E7%89%88/" style="font-size: 14px; color: #999">斐波那契取余版</a> <a href="/tags/%E6%97%A0%E9%99%90%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">无限背包</a> <a href="/tags/%E6%98%93%E9%94%99%E9%A2%98/" style="font-size: 14px; color: #999">易错题</a> <a href="/tags/%E6%9C%80%E5%A4%A7%E6%9C%80%E5%B0%8F%E8%B7%9D%E7%A6%BB/" style="font-size: 14px; color: #999">最大最小距离</a> <a href="/tags/%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最大连续子序列</a> <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" style="font-size: 17.33px; color: #828282">最短路径</a> <a href="/tags/%E6%9C%80%E9%95%BF-%E9%9D%9E-%E5%8D%95%E8%B0%83%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最长(非)单调子序列</a> <a href="/tags/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最长上升子序列</a> <a href="/tags/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最长公共子序列</a> <a href="/tags/%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%9B%A0%E6%95%B0/" style="font-size: 14px; color: #999">最长连续因数</a> <a href="/tags/%E6%9C%89%E5%90%91%E5%9B%BE%E7%BB%95%E5%9C%88/" style="font-size: 14px; color: #999">有向图绕圈</a> <a href="/tags/%E6%9D%A5%E5%9B%9E%E6%80%BB%E5%92%8C%E6%9C%80%E7%9F%AD/" style="font-size: 14px; color: #999">来回总和最短</a> <a href="/tags/%E6%9E%81%E5%BA%A6%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">极度优化</a> <a href="/tags/%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84%E5%81%9A%E8%AE%B0%E5%BD%95/" style="font-size: 14px; color: #999">标志数组做记录</a> <a href="/tags/%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84%E5%A6%99%E7%94%A8/" style="font-size: 17.33px; color: #828282">标志数组妙用</a> <a href="/tags/%E6%AD%A3%E5%8F%8D%E5%90%91%E6%80%9D%E8%80%83/" style="font-size: 14px; color: #999">正反向思考</a> <a href="/tags/%E6%AD%A3%E5%90%91DP/" style="font-size: 14px; color: #999">正向DP</a> <a href="/tags/%E6%AD%A3%E7%8E%AF/" style="font-size: 17.33px; color: #828282">正环</a> <a href="/tags/%E6%B0%B4%E9%A2%98/" style="font-size: 20.67px; color: #6c6c6c">水题</a> <a href="/tags/%E6%B2%99%E6%BC%8F/" style="font-size: 14px; color: #999">沙漏</a> <a href="/tags/%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">泛型编程</a> <a href="/tags/%E6%BA%A2%E5%87%BA%E9%99%B7%E9%98%B1/" style="font-size: 14px; color: #999">溢出陷阱</a> <a href="/tags/%E6%BB%9A%E5%8A%A8%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">滚动数组</a> <a href="/tags/%E7%81%AB%E5%9C%BA%E9%80%83%E7%94%9F/" style="font-size: 14px; color: #999">火场逃生</a> <a href="/tags/%E7%89%B9%E6%AE%8A%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">特殊标志数组</a> <a href="/tags/%E7%94%B5%E6%A2%AF/" style="font-size: 14px; color: #999">电梯</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E6%88%90%E5%9B%9E%E6%96%87%E6%9C%80%E7%9F%AD/" style="font-size: 14px; color: #999">移动成回文最短</a> <a href="/tags/%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97/" style="font-size: 14px; color: #999">等差数列</a> <a href="/tags/%E7%AE%80%E5%8D%95DP/" style="font-size: 14px; color: #999">简单DP</a> <a href="/tags/%E7%B4%A0%E6%95%B0%E6%89%93%E8%A1%A8/" style="font-size: 14px; color: #999">素数打表</a> <a href="/tags/%E7%B4%A0%E6%95%B0%E7%8E%AF/" style="font-size: 14px; color: #999">素数环</a> <a href="/tags/%E7%B4%A2%E5%BC%95%E8%A1%A8/" style="font-size: 14px; color: #999">索引表</a> <a href="/tags/%E7%BB%84%E5%86%85%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" style="font-size: 14px; color: #999">组内最短路径</a> <a href="/tags/%E7%BB%9F%E8%AE%A1%E6%95%B0%E5%AD%97%E7%9A%84%E4%B8%AA%E6%95%B0/" style="font-size: 14px; color: #999">统计数字的个数</a> <a href="/tags/%E7%BC%96%E7%A0%81/" style="font-size: 14px; color: #999">编码</a> <a href="/tags/%E7%BF%BB%E8%BD%AC%E6%B8%B8%E6%88%8F/" style="font-size: 14px; color: #999">翻转游戏</a> <a href="/tags/%E7%BF%BB%E8%BD%AC%E7%9F%A9%E9%98%B5/" style="font-size: 14px; color: #999">翻转矩阵</a> <a href="/tags/%E7%BF%BB%E8%BD%AC%E8%BE%B9/" style="font-size: 14px; color: #999">翻转边</a> <a href="/tags/%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">背包</a> <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF2020%E6%A8%A1%E6%8B%9F%E8%B5%9B/" style="font-size: 14px; color: #999">蓝桥杯2020模拟赛</a> <a href="/tags/%E8%A1%A5%E7%A0%81/" style="font-size: 14px; color: #999">补码</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E8%BF%90%E7%AE%97%E8%BF%87%E7%A8%8B/" style="font-size: 14px; color: #999">计算机中运算过程</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" style="font-size: 14px; color: #999">计算机图形学</a> <a href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96dfs/" style="font-size: 14px; color: #999">记忆化dfs</a> <a href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96%E9%80%92%E5%BD%92/" style="font-size: 14px; color: #999">记忆化递归</a> <a href="/tags/%E8%AE%BE%E7%8A%B6%E6%80%81/" style="font-size: 14px; color: #999">设状态</a> <a href="/tags/%E8%AF%BB%E6%95%B0%E5%AD%97/" style="font-size: 14px; color: #999">读数字</a> <a href="/tags/%E8%B4%9F%E7%8E%AF/" style="font-size: 14px; color: #999">负环</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 14px; color: #999">贪心</a> <a href="/tags/%E8%BD%AC%E7%A7%BB%E6%96%B9%E7%A8%8B%E7%9A%84%E6%9E%84%E9%80%A0/" style="font-size: 14px; color: #999">转移方程的构造</a> <a href="/tags/%E8%BE%93%E5%87%BA%E8%B7%AF%E5%BE%84/" style="font-size: 14px; color: #999">输出路径</a> <a href="/tags/%E9%80%92%E5%BD%92%E8%8C%83%E5%9B%B4/" style="font-size: 14px; color: #999">递归范围</a> <a href="/tags/%E9%80%BB%E8%BE%91/" style="font-size: 17.33px; color: #828282">逻辑</a> <a href="/tags/%E9%80%BB%E8%BE%91%E7%9B%B8%E5%8A%A0%E5%A6%99%E7%94%A8/" style="font-size: 14px; color: #999">逻辑相加妙用</a> <a href="/tags/%E9%80%BB%E8%BE%91%E8%B7%AF%E5%BE%84/" style="font-size: 14px; color: #999">逻辑路径</a> <a href="/tags/%E9%81%8D%E5%8E%86%E6%89%80%E6%9C%89%E5%8F%AF%E8%83%BD%E6%80%A7/" style="font-size: 14px; color: #999">遍历所有可能性</a> <a href="/tags/%E9%82%BB%E6%8E%A5%E8%A1%A8/" style="font-size: 14px; color: #999">邻接表</a> <a href="/tags/%E9%A3%9F%E7%89%A9%E9%93%BE/" style="font-size: 14px; color: #999">食物链</a> <a href="/tags/%E9%AB%98%E7%BA%A7dfs/" style="font-size: 14px; color: #999">高级dfs</a> <a href="/tags/%E9%AB%98%E9%98%B601%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">高阶01背包</a> <a href="/tags/%E9%BB%91%E7%99%BD%E5%AD%90/" style="font-size: 14px; color: #999">黑白子</a> <a href="/tags/%E9%BE%9F%E5%85%94%E8%B5%9B%E8%B7%91/" style="font-size: 14px; color: #999">龟兔赛跑</a>
     </div>
   </section>
 
