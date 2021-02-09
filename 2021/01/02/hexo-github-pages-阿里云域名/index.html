@@ -414,45 +414,45 @@ var _hmt = _hmt || [];
 <h1 id="1-安装Node-js"><a href="#1-安装Node-js" class="headerlink" title="1.安装Node.js"></a>1.安装Node.js</h1><p>官网:<a href="https://nodejs.org/en/xia安装LTS版本即可" target="_blank" rel="noopener">https://nodejs.org/en/xia安装LTS版本即可</a></p>
 <h1 id="2-安装-Git"><a href="#2-安装-Git" class="headerlink" title="2.安装 Git"></a>2.安装 Git</h1><p>官网:<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a></p>
 <p>2个都安装完成如下：</p>
-<p><img src="/2021/01/02/hexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D/D:%5Cprogramming%5Cblog%5Cdonghuangzhong%5Csource_posts%5Chexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D%5C3656.png" alt></p>
+<p><img src="/2021/01/02/hexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D/3656.png" alt></p>
 <h1 id="3-安装hexo"><a href="#3-安装hexo" class="headerlink" title="3.安装hexo"></a>3.安装hexo</h1><h2 id="1-新建一个文件夹，右键空白处点Git-Bash-Here"><a href="#1-新建一个文件夹，右键空白处点Git-Bash-Here" class="headerlink" title="1.新建一个文件夹，右键空白处点Git Bash Here"></a>1.新建一个文件夹，右键空白处点Git Bash Here</h2><ul>
 <li><p>关于博客的所有文件都在这个文件夹下面，我新建的名字是dipamkar。</p>
 </li>
 <li><p>验证node，npm 是否安装成功，没有成功的就重新安装node。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">键入node -v和npm -v。进行验证</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2021/01/02/hexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D/D:%5Cprogramming%5Cblog%5Cdonghuangzhong%5Csource_posts%5Chexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D%5C23010.jpg" alt></p>
+<p><img src="/2021/01/02/hexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D/23010.jpg" alt></p>
 </li>
 </ul>
 <h2 id="2-安装个cnpm提高速度，以后下载什么东西都用cnpm"><a href="#2-安装个cnpm提高速度，以后下载什么东西都用cnpm" class="headerlink" title="2.安装个cnpm提高速度，以后下载什么东西都用cnpm"></a>2.安装个cnpm提高速度，以后下载什么东西都用cnpm</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>验证cnpm是否安装成功，键入cnpm -v</p>
-<p><img src="/2021/01/02/hexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D/D:%5Cprogramming%5Cblog%5Cdonghuangzhong%5Csource_posts%5Chexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D%5C123349.jpg" alt></p>
+<p><img src="/2021/01/02/hexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D/123349.jpg" alt></p>
 </li>
 </ul>
 <h2 id="3-正式安装hexo"><a href="#3-正式安装hexo" class="headerlink" title="3.正式安装hexo"></a>3.正式安装hexo</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>验证hexo是否安装成功，键入hexo -v</p>
-<p><img src="/2021/01/02/hexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D/D:%5Cprogramming%5Cblog%5Cdonghuangzhong%5Csource_posts%5Chexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D%5C123526.jpg" alt></p>
+<p><img src="/2021/01/02/hexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D/123526.jpg" alt></p>
 </li>
 </ul>
 <h1 id="4-初始化hexo"><a href="#4-初始化hexo" class="headerlink" title="4.初始化hexo"></a>4.初始化hexo</h1><h2 id="1-本地初始化"><a href="#1-本地初始化" class="headerlink" title="1.本地初始化"></a>1.本地初始化</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
 
 <p>在此文件夹就会出现一堆文件</p>
-<p><img src="/2021/01/02/hexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D/D:%5Cprogramming%5Cblog%5Cdonghuangzhong%5Csource_posts%5Chexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D%5C123825.jpg" alt></p>
+<p><img src="/2021/01/02/hexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D/123825.jpg" alt></p>
 <h2 id="2-运行测试"><a href="#2-运行测试" class="headerlink" title="2.运行测试"></a>2.运行测试</h2><p>常用命令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean #用来清理缓存文件</span><br><span class="line">hexo g      #生成文件</span><br><span class="line">hexo  s     #运行本地服务器</span><br><span class="line">hexo  d   #上传到服务器</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>先运行hexo s。在浏览器中打开网址<code>localhost:4000</code>即可，得到下图表示成功</p>
-<p><img src="/2021/01/02/hexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D/D:%5Cprogramming%5Cblog%5Cdonghuangzhong%5Csource_posts%5Chexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D%5C124154.jpg" alt></p>
+<p><img src="/2021/01/02/hexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D/124154.jpg" alt></p>
 </li>
 </ul>
 <h1 id="5-部署到github"><a href="#5-部署到github" class="headerlink" title="5.部署到github"></a>5.部署到github</h1><h2 id="1-注册登录github"><a href="#1-注册登录github" class="headerlink" title="1.注册登录github"></a>1.注册登录github</h2><p>网址：github.com</p>
-<h2 id="2-点击your-repositories然后点new-新建仓库"><a href="#2-点击your-repositories然后点new-新建仓库" class="headerlink" title="2.点击your repositories然后点new,新建仓库"></a>2.点击your repositories然后点new,新建仓库</h2><p><img src="/2021/01/02/hexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D/D:%5Cprogramming%5Cblog%5Cdonghuangzhong%5Csource_posts%5Chexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D%5C124713.jpg" alt></p>
-<h2 id="3-Repository-name必须写github账号名-github-io"><a href="#3-Repository-name必须写github账号名-github-io" class="headerlink" title="3.Repository name必须写github账号名+github.io"></a>3.Repository name必须写github账号名+github.io</h2><p><img src="/2021/01/02/hexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D/D:%5Cprogramming%5Cblog%5Cdonghuangzhong%5Csource_posts%5Chexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D%5C124907.jpg" alt></p>
+<h2 id="2-点击your-repositories然后点new-新建仓库"><a href="#2-点击your-repositories然后点new-新建仓库" class="headerlink" title="2.点击your repositories然后点new,新建仓库"></a>2.点击your repositories然后点new,新建仓库</h2><p><img src="/2021/01/02/hexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D/124713.jpg" alt></p>
+<h2 id="3-Repository-name必须写github账号名-github-io"><a href="#3-Repository-name必须写github账号名-github-io" class="headerlink" title="3.Repository name必须写github账号名+github.io"></a>3.Repository name必须写github账号名+github.io</h2><p><img src="/2021/01/02/hexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D/124907.jpg" alt></p>
 <p>填成上图即可点击create完成仓库创建</p>
 <h2 id="4-安装部署插件"><a href="#4-安装部署插件" class="headerlink" title="4.安装部署插件"></a>4.安装部署插件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
 
@@ -462,8 +462,8 @@ var _hmt = _hmt || [];
 <li><p>或者用记事本打开</p>
 <p>到此文件最后的位置，只改Deployment，改成下图</p>
 <p><strong>注意：repo按照下图从仓库中复制过来，改完不要忘了保存</strong></p>
-<p><img src="/2021/01/02/hexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D/D:%5Cprogramming%5Cblog%5Cdonghuangzhong%5Csource_posts%5Chexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D%5C171216.jpg" alt></p>
-<p><img src="/2021/01/02/hexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D/D:%5Cprogramming%5Cblog%5Cdonghuangzhong%5Csource_posts%5Chexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D%5Crepo.jpg" alt></p>
+<p><img src="/2021/01/02/hexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D/171216.jpg" alt></p>
+<p><img src="/2021/01/02/hexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D/repo.jpg" alt></p>
 </li>
 </ul>
 <h2 id="6-绑定邮箱和账号名"><a href="#6-绑定邮箱和账号名" class="headerlink" title="6.绑定邮箱和账号名"></a>6.绑定邮箱和账号名</h2><p>键入以下命令，引号中的信息换成你自己的</p>
@@ -473,7 +473,7 @@ var _hmt = _hmt || [];
 
 <h2 id="7-用hexo-d正式部署到github"><a href="#7-用hexo-d正式部署到github" class="headerlink" title="7.用hexo d正式部署到github"></a>7.用<code>hexo d</code>正式部署到github</h2><ul>
 <li><p>键入<code>hexo d</code>，然后会让你输入github账号密码，最后出现Deploy done表示成功</p>
-<p><img src="/2021/01/02/hexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D/D:%5Cprogramming%5Cblog%5Cdonghuangzhong%5Csource_posts%5Chexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D%5C172834.jpg" alt></p>
+<p><img src="/2021/01/02/hexo-github-pages-%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D/172834.jpg" alt></p>
 </li>
 </ul>
 <ul>
@@ -498,10 +498,10 @@ var _hmt = _hmt || [];
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-12T17:39:53+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-09T20:37:20+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>updated at Jan 12, 2021</p>
+    <p>updated at Feb 9, 2021</p>
   </a>
 </div>
 

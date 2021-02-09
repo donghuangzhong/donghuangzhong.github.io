@@ -425,7 +425,7 @@ var _hmt = _hmt || [];
 </li>
 <li>使用回归器精细修正候选框位置  </li>
 </ol>
-<h3 id="算法框架"><a href="#算法框架" class="headerlink" title="算法框架"></a>算法框架</h3><p><img src="/2021/02/08/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/%5C%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%5Cimage-20210208102803793.png" alt="image-20210208102803793"></p>
+<h3 id="算法框架"><a href="#算法框架" class="headerlink" title="算法框架"></a>算法框架</h3><p><img src="/2021/02/08/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/image-20210208102803793.png" alt="image-20210208102803793"></p>
 <h3 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h3><ol>
 <li><h4 id="测试速度慢"><a href="#测试速度慢" class="headerlink" title="测试速度慢"></a>测试速度慢</h4><p>测试一张图片约53s(CPU)。 用Selective Search算法提取候选框用时约2秒， 一张图像内候选框之间存在大量重叠， 提取特征操作冗余。  </p>
 </li>
@@ -449,20 +449,20 @@ var _hmt = _hmt || [];
 <ul>
 <li>经过softmax处理</li>
 </ul>
-<h4 id="边界框回归器"><a href="#边界框回归器" class="headerlink" title="边界框回归器"></a>边界框回归器</h4><p><img src="/2021/02/08/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/D:%5Cprogramming%5Cblog%5Cdonghuangzhong%5Csource_posts%5C%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%5Cimage-20210208123531241.png" alt="image-20210208123531241"></p>
+<h4 id="边界框回归器"><a href="#边界框回归器" class="headerlink" title="边界框回归器"></a>边界框回归器</h4><p><img src="/2021/02/08/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/image-20210208123531241.png" alt="image-20210208123531241"></p>
 <ul>
 <li>(N+1)*4个节点(每个类别对应4个边界框回归参数(dx, dy, dw, dh) )</li>
 <li>Px, Py, Pw, Ph 分别为候选框的中心x y坐标，以及宽高</li>
 <li>Gˆx,Gˆ y,Gˆw,Gˆh 分别为最终预测的边界框中心x y坐标，以及宽高  </li>
 </ul>
-<h4 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h4><p><img src="/2021/02/08/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/D:%5Cprogramming%5Cblog%5Cdonghuangzhong%5Csource_posts%5C%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%5Cimage-20210208123743975.png" alt="image-20210208123743975"></p>
+<h4 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h4><p><img src="/2021/02/08/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/image-20210208123743975.png" alt="image-20210208123743975"></p>
 <ul>
 <li>p : 分类器输出的softmax输出</li>
 <li>u : 真实类别标签</li>
 </ul>
-<p><img src="/2021/02/08/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/D:%5Cprogramming%5Cblog%5Cdonghuangzhong%5Csource_posts%5C%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%5Cimage-20210208124340751.png" alt="image-20210208124340751"></p>
+<p><img src="/2021/02/08/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/image-20210208124340751.png" alt="image-20210208124340751"></p>
 <p><img src="/2021/02/08/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/D:%5Cprogramming%5Cblog%5Cdonghuangzhong%5Csource_posts%5C%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%5Cimage-20210208124515230.png" alt="image-20210208124515230"></p>
-<h3 id="算法框架-1"><a href="#算法框架-1" class="headerlink" title="算法框架"></a>算法框架</h3><p><img src="/2021/02/08/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/D:%5Cprogramming%5Cblog%5Cdonghuangzhong%5Csource_posts%5C%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%5Cimage-20210208124647879.png" alt="image-20210208124647879"></p>
+<h3 id="算法框架-1"><a href="#算法框架-1" class="headerlink" title="算法框架"></a>算法框架</h3><p><img src="/2021/02/08/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/image-20210208124647879.png" alt="image-20210208124647879"></p>
 <h2 id="Faster-R-CNN"><a href="#Faster-R-CNN" class="headerlink" title="Faster R-CNN"></a>Faster R-CNN</h2><p>实际就是RPN + Fast R-CNN  </p>
 <h3 id="算法流程-2"><a href="#算法流程-2" class="headerlink" title="算法流程"></a>算法流程</h3><ol>
 <li>将图像输入网络得到相应的特征图  </li>
@@ -477,8 +477,8 @@ var _hmt = _hmt || [];
 </ul>
 </li>
 </ol>
-<h3 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h3><p><img src="/2021/02/08/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/D:%5Cprogramming%5Cblog%5Cdonghuangzhong%5Csource_posts%5C%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%5Cimage-20210208172244880.png" alt="image-20210208172244880"></p>
-<h3 id="损失函数-1"><a href="#损失函数-1" class="headerlink" title="损失函数"></a>损失函数</h3><p><img src="/2021/02/08/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/D:%5Cprogramming%5Cblog%5Cdonghuangzhong%5Csource_posts%5C%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%5Cimage-20210209075651508.png" alt="image-20210209075651508"></p>
+<h3 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h3><p><img src="/2021/02/08/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/image-20210208172244880.png" alt="image-20210208172244880"></p>
+<h3 id="损失函数-1"><a href="#损失函数-1" class="headerlink" title="损失函数"></a>损失函数</h3><p><img src="/2021/02/08/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/image-20210209075651508.png" alt="image-20210209075651508"></p>
 <h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
 <li>群体性小目标检测效果不好(原论文7*7个网格，每个网格预测两个框)</li>
 <li>目标出现新的尺寸比例的时候效果差(直接预测位置和宽高，而像R-CNN和SSD系列预测回归参数)</li>
@@ -487,15 +487,15 @@ var _hmt = _hmt || [];
 <li>每个卷积层后加BN(Batch Normalization)层</li>
 <li>更大的输入图片尺寸(更高分辨率)</li>
 <li>基于Anchor Boxes，用K-means聚类得到anchor尺寸</li>
-<li><img src="/2021/02/08/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/D:%5Cprogramming%5Cblog%5Cdonghuangzhong%5Csource_posts%5C%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%5Cimage-20210208182050827.png" alt="image-20210208182050827">用sigmoid函数限制变换后的位置</li>
+<li><img src="/2021/02/08/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/image-20210208182050827.png" alt="image-20210208182050827">用sigmoid函数限制变换后的位置</li>
 <li>高层特征和底层特征(包含细节信息，解决v1小目标效果不好)结合<ul>
 <li>用4x4方格将宽高变为一半，深度变为4倍，与高层特征在深度上拼接</li>
 </ul>
 </li>
 <li>多尺度训练，解决输入图像尺寸固定的弊端，每迭代10个batch，随机选择图片尺寸</li>
 </ol>
-<h3 id="网络结构-1"><a href="#网络结构-1" class="headerlink" title="网络结构"></a>网络结构</h3><h4 id="darknet-19"><a href="#darknet-19" class="headerlink" title="darknet-19"></a>darknet-19</h4><p><img src="/2021/02/08/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/D:%5Cprogramming%5Cblog%5Cdonghuangzhong%5Csource_posts%5C%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%5Cimage-20210208182949454.png" alt="image-20210208182949454"></p>
-<h4 id="总结构"><a href="#总结构" class="headerlink" title="总结构"></a>总结构</h4><p><img src="/2021/02/08/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/D:%5Cprogramming%5Cblog%5Cdonghuangzhong%5Csource_posts%5C%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%5Cimage-20210208183128674.png" alt="image-20210208183128674"></p>
+<h3 id="网络结构-1"><a href="#网络结构-1" class="headerlink" title="网络结构"></a>网络结构</h3><h4 id="darknet-19"><a href="#darknet-19" class="headerlink" title="darknet-19"></a>darknet-19</h4><p><img src="/2021/02/08/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/image-20210208182949454.png" alt="image-20210208182949454"></p>
+<h4 id="总结构"><a href="#总结构" class="headerlink" title="总结构"></a>总结构</h4><p><img src="/2021/02/08/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/image-20210208183128674.png" alt="image-20210208183128674"></p>
 <h2 id="YOLO-v3"><a href="#YOLO-v3" class="headerlink" title="YOLO v3"></a>YOLO v3</h2><h3 id="创新点"><a href="#创新点" class="headerlink" title="创新点"></a>创新点</h3><ol>
 <li>在三个尺度对目标进行检测</li>
 <li></li>
@@ -518,7 +518,7 @@ var _hmt = _hmt || [];
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-09T15:56:59+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-09T20:29:38+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>updated at Feb 9, 2021</p>
