@@ -345,9 +345,9 @@ var _hmt = _hmt || [];
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/category1/category2/' rel="nofollow">
+    <a href='/categories/java/JSP/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>category1&nbsp;/&nbsp;category2</p>
+      <p>java&nbsp;/&nbsp;JSP</p>
     </a>
   </div>
 
@@ -379,14 +379,14 @@ var _hmt = _hmt || [];
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>1.8k字</p>
+        <p>2.1k字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>7分</p>
+        <p>8分</p>
       </a>
     </div>
   
@@ -427,44 +427,69 @@ var _hmt = _hmt || [];
 </ol>
 <a id="more"></a>
 
-<h1 id="1-JSP"><a href="#1-JSP" class="headerlink" title="1.JSP"></a>1.JSP</h1><h2 id="1-指令"><a href="#1-指令" class="headerlink" title="1.指令"></a>1.指令</h2><ul>
-<li><h3 id="作用：用于配置JSP页面，导入资源文件"><a href="#作用：用于配置JSP页面，导入资源文件" class="headerlink" title="作用：用于配置JSP页面，导入资源文件"></a>作用：用于配置JSP页面，导入资源文件</h3></li>
-<li><h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ 指令名称 属性名1&#x3D;属性值1 属性名2&#x3D;属性值2 ... %&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h1><ul>
+<li>概念：Java Server Pages： java服务器端页面<ul>
+<li>可以理解为：一个特殊的页面，其中既可以指定定义html标签，又可以定义java代码</li>
+<li>用于简化书写！！！</li>
+</ul>
 </li>
-<li><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ol>
-<li><h4 id="page"><a href="#page" class="headerlink" title="page"></a>page</h4><ul>
-<li><h5 id="contentType：等同于response-setContentType"><a href="#contentType：等同于response-setContentType" class="headerlink" title="contentType：等同于response.setContentType()"></a>contentType：等同于response.setContentType()</h5><ol>
-<li>设置响应体的mime类型以及字符集</li>
-<li>设置当前jsp页面的编码（只能是高级的IDE才能生效，如果使用低级工具，则需要设置pageEncoding属性设置当前页面的字符集）</li>
+<li>原理：JSP本质上就是一个Servlet</li>
+</ul>
+<h2 id="JSP的脚本：JSP定义Java代码的方式"><a href="#JSP的脚本：JSP定义Java代码的方式" class="headerlink" title="JSP的脚本：JSP定义Java代码的方式"></a>JSP的脚本：JSP定义Java代码的方式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. &lt;%  代码 %&gt;：定义的java代码，在service方法中。service方法中可以定义什么，该脚本中就可以定义什么。</span><br><span class="line">2. &lt;%! 代码 %&gt;：定义的java代码，在jsp转换后的java类的成员位置。</span><br><span class="line">3. &lt;%&#x3D; 代码 %&gt;：定义的java代码，会输出到页面上。输出语句中可以定义什么，该脚本中就可以定义什么。</span><br></pre></td></tr></table></figure>
+
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><ul>
+<li><p>作用：用于配置JSP页面，导入资源文件</p>
+</li>
+<li><p>格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ 指令名称 属性名1&#x3D;属性值1 属性名2&#x3D;属性值2 ... %&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>分类</p>
+<ol>
+<li><p>page</p>
+<ul>
+<li>contentType：等同于response.setContentType()</li>
+</ul>
+</li>
 </ol>
 </li>
-<li><h5 id="import：导包"><a href="#import：导包" class="headerlink" title="import：导包"></a>import：导包</h5></li>
-<li><h5 id="errorPage：当前页面发生异常后，会自动跳转到指定的错误页面"><a href="#errorPage：当前页面发生异常后，会自动跳转到指定的错误页面" class="headerlink" title="errorPage：当前页面发生异常后，会自动跳转到指定的错误页面"></a>errorPage：当前页面发生异常后，会自动跳转到指定的错误页面</h5></li>
-<li><h5 id="isErrorPage：标识当前也是是否是错误页面。"><a href="#isErrorPage：标识当前也是是否是错误页面。" class="headerlink" title="isErrorPage：标识当前也是是否是错误页面。"></a>isErrorPage：标识当前也是是否是错误页面。</h5><ol>
-<li>true：是，可以使用内置对象exception</li>
+</ul>
+<ol>
+<li>设置响应体的mime类型以及字符集<pre><code>2. 设置当前jsp页面的编码（只能是高级的IDE才能生效，如果使用低级工具，则需要设置pageEncoding属性设置当前页面的字符集）</code></pre></li>
+</ol>
+<ul>
+<li><p>import：导包</p>
+</li>
+<li><p>errorPage：当前页面发生异常后，会自动跳转到指定的错误页面</p>
+</li>
+<li><p>isErrorPage：标识当前也是是否是错误页面。</p>
+<ol>
+<li>true：是，可以使用内置对象exception<ol start="2">
 <li>false：否。默认值。不可以使用内置对象exception</li>
 </ol>
 </li>
-</ul>
+</ol>
+<ol start="2">
+<li><p>include   页面包含的。导入页面的资源文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@include file&#x3D;&quot;top.jsp&quot;%&gt;</span><br></pre></td></tr></table></figure>
 </li>
-<li><h4 id="include-页面包含的。导入页面的资源文件"><a href="#include-页面包含的。导入页面的资源文件" class="headerlink" title="include   页面包含的。导入页面的资源文件"></a>include   页面包含的。导入页面的资源文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@include file&#x3D;&quot;top.jsp&quot;%&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><h4 id="taglib-导入资源"><a href="#taglib-导入资源" class="headerlink" title="taglib     导入资源"></a>taglib     导入资源</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib prefix&#x3D;&quot;c&quot; uri&#x3D;&quot;http:&#x2F;&#x2F;java.sun.com&#x2F;jsp&#x2F;jstl&#x2F;core&quot; %&gt;</span><br><span class="line">&#x2F;&#x2F;prefix：前缀，自定义的</span><br></pre></td></tr></table></figure>
+<li><p>taglib     导入资源</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib prefix&#x3D;&quot;c&quot; uri&#x3D;&quot;http:&#x2F;&#x2F;java.sun.com&#x2F;jsp&#x2F;jstl&#x2F;core&quot; %&gt;</span><br><span class="line">  &#x2F;&#x2F;prefix：前缀，自定义的</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
 </li>
 </ul>
-<h2 id="2-注释"><a href="#2-注释" class="headerlink" title="2.注释"></a>2.注释</h2><ol>
-<li><h3 id="html注释"><a href="#html注释" class="headerlink" title="html注释"></a>html注释</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- --&gt;     &#x2F;&#x2F;只能注释html代码片段</span><br></pre></td></tr></table></figure>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><ol>
+<li><p>html注释</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- --&gt;     &#x2F;&#x2F;只能注释html代码片段</span><br></pre></td></tr></table></figure>
 </li>
-<li><h3 id="jsp注释：推荐使用"><a href="#jsp注释：推荐使用" class="headerlink" title="jsp注释：推荐使用"></a>jsp注释：推荐使用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%-- --%&gt;    &#x2F;&#x2F;可以注释所有</span><br></pre></td></tr></table></figure>
-
+<li><p>jsp注释：推荐使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%-- --%&gt;    &#x2F;&#x2F;可以注释所有</span><br></pre></td></tr></table></figure>
 
 
 </li>
 </ol>
-<h2 id="3-内置对象"><a href="#3-内置对象" class="headerlink" title="3.内置对象"></a>3.内置对象</h2><p>在jsp页面中不需要创建，直接使用的对象，一共有如下9个。</p>
+<h2 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h2><p>在jsp页面中不需要创建，直接使用的对象，一共有如下9个。</p>
 <table>
 <thead>
 <tr>
@@ -519,46 +544,59 @@ var _hmt = _hmt || [];
 <td>异常对象</td>
 </tr>
 </tbody></table>
-<h1 id="2-MVC：开发模式"><a href="#2-MVC：开发模式" class="headerlink" title="2.MVC：开发模式"></a>2.MVC：开发模式</h1><h2 id="1-jsp演变历史"><a href="#1-jsp演变历史" class="headerlink" title="1.jsp演变历史"></a>1.jsp演变历史</h2><ol>
+<pre><code>* out：字符输出流对象。可以将数据输出到页面上。和response.getWriter()类似
+    * response.getWriter()和out.write()的区别：
+        * 在tomcat服务器真正给客户端做出响应之前，会先找response缓冲区数据，再找out缓冲区数据。
+        * response.getWriter()数据输出永远在out.write()之前</code></pre><h1 id="MVC：开发模式"><a href="#MVC：开发模式" class="headerlink" title="MVC：开发模式"></a>MVC：开发模式</h1><h2 id="jsp演变历史"><a href="#jsp演变历史" class="headerlink" title="jsp演变历史"></a>jsp演变历史</h2><ol>
 <li>早期只有servlet，只能使用response输出标签数据，非常麻烦</li>
 <li>后来又jsp，简化了Servlet的开发，如果过度使用jsp，在jsp中即写大量的java代码，有写html表，造成难于维护，难于分工协作</li>
 <li>再后来，java的web开发，借鉴mvc开发模式，使得程序的设计更加合理性</li>
 </ol>
-<h2 id="2-MVC"><a href="#2-MVC" class="headerlink" title="2.MVC"></a>2.MVC</h2><ol>
-<li><h4 id="M：Model，模型。JavaBean"><a href="#M：Model，模型。JavaBean" class="headerlink" title="M：Model，模型。JavaBean"></a>M：Model，模型。JavaBean</h4><ul>
+<h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><ol>
+<li>M：Model，模型。JavaBean</li>
+</ol>
+<ul>
 <li>完成具体的业务操作，如：查询数据库，封装对象</li>
 </ul>
-</li>
-<li><h4 id="V：View，视图。JSP"><a href="#V：View，视图。JSP" class="headerlink" title="V：View，视图。JSP"></a>V：View，视图。JSP</h4><ul>
+<ol start="2">
+<li>V：View，视图。JSP</li>
+</ol>
+<ul>
 <li>展示数据</li>
 </ul>
-</li>
-<li><h4 id="C：Controller，控制器。Servlet"><a href="#C：Controller，控制器。Servlet" class="headerlink" title="C：Controller，控制器。Servlet"></a>C：Controller，控制器。Servlet</h4><ul>
-<li>获取用户的输入</li>
+<ol start="3">
+<li>C：Controller，控制器。Servlet</li>
+</ol>
+<ul>
+<li>获取用户的输入<ul>
 <li>调用模型</li>
 <li>将数据交给视图进行展示</li>
 </ul>
 </li>
-<li><h4 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h4><ul>
+</ul>
+<ol start="4">
+<li>优缺点</li>
+</ol>
+<ul>
 <li>优点<ol>
 <li>耦合性低，方便维护，可以利于分工协作</li>
-<li>重用性高</li>
-</ol>
-</li>
+<li>重用性高<ul>
 <li>缺点：使得项目架构变得复杂，对开发人员要求高</li>
 </ul>
 </li>
 </ol>
-<h1 id="3-EL表达式"><a href="#3-EL表达式" class="headerlink" title="3.EL表达式"></a>3.EL表达式</h1><p><strong>不用声明语句，直接在jsp中使用即可</strong></p>
-<h2 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h2><p>Expression Language 表达式语言</p>
-<h2 id="2-作用"><a href="#2-作用" class="headerlink" title="2.作用"></a>2.作用</h2><p>替换和简化jsp页面中java代码的编写</p>
-<h2 id="3-语法"><a href="#3-语法" class="headerlink" title="3.语法"></a>3.语法</h2><p>${表达式}</p>
-<h2 id="4-忽略el表达式"><a href="#4-忽略el表达式" class="headerlink" title="4.忽略el表达式"></a>4.忽略el表达式</h2><p>jsp默认支持el表达式的。如果要忽略el表达式</p>
+</li>
+</ul>
+<h1 id="EL表达式"><a href="#EL表达式" class="headerlink" title="EL表达式"></a>EL表达式</h1><p><strong>不用声明语句，直接在jsp中使用即可</strong></p>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>Expression Language 表达式语言</p>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>替换和简化jsp页面中java代码的编写</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>${表达式}</p>
+<h2 id="忽略el表达式"><a href="#忽略el表达式" class="headerlink" title="忽略el表达式"></a>忽略el表达式</h2><p>jsp默认支持el表达式的。如果要忽略el表达式</p>
 <ol>
 <li>设置jsp中page指令中：isELIgnored=”true” 忽略当前jsp页面中所有的el表达式</li>
 <li>\${表达式} ：忽略当前这个el表达式</li>
 </ol>
-<h2 id="5-使用"><a href="#5-使用" class="headerlink" title="5.使用"></a>5.使用</h2><ol>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ol>
 <li><h3 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h3><ol>
 <li>算数运算符： + - * /(div) %(mod)</li>
 <li>比较运算符： &gt; &lt; &gt;= &lt;= == !=</li>
@@ -573,7 +611,7 @@ var _hmt = _hmt || [];
 </li>
 <li><h3 id="获取值"><a href="#获取值" class="headerlink" title="获取值"></a>获取值</h3><ol>
 <li><h4 id="el表达式只能从域对象中获取值"><a href="#el表达式只能从域对象中获取值" class="headerlink" title="el表达式只能从域对象中获取值"></a>el表达式只能从域对象中获取值</h4></li>
-<li><h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><ol>
+<li><h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><ol>
 <li><h5 id="域名称-键名-：从指定域中获取指定键的值"><a href="#域名称-键名-：从指定域中获取指定键的值" class="headerlink" title="${域名称.键名}：从指定域中获取指定键的值"></a>${域名称.键名}：从指定域中获取指定键的值</h5><ul>
 <li><p>域名称</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. pageScope		--&gt; pageContext</span><br><span class="line">2. requestScope 	--&gt; request</span><br><span class="line">3. sessionScope 	--&gt; session</span><br><span class="line">4. applicationScope --&gt; application（ServletContext）</span><br></pre></td></tr></table></figure>
@@ -609,11 +647,11 @@ var _hmt = _hmt || [];
 </ol>
 </li>
 </ol>
-<h1 id="4-JSTL"><a href="#4-JSTL" class="headerlink" title="4.JSTL"></a>4.JSTL</h1><h2 id="1-概念-1"><a href="#1-概念-1" class="headerlink" title="1.概念"></a>1.概念</h2><ol>
+<h1 id="4-JSTL"><a href="#4-JSTL" class="headerlink" title="4.JSTL"></a>4.JSTL</h1><h2 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h2><ol>
 <li>JavaServer Pages Tag Library  JSP标准标签库</li>
 <li>是由Apache组织提供的开源的免费的jsp标签        &lt;标签&gt;</li>
 </ol>
-<h2 id="2-作用-1"><a href="#2-作用-1" class="headerlink" title="2.作用"></a>2.作用</h2><p>用于简化和替换jsp页面上的java代码</p>
+<h2 id="2-作用"><a href="#2-作用" class="headerlink" title="2.作用"></a>2.作用</h2><p>用于简化和替换jsp页面上的java代码</p>
 <h2 id="3-使用步骤"><a href="#3-使用步骤" class="headerlink" title="3.使用步骤"></a>3.使用步骤</h2><ol>
 <li><p>导入jstl相关jar包</p>
 </li>
@@ -697,10 +735,10 @@ var _hmt = _hmt || [];
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-21T12:15:32+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-03T18:21:05+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>updated at Feb 21, 2021</p>
+    <p>updated at Mar 3, 2021</p>
   </a>
 </div>
 
@@ -709,7 +747,7 @@ var _hmt = _hmt || [];
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/tag1/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>tag1</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/tag2/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>tag2</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/java/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>java</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/EL-JSTL/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>EL&JSTL</p></a></div>
 
 
         
@@ -1070,7 +1108,7 @@ JSTL标签
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-JSP"><span class="toc-text">1.JSP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-指令"><span class="toc-text">1.指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#作用：用于配置JSP页面，导入资源文件"><span class="toc-text">作用：用于配置JSP页面，导入资源文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#格式"><span class="toc-text">格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分类"><span class="toc-text">分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#page"><span class="toc-text">page</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#contentType：等同于response-setContentType"><span class="toc-text">contentType：等同于response.setContentType()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#import：导包"><span class="toc-text">import：导包</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#errorPage：当前页面发生异常后，会自动跳转到指定的错误页面"><span class="toc-text">errorPage：当前页面发生异常后，会自动跳转到指定的错误页面</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#isErrorPage：标识当前也是是否是错误页面。"><span class="toc-text">isErrorPage：标识当前也是是否是错误页面。</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#include-页面包含的。导入页面的资源文件"><span class="toc-text">include   页面包含的。导入页面的资源文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#taglib-导入资源"><span class="toc-text">taglib     导入资源</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-注释"><span class="toc-text">2.注释</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#html注释"><span class="toc-text">html注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jsp注释：推荐使用"><span class="toc-text">jsp注释：推荐使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-内置对象"><span class="toc-text">3.内置对象</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-MVC：开发模式"><span class="toc-text">2.MVC：开发模式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-jsp演变历史"><span class="toc-text">1.jsp演变历史</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-MVC"><span class="toc-text">2.MVC</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#M：Model，模型。JavaBean"><span class="toc-text">M：Model，模型。JavaBean</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#V：View，视图。JSP"><span class="toc-text">V：View，视图。JSP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C：Controller，控制器。Servlet"><span class="toc-text">C：Controller，控制器。Servlet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#优缺点"><span class="toc-text">优缺点</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-EL表达式"><span class="toc-text">3.EL表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-概念"><span class="toc-text">1.概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-作用"><span class="toc-text">2.作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-语法"><span class="toc-text">3.语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-忽略el表达式"><span class="toc-text">4.忽略el表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-使用"><span class="toc-text">5.使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#运算"><span class="toc-text">运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取值"><span class="toc-text">获取值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#el表达式只能从域对象中获取值"><span class="toc-text">el表达式只能从域对象中获取值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#语法"><span class="toc-text">语法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#域名称-键名-：从指定域中获取指定键的值"><span class="toc-text">${域名称.键名}：从指定域中获取指定键的值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#键名-：表示依次从最小的域中查找是否有该键对应的值，直到找到为止。"><span class="toc-text">${键名}：表示依次从最小的域中查找是否有该键对应的值，直到找到为止。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#获取对象、List集合、Map集合的值"><span class="toc-text">获取对象、List集合、Map集合的值</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#隐式对象"><span class="toc-text">隐式对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#el表达式中有11个隐式对象"><span class="toc-text">el表达式中有11个隐式对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pageContext"><span class="toc-text">pageContext</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-JSTL"><span class="toc-text">4.JSTL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-概念-1"><span class="toc-text">1.概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-作用-1"><span class="toc-text">2.作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-使用步骤"><span class="toc-text">3.使用步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-常用的JSTL标签"><span class="toc-text">4.常用的JSTL标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#if-相当于java代码的if语句"><span class="toc-text">if:相当于java代码的if语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#choose-相当于java代码的switch语句"><span class="toc-text">choose:相当于java代码的switch语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#foreach-相当于java代码的for语句"><span class="toc-text">foreach:相当于java代码的for语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#属性"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#示例"><span class="toc-text">示例</span></a></li></ol></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JSP"><span class="toc-text">JSP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JSP的脚本：JSP定义Java代码的方式"><span class="toc-text">JSP的脚本：JSP定义Java代码的方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#指令"><span class="toc-text">指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注释"><span class="toc-text">注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内置对象"><span class="toc-text">内置对象</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MVC：开发模式"><span class="toc-text">MVC：开发模式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#jsp演变历史"><span class="toc-text">jsp演变历史</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MVC"><span class="toc-text">MVC</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#EL表达式"><span class="toc-text">EL表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概念"><span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#作用"><span class="toc-text">作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语法"><span class="toc-text">语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#忽略el表达式"><span class="toc-text">忽略el表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#运算"><span class="toc-text">运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取值"><span class="toc-text">获取值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#el表达式只能从域对象中获取值"><span class="toc-text">el表达式只能从域对象中获取值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#语法-1"><span class="toc-text">语法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#域名称-键名-：从指定域中获取指定键的值"><span class="toc-text">${域名称.键名}：从指定域中获取指定键的值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#键名-：表示依次从最小的域中查找是否有该键对应的值，直到找到为止。"><span class="toc-text">${键名}：表示依次从最小的域中查找是否有该键对应的值，直到找到为止。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#获取对象、List集合、Map集合的值"><span class="toc-text">获取对象、List集合、Map集合的值</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#隐式对象"><span class="toc-text">隐式对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#el表达式中有11个隐式对象"><span class="toc-text">el表达式中有11个隐式对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pageContext"><span class="toc-text">pageContext</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-JSTL"><span class="toc-text">4.JSTL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-概念"><span class="toc-text">1.概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-作用"><span class="toc-text">2.作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-使用步骤"><span class="toc-text">3.使用步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-常用的JSTL标签"><span class="toc-text">4.常用的JSTL标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#if-相当于java代码的if语句"><span class="toc-text">if:相当于java代码的if语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#choose-相当于java代码的switch语句"><span class="toc-text">choose:相当于java代码的switch语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#foreach-相当于java代码的for语句"><span class="toc-text">foreach:相当于java代码的for语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#属性"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#示例"><span class="toc-text">示例</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
   </section>
 
@@ -1299,31 +1337,35 @@ JSTL标签
         
           <li><a class="flat-box" title="/categories/Hexo/" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Java/" href="/categories/Java/"><div class='name'>Java</div><div class='badge'>(7)</div></a></li>
+          <li><a class="flat-box" title="/categories/Java/" href="/categories/Java/"><div class='name'>Java</div><div class='badge'>(6)</div></a></li>
         
           <li><a class="flat-box child" title="/categories/Java/Idea/" href="/categories/Java/Idea/"><div class='name'>Idea</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box child" title="/categories/Java/JDBC/" href="/categories/Java/JDBC/"><div class='name'>JDBC</div><div class='badge'>(3)</div></a></li>
+          <li><a class="flat-box child" title="/categories/Java/JDBC/" href="/categories/Java/JDBC/"><div class='name'>JDBC</div><div class='badge'>(2)</div></a></li>
         
-          <li><a class="flat-box child" title="/categories/Java/SQL%E7%BA%A6%E6%9D%9F/" href="/categories/Java/SQL%E7%BA%A6%E6%9D%9F/"><div class='name'>SQL约束</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box child" title="/categories/Java/SQL/" href="/categories/Java/SQL/"><div class='name'>SQL</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box child" title="/categories/Java/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" href="/categories/Java/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"><div class='name'>配置文件</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box" title="/categories/Linux/" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Spring/" href="/categories/Spring/"><div class='name'>Spring</div><div class='badge'>(1)</div></a></li>
-        
           <li><a class="flat-box" title="/categories/TersorFlow/" href="/categories/TersorFlow/"><div class='name'>TersorFlow</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box" title="/categories/VM/" href="/categories/VM/"><div class='name'>VM</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/category1/" href="/categories/category1/"><div class='name'>category1</div><div class='badge'>(9)</div></a></li>
+          <li><a class="flat-box" title="/categories/category1/" href="/categories/category1/"><div class='name'>category1</div><div class='badge'>(8)</div></a></li>
         
-          <li><a class="flat-box child" title="/categories/category1/category2/" href="/categories/category1/category2/"><div class='name'>category2</div><div class='badge'>(9)</div></a></li>
+          <li><a class="flat-box child" title="/categories/category1/category2/" href="/categories/category1/category2/"><div class='name'>category2</div><div class='badge'>(8)</div></a></li>
         
           <li><a class="flat-box" title="/categories/hexo/" href="/categories/hexo/"><div class='name'>hexo</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/java/" href="/categories/java/"><div class='name'>java</div><div class='badge'>(7)</div></a></li>
+          <li><a class="flat-box" title="/categories/java/" href="/categories/java/"><div class='name'>java</div><div class='badge'>(13)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/java/JSP/" href="/categories/java/JSP/"><div class='name'>JSP</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/java/SQL/" href="/categories/java/SQL/"><div class='name'>SQL</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/java/web%E7%9B%B8%E5%85%B3/" href="/categories/java/web%E7%9B%B8%E5%85%B3/"><div class='name'>web相关</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box" title="/categories/python/" href="/categories/python/"><div class='name'>python</div><div class='badge'>(5)</div></a></li>
         
@@ -1396,7 +1438,7 @@ JSTL标签
 </header>
 
     <div class='content pure'>
-      <a href="/tags/01%E5%8F%AF%E4%B8%8D%E6%BB%A1%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">01可不满背包</a> <a href="/tags/AlexNet/" style="font-size: 14px; color: #999">AlexNet</a> <a href="/tags/BFS/" style="font-size: 14px; color: #999">BFS</a> <a href="/tags/C-%E6%96%87%E4%BB%B6%E4%BB%A3%E6%9B%BF%E6%89%8B%E5%B7%A5%E8%BE%93%E5%85%A5/" style="font-size: 14px; color: #999">C++文件代替手工输入</a> <a href="/tags/DFS/" style="font-size: 14px; color: #999">DFS</a> <a href="/tags/Dilworth%E5%AE%9A%E7%90%86/" style="font-size: 14px; color: #999">Dilworth定理</a> <a href="/tags/EOF/" style="font-size: 14px; color: #999">EOF</a> <a href="/tags/GeForce940MX/" style="font-size: 14px; color: #999">GeForce940MX</a> <a href="/tags/Idea/" style="font-size: 14px; color: #999">Idea</a> <a href="/tags/JDBC/" style="font-size: 16.5px; color: #888">JDBC</a> <a href="/tags/Java/" style="font-size: 21.5px; color: #666">Java</a> <a href="/tags/MFC/" style="font-size: 14px; color: #999">MFC</a> <a href="/tags/Mybatis/" style="font-size: 16.5px; color: #888">Mybatis</a> <a href="/tags/Properties/" style="font-size: 14px; color: #999">Properties</a> <a href="/tags/SQL%E7%BA%A6%E6%9D%9F/" style="font-size: 14px; color: #999">SQL约束</a> <a href="/tags/ST/" style="font-size: 14px; color: #999">ST</a> <a href="/tags/STL/" style="font-size: 14px; color: #999">STL</a> <a href="/tags/SpringTemplate/" style="font-size: 14px; color: #999">SpringTemplate</a> <a href="/tags/VM/" style="font-size: 14px; color: #999">VM</a> <a href="/tags/W/" style="font-size: 14px; color: #999">W</a> <a href="/tags/WSL/" style="font-size: 14px; color: #999">WSL</a> <a href="/tags/keras/" style="font-size: 14px; color: #999">_keras</a> <a href="/tags/github-pages/" style="font-size: 14px; color: #999">github_pages</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/jupyter/" style="font-size: 14px; color: #999">jupyter</a> <a href="/tags/map/" style="font-size: 16.5px; color: #888">map</a> <a href="/tags/maven/" style="font-size: 14px; color: #999">maven</a> <a href="/tags/mybatis/" style="font-size: 14px; color: #999">mybatis</a> <a href="/tags/numpy/" style="font-size: 14px; color: #999">numpy</a> <a href="/tags/n%E7%BB%B4%E4%BA%A4/" style="font-size: 14px; color: #999">n维交</a> <a href="/tags/pandas/" style="font-size: 14px; color: #999">pandas</a> <a href="/tags/pyplot/" style="font-size: 14px; color: #999">pyplot</a> <a href="/tags/spring/" style="font-size: 16.5px; color: #888">spring</a> <a href="/tags/spring-web/" style="font-size: 14px; color: #999">spring+web</a> <a href="/tags/springmvc/" style="font-size: 14px; color: #999">springmvc</a> <a href="/tags/tag1/" style="font-size: 24px; color: #555">tag1</a> <a href="/tags/tag2/" style="font-size: 24px; color: #555">tag2</a> <a href="/tags/vector/" style="font-size: 14px; color: #999">vector</a> <a href="/tags/wallpapers/" style="font-size: 14px; color: #999">wallpapers</a> <a href="/tags/%E4%B8%A4%E4%B8%AA%E6%9C%80%E5%B0%8F%E5%80%BC/" style="font-size: 14px; color: #999">两个最小值</a> <a href="/tags/%E4%B8%A4%E6%AC%A1BFS/" style="font-size: 14px; color: #999">两次BFS</a> <a href="/tags/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/" style="font-size: 14px; color: #999">中序遍历</a> <a href="/tags/%E4%B8%B4%E7%95%8C%E6%9C%80%E4%BC%98/" style="font-size: 14px; color: #999">临界最优</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE-%E5%A4%A7%E5%B0%8F%E4%BA%8E/" style="font-size: 16.5px; color: #888">二分查找(大小于)</a> <a href="/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">二进制优化</a> <a href="/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E5%8D%81%E8%BF%9B%E5%88%B6/" style="font-size: 14px; color: #999">二进制表示十进制</a> <a href="/tags/%E4%BB%A3%E6%95%B0%E5%BC%8F%E6%9C%80%E5%A4%A7%E5%8C%96%E9%83%A8%E5%88%86%E6%BA%A2%E5%87%BA/" style="font-size: 14px; color: #999">代数式最大化部分溢出</a> <a href="/tags/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/" style="font-size: 14px; color: #999">优先队列</a> <a href="/tags/%E5%80%92%E6%B0%B4/" style="font-size: 14px; color: #999">倒水</a> <a href="/tags/%E5%85%94%E5%AD%90%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">兔子问题</a> <a href="/tags/%E5%85%AB%E7%9A%87%E5%90%8E%E7%AE%80%E5%8C%96%E7%89%88/" style="font-size: 14px; color: #999">八皇后简化版</a> <a href="/tags/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">八皇后问题</a> <a href="/tags/%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6/" style="font-size: 14px; color: #999">共享文件</a> <a href="/tags/%E5%87%BD%E6%95%B0%E6%95%B0%E7%BB%84%E5%BD%A2%E5%8F%82/" style="font-size: 14px; color: #999">函数数组形参</a> <a href="/tags/%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF/" style="font-size: 14px; color: #999">函数模板</a> <a href="/tags/%E5%88%86%E8%A7%A3%E8%B4%A8%E5%9B%A0%E6%95%B0/" style="font-size: 14px; color: #999">分解质因数</a> <a href="/tags/%E5%88%A4%E6%96%AD%E6%9D%A1%E4%BB%B6%E7%9A%84%E5%85%88%E5%90%8E/" style="font-size: 14px; color: #999">判断条件的先后</a> <a href="/tags/%E5%8A%A8%E6%80%81%E4%BA%8C%E8%BF%9B%E5%88%B6/" style="font-size: 14px; color: #999">动态二进制</a> <a href="/tags/%E5%8A%A8%E6%80%81%E5%91%A8%E6%9C%9F/" style="font-size: 14px; color: #999">动态周期</a> <a href="/tags/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/" style="font-size: 14px; color: #999">双向链表</a> <a href="/tags/%E5%90%8C%E4%BD%99%E5%AE%9A%E7%90%86/" style="font-size: 14px; color: #999">同余定理</a> <a href="/tags/%E5%9B%9E%E5%BD%A2%E5%8F%96%E6%95%B0/" style="font-size: 14px; color: #999">回形取数</a> <a href="/tags/%E5%9B%9E%E6%BA%AF/" style="font-size: 14px; color: #999">回溯</a> <a href="/tags/%E5%9B%BE%E7%89%87/" style="font-size: 14px; color: #999">图片</a> <a href="/tags/%E5%9B%BE%E7%9A%84%E8%BF%9E%E9%80%9A%E5%8C%BA%E5%9F%9F/" style="font-size: 14px; color: #999">图的连通区域</a> <a href="/tags/%E5%A3%81%E7%BA%B8/" style="font-size: 14px; color: #999">壁纸</a> <a href="/tags/%E5%A4%9A%E5%85%A5%E5%8F%A3BFS/" style="font-size: 14px; color: #999">多入口BFS</a> <a href="/tags/%E5%A4%9A%E6%95%B0%E7%BB%84DP/" style="font-size: 14px; color: #999">多数组DP</a> <a href="/tags/%E5%A4%A7%E6%95%B0/" style="font-size: 14px; color: #999">大数</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E5%8A%A0%E6%B3%95/" style="font-size: 14px; color: #999">大数加法</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E9%98%B6%E4%B9%98/" style="font-size: 14px; color: #999">大数阶乘</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E9%99%B7%E9%98%B1/" style="font-size: 16.5px; color: #888">大数陷阱</a> <a href="/tags/%E5%A6%99%E7%94%A8%E4%B8%8B%E6%A0%87%E5%92%8C/" style="font-size: 14px; color: #999">妙用下标和</a> <a href="/tags/%E5%A6%99%E7%94%A8%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84/" style="font-size: 16.5px; color: #888">妙用标志数组</a> <a href="/tags/%E5%AD%97%E5%85%B8/" style="font-size: 16.5px; color: #888">字典</a> <a href="/tags/%E5%AD%97%E6%AF%8D/" style="font-size: 14px; color: #999">字母</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">字符串数组</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83/" style="font-size: 14px; color: #999">字符串比较</a> <a href="/tags/%E5%B1%8F%E8%94%BD%E7%BB%86%E8%8A%82/" style="font-size: 14px; color: #999">屏蔽细节</a> <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" style="font-size: 14px; color: #999">拓扑排序</a> <a href="/tags/%E6%8C%89%E5%BA%8F%E5%88%97%E7%B4%AF%E9%99%A4/" style="font-size: 14px; color: #999">按序列累除</a> <a href="/tags/%E6%8E%92%E5%90%8D/" style="font-size: 14px; color: #999">排名</a> <a href="/tags/%E6%91%84%E6%B0%8F%E5%8D%8E%E6%B0%8F%E6%B8%A9%E5%BA%A6%E8%BD%AC%E6%8D%A2/" style="font-size: 14px; color: #999">摄氏华氏温度转换</a> <a href="/tags/%E6%95%B0%E5%A1%94/" style="font-size: 14px; color: #999">数塔</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/" style="font-size: 14px; color: #999">数据库连接池</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E8%A7%84%E6%A8%A1/" style="font-size: 14px; color: #999">数据规模</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 14px; color: #999">数论</a> <a href="/tags/%E6%95%B4%E9%99%A42/" style="font-size: 14px; color: #999">整除2</a> <a href="/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91/" style="font-size: 14px; color: #999">斐波那契</a> <a href="/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%8F%96%E4%BD%99%E7%89%88/" style="font-size: 14px; color: #999">斐波那契取余版</a> <a href="/tags/%E6%97%A0%E9%99%90%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">无限背包</a> <a href="/tags/%E6%98%93%E9%94%99%E9%A2%98/" style="font-size: 14px; color: #999">易错题</a> <a href="/tags/%E6%9C%80%E5%A4%A7%E6%9C%80%E5%B0%8F%E8%B7%9D%E7%A6%BB/" style="font-size: 14px; color: #999">最大最小距离</a> <a href="/tags/%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最大连续子序列</a> <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" style="font-size: 16.5px; color: #888">最短路径</a> <a href="/tags/%E6%9C%80%E9%95%BF-%E9%9D%9E-%E5%8D%95%E8%B0%83%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最长(非)单调子序列</a> <a href="/tags/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最长上升子序列</a> <a href="/tags/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最长公共子序列</a> <a href="/tags/%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%9B%A0%E6%95%B0/" style="font-size: 14px; color: #999">最长连续因数</a> <a href="/tags/%E6%9C%89%E5%90%91%E5%9B%BE%E7%BB%95%E5%9C%88/" style="font-size: 14px; color: #999">有向图绕圈</a> <a href="/tags/%E6%9D%A5%E5%9B%9E%E6%80%BB%E5%92%8C%E6%9C%80%E7%9F%AD/" style="font-size: 14px; color: #999">来回总和最短</a> <a href="/tags/%E6%9E%81%E5%BA%A6%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">极度优化</a> <a href="/tags/%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84%E5%81%9A%E8%AE%B0%E5%BD%95/" style="font-size: 14px; color: #999">标志数组做记录</a> <a href="/tags/%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84%E5%A6%99%E7%94%A8/" style="font-size: 16.5px; color: #888">标志数组妙用</a> <a href="/tags/%E6%AD%A3%E5%8F%8D%E5%90%91%E6%80%9D%E8%80%83/" style="font-size: 14px; color: #999">正反向思考</a> <a href="/tags/%E6%AD%A3%E5%90%91DP/" style="font-size: 14px; color: #999">正向DP</a> <a href="/tags/%E6%AD%A3%E7%8E%AF/" style="font-size: 16.5px; color: #888">正环</a> <a href="/tags/%E6%B0%B4%E9%A2%98/" style="font-size: 19px; color: #777">水题</a> <a href="/tags/%E6%B2%99%E6%BC%8F/" style="font-size: 14px; color: #999">沙漏</a> <a href="/tags/%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">泛型编程</a> <a href="/tags/%E6%BA%A2%E5%87%BA%E9%99%B7%E9%98%B1/" style="font-size: 14px; color: #999">溢出陷阱</a> <a href="/tags/%E6%BB%9A%E5%8A%A8%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">滚动数组</a> <a href="/tags/%E7%81%AB%E5%9C%BA%E9%80%83%E7%94%9F/" style="font-size: 14px; color: #999">火场逃生</a> <a href="/tags/%E7%89%B9%E6%AE%8A%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">特殊标志数组</a> <a href="/tags/%E7%94%B5%E6%A2%AF/" style="font-size: 14px; color: #999">电梯</a> <a href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" style="font-size: 14px; color: #999">目标检测</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E6%88%90%E5%9B%9E%E6%96%87%E6%9C%80%E7%9F%AD/" style="font-size: 14px; color: #999">移动成回文最短</a> <a href="/tags/%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97/" style="font-size: 14px; color: #999">等差数列</a> <a href="/tags/%E7%AE%80%E5%8D%95DP/" style="font-size: 14px; color: #999">简单DP</a> <a href="/tags/%E7%B4%A0%E6%95%B0%E6%89%93%E8%A1%A8/" style="font-size: 14px; color: #999">素数打表</a> <a href="/tags/%E7%B4%A0%E6%95%B0%E7%8E%AF/" style="font-size: 14px; color: #999">素数环</a> <a href="/tags/%E7%B4%A2%E5%BC%95%E8%A1%A8/" style="font-size: 14px; color: #999">索引表</a> <a href="/tags/%E7%BB%84%E5%86%85%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" style="font-size: 14px; color: #999">组内最短路径</a> <a href="/tags/%E7%BB%9F%E8%AE%A1%E6%95%B0%E5%AD%97%E7%9A%84%E4%B8%AA%E6%95%B0/" style="font-size: 14px; color: #999">统计数字的个数</a> <a href="/tags/%E7%BC%96%E7%A0%81/" style="font-size: 14px; color: #999">编码</a> <a href="/tags/%E7%BF%BB%E8%BD%AC%E6%B8%B8%E6%88%8F/" style="font-size: 14px; color: #999">翻转游戏</a> <a href="/tags/%E7%BF%BB%E8%BD%AC%E7%9F%A9%E9%98%B5/" style="font-size: 14px; color: #999">翻转矩阵</a> <a href="/tags/%E7%BF%BB%E8%BD%AC%E8%BE%B9/" style="font-size: 14px; color: #999">翻转边</a> <a href="/tags/%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">背包</a> <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF2020%E6%A8%A1%E6%8B%9F%E8%B5%9B/" style="font-size: 14px; color: #999">蓝桥杯2020模拟赛</a> <a href="/tags/%E8%A1%A5%E7%A0%81/" style="font-size: 14px; color: #999">补码</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E8%BF%90%E7%AE%97%E8%BF%87%E7%A8%8B/" style="font-size: 14px; color: #999">计算机中运算过程</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" style="font-size: 14px; color: #999">计算机图形学</a> <a href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96dfs/" style="font-size: 14px; color: #999">记忆化dfs</a> <a href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96%E9%80%92%E5%BD%92/" style="font-size: 14px; color: #999">记忆化递归</a> <a href="/tags/%E8%AE%BE%E7%8A%B6%E6%80%81/" style="font-size: 14px; color: #999">设状态</a> <a href="/tags/%E8%AF%BB%E6%95%B0%E5%AD%97/" style="font-size: 14px; color: #999">读数字</a> <a href="/tags/%E8%B4%9F%E7%8E%AF/" style="font-size: 14px; color: #999">负环</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 14px; color: #999">贪心</a> <a href="/tags/%E8%BD%AC%E7%A7%BB%E6%96%B9%E7%A8%8B%E7%9A%84%E6%9E%84%E9%80%A0/" style="font-size: 14px; color: #999">转移方程的构造</a> <a href="/tags/%E8%BE%93%E5%87%BA%E8%B7%AF%E5%BE%84/" style="font-size: 14px; color: #999">输出路径</a> <a href="/tags/%E9%80%92%E5%BD%92%E8%8C%83%E5%9B%B4/" style="font-size: 14px; color: #999">递归范围</a> <a href="/tags/%E9%80%BB%E8%BE%91/" style="font-size: 16.5px; color: #888">逻辑</a> <a href="/tags/%E9%80%BB%E8%BE%91%E7%9B%B8%E5%8A%A0%E5%A6%99%E7%94%A8/" style="font-size: 14px; color: #999">逻辑相加妙用</a> <a href="/tags/%E9%80%BB%E8%BE%91%E8%B7%AF%E5%BE%84/" style="font-size: 14px; color: #999">逻辑路径</a> <a href="/tags/%E9%81%8D%E5%8E%86%E6%89%80%E6%9C%89%E5%8F%AF%E8%83%BD%E6%80%A7/" style="font-size: 14px; color: #999">遍历所有可能性</a> <a href="/tags/%E9%82%BB%E6%8E%A5%E8%A1%A8/" style="font-size: 14px; color: #999">邻接表</a> <a href="/tags/%E9%A3%9F%E7%89%A9%E9%93%BE/" style="font-size: 14px; color: #999">食物链</a> <a href="/tags/%E9%AB%98%E7%BA%A7dfs/" style="font-size: 14px; color: #999">高级dfs</a> <a href="/tags/%E9%AB%98%E9%98%B601%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">高阶01背包</a> <a href="/tags/%E9%BB%91%E7%99%BD%E5%AD%90/" style="font-size: 14px; color: #999">黑白子</a> <a href="/tags/%E9%BE%9F%E5%85%94%E8%B5%9B%E8%B7%91/" style="font-size: 14px; color: #999">龟兔赛跑</a>
+      <a href="/tags/01%E5%8F%AF%E4%B8%8D%E6%BB%A1%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">01可不满背包</a> <a href="/tags/AlexNet/" style="font-size: 14px; color: #999">AlexNet</a> <a href="/tags/BFS/" style="font-size: 14px; color: #999">BFS</a> <a href="/tags/C-%E6%96%87%E4%BB%B6%E4%BB%A3%E6%9B%BF%E6%89%8B%E5%B7%A5%E8%BE%93%E5%85%A5/" style="font-size: 14px; color: #999">C++文件代替手工输入</a> <a href="/tags/DFS/" style="font-size: 14px; color: #999">DFS</a> <a href="/tags/Dilworth%E5%AE%9A%E7%90%86/" style="font-size: 14px; color: #999">Dilworth定理</a> <a href="/tags/EL-JSTL/" style="font-size: 14px; color: #999">EL&JSTL</a> <a href="/tags/EOF/" style="font-size: 14px; color: #999">EOF</a> <a href="/tags/GeForce940MX/" style="font-size: 14px; color: #999">GeForce940MX</a> <a href="/tags/Idea/" style="font-size: 14px; color: #999">Idea</a> <a href="/tags/JDBC/" style="font-size: 14px; color: #999">JDBC</a> <a href="/tags/Java/" style="font-size: 19px; color: #777">Java</a> <a href="/tags/MFC/" style="font-size: 14px; color: #999">MFC</a> <a href="/tags/MySql/" style="font-size: 14px; color: #999">MySql</a> <a href="/tags/Mybatis/" style="font-size: 16.5px; color: #888">Mybatis</a> <a href="/tags/Properties/" style="font-size: 14px; color: #999">Properties</a> <a href="/tags/ST/" style="font-size: 14px; color: #999">ST</a> <a href="/tags/STL/" style="font-size: 14px; color: #999">STL</a> <a href="/tags/SpringTemplate/" style="font-size: 14px; color: #999">SpringTemplate</a> <a href="/tags/VM/" style="font-size: 14px; color: #999">VM</a> <a href="/tags/W/" style="font-size: 14px; color: #999">W</a> <a href="/tags/WSL/" style="font-size: 14px; color: #999">WSL</a> <a href="/tags/keras/" style="font-size: 14px; color: #999">_keras</a> <a href="/tags/cookie/" style="font-size: 14px; color: #999">cookie</a> <a href="/tags/github-pages/" style="font-size: 14px; color: #999">github_pages</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/java/" style="font-size: 16.5px; color: #888">java</a> <a href="/tags/jupyter/" style="font-size: 14px; color: #999">jupyter</a> <a href="/tags/map/" style="font-size: 16.5px; color: #888">map</a> <a href="/tags/maven/" style="font-size: 14px; color: #999">maven</a> <a href="/tags/mybatis/" style="font-size: 14px; color: #999">mybatis</a> <a href="/tags/numpy/" style="font-size: 14px; color: #999">numpy</a> <a href="/tags/n%E7%BB%B4%E4%BA%A4/" style="font-size: 14px; color: #999">n维交</a> <a href="/tags/pandas/" style="font-size: 14px; color: #999">pandas</a> <a href="/tags/pyplot/" style="font-size: 14px; color: #999">pyplot</a> <a href="/tags/redis/" style="font-size: 14px; color: #999">redis</a> <a href="/tags/response/" style="font-size: 14px; color: #999">response</a> <a href="/tags/session/" style="font-size: 14px; color: #999">session</a> <a href="/tags/spring/" style="font-size: 19px; color: #777">spring</a> <a href="/tags/spring-web/" style="font-size: 14px; color: #999">spring+web</a> <a href="/tags/springmvc/" style="font-size: 14px; color: #999">springmvc</a> <a href="/tags/tag1/" style="font-size: 24px; color: #555">tag1</a> <a href="/tags/tag2/" style="font-size: 24px; color: #555">tag2</a> <a href="/tags/vector/" style="font-size: 14px; color: #999">vector</a> <a href="/tags/wallpapers/" style="font-size: 14px; color: #999">wallpapers</a> <a href="/tags/web/" style="font-size: 14px; color: #999">web</a> <a href="/tags/%E4%B8%A4%E4%B8%AA%E6%9C%80%E5%B0%8F%E5%80%BC/" style="font-size: 14px; color: #999">两个最小值</a> <a href="/tags/%E4%B8%A4%E6%AC%A1BFS/" style="font-size: 14px; color: #999">两次BFS</a> <a href="/tags/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/" style="font-size: 14px; color: #999">中序遍历</a> <a href="/tags/%E4%B8%B4%E7%95%8C%E6%9C%80%E4%BC%98/" style="font-size: 14px; color: #999">临界最优</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE-%E5%A4%A7%E5%B0%8F%E4%BA%8E/" style="font-size: 16.5px; color: #888">二分查找(大小于)</a> <a href="/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">二进制优化</a> <a href="/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E5%8D%81%E8%BF%9B%E5%88%B6/" style="font-size: 14px; color: #999">二进制表示十进制</a> <a href="/tags/%E4%BB%A3%E6%95%B0%E5%BC%8F%E6%9C%80%E5%A4%A7%E5%8C%96%E9%83%A8%E5%88%86%E6%BA%A2%E5%87%BA/" style="font-size: 14px; color: #999">代数式最大化部分溢出</a> <a href="/tags/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/" style="font-size: 14px; color: #999">优先队列</a> <a href="/tags/%E5%80%92%E6%B0%B4/" style="font-size: 14px; color: #999">倒水</a> <a href="/tags/%E5%85%94%E5%AD%90%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">兔子问题</a> <a href="/tags/%E5%85%AB%E7%9A%87%E5%90%8E%E7%AE%80%E5%8C%96%E7%89%88/" style="font-size: 14px; color: #999">八皇后简化版</a> <a href="/tags/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">八皇后问题</a> <a href="/tags/%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6/" style="font-size: 14px; color: #999">共享文件</a> <a href="/tags/%E5%87%BD%E6%95%B0%E6%95%B0%E7%BB%84%E5%BD%A2%E5%8F%82/" style="font-size: 14px; color: #999">函数数组形参</a> <a href="/tags/%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF/" style="font-size: 14px; color: #999">函数模板</a> <a href="/tags/%E5%88%86%E8%A7%A3%E8%B4%A8%E5%9B%A0%E6%95%B0/" style="font-size: 14px; color: #999">分解质因数</a> <a href="/tags/%E5%88%A4%E6%96%AD%E6%9D%A1%E4%BB%B6%E7%9A%84%E5%85%88%E5%90%8E/" style="font-size: 14px; color: #999">判断条件的先后</a> <a href="/tags/%E5%8A%A8%E6%80%81%E4%BA%8C%E8%BF%9B%E5%88%B6/" style="font-size: 14px; color: #999">动态二进制</a> <a href="/tags/%E5%8A%A8%E6%80%81%E5%91%A8%E6%9C%9F/" style="font-size: 14px; color: #999">动态周期</a> <a href="/tags/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/" style="font-size: 14px; color: #999">双向链表</a> <a href="/tags/%E5%90%8C%E4%BD%99%E5%AE%9A%E7%90%86/" style="font-size: 14px; color: #999">同余定理</a> <a href="/tags/%E5%9B%9E%E5%BD%A2%E5%8F%96%E6%95%B0/" style="font-size: 14px; color: #999">回形取数</a> <a href="/tags/%E5%9B%9E%E6%BA%AF/" style="font-size: 14px; color: #999">回溯</a> <a href="/tags/%E5%9B%BE%E7%89%87/" style="font-size: 14px; color: #999">图片</a> <a href="/tags/%E5%9B%BE%E7%9A%84%E8%BF%9E%E9%80%9A%E5%8C%BA%E5%9F%9F/" style="font-size: 14px; color: #999">图的连通区域</a> <a href="/tags/%E5%A3%81%E7%BA%B8/" style="font-size: 14px; color: #999">壁纸</a> <a href="/tags/%E5%A4%9A%E5%85%A5%E5%8F%A3BFS/" style="font-size: 14px; color: #999">多入口BFS</a> <a href="/tags/%E5%A4%9A%E6%95%B0%E7%BB%84DP/" style="font-size: 14px; color: #999">多数组DP</a> <a href="/tags/%E5%A4%A7%E6%95%B0/" style="font-size: 14px; color: #999">大数</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E5%8A%A0%E6%B3%95/" style="font-size: 14px; color: #999">大数加法</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E9%98%B6%E4%B9%98/" style="font-size: 14px; color: #999">大数阶乘</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E9%99%B7%E9%98%B1/" style="font-size: 16.5px; color: #888">大数陷阱</a> <a href="/tags/%E5%A6%99%E7%94%A8%E4%B8%8B%E6%A0%87%E5%92%8C/" style="font-size: 14px; color: #999">妙用下标和</a> <a href="/tags/%E5%A6%99%E7%94%A8%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84/" style="font-size: 16.5px; color: #888">妙用标志数组</a> <a href="/tags/%E5%AD%97%E5%85%B8/" style="font-size: 16.5px; color: #888">字典</a> <a href="/tags/%E5%AD%97%E6%AF%8D/" style="font-size: 14px; color: #999">字母</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">字符串数组</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83/" style="font-size: 14px; color: #999">字符串比较</a> <a href="/tags/%E5%B1%8F%E8%94%BD%E7%BB%86%E8%8A%82/" style="font-size: 14px; color: #999">屏蔽细节</a> <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" style="font-size: 14px; color: #999">拓扑排序</a> <a href="/tags/%E6%8C%89%E5%BA%8F%E5%88%97%E7%B4%AF%E9%99%A4/" style="font-size: 14px; color: #999">按序列累除</a> <a href="/tags/%E6%8E%92%E5%90%8D/" style="font-size: 14px; color: #999">排名</a> <a href="/tags/%E6%91%84%E6%B0%8F%E5%8D%8E%E6%B0%8F%E6%B8%A9%E5%BA%A6%E8%BD%AC%E6%8D%A2/" style="font-size: 14px; color: #999">摄氏华氏温度转换</a> <a href="/tags/%E6%95%B0%E5%A1%94/" style="font-size: 14px; color: #999">数塔</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/" style="font-size: 14px; color: #999">数据库连接池</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E8%A7%84%E6%A8%A1/" style="font-size: 14px; color: #999">数据规模</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 14px; color: #999">数论</a> <a href="/tags/%E6%95%B4%E9%99%A42/" style="font-size: 14px; color: #999">整除2</a> <a href="/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91/" style="font-size: 14px; color: #999">斐波那契</a> <a href="/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%8F%96%E4%BD%99%E7%89%88/" style="font-size: 14px; color: #999">斐波那契取余版</a> <a href="/tags/%E6%97%A0%E9%99%90%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">无限背包</a> <a href="/tags/%E6%98%93%E9%94%99%E9%A2%98/" style="font-size: 14px; color: #999">易错题</a> <a href="/tags/%E6%9C%80%E5%A4%A7%E6%9C%80%E5%B0%8F%E8%B7%9D%E7%A6%BB/" style="font-size: 14px; color: #999">最大最小距离</a> <a href="/tags/%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最大连续子序列</a> <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" style="font-size: 16.5px; color: #888">最短路径</a> <a href="/tags/%E6%9C%80%E9%95%BF-%E9%9D%9E-%E5%8D%95%E8%B0%83%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最长(非)单调子序列</a> <a href="/tags/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最长上升子序列</a> <a href="/tags/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最长公共子序列</a> <a href="/tags/%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%9B%A0%E6%95%B0/" style="font-size: 14px; color: #999">最长连续因数</a> <a href="/tags/%E6%9C%89%E5%90%91%E5%9B%BE%E7%BB%95%E5%9C%88/" style="font-size: 14px; color: #999">有向图绕圈</a> <a href="/tags/%E6%9D%A5%E5%9B%9E%E6%80%BB%E5%92%8C%E6%9C%80%E7%9F%AD/" style="font-size: 14px; color: #999">来回总和最短</a> <a href="/tags/%E6%9E%81%E5%BA%A6%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">极度优化</a> <a href="/tags/%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84%E5%81%9A%E8%AE%B0%E5%BD%95/" style="font-size: 14px; color: #999">标志数组做记录</a> <a href="/tags/%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84%E5%A6%99%E7%94%A8/" style="font-size: 16.5px; color: #888">标志数组妙用</a> <a href="/tags/%E6%AD%A3%E5%8F%8D%E5%90%91%E6%80%9D%E8%80%83/" style="font-size: 14px; color: #999">正反向思考</a> <a href="/tags/%E6%AD%A3%E5%90%91DP/" style="font-size: 14px; color: #999">正向DP</a> <a href="/tags/%E6%AD%A3%E7%8E%AF/" style="font-size: 16.5px; color: #888">正环</a> <a href="/tags/%E6%B0%B4%E9%A2%98/" style="font-size: 21.5px; color: #666">水题</a> <a href="/tags/%E6%B2%99%E6%BC%8F/" style="font-size: 14px; color: #999">沙漏</a> <a href="/tags/%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">泛型编程</a> <a href="/tags/%E6%BA%A2%E5%87%BA%E9%99%B7%E9%98%B1/" style="font-size: 14px; color: #999">溢出陷阱</a> <a href="/tags/%E6%BB%9A%E5%8A%A8%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">滚动数组</a> <a href="/tags/%E7%81%AB%E5%9C%BA%E9%80%83%E7%94%9F/" style="font-size: 14px; color: #999">火场逃生</a> <a href="/tags/%E7%89%B9%E6%AE%8A%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">特殊标志数组</a> <a href="/tags/%E7%94%B5%E6%A2%AF/" style="font-size: 14px; color: #999">电梯</a> <a href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" style="font-size: 14px; color: #999">目标检测</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E6%88%90%E5%9B%9E%E6%96%87%E6%9C%80%E7%9F%AD/" style="font-size: 14px; color: #999">移动成回文最短</a> <a href="/tags/%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97/" style="font-size: 14px; color: #999">等差数列</a> <a href="/tags/%E7%AE%80%E5%8D%95DP/" style="font-size: 14px; color: #999">简单DP</a> <a href="/tags/%E7%B4%A0%E6%95%B0%E6%89%93%E8%A1%A8/" style="font-size: 14px; color: #999">素数打表</a> <a href="/tags/%E7%B4%A0%E6%95%B0%E7%8E%AF/" style="font-size: 14px; color: #999">素数环</a> <a href="/tags/%E7%B4%A2%E5%BC%95%E8%A1%A8/" style="font-size: 14px; color: #999">索引表</a> <a href="/tags/%E7%BB%84%E5%86%85%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" style="font-size: 14px; color: #999">组内最短路径</a> <a href="/tags/%E7%BB%9F%E8%AE%A1%E6%95%B0%E5%AD%97%E7%9A%84%E4%B8%AA%E6%95%B0/" style="font-size: 14px; color: #999">统计数字的个数</a> <a href="/tags/%E7%BC%96%E7%A0%81/" style="font-size: 14px; color: #999">编码</a> <a href="/tags/%E7%BF%BB%E8%BD%AC%E6%B8%B8%E6%88%8F/" style="font-size: 14px; color: #999">翻转游戏</a> <a href="/tags/%E7%BF%BB%E8%BD%AC%E7%9F%A9%E9%98%B5/" style="font-size: 14px; color: #999">翻转矩阵</a> <a href="/tags/%E7%BF%BB%E8%BD%AC%E8%BE%B9/" style="font-size: 14px; color: #999">翻转边</a> <a href="/tags/%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">背包</a> <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF2020%E6%A8%A1%E6%8B%9F%E8%B5%9B/" style="font-size: 14px; color: #999">蓝桥杯2020模拟赛</a> <a href="/tags/%E8%A1%A5%E7%A0%81/" style="font-size: 14px; color: #999">补码</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E8%BF%90%E7%AE%97%E8%BF%87%E7%A8%8B/" style="font-size: 14px; color: #999">计算机中运算过程</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" style="font-size: 14px; color: #999">计算机图形学</a> <a href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96dfs/" style="font-size: 14px; color: #999">记忆化dfs</a> <a href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96%E9%80%92%E5%BD%92/" style="font-size: 14px; color: #999">记忆化递归</a> <a href="/tags/%E8%AE%BE%E7%8A%B6%E6%80%81/" style="font-size: 14px; color: #999">设状态</a> <a href="/tags/%E8%AF%BB%E6%95%B0%E5%AD%97/" style="font-size: 14px; color: #999">读数字</a> <a href="/tags/%E8%B4%9F%E7%8E%AF/" style="font-size: 14px; color: #999">负环</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 14px; color: #999">贪心</a> <a href="/tags/%E8%BD%AC%E7%A7%BB%E6%96%B9%E7%A8%8B%E7%9A%84%E6%9E%84%E9%80%A0/" style="font-size: 14px; color: #999">转移方程的构造</a> <a href="/tags/%E8%BE%93%E5%87%BA%E8%B7%AF%E5%BE%84/" style="font-size: 14px; color: #999">输出路径</a> <a href="/tags/%E9%80%92%E5%BD%92%E8%8C%83%E5%9B%B4/" style="font-size: 14px; color: #999">递归范围</a> <a href="/tags/%E9%80%BB%E8%BE%91/" style="font-size: 16.5px; color: #888">逻辑</a> <a href="/tags/%E9%80%BB%E8%BE%91%E7%9B%B8%E5%8A%A0%E5%A6%99%E7%94%A8/" style="font-size: 14px; color: #999">逻辑相加妙用</a> <a href="/tags/%E9%80%BB%E8%BE%91%E8%B7%AF%E5%BE%84/" style="font-size: 14px; color: #999">逻辑路径</a> <a href="/tags/%E9%81%8D%E5%8E%86%E6%89%80%E6%9C%89%E5%8F%AF%E8%83%BD%E6%80%A7/" style="font-size: 14px; color: #999">遍历所有可能性</a> <a href="/tags/%E9%82%BB%E6%8E%A5%E8%A1%A8/" style="font-size: 14px; color: #999">邻接表</a> <a href="/tags/%E9%A3%9F%E7%89%A9%E9%93%BE/" style="font-size: 14px; color: #999">食物链</a> <a href="/tags/%E9%AB%98%E7%BA%A7dfs/" style="font-size: 14px; color: #999">高级dfs</a> <a href="/tags/%E9%AB%98%E9%98%B601%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">高阶01背包</a> <a href="/tags/%E9%BB%91%E7%99%BD%E5%AD%90/" style="font-size: 14px; color: #999">黑白子</a> <a href="/tags/%E9%BE%9F%E5%85%94%E8%B5%9B%E8%B7%91/" style="font-size: 14px; color: #999">龟兔赛跑</a>
     </div>
   </section>
 
