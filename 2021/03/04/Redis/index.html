@@ -386,7 +386,7 @@ var _hmt = _hmt || [];
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>13分</p>
+        <p>12分</p>
       </a>
     </div>
   
@@ -443,18 +443,11 @@ var _hmt = _hmt || [];
 
 <h3 id="列表类型-list"><a href="#列表类型-list" class="headerlink" title="列表类型 list"></a>列表类型 list</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">列表类型 list:可以添加一个元素到列表的头部（左边）或者尾部（右边）</span><br><span class="line">		1. 添加：</span><br><span class="line">			1. lpush key value: 将元素加入列表左表</span><br><span class="line">				</span><br><span class="line">			2. rpush key value：将元素加入列表右边</span><br><span class="line">				</span><br><span class="line">				127.0.0.1:6379&gt; lpush myList a</span><br><span class="line">				(integer) 1</span><br><span class="line">				127.0.0.1:6379&gt; lpush myList b</span><br><span class="line">				(integer) 2</span><br><span class="line">				127.0.0.1:6379&gt; rpush myList c</span><br><span class="line">				(integer) 3</span><br><span class="line">		2. 获取：</span><br><span class="line">			* lrange key start end ：范围获取</span><br><span class="line">				127.0.0.1:6379&gt; lrange myList 0 -1</span><br><span class="line">				1) &quot;b&quot;</span><br><span class="line">				2) &quot;a&quot;</span><br><span class="line">				3) &quot;c&quot;</span><br><span class="line">		3. 删除：</span><br><span class="line">			* lpop key： 删除列表最左边的元素，并将元素返回</span><br><span class="line">			* rpop key： 删除列表最右边的元素，并将元素返回</span><br></pre></td></tr></table></figure>
 
-<h3 id="集合类型-set"><a href="#集合类型-set" class="headerlink" title="集合类型 set"></a>集合类型 set</h3><pre><code>集合类型 set ： 不允许重复元素
-        1. 存储：sadd key value
-            127.0.0.1:6379&gt; sadd myset a
-            (integer) 1
-            127.0.0.1:6379&gt; sadd myset a
-            (integer) 0
-        2. 获取：smembers key:获取set集合中所有元素
-            127.0.0.1:6379&gt; smembers myset
-            1) &quot;a&quot;
-        3. 删除：srem key value:删除set集合中的某个元素    
-            127.0.0.1:6379&gt; srem myset a
-            (integer) 1</code></pre><h3 id="有序集合类型-sortedset"><a href="#有序集合类型-sortedset" class="headerlink" title="有序集合类型 sortedset"></a>有序集合类型 sortedset</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">有序集合类型 sortedset：不允许重复元素，且元素有顺序.每个元素都会关联一个double类型的分数。redis正是通过分数来为集合中的成员进行从小到大的排序。</span><br><span class="line"></span><br><span class="line">		1. 存储：zadd key score value</span><br><span class="line">			127.0.0.1:6379&gt; zadd mysort 60 zhangsan</span><br><span class="line">			(integer) 1</span><br><span class="line">			127.0.0.1:6379&gt; zadd mysort 50 lisi</span><br><span class="line">			(integer) 1</span><br><span class="line">			127.0.0.1:6379&gt; zadd mysort 80 wangwu</span><br><span class="line">			(integer) 1</span><br><span class="line">		2. 获取：zrange key start end [withscores]</span><br><span class="line">			127.0.0.1:6379&gt; zrange mysort 0 -1</span><br><span class="line">			1) &quot;lisi&quot;</span><br><span class="line">			2) &quot;zhangsan&quot;</span><br><span class="line">			3) &quot;wangwu&quot;</span><br><span class="line"></span><br><span class="line">			127.0.0.1:6379&gt; zrange mysort 0 -1 withscores</span><br><span class="line">			1) &quot;zhangsan&quot;</span><br><span class="line">			2) &quot;60&quot;</span><br><span class="line">			3) &quot;wangwu&quot;</span><br><span class="line">			4) &quot;80&quot;</span><br><span class="line">			5) &quot;lisi&quot;</span><br><span class="line">			6) &quot;500&quot;</span><br><span class="line">		3. 删除：zrem key value</span><br><span class="line">			127.0.0.1:6379&gt; zrem mysort lisi</span><br><span class="line">			(integer) 1</span><br></pre></td></tr></table></figure>
+<h3 id="集合类型-set"><a href="#集合类型-set" class="headerlink" title="集合类型 set"></a>集合类型 set</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">集合类型 set ： 不允许重复元素</span><br><span class="line">		1. 存储：sadd key value</span><br><span class="line">			127.0.0.1:6379&gt; sadd myset a</span><br><span class="line">			(integer) 1</span><br><span class="line">			127.0.0.1:6379&gt; sadd myset a</span><br><span class="line">			(integer) 0</span><br><span class="line">		2. 获取：smembers key:获取set集合中所有元素</span><br><span class="line">			127.0.0.1:6379&gt; smembers myset</span><br><span class="line">			1) &quot;a&quot;</span><br><span class="line">		3. 删除：srem key value:删除set集合中的某个元素	</span><br><span class="line">			127.0.0.1:6379&gt; srem myset a</span><br><span class="line">			(integer) 1</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="有序集合类型-sortedset"><a href="#有序集合类型-sortedset" class="headerlink" title="有序集合类型 sortedset"></a>有序集合类型 sortedset</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">有序集合类型 sortedset：不允许重复元素，且元素有顺序.每个元素都会关联一个double类型的分数。redis正是通过分数来为集合中的成员进行从小到大的排序。</span><br><span class="line"></span><br><span class="line">		1. 存储：zadd key score value</span><br><span class="line">			127.0.0.1:6379&gt; zadd mysort 60 zhangsan</span><br><span class="line">			(integer) 1</span><br><span class="line">			127.0.0.1:6379&gt; zadd mysort 50 lisi</span><br><span class="line">			(integer) 1</span><br><span class="line">			127.0.0.1:6379&gt; zadd mysort 80 wangwu</span><br><span class="line">			(integer) 1</span><br><span class="line">		2. 获取：zrange key start end [withscores]</span><br><span class="line">			127.0.0.1:6379&gt; zrange mysort 0 -1</span><br><span class="line">			1) &quot;lisi&quot;</span><br><span class="line">			2) &quot;zhangsan&quot;</span><br><span class="line">			3) &quot;wangwu&quot;</span><br><span class="line"></span><br><span class="line">			127.0.0.1:6379&gt; zrange mysort 0 -1 withscores</span><br><span class="line">			1) &quot;zhangsan&quot;</span><br><span class="line">			2) &quot;60&quot;</span><br><span class="line">			3) &quot;wangwu&quot;</span><br><span class="line">			4) &quot;80&quot;</span><br><span class="line">			5) &quot;lisi&quot;</span><br><span class="line">			6) &quot;500&quot;</span><br><span class="line">		3. 删除：zrem key value</span><br><span class="line">			127.0.0.1:6379&gt; zrem mysort lisi</span><br><span class="line">			(integer) 1</span><br></pre></td></tr></table></figure>
 
 <h3 id="通用命令"><a href="#通用命令" class="headerlink" title="通用命令"></a>通用命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. keys * : 查询所有的键</span><br><span class="line">2. type key ： 获取键对应的value的类型</span><br><span class="line">3. del key：删除指定的key value</span><br></pre></td></tr></table></figure>
 
@@ -465,20 +458,8 @@ var _hmt = _hmt || [];
 <li>Jedis: 一款java操作redis数据库的工具.</li>
 </ul>
 <pre><code>4. 持久化
-    1. redis是一个内存数据库，当redis服务器重启，获取电脑重启，数据会丢失，我们可以将redis内存中的数据持久化保存到硬盘的文件中。
-
-
-5. 
-    * 
-    * 使用步骤：
-        1. 下载jedis的jar包
-        2. 使用
-            //1. 获取连接
-            Jedis jedis = new Jedis(&quot;localhost&quot;,6379);
-               //2. 操作
-               jedis.set(&quot;username&quot;,&quot;zhangsan&quot;);
-            //3. 关闭连接
-            jedis.close();</code></pre><p>​        </p>
+    1. redis是一个内存数据库，当redis服务器重启，获取电脑重启，数据会丢失，我们可以将redis内存中的数据持久化保存到硬盘的文件中。</code></pre><p>​<br>    5.<br>        *<br>        * 使用步骤：<br>            1. 下载jedis的jar包<br>            2. 使用<br>                //1. 获取连接<br>                Jedis jedis = new Jedis(“localhost”,6379);<br>                   //2. 操作<br>                   jedis.set(“username”,”zhangsan”);<br>                //3. 关闭连接<br>                jedis.close();</p>
+<p>​        </p>
 <pre><code>* Jedis操作各种redis中的数据结构
     1) 字符串类型 string
         set
@@ -664,7 +645,7 @@ jedis.close();</code></pre><p>​        </p>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-04T07:36:00+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-04T16:28:27+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>updated at Mar 4, 2021</p>
