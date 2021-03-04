@@ -127,6 +127,8 @@
           
           <category> java </category>
           
+          <category> SQL </category>
+          
       </categories>
       
       
@@ -151,6 +153,8 @@
       <categories>
           
           <category> java </category>
+          
+          <category> SQL </category>
           
       </categories>
       
@@ -177,6 +181,8 @@
           
           <category> java </category>
           
+          <category> SQL </category>
+          
       </categories>
       
       
@@ -202,6 +208,8 @@
           
           <category> java </category>
           
+          <category> spring </category>
+          
       </categories>
       
       
@@ -225,9 +233,9 @@
       
       <categories>
           
-          <category> category1 </category>
+          <category> java </category>
           
-          <category> category2 </category>
+          <category> spring </category>
           
       </categories>
       
@@ -256,6 +264,8 @@
           
           <category> java </category>
           
+          <category> spring </category>
+          
       </categories>
       
       
@@ -281,6 +291,8 @@
           
           <category> java </category>
           
+          <category> spring </category>
+          
       </categories>
       
       
@@ -305,6 +317,8 @@
       <categories>
           
           <category> java </category>
+          
+          <category> maven </category>
           
       </categories>
       
@@ -356,9 +370,9 @@
       
       <categories>
           
-          <category> category1 </category>
+          <category> java </category>
           
-          <category> category2 </category>
+          <category> spring </category>
           
       </categories>
       
@@ -386,6 +400,8 @@
       <categories>
           
           <category> java </category>
+          
+          <category> spring </category>
           
       </categories>
       
@@ -550,7 +566,7 @@
           
           <category> java </category>
           
-          <category> JSP </category>
+          <category> web相关 </category>
           
       </categories>
       
