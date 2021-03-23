@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?9133634925670debc6eb2c4f7da10df1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>spring_boot | DHZ&#39;S BLOG</title>
+  
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+
+  
+    
+<link rel="stylesheet" href="/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>DongHuangZhong</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;博文
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/projects/"
+            
+            
+            id="projects">
+            <i class='fas fa-code-branch fa-fw'></i>&nbsp;项目
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/friends/"
+            
+              rel="nofollow"
+            
+            
+            id="friends">
+            <i class='fas fa-link fa-fw'></i>&nbsp;友链
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/about/"
+            
+              rel="nofollow"
+            
+            
+            id="about">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          DHZ'S BLOG
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-home fa-fw'></i>&nbsp;主页
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/categories/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="categories">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/tags/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="tags">
+									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/projects/"
+                
+                
+                id="projects">
+								<i class='fas fa-code-branch fa-fw'></i>&nbsp;开源项目
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/friends/"
+                
+                  rel="nofollow"
+                
+                
+                id="friends">
+								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/"
+                
+                  rel="nofollow"
+                
+                
+                id="https:xaoxuu.comwikimaterial-x">
+								<i class='fas fa-book fa-fw'></i>&nbsp;主题文档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about/"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2021/03/16/spring-boot/">
+        spring_boot
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://donghuangzhong.github.io" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>东皇钟</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2021-03-16</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/java/spring/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>java&nbsp;/&nbsp;spring</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item wordcount">
+      <a class='notlink'>
+        <i class="fas fa-keyboard" aria-hidden="true"></i>
+        <p>字数统计:</p>
+        <p>3.4k字</p>
+      </a>
+    </div>
+    <div class="new-meta-item readtime">
+      <a class='notlink'>
+        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+        <p>阅读时长≈</p>
+        <p>14分</p>
+      </a>
+    </div>
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <p>摘要</p>
+<a id="more"></a>
+
+<h2 id="Spring-Boot概述"><a href="#Spring-Boot概述" class="headerlink" title="Spring Boot概述"></a>Spring Boot概述</h2><p>Spring Boot是一个便捷搭建 基于spring工程的脚手架；作用是帮助开发人员快速搭建大型的spring 项目。简化工程的配置，依赖管理；实现开发人员把时间都集中在业务开发上。</p>
+<h3 id="spring的优缺点"><a href="#spring的优缺点" class="headerlink" title="spring的优缺点"></a>spring的优缺点</h3><ul>
+<li><p>优点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Spring是Java企业版（Java Enterprise Edition，JEE，也称J2EE）的轻量级代替品。无需开发重量级的Enterprise JavaBean（EJB），Spring为企业级Java开发提供了一种相对简单的方法，通过依赖注入和面向切面编程，用简单的Java对象（Plain Old Java Object，POJO）实现了EJB的功能。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>缺点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">虽然Spring的组件代码是轻量级的，但它的配置却是重量级的。一开始，Spring用XML配置，而且是很多XML配置。Spring 2.5引入了基于注解的组件扫描，这消除了大量针对应用程序自身组件的显式XML配置。Spring 3.0引入了基于Java的配置，这是一种类型安全的可重构配置方式，可以代替XML。</span><br><span class="line"></span><br><span class="line">所有这些配置都代表了开发时的损耗。因为在思考Spring特性配置和解决业务问题之间需要进行思维切换，所以编写配置挤占了编写应用程序逻辑的时间。和所有框架一样，Spring实用，但与此同时它要求的回报也不少。</span><br><span class="line"></span><br><span class="line">除此之外，项目的依赖管理也是一件耗时耗力的事情。在环境搭建时，需要分析要导入哪些库的坐标，而且还需要分析导入与之有依赖关系的其他库的坐标，一旦选错了依赖的版本，随之而来的不兼容问题就会严重阻碍项目的开发进度。</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="springBoot的特点"><a href="#springBoot的特点" class="headerlink" title="springBoot的特点"></a>springBoot的特点</h3><ul>
+<li>为基于Spring的开发提供更快的入门体验</li>
+<li>开箱即用，没有代码生成，也无需XML配置。同时也可以修改默认值来满足特定的需求</li>
+<li>提供了一些大型项目中常见的非功能性特性，如嵌入式服务器、安全、指标，健康检测、外部配置等</li>
+<li>SpringBoot不是对Spring功能上的增强，而是提供了一种快速使用Spring的方式</li>
+</ul>
+<h2 id="Spring-Boot入门"><a href="#Spring-Boot入门" class="headerlink" title="Spring Boot入门"></a>Spring Boot入门</h2><p>实现可以在浏览器中访问<a href="http://localhost:8080/hello输出一串字符" target="_blank" rel="noopener">http://localhost:8080/hello输出一串字符</a></p>
+<h3 id="创建一个普通的maven工程"><a href="#创建一个普通的maven工程" class="headerlink" title="创建一个普通的maven工程"></a>创建一个普通的maven工程</h3><p><img src="/2021/03/16/spring-boot/image-20210317091840516.png" alt="image-20210317091840516"></p>
+<p><img src="/2021/03/16/spring-boot/image-20210317091959674.png" alt="image-20210317091959674"></p>
+<h3 id="添加SpringBoot的起步依赖"><a href="#添加SpringBoot的起步依赖" class="headerlink" title="添加SpringBoot的起步依赖"></a>添加SpringBoot的起步依赖</h3><ul>
+<li>SpringBoot要求，项目要继承SpringBoot的起步依赖spring-boot-starter-parent</li>
+<li>SpringBoot要集成SpringMVC进行Controller的开发，所以项目要导入web的启动依赖</li>
+</ul>
+<p>修改pom.xml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--继承SpringBoot的起步依赖spring-boot-starter-parent--&gt;</span><br><span class="line">&lt;parent&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-parent&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;version&gt;2.3.9.RELEASE&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;parent&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--导入web的启动依赖--&gt;</span><br><span class="line">&lt;dependencies&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-web&lt;&#x2F;artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.3.9.RELEASE&lt;&#x2F;version&gt;</span><br><span class="line">    &lt;&#x2F;dependency&gt;</span><br><span class="line">&lt;&#x2F;dependencies&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="编写启动类"><a href="#编写启动类" class="headerlink" title="编写启动类"></a>编写启动类</h3><p>要通过SpringBoot提供的引导类起步SpringBoot才可以进行访问，注意该类不能从组件的默认包启动，所以需要建立一个包，然后将引导类放入其中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@SpringBootApplication</span><br><span class="line">public class AppRun &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SpringApplication.run(AppRun.class,args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="编写Controller"><a href="#编写Controller" class="headerlink" title="编写Controller"></a>编写Controller</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@Controller</span><br><span class="line">public class TestController &#123;</span><br><span class="line">    </span><br><span class="line">    @RequestMapping(&quot;hello&quot;)</span><br><span class="line">    @ResponseBody</span><br><span class="line">    String hello()&#123;</span><br><span class="line">        return &quot;hello spring_boot&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="运行启动类中的main方测试"><a href="#运行启动类中的main方测试" class="headerlink" title="运行启动类中的main方测试"></a>运行启动类中的main方测试</h3><p>网址：<a href="http://localhost:8080/hello" target="_blank" rel="noopener">http://localhost:8080/hello</a></p>
+<h2 id="Java代码方式配置"><a href="#Java代码方式配置" class="headerlink" title="Java代码方式配置"></a>Java代码方式配置</h2><p>可以使用@Value获取配置文件配置项并结合@Bean注册组件到Spring</p>
+<p>jdbc.properties:（在resources目录下）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">jdbc.driverClassName&#x3D;com.mysql.jdbc.Driver</span><br><span class="line">jdbc.url&#x3D;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;test</span><br><span class="line">jdbc.username&#x3D;root</span><br><span class="line">jdbc.password&#x3D;root</span><br></pre></td></tr></table></figure>
+
+<p>spring配置类config:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@PropertySource</span>(<span class="string">"classpath:jdbc.properties"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Config</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;jdbc.driverClassName&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String driverClassName;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;jdbc.url&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String url;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;jdbc.username&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;jdbc.password&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function">DataSource <span class="title">druid</span><span class="params">()</span></span>&#123;</span><br><span class="line">        DruidDataSource druidDataSource = <span class="keyword">new</span> DruidDataSource();</span><br><span class="line">        druidDataSource.setDriverClassName(driverClassName);</span><br><span class="line">        druidDataSource.setUrl(url);</span><br><span class="line">        druidDataSource.setUsername(username);</span><br><span class="line">        druidDataSource.setPassword(password);</span><br><span class="line">        <span class="keyword">return</span> druidDataSource;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Spring-Boot属性注入方式"><a href="#Spring-Boot属性注入方式" class="headerlink" title="Spring Boot属性注入方式"></a>Spring Boot属性注入方式</h2><h3 id="复杂方式-不推荐"><a href="#复杂方式-不推荐" class="headerlink" title="复杂方式(不推荐)"></a>复杂方式(不推荐)</h3><h4 id="创建application-properties文件-resources目录下"><a href="#创建application-properties文件-resources目录下" class="headerlink" title="创建application.properties文件(resources目录下)"></a>创建application.properties文件(resources目录下)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">jdbc.driverClassName&#x3D;com.mysql.jdbc.Driver</span><br><span class="line">jdbc.url&#x3D;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;test</span><br><span class="line">jdbc.username&#x3D;root</span><br><span class="line">jdbc.password&#x3D;root</span><br></pre></td></tr></table></figure>
+
+<h4 id="创建配置项类JdbcProperties类并加注解"><a href="#创建配置项类JdbcProperties类并加注解" class="headerlink" title="创建配置项类JdbcProperties类并加注解"></a>创建配置项类JdbcProperties类并加注解</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">@Component &#x2F;&#x2F;与ConfigurationProperties搭配使用(注入时)</span><br><span class="line">@ConfigurationProperties(prefix &#x3D; &quot;jdbc&quot;)</span><br><span class="line">public class JdbcProperties &#123;</span><br><span class="line">    private String driverClassName;</span><br><span class="line">    private String url;</span><br><span class="line">    private String username;</span><br><span class="line">    private String password;</span><br><span class="line"></span><br><span class="line">    public String getDriverClassName() &#123;</span><br><span class="line">        return driverClassName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setDriverClassName(String driverClassName) &#123;</span><br><span class="line">        this.driverClassName &#x3D; driverClassName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getUrl() &#123;</span><br><span class="line">        return url;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setUrl(String url) &#123;</span><br><span class="line">        this.url &#x3D; url;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getUsername() &#123;</span><br><span class="line">        return username;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setUsername(String username) &#123;</span><br><span class="line">        this.username &#x3D; username;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getPassword() &#123;</span><br><span class="line">        return password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setPassword(String password) &#123;</span><br><span class="line">        this.password &#x3D; password;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="在spring的配置类中通过函数参数注入JdbcProperties"><a href="#在spring的配置类中通过函数参数注入JdbcProperties" class="headerlink" title="在spring的配置类中通过函数参数注入JdbcProperties"></a>在spring的配置类中通过函数参数注入JdbcProperties</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@Bean</span><br><span class="line">DataSource druid(JdbcProperties jdbcProperties)&#123;</span><br><span class="line">    DruidDataSource druidDataSource &#x3D; new DruidDataSource();</span><br><span class="line">    druidDataSource.setDriverClassName(jdbcProperties.getDriverClassName());</span><br><span class="line">    druidDataSource.setUrl(jdbcProperties.getUrl());</span><br><span class="line">    druidDataSource.setUsername(jdbcProperties.getUsername());</span><br><span class="line">    druidDataSource.setPassword(jdbcProperties.getPassword());</span><br><span class="line">    return druidDataSource;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="简单方式（推荐）"><a href="#简单方式（推荐）" class="headerlink" title="简单方式（推荐）"></a>简单方式（推荐）</h3><p>需求：将配置文件中的配置项读取到一个对象中；</p>
+<p>实现：可以使用Spring Boot提供的注解@ConfigurationProperties，该注解可以将Spring Boot的配置文件（默认必须为application.properties或application.yml）中的配置项读取到一个对象中。</p>
+<h4 id="创建application-properties文件-resources目录下-1"><a href="#创建application-properties文件-resources目录下-1" class="headerlink" title="创建application.properties文件(resources目录下)"></a>创建application.properties文件(resources目录下)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">jdbc.driverClassName&#x3D;com.mysql.jdbc.Driver</span><br><span class="line">jdbc.url&#x3D;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;test</span><br><span class="line">jdbc.username&#x3D;root</span><br><span class="line">jdbc.password&#x3D;root</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用-ConfigurationProperties在方法上面使用"><a href="#使用-ConfigurationProperties在方法上面使用" class="headerlink" title="使用@ConfigurationProperties在方法上面使用"></a>使用@ConfigurationProperties在方法上面使用</h4><p>在spring的配置类中，会按照属性名对应自动注入</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="meta">@ConfigurationProperties</span>(prefix = <span class="string">"jdbc"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> DataSource <span class="title">dataSource</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> DruidDataSource();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="多个yml文件配置"><a href="#多个yml文件配置" class="headerlink" title="多个yml文件配置"></a>多个yml文件配置</h2><p>yaml与properties配置文件除了展示形式不相同以外，其它功能和作用都是一样的；在项目中原路的读取方式不需要改变。</p>
+<p>1）yml配置文件的特征：</p>
+<ol>
+<li>树状层级结构展示配置项；</li>
+<li>配置项之间如果有关系的话需要分行空两格；</li>
+<li>配置项如果有值的话，那么需要在 <code>:</code>之后空一格再写配置项值；</li>
+</ol>
+<p>将application.properties配置文件修改为application.yml的话：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">jdbc:</span></span><br><span class="line">  <span class="attr">driverClassName:</span> <span class="string">com.mysql.jdbc.Driver</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">jdbc:mysql://127.0.0.1:3306/heima</span></span><br><span class="line">  <span class="attr">username:</span> <span class="string">root</span></span><br><span class="line">  <span class="attr">password:</span> <span class="string">root</span></span><br><span class="line"></span><br><span class="line"><span class="attr">key:</span></span><br><span class="line">  <span class="attr">abc:</span> <span class="string">cba</span></span><br><span class="line">  <span class="string">def://结合或列表</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">g</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">h</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">j</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>2）多个yml配置文件；在spring boot中是被允许的。这些配置文件的名称必须为application-***.yml，并且这些配置文件必须要在application.yml配置文件中激活之后才可以使用。</p>
+<p>3）如果properties和yml配置文件同时存在在spring boot项目中；那么这两类配置文件都有效。在两个配置文件中如果存在同名的配置项的话会以properties文件的为主。</p>
+<p><strong>小结</strong>：</p>
+<p>在多个配置文件时，需要将这些文件在application.yml文件中进行激活：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#激活配置文件;需要指定其它的配置文件名称</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">profiles:</span></span><br><span class="line">    <span class="attr">active:</span> <span class="string">abc,def</span>  <span class="string">//abc对应application-abc.yml</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="自动配置原理"><a href="#自动配置原理" class="headerlink" title="自动配置原理"></a>自动配置原理</h2><p><strong>目标</strong>：了解Spring Boot项目的配置加载流程</p>
+<p><strong>小结</strong>：</p>
+<ul>
+<li><p>在 <code>External Libraries\*spring-boot-autocnfig\META-INF\spring.fatories</code>文件中定义了很多自动配置类；可以根据在pom.xml文件中添加的 启动器依赖自动配置组件</p>
+<p><img src="/2021/03/16/spring-boot/image-20210317111858220.png" alt="image-20210317111858220"></p>
+</li>
+<li><p>通过如下流程可以去修改application配置文件，改变自动配置的组件默认参数</p>
+<p>在org.springframework.boot.autoconfigure中分类的文件夹下找jar包</p>
+</li>
+</ul>
+<p><img src="/2021/03/16/spring-boot/1560091228494.png" alt="1560091228494"></p>
+<h3 id="修改tomcat端口示例"><a href="#修改tomcat端口示例" class="headerlink" title="修改tomcat端口示例"></a>修改tomcat端口示例</h3><h4 id="找到相关的xxxProperties文件，查看prefix"><a href="#找到相关的xxxProperties文件，查看prefix" class="headerlink" title="找到相关的xxxProperties文件，查看prefix"></a>找到相关的xxxProperties文件，查看prefix</h4><p>端口相关的在web文件夹下的org.springframework.boot.autoconfigure.web.ServerProperties</p>
+<p><img src="/2021/03/16/spring-boot/image-20210317113001851.png" alt="image-20210317113001851"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="修改application-properties"><a href="#修改application-properties" class="headerlink" title="修改application.properties"></a>修改application.properties</h4><p><img src="/2021/03/16/spring-boot/image-20210317113121898.png" alt="image-20210317113121898"></p>
+<h2 id="lombok应用"><a href="#lombok应用" class="headerlink" title="lombok应用"></a>lombok应用</h2><ul>
+<li>编写数据库表对应的实体类；一般情况下需要编写get/set/toString等这些方法会耗时并且会让实体类看起来比较臃肿。可以使用lombok插件对实体类进行简化。</li>
+<li>lombok是一个插件工具类包；提供了一些注解@Data、@Getter等这些注解去简化实体类中的构造方法、get/set等方法的编写。</li>
+</ul>
+<ol>
+<li>在IDEA中安装lombok插件；<ol start="2">
+<li>添加lombok对应的依赖到项目pom.xml文件；</li>
+</ol>
+</li>
+<li>改造实体类使用lombok注解</li>
+</ol>
+<p><strong>小结</strong>：</p>
+<p>在Bean上使用：<br>@Data ：自动提供getter和setter、hashCode、equals、toString等方法<br>@Getter：自动提供getter方法<br>@Setter：自动提供setter方法<br>@Slf4j：自动在bean中提供log变量，其实用的是slf4j的日志功能。</p>
+<h2 id="Spring-Boot整合-SpringMVC静态资源"><a href="#Spring-Boot整合-SpringMVC静态资源" class="headerlink" title="Spring Boot整合-SpringMVC静态资源"></a>Spring Boot整合-SpringMVC静态资源</h2><ul>
+<li><p>在spring boot项目中静态资源可以放置在如下目录：</p>
+<p><img src="/2021/03/16/spring-boot/1560096384799.png" alt="1560096384799"> </p>
+</li>
+</ul>
+<h2 id="Spring-Boot整合-SpringMVC拦截器"><a href="#Spring-Boot整合-SpringMVC拦截器" class="headerlink" title="Spring Boot整合-SpringMVC拦截器"></a>Spring Boot整合-SpringMVC拦截器</h2><p><strong>目标</strong>：可以在Spring Boot项目中配置自定义SpringMVC拦截器</p>
+<p><strong>分析</strong>：</p>
+<ol>
+<li>编写拦截器（实现HandlerInterceptor）；</li>
+<li>编写配置类实现 WebMvcConfigurer，在该类中添加各种组件；</li>
+<li>测试</li>
+</ol>
+<h3 id="编写拦截器（实现HandlerInterceptor）"><a href="#编写拦截器（实现HandlerInterceptor）" class="headerlink" title="编写拦截器（实现HandlerInterceptor）"></a>编写拦截器（实现HandlerInterceptor）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class MyIntercepter implements HandlerInterceptor &#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception &#123;</span><br><span class="line">        System.out.println(&quot;preHandle running&quot;);</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception &#123;</span><br><span class="line">        System.out.println(&quot;postHandle running&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception &#123;</span><br><span class="line">        System.out.println(&quot;afterCompletion running&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="编写配置类实现-WebMvcConfigurer，重写方法添加"><a href="#编写配置类实现-WebMvcConfigurer，重写方法添加" class="headerlink" title="编写配置类实现 WebMvcConfigurer，重写方法添加"></a>编写配置类实现 WebMvcConfigurer，重写方法添加</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">public class MvcConfig implements WebMvcConfigurer &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void addInterceptors(InterceptorRegistry registry) &#123;</span><br><span class="line">        registry.addInterceptor(new MyIntercepter()).addPathPatterns(&quot;&#x2F;*&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Spring-Boot整合-事务和连接池"><a href="#Spring-Boot整合-事务和连接池" class="headerlink" title="Spring Boot整合-事务和连接池"></a>Spring Boot整合-事务和连接池</h2><p>数据库声明</p>
+<p><img src="/2021/03/16/spring-boot/image-20210317141641778.png" alt="image-20210317141641778"></p>
+<h3 id="事务配置"><a href="#事务配置" class="headerlink" title="事务配置"></a>事务配置</h3><ol>
+<li><p>添加事务相关的启动器依赖，mysql相关依赖；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-jdbc&lt;&#x2F;artifactId&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;mysql&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;mysql-connector-java&lt;&#x2F;artifactId&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编写业务类UserService使用事务注解@Transactional</p>
+</li>
+</ol>
+<h3 id="整合hikari连接池"><a href="#整合hikari连接池" class="headerlink" title="整合hikari连接池"></a>整合hikari连接池</h3><ol>
+<li><p>修改application.yml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  datasource:</span><br><span class="line">    driver-class-name: com.mysql.jdbc.Driver</span><br><span class="line">    url: jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;test</span><br><span class="line">    username: root</span><br><span class="line">    password: root</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试即可</p>
+</li>
+</ol>
+<h2 id="11-Spring-Boot整合-Mybatis"><a href="#11-Spring-Boot整合-Mybatis" class="headerlink" title="11. Spring Boot整合-Mybatis"></a>11. Spring Boot整合-Mybatis</h2><p><strong>目标</strong>：配置Mybatis在Spring Boot工程中的整合包，设置mybatis的实体类别名，输出执行sql语句配置项</p>
+<p><strong>分析</strong>：</p>
+<ol>
+<li>添加启动器依赖；</li>
+<li>配置Mybatis：实体类别名包，日志，映射文件等；</li>
+<li>配置MapperScan</li>
+</ol>
+<p><strong>小结</strong>：</p>
+<ul>
+<li><p>添加mybatis官方对于spring boot的一个启动器</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--mybatis --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.spring.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>配置mybatis</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mybatis:</span></span><br><span class="line">  <span class="comment"># 实体类别名包路径</span></span><br><span class="line">  <span class="attr">type-aliases-package:</span> <span class="string">com.itheima.pojo</span></span><br><span class="line">  <span class="comment"># 映射文件路径</span></span><br><span class="line">  <span class="comment"># mapper-locations: classpath:mappers/*.xml</span></span><br><span class="line">  <span class="attr">configuration:</span></span><br><span class="line">    <span class="attr">log-impl:</span> <span class="string">org.apache.ibatis.logging.stdout.StdOutImpl</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>设置启动器类中的mapper扫描</p>
+<p><img src="/2021/03/16/spring-boot/1560178298122.png" alt="1560178298122"> </p>
+</li>
+</ul>
+<h2 id="12-Spring-Boot整合-通用Mapper"><a href="#12-Spring-Boot整合-通用Mapper" class="headerlink" title="12. Spring Boot整合-通用Mapper"></a>12. Spring Boot整合-通用Mapper</h2><p><strong>目标</strong>：配置通用Mapper组件到Spring Boot项目中并使用Mapper<T>接口</T></p>
+<p><strong>分析</strong>：</p>
+<p>通用Mapper：可以实现自动拼接sql语句；所有的mapper都不需要编写任何方法也就是不用编写sql语句。可以提高开发效率。</p>
+<ol>
+<li>添加启动器依赖；</li>
+<li>改造UserMapper继承Mapper<User>；</User></li>
+<li>修改启动引导类Application中的Mapper扫描注解；</li>
+<li>修改User实体类添加jpa注解；</li>
+<li>改造UserService实现业务功能；</li>
+</ol>
+<p><strong>小结</strong>：</p>
+<blockquote>
+<p>在启动引导类上面的mapper扫描注解 一定要修改为 通用mapper的扫描注解</p>
+</blockquote>
+<h2 id="13-Spring-Boot整合测试"><a href="#13-Spring-Boot整合测试" class="headerlink" title="13. Spring Boot整合测试"></a>13. Spring Boot整合测试</h2><p><strong>目标</strong>：可以访问处理器对应路径将数据库中的数据根据id查询</p>
+<p><strong>分析</strong>：</p>
+<ol>
+<li>改造HelloController，注入UserService利用其方法实现查询；</li>
+<li>启动项目进行测试 <a href="http://localhost/user/用户id" target="_blank" rel="noopener">http://localhost/user/用户id</a> –&gt; <a href="http://localhost/user/8" target="_blank" rel="noopener">http://localhost/user/8</a></li>
+</ol>
+<p><strong>小结</strong>：</p>
+<p>修改了HelloController：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 根据用户id查询用户</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> id 用户id</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> 用户</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@GetMapping</span>(<span class="string">"/user/&#123;id&#125;"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> User <span class="title">queryById</span><span class="params">(@PathVariable Long id)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> userService.queryById(id);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="14-Spring-Boot整合-Junit"><a href="#14-Spring-Boot整合-Junit" class="headerlink" title="14. Spring Boot整合-Junit"></a>14. Spring Boot整合-Junit</h2><p><strong>目标</strong>：在Spring Boot项目中使用Junit进行单元测试UserService的方法</p>
+<p><strong>分析</strong>：</p>
+<ol>
+<li>添加启动器依赖spring-boot-starter-test；</li>
+<li>编写测试类</li>
+</ol>
+<p><strong>小结</strong>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith</span>(SpringRunner<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">@<span class="title">SpringBootTest</span></span></span><br><span class="line"><span class="class"><span class="title">public</span> <span class="title">class</span> <span class="title">UserServiceTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserService userService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">queryById</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        User user = userService.queryById(<span class="number">8L</span>);</span><br><span class="line">        System.out.println(<span class="string">"user = "</span> + user);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">saveUser</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        User user = <span class="keyword">new</span> User();</span><br><span class="line">        user.setUserName(<span class="string">"test2"</span>);</span><br><span class="line">        user.setName(<span class="string">"test2"</span>);</span><br><span class="line">        user.setAge(<span class="number">13</span>);</span><br><span class="line">        user.setPassword(<span class="string">"123456"</span>);</span><br><span class="line">        user.setSex(<span class="number">1</span>);</span><br><span class="line">        user.setCreated(<span class="keyword">new</span> Date());</span><br><span class="line">        userService.saveUser(user);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在Spring Boot项目中如果编写测试类则必须要在类上面添加@SpringBootTest</p>
+</blockquote>
+<h2 id="15-Spring-Boot整合-redis"><a href="#15-Spring-Boot整合-redis" class="headerlink" title="15. Spring Boot整合-redis"></a>15. Spring Boot整合-redis</h2><p><strong>目标</strong>：在Spring Boot项目中使用Junit测试RedisTemplate的使用</p>
+<p><strong>分析</strong>：</p>
+<ol>
+<li>添加启动器依赖；spring-boot-starter-data-redis</li>
+<li>配置application.yml中修改redis的连接参数；（redis需要启动）</li>
+<li>编写测试类应用RedisTemplate操作redis中的5种数据类型（string/hash/list/set/sorted set）</li>
+</ol>
+<p><strong>小结</strong>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith</span>(SpringRunner<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">@<span class="title">SpringBootTest</span></span></span><br><span class="line"><span class="class"><span class="title">public</span> <span class="title">class</span> <span class="title">RedisTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> RedisTemplate redisTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//string 字符串</span></span><br><span class="line">        <span class="comment">//redisTemplate.opsForValue().set("str", "heima");</span></span><br><span class="line">        redisTemplate.boundValueOps(<span class="string">"str"</span>).set(<span class="string">"heima"</span>);</span><br><span class="line">        System.out.println(<span class="string">"str = "</span> + redisTemplate.opsForValue().get(<span class="string">"str"</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//hash 散列</span></span><br><span class="line">        redisTemplate.boundHashOps(<span class="string">"h_key"</span>).put(<span class="string">"name"</span>, <span class="string">"heima"</span>);</span><br><span class="line">        redisTemplate.boundHashOps(<span class="string">"h_key"</span>).put(<span class="string">"age"</span>, <span class="number">13</span>);</span><br><span class="line">        <span class="comment">//获取所有域</span></span><br><span class="line">        Set set = redisTemplate.boundHashOps(<span class="string">"h_key"</span>).keys();</span><br><span class="line">        System.out.println(<span class="string">" hash散列的所有域："</span> + set);</span><br><span class="line">        <span class="comment">//获取所有值</span></span><br><span class="line">        List list = redisTemplate.boundHashOps(<span class="string">"h_key"</span>).values();</span><br><span class="line">        System.out.println(<span class="string">" hash散列的所有域的值："</span> + list);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//list 列表</span></span><br><span class="line">        redisTemplate.boundListOps(<span class="string">"l_key"</span>).leftPush(<span class="string">"c"</span>);</span><br><span class="line">        redisTemplate.boundListOps(<span class="string">"l_key"</span>).leftPush(<span class="string">"b"</span>);</span><br><span class="line">        redisTemplate.boundListOps(<span class="string">"l_key"</span>).leftPush(<span class="string">"a"</span>);</span><br><span class="line">        <span class="comment">//获取全部元素</span></span><br><span class="line">        list = redisTemplate.boundListOps(<span class="string">"l_key"</span>).range(<span class="number">0</span>, -<span class="number">1</span>);</span><br><span class="line">        System.out.println(<span class="string">" list列表中的所有元素："</span> + list);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// set 集合</span></span><br><span class="line">        redisTemplate.boundSetOps(<span class="string">"s_key"</span>).add(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>);</span><br><span class="line">        set = redisTemplate.boundSetOps(<span class="string">"s_key"</span>).members();</span><br><span class="line">        System.out.println(<span class="string">" set集合中的所有元素："</span> + set);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// sorted set 有序集合</span></span><br><span class="line">        redisTemplate.boundZSetOps(<span class="string">"z_key"</span>).add(<span class="string">"a"</span>, <span class="number">30</span>);</span><br><span class="line">        redisTemplate.boundZSetOps(<span class="string">"z_key"</span>).add(<span class="string">"b"</span>, <span class="number">20</span>);</span><br><span class="line">        redisTemplate.boundZSetOps(<span class="string">"z_key"</span>).add(<span class="string">"c"</span>, <span class="number">10</span>);</span><br><span class="line">        set = redisTemplate.boundZSetOps(<span class="string">"z_key"</span>).range(<span class="number">0</span>, -<span class="number">1</span>);</span><br><span class="line">        System.out.println(<span class="string">" zset有序集合中的所有元素："</span> + set);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="16-Spring-Boot项目部署"><a href="#16-Spring-Boot项目部署" class="headerlink" title="16. Spring Boot项目部署"></a>16. Spring Boot项目部署</h2><p><strong>目标</strong>：将Spring Boot项目使用maven指令打成jar包并运行测试</p>
+<p><strong>分析</strong>：</p>
+<ol>
+<li>需要添加打包组件将项目中的资源、配置、依赖包打到一个jar包中；可以使用maven的<code>package</code>；</li>
+<li>部署：java -jar 包名</li>
+</ol>
+<p><strong>小结</strong>：</p>
+<ul>
+<li><p>添加打包组件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!-- 打jar包时如果不配置该插件，打出来的jar包没有清单文件 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>部署运行</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar 包名</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+</li>
+</ul>
+
+      </div>
+      
+      
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-17T15:06:23+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>updated at Mar 17, 2021</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/spring/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>spring</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/spring-boot/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>spring_boot</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://donghuangzhong.github.io/2021/03/16/spring-boot/&title=spring_boot | DHZ'S BLOG&summary=摘要"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://donghuangzhong.github.io/2021/03/16/spring-boot/&title=spring_boot | DHZ'S BLOG&summary=摘要"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://donghuangzhong.github.io/2021/03/16/spring-boot/&title=spring_boot | DHZ'S BLOG&summary=摘要"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
+                          <h4>
+                              <a href="/2021/03/17/idea/" rel="prev" title="idea">
+                                
+                                    idea
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/tags/java/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> java</a> <a class="tag" href="/tags/idea/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> idea</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/2021/03/04/Redis/" rel="prev" title="Redis">
+                                  
+                                      Redis
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/tags/redis/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> redis</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Comments</h4>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'spring_boot',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+      
+        
+          
+          
+            
+              <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png'/>
+      </div>
+    
+    
+      <div class='text'>
+        
+        
+        
+          <!-- <p><span id="jinrishici-sentence">DHZ'S BLOG</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script> -->
+          <p><span id="jinrishici-sentence">
+                <div id="binft" style="text-align: center;"></div>
+                <script>
+                  var binft = function (r) {
+                    function t() {
+                      return b[Math.floor(Math.random() * b.length)]
+                    }  
+                    function e() {
+                      return String.fromCharCode(94 * Math.random() + 33)
+                    }
+                    function n(r) {
+                      for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {
+                        var l = document.createElement("span");
+                        l.textContent = e(), l.style.color = t(), n.appendChild(l)
+                      }
+                      return n
+                    }
+                    function i() {
+                      var t = o[c.skillI];
+                      c.step ? c.step-- : (c.step = g, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = "backward", c.delay = a) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)
+                    }
+                    var l = "",
+                    o = ["青青陵上柏，磊磊涧中石。", "人生天地间，忽如远行客。","斗酒相娱乐，聊厚不为薄。", "驱车策驽马，游戏宛与洛。","洛中何郁郁，冠带自相索。","长衢罗夹巷，王侯多第宅。","两宫遥相望，双阙百余尺。","极宴娱心意，戚戚何所迫？"].map(function (r) {
+                    return r + ""
+                    }),
+                    a = 2,
+                    g = 1,
+                    s = 5,
+                    d = 75,
+                    b = ["rgb(110,64,170)", "rgb(150,61,179)", "rgb(191,60,175)", "rgb(228,65,157)", "rgb(254,75,131)", "rgb(255,94,99)", "rgb(255,120,71)", "rgb(251,150,51)", "rgb(226,183,47)", "rgb(198,214,60)", "rgb(175,240,91)", "rgb(127,246,88)", "rgb(82,246,103)", "rgb(48,239,130)", "rgb(29,223,163)", "rgb(26,199,194)", "rgb(35,171,216)", "rgb(54,140,225)", "rgb(76,110,219)", "rgb(96,84,200)"],
+                    c = {
+                      text: "",
+                      prefixP: -s,
+                      skillI: 0,
+                      skillP: 0,
+                      direction: "forward",
+                      delay: a,
+                      step: g
+                    };
+                    i()
+                    };
+                    binft(document.getElementById('binft'));
+                </script>
+            </span></p>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=936035285&site=qq&menu=yes"
+              class="social fab fa-qq flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:me@xaoxuu.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/donghuangzhong"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=539552053"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring-Boot概述"><span class="toc-text">Spring Boot概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#spring的优缺点"><span class="toc-text">spring的优缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#springBoot的特点"><span class="toc-text">springBoot的特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring-Boot入门"><span class="toc-text">Spring Boot入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建一个普通的maven工程"><span class="toc-text">创建一个普通的maven工程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加SpringBoot的起步依赖"><span class="toc-text">添加SpringBoot的起步依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编写启动类"><span class="toc-text">编写启动类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编写Controller"><span class="toc-text">编写Controller</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行启动类中的main方测试"><span class="toc-text">运行启动类中的main方测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java代码方式配置"><span class="toc-text">Java代码方式配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring-Boot属性注入方式"><span class="toc-text">Spring Boot属性注入方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂方式-不推荐"><span class="toc-text">复杂方式(不推荐)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建application-properties文件-resources目录下"><span class="toc-text">创建application.properties文件(resources目录下)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建配置项类JdbcProperties类并加注解"><span class="toc-text">创建配置项类JdbcProperties类并加注解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在spring的配置类中通过函数参数注入JdbcProperties"><span class="toc-text">在spring的配置类中通过函数参数注入JdbcProperties</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单方式（推荐）"><span class="toc-text">简单方式（推荐）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建application-properties文件-resources目录下-1"><span class="toc-text">创建application.properties文件(resources目录下)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用-ConfigurationProperties在方法上面使用"><span class="toc-text">使用@ConfigurationProperties在方法上面使用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多个yml文件配置"><span class="toc-text">多个yml文件配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动配置原理"><span class="toc-text">自动配置原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#修改tomcat端口示例"><span class="toc-text">修改tomcat端口示例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#找到相关的xxxProperties文件，查看prefix"><span class="toc-text">找到相关的xxxProperties文件，查看prefix</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改application-properties"><span class="toc-text">修改application.properties</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lombok应用"><span class="toc-text">lombok应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring-Boot整合-SpringMVC静态资源"><span class="toc-text">Spring Boot整合-SpringMVC静态资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring-Boot整合-SpringMVC拦截器"><span class="toc-text">Spring Boot整合-SpringMVC拦截器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#编写拦截器（实现HandlerInterceptor）"><span class="toc-text">编写拦截器（实现HandlerInterceptor）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编写配置类实现-WebMvcConfigurer，重写方法添加"><span class="toc-text">编写配置类实现 WebMvcConfigurer，重写方法添加</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring-Boot整合-事务和连接池"><span class="toc-text">Spring Boot整合-事务和连接池</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#事务配置"><span class="toc-text">事务配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#整合hikari连接池"><span class="toc-text">整合hikari连接池</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-Spring-Boot整合-Mybatis"><span class="toc-text">11. Spring Boot整合-Mybatis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-Spring-Boot整合-通用Mapper"><span class="toc-text">12. Spring Boot整合-通用Mapper</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-Spring-Boot整合测试"><span class="toc-text">13. Spring Boot整合测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-Spring-Boot整合-Junit"><span class="toc-text">14. Spring Boot整合-Junit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-Spring-Boot整合-redis"><span class="toc-text">15. Spring Boot整合-redis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-Spring-Boot项目部署"><span class="toc-text">16. Spring Boot项目部署</span></a></li></ol>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget grid'>
+  
+<header class='pure'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="grid navgation">
+      
+        <li><a class="flat-box" title="/" href="/"
+          
+          
+          id="home">
+          
+            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
+          
+          近期文章
+        </a></li>
+      
+        <li><a class="flat-box" title="/archives/" href="/archives/"
+          
+            rel="nofollow"
+          
+          
+          id="archives">
+          
+            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
+          
+          文章归档
+        </a></li>
+      
+        <li><a class="flat-box" title="/projects/" href="/projects/"
+          
+          
+          id="projects">
+          
+            <i class="fas fa-code-branch fa-fw" aria-hidden="true"></i>
+          
+          开源项目
+        </a></li>
+      
+        <li><a class="flat-box" title="/friends/" href="/friends/"
+          
+            rel="nofollow"
+          
+          
+          id="friends">
+          
+            <i class="fas fa-link fa-fw" aria-hidden="true"></i>
+          
+          我的友链
+        </a></li>
+      
+        <li><a class="flat-box" title="https://xaoxuu.com/wiki/material-x/" href="https://xaoxuu.com/wiki/material-x/"
+          
+            rel="nofollow"
+          
+          
+          id="https:xaoxuu.comwikimaterial-x">
+          
+            <i class="fas fa-book fa-fw" aria-hidden="true"></i>
+          
+          主题文档
+        </a></li>
+      
+        <li><a class="flat-box" title="/about/" href="/about/"
+          
+            rel="nofollow"
+          
+          
+          id="about">
+          
+            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
+          
+          关于小站
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Categories</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/ACM/" href="/categories/ACM/"><div class='name'>ACM</div><div class='badge'>(83)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/BFS/" href="/categories/ACM/BFS/"><div class='name'>BFS</div><div class='badge'>(9)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/Bellman/" href="/categories/ACM/Bellman/"><div class='name'>Bellman</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/DFS/" href="/categories/ACM/DFS/"><div class='name'>DFS</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/DP/" href="/categories/ACM/DP/"><div class='name'>DP</div><div class='badge'>(17)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/Floyd/" href="/categories/ACM/Floyd/"><div class='name'>Floyd</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/Huffuman/" href="/categories/ACM/Huffuman/"><div class='name'>Huffuman</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/RMQ/" href="/categories/ACM/RMQ/"><div class='name'>RMQ</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/SPFA/" href="/categories/ACM/SPFA/"><div class='name'>SPFA</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/category2/" href="/categories/ACM/category2/"><div class='name'>category2</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/dfs/" href="/categories/ACM/dfs/"><div class='name'>dfs</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/dij/" href="/categories/ACM/dij/"><div class='name'>dij</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E4%BA%8C%E8%BF%9B%E5%88%B6/" href="/categories/ACM/%E4%BA%8C%E8%BF%9B%E5%88%B6/"><div class='name'>二进制</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/" href="/categories/ACM/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/"><div class='name'>双向链表</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E5%9B%9E%E6%96%87/" href="/categories/ACM/%E5%9B%9E%E6%96%87/"><div class='name'>回文</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E5%9B%A0%E6%95%B0/" href="/categories/ACM/%E5%9B%A0%E6%95%B0/"><div class='name'>因数</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E5%A4%A7%E6%95%B0/" href="/categories/ACM/%E5%A4%A7%E6%95%B0/"><div class='name'>大数</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E5%A4%A7%E6%95%B0%E5%8A%A8%E6%80%81%E5%91%A8%E6%9C%9F/" href="/categories/ACM/%E5%A4%A7%E6%95%B0%E5%8A%A8%E6%80%81%E5%91%A8%E6%9C%9F/"><div class='name'>大数动态周期</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E5%AD%97%E5%85%B8/" href="/categories/ACM/%E5%AD%97%E5%85%B8/"><div class='name'>字典</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E5%AD%97%E7%AC%A6%E4%B8%B2/" href="/categories/ACM/%E5%AD%97%E7%AC%A6%E4%B8%B2/"><div class='name'>字符串</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E5%BC%80%E5%85%B3/" href="/categories/ACM/%E5%BC%80%E5%85%B3/"><div class='name'>开关</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E5%BF%AB%E9%80%9F%E5%B9%82/" href="/categories/ACM/%E5%BF%AB%E9%80%9F%E5%B9%82/"><div class='name'>快速幂</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E6%98%93%E9%94%99%E9%A2%98/" href="/categories/ACM/%E6%98%93%E9%94%99%E9%A2%98/"><div class='name'>易错题</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E6%B0%B4%E9%A2%98/" href="/categories/ACM/%E6%B0%B4%E9%A2%98/"><div class='name'>水题</div><div class='badge'>(10)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E7%9B%B2%E9%9B%86%E5%90%88%E6%B1%82%E4%BA%A4/" href="/categories/ACM/%E7%9B%B2%E9%9B%86%E5%90%88%E6%B1%82%E4%BA%A4/"><div class='name'>盲集合求交</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95/" href="/categories/ACM/%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95/"><div class='name'>矩阵乘法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E7%BA%BF%E6%AE%B5%E4%BA%A4/" href="/categories/ACM/%E7%BA%BF%E6%AE%B5%E4%BA%A4/"><div class='name'>线段交</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" href="/categories/ACM/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/"><div class='name'>解题报告</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E8%B4%A8%E5%9B%A0%E6%95%B0/" href="/categories/ACM/%E8%B4%A8%E5%9B%A0%E6%95%B0/"><div class='name'>质因数</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E8%B4%AA%E5%BF%83/" href="/categories/ACM/%E8%B4%AA%E5%BF%83/"><div class='name'>贪心</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E8%BF%9B%E5%88%B6/" href="/categories/ACM/%E8%BF%9B%E5%88%B6/"><div class='name'>进制</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E9%80%92%E5%BD%92/" href="/categories/ACM/%E9%80%92%E5%BD%92/"><div class='name'>递归</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E9%80%BB%E8%BE%91/" href="/categories/ACM/%E9%80%BB%E8%BE%91/"><div class='name'>逻辑</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E9%AB%98%E7%BA%A7dfs/" href="/categories/ACM/%E9%AB%98%E7%BA%A7dfs/"><div class='name'>高级dfs</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Hexo/" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Linux/" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/TersorFlow/" href="/categories/TersorFlow/"><div class='name'>TersorFlow</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/VM/" href="/categories/VM/"><div class='name'>VM</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/category1/" href="/categories/category1/"><div class='name'>category1</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/category1/category2/" href="/categories/category1/category2/"><div class='name'>category2</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/hexo/" href="/categories/hexo/"><div class='name'>hexo</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/java/" href="/categories/java/"><div class='name'>java</div><div class='badge'>(23)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/java/SQL/" href="/categories/java/SQL/"><div class='name'>SQL</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/java/idea/" href="/categories/java/idea/"><div class='name'>idea</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/java/maven/" href="/categories/java/maven/"><div class='name'>maven</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/java/spring/" href="/categories/java/spring/"><div class='name'>spring</div><div class='badge'>(8)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/java/tools/" href="/categories/java/tools/"><div class='name'>tools</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/java/web%E7%9B%B8%E5%85%B3/" href="/categories/java/web%E7%9B%B8%E5%85%B3/"><div class='name'>web相关</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/java/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" href="/categories/java/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"><div class='name'>配置文件</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/js/" href="/categories/js/"><div class='name'>js</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/js/%E5%B8%B8%E7%94%A8js/" href="/categories/js/%E5%B8%B8%E7%94%A8js/"><div class='name'>常用js</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/python/" href="/categories/python/"><div class='name'>python</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/python/%E7%88%AC%E8%99%AB/" href="/categories/python/%E7%88%AC%E8%99%AB/"><div class='name'>爬虫</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/tools/" href="/categories/tools/"><div class='name'>tools</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/tools/C/" href="/categories/tools/C/"><div class='name'>C++</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"><div class='name'>个人博客</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"><div class='name'>博客搭建</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E5%B7%A5%E5%85%B7/" href="/categories/%E5%B7%A5%E5%85%B7/"><div class='name'>工具</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"><div class='name'>深度学习</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" href="/categories/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"><div class='name'>目标检测</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/"><div class='name'>计算机图形学</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/%E5%A4%9A%E8%BE%B9%E5%BD%A2%E5%A1%AB%E5%85%85/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/%E5%A4%9A%E8%BE%B9%E5%BD%A2%E5%A1%AB%E5%85%85/"><div class='name'>多边形填充</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/tags/01%E5%8F%AF%E4%B8%8D%E6%BB%A1%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">01可不满背包</a> <a href="/tags/AlexNet/" style="font-size: 14px; color: #999">AlexNet</a> <a href="/tags/BFS/" style="font-size: 14px; color: #999">BFS</a> <a href="/tags/C-%E6%96%87%E4%BB%B6%E4%BB%A3%E6%9B%BF%E6%89%8B%E5%B7%A5%E8%BE%93%E5%85%A5/" style="font-size: 14px; color: #999">C++文件代替手工输入</a> <a href="/tags/DFS/" style="font-size: 14px; color: #999">DFS</a> <a href="/tags/Dilworth%E5%AE%9A%E7%90%86/" style="font-size: 14px; color: #999">Dilworth定理</a> <a href="/tags/EL-JSTL/" style="font-size: 14px; color: #999">EL&JSTL</a> <a href="/tags/EOF/" style="font-size: 14px; color: #999">EOF</a> <a href="/tags/GeForce940MX/" style="font-size: 14px; color: #999">GeForce940MX</a> <a href="/tags/JDBC/" style="font-size: 14px; color: #999">JDBC</a> <a href="/tags/Java/" style="font-size: 14px; color: #999">Java</a> <a href="/tags/MFC/" style="font-size: 14px; color: #999">MFC</a> <a href="/tags/MySql/" style="font-size: 14px; color: #999">MySql</a> <a href="/tags/Mybatis/" style="font-size: 17.33px; color: #828282">Mybatis</a> <a href="/tags/Properties/" style="font-size: 14px; color: #999">Properties</a> <a href="/tags/ST/" style="font-size: 14px; color: #999">ST</a> <a href="/tags/STL/" style="font-size: 14px; color: #999">STL</a> <a href="/tags/SpringTemplate/" style="font-size: 14px; color: #999">SpringTemplate</a> <a href="/tags/VM/" style="font-size: 14px; color: #999">VM</a> <a href="/tags/W/" style="font-size: 14px; color: #999">W</a> <a href="/tags/WSL/" style="font-size: 14px; color: #999">WSL</a> <a href="/tags/keras/" style="font-size: 14px; color: #999">_keras</a> <a href="/tags/cookie/" style="font-size: 14px; color: #999">cookie</a> <a href="/tags/github-pages/" style="font-size: 14px; color: #999">github_pages</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/idea/" style="font-size: 17.33px; color: #828282">idea</a> <a href="/tags/java/" style="font-size: 20.67px; color: #6c6c6c">java</a> <a href="/tags/jdbctemplate/" style="font-size: 14px; color: #999">jdbctemplate</a> <a href="/tags/js/" style="font-size: 14px; color: #999">js</a> <a href="/tags/jupyter/" style="font-size: 14px; color: #999">jupyter</a> <a href="/tags/map/" style="font-size: 17.33px; color: #828282">map</a> <a href="/tags/maven/" style="font-size: 14px; color: #999">maven</a> <a href="/tags/mybatis/" style="font-size: 14px; color: #999">mybatis</a> <a href="/tags/numpy/" style="font-size: 14px; color: #999">numpy</a> <a href="/tags/n%E7%BB%B4%E4%BA%A4/" style="font-size: 14px; color: #999">n维交</a> <a href="/tags/pandas/" style="font-size: 14px; color: #999">pandas</a> <a href="/tags/pyplot/" style="font-size: 14px; color: #999">pyplot</a> <a href="/tags/redis/" style="font-size: 14px; color: #999">redis</a> <a href="/tags/response/" style="font-size: 14px; color: #999">response</a> <a href="/tags/session/" style="font-size: 14px; color: #999">session</a> <a href="/tags/spring/" style="font-size: 20.67px; color: #6c6c6c">spring</a> <a href="/tags/spring-web/" style="font-size: 14px; color: #999">spring+web</a> <a href="/tags/spring-boot/" style="font-size: 14px; color: #999">spring_boot</a> <a href="/tags/springmvc/" style="font-size: 14px; color: #999">springmvc</a> <a href="/tags/tag1/" style="font-size: 24px; color: #555">tag1</a> <a href="/tags/tag2/" style="font-size: 24px; color: #555">tag2</a> <a href="/tags/vector/" style="font-size: 14px; color: #999">vector</a> <a href="/tags/wallpapers/" style="font-size: 14px; color: #999">wallpapers</a> <a href="/tags/web/" style="font-size: 14px; color: #999">web</a> <a href="/tags/%E4%B8%A4%E4%B8%AA%E6%9C%80%E5%B0%8F%E5%80%BC/" style="font-size: 14px; color: #999">两个最小值</a> <a href="/tags/%E4%B8%A4%E6%AC%A1BFS/" style="font-size: 14px; color: #999">两次BFS</a> <a href="/tags/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/" style="font-size: 14px; color: #999">中序遍历</a> <a href="/tags/%E4%B8%B4%E7%95%8C%E6%9C%80%E4%BC%98/" style="font-size: 14px; color: #999">临界最优</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE-%E5%A4%A7%E5%B0%8F%E4%BA%8E/" style="font-size: 17.33px; color: #828282">二分查找(大小于)</a> <a href="/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">二进制优化</a> <a href="/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E5%8D%81%E8%BF%9B%E5%88%B6/" style="font-size: 14px; color: #999">二进制表示十进制</a> <a href="/tags/%E4%BB%A3%E6%95%B0%E5%BC%8F%E6%9C%80%E5%A4%A7%E5%8C%96%E9%83%A8%E5%88%86%E6%BA%A2%E5%87%BA/" style="font-size: 14px; color: #999">代数式最大化部分溢出</a> <a href="/tags/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/" style="font-size: 14px; color: #999">优先队列</a> <a href="/tags/%E5%80%92%E6%B0%B4/" style="font-size: 14px; color: #999">倒水</a> <a href="/tags/%E5%85%94%E5%AD%90%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">兔子问题</a> <a href="/tags/%E5%85%AB%E7%9A%87%E5%90%8E%E7%AE%80%E5%8C%96%E7%89%88/" style="font-size: 14px; color: #999">八皇后简化版</a> <a href="/tags/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">八皇后问题</a> <a href="/tags/%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6/" style="font-size: 14px; color: #999">共享文件</a> <a href="/tags/%E5%87%BD%E6%95%B0%E6%95%B0%E7%BB%84%E5%BD%A2%E5%8F%82/" style="font-size: 14px; color: #999">函数数组形参</a> <a href="/tags/%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF/" style="font-size: 14px; color: #999">函数模板</a> <a href="/tags/%E5%88%86%E8%A7%A3%E8%B4%A8%E5%9B%A0%E6%95%B0/" style="font-size: 14px; color: #999">分解质因数</a> <a href="/tags/%E5%88%A4%E6%96%AD%E6%9D%A1%E4%BB%B6%E7%9A%84%E5%85%88%E5%90%8E/" style="font-size: 14px; color: #999">判断条件的先后</a> <a href="/tags/%E5%8A%A8%E6%80%81%E4%BA%8C%E8%BF%9B%E5%88%B6/" style="font-size: 14px; color: #999">动态二进制</a> <a href="/tags/%E5%8A%A8%E6%80%81%E5%91%A8%E6%9C%9F/" style="font-size: 14px; color: #999">动态周期</a> <a href="/tags/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/" style="font-size: 14px; color: #999">双向链表</a> <a href="/tags/%E5%90%8C%E4%BD%99%E5%AE%9A%E7%90%86/" style="font-size: 14px; color: #999">同余定理</a> <a href="/tags/%E5%9B%9E%E5%BD%A2%E5%8F%96%E6%95%B0/" style="font-size: 14px; color: #999">回形取数</a> <a href="/tags/%E5%9B%9E%E6%BA%AF/" style="font-size: 14px; color: #999">回溯</a> <a href="/tags/%E5%9B%BE%E7%89%87/" style="font-size: 14px; color: #999">图片</a> <a href="/tags/%E5%9B%BE%E7%9A%84%E8%BF%9E%E9%80%9A%E5%8C%BA%E5%9F%9F/" style="font-size: 14px; color: #999">图的连通区域</a> <a href="/tags/%E5%A3%81%E7%BA%B8/" style="font-size: 14px; color: #999">壁纸</a> <a href="/tags/%E5%A4%9A%E5%85%A5%E5%8F%A3BFS/" style="font-size: 14px; color: #999">多入口BFS</a> <a href="/tags/%E5%A4%9A%E6%95%B0%E7%BB%84DP/" style="font-size: 14px; color: #999">多数组DP</a> <a href="/tags/%E5%A4%A7%E6%95%B0/" style="font-size: 14px; color: #999">大数</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E5%8A%A0%E6%B3%95/" style="font-size: 14px; color: #999">大数加法</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E9%98%B6%E4%B9%98/" style="font-size: 14px; color: #999">大数阶乘</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E9%99%B7%E9%98%B1/" style="font-size: 17.33px; color: #828282">大数陷阱</a> <a href="/tags/%E5%A6%99%E7%94%A8%E4%B8%8B%E6%A0%87%E5%92%8C/" style="font-size: 14px; color: #999">妙用下标和</a> <a href="/tags/%E5%A6%99%E7%94%A8%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84/" style="font-size: 17.33px; color: #828282">妙用标志数组</a> <a href="/tags/%E5%AD%97%E5%85%B8/" style="font-size: 17.33px; color: #828282">字典</a> <a href="/tags/%E5%AD%97%E6%AF%8D/" style="font-size: 14px; color: #999">字母</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">字符串数组</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83/" style="font-size: 14px; color: #999">字符串比较</a> <a href="/tags/%E5%B1%8F%E8%94%BD%E7%BB%86%E8%8A%82/" style="font-size: 14px; color: #999">屏蔽细节</a> <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" style="font-size: 14px; color: #999">拓扑排序</a> <a href="/tags/%E6%8C%89%E5%BA%8F%E5%88%97%E7%B4%AF%E9%99%A4/" style="font-size: 14px; color: #999">按序列累除</a> <a href="/tags/%E6%8E%92%E5%90%8D/" style="font-size: 14px; color: #999">排名</a> <a href="/tags/%E6%91%84%E6%B0%8F%E5%8D%8E%E6%B0%8F%E6%B8%A9%E5%BA%A6%E8%BD%AC%E6%8D%A2/" style="font-size: 14px; color: #999">摄氏华氏温度转换</a> <a href="/tags/%E6%95%B0%E5%A1%94/" style="font-size: 14px; color: #999">数塔</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/" style="font-size: 14px; color: #999">数据库连接池</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E8%A7%84%E6%A8%A1/" style="font-size: 14px; color: #999">数据规模</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 14px; color: #999">数论</a> <a href="/tags/%E6%95%B4%E9%99%A42/" style="font-size: 14px; color: #999">整除2</a> <a href="/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91/" style="font-size: 14px; color: #999">斐波那契</a> <a href="/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%8F%96%E4%BD%99%E7%89%88/" style="font-size: 14px; color: #999">斐波那契取余版</a> <a href="/tags/%E6%97%A0%E9%99%90%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">无限背包</a> <a href="/tags/%E6%98%93%E9%94%99%E9%A2%98/" style="font-size: 14px; color: #999">易错题</a> <a href="/tags/%E6%9C%80%E5%A4%A7%E6%9C%80%E5%B0%8F%E8%B7%9D%E7%A6%BB/" style="font-size: 14px; color: #999">最大最小距离</a> <a href="/tags/%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最大连续子序列</a> <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" style="font-size: 17.33px; color: #828282">最短路径</a> <a href="/tags/%E6%9C%80%E9%95%BF-%E9%9D%9E-%E5%8D%95%E8%B0%83%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最长(非)单调子序列</a> <a href="/tags/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最长上升子序列</a> <a href="/tags/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最长公共子序列</a> <a href="/tags/%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%9B%A0%E6%95%B0/" style="font-size: 14px; color: #999">最长连续因数</a> <a href="/tags/%E6%9C%89%E5%90%91%E5%9B%BE%E7%BB%95%E5%9C%88/" style="font-size: 14px; color: #999">有向图绕圈</a> <a href="/tags/%E6%9D%A5%E5%9B%9E%E6%80%BB%E5%92%8C%E6%9C%80%E7%9F%AD/" style="font-size: 14px; color: #999">来回总和最短</a> <a href="/tags/%E6%9E%81%E5%BA%A6%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">极度优化</a> <a href="/tags/%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84%E5%81%9A%E8%AE%B0%E5%BD%95/" style="font-size: 14px; color: #999">标志数组做记录</a> <a href="/tags/%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84%E5%A6%99%E7%94%A8/" style="font-size: 17.33px; color: #828282">标志数组妙用</a> <a href="/tags/%E6%AD%A3%E5%8F%8D%E5%90%91%E6%80%9D%E8%80%83/" style="font-size: 14px; color: #999">正反向思考</a> <a href="/tags/%E6%AD%A3%E5%90%91DP/" style="font-size: 14px; color: #999">正向DP</a> <a href="/tags/%E6%AD%A3%E7%8E%AF/" style="font-size: 17.33px; color: #828282">正环</a> <a href="/tags/%E6%B0%B4%E9%A2%98/" style="font-size: 20.67px; color: #6c6c6c">水题</a> <a href="/tags/%E6%B2%99%E6%BC%8F/" style="font-size: 14px; color: #999">沙漏</a> <a href="/tags/%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">泛型编程</a> <a href="/tags/%E6%BA%A2%E5%87%BA%E9%99%B7%E9%98%B1/" style="font-size: 14px; color: #999">溢出陷阱</a> <a href="/tags/%E6%BB%9A%E5%8A%A8%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">滚动数组</a> <a href="/tags/%E7%81%AB%E5%9C%BA%E9%80%83%E7%94%9F/" style="font-size: 14px; color: #999">火场逃生</a> <a href="/tags/%E7%89%B9%E6%AE%8A%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">特殊标志数组</a> <a href="/tags/%E7%94%B5%E6%A2%AF/" style="font-size: 14px; color: #999">电梯</a> <a href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" style="font-size: 14px; color: #999">目标检测</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E6%88%90%E5%9B%9E%E6%96%87%E6%9C%80%E7%9F%AD/" style="font-size: 14px; color: #999">移动成回文最短</a> <a href="/tags/%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97/" style="font-size: 14px; color: #999">等差数列</a> <a href="/tags/%E7%AE%80%E5%8D%95DP/" style="font-size: 14px; color: #999">简单DP</a> <a href="/tags/%E7%B4%A0%E6%95%B0%E6%89%93%E8%A1%A8/" style="font-size: 14px; color: #999">素数打表</a> <a href="/tags/%E7%B4%A0%E6%95%B0%E7%8E%AF/" style="font-size: 14px; color: #999">素数环</a> <a href="/tags/%E7%B4%A2%E5%BC%95%E8%A1%A8/" style="font-size: 14px; color: #999">索引表</a> <a href="/tags/%E7%BB%84%E5%86%85%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" style="font-size: 14px; color: #999">组内最短路径</a> <a href="/tags/%E7%BB%9F%E8%AE%A1%E6%95%B0%E5%AD%97%E7%9A%84%E4%B8%AA%E6%95%B0/" style="font-size: 14px; color: #999">统计数字的个数</a> <a href="/tags/%E7%BC%96%E7%A0%81/" style="font-size: 14px; color: #999">编码</a> <a href="/tags/%E7%BF%BB%E8%BD%AC%E6%B8%B8%E6%88%8F/" style="font-size: 14px; color: #999">翻转游戏</a> <a href="/tags/%E7%BF%BB%E8%BD%AC%E7%9F%A9%E9%98%B5/" style="font-size: 14px; color: #999">翻转矩阵</a> <a href="/tags/%E7%BF%BB%E8%BD%AC%E8%BE%B9/" style="font-size: 14px; color: #999">翻转边</a> <a href="/tags/%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">背包</a> <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF2020%E6%A8%A1%E6%8B%9F%E8%B5%9B/" style="font-size: 14px; color: #999">蓝桥杯2020模拟赛</a> <a href="/tags/%E8%A1%A5%E7%A0%81/" style="font-size: 14px; color: #999">补码</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E8%BF%90%E7%AE%97%E8%BF%87%E7%A8%8B/" style="font-size: 14px; color: #999">计算机中运算过程</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" style="font-size: 14px; color: #999">计算机图形学</a> <a href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96dfs/" style="font-size: 14px; color: #999">记忆化dfs</a> <a href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96%E9%80%92%E5%BD%92/" style="font-size: 14px; color: #999">记忆化递归</a> <a href="/tags/%E8%AE%BE%E7%8A%B6%E6%80%81/" style="font-size: 14px; color: #999">设状态</a> <a href="/tags/%E8%AF%BB%E6%95%B0%E5%AD%97/" style="font-size: 14px; color: #999">读数字</a> <a href="/tags/%E8%B4%9F%E7%8E%AF/" style="font-size: 14px; color: #999">负环</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 14px; color: #999">贪心</a> <a href="/tags/%E8%BD%AC%E7%A7%BB%E6%96%B9%E7%A8%8B%E7%9A%84%E6%9E%84%E9%80%A0/" style="font-size: 14px; color: #999">转移方程的构造</a> <a href="/tags/%E8%BE%93%E5%87%BA%E8%B7%AF%E5%BE%84/" style="font-size: 14px; color: #999">输出路径</a> <a href="/tags/%E9%80%92%E5%BD%92%E8%8C%83%E5%9B%B4/" style="font-size: 14px; color: #999">递归范围</a> <a href="/tags/%E9%80%BB%E8%BE%91/" style="font-size: 17.33px; color: #828282">逻辑</a> <a href="/tags/%E9%80%BB%E8%BE%91%E7%9B%B8%E5%8A%A0%E5%A6%99%E7%94%A8/" style="font-size: 14px; color: #999">逻辑相加妙用</a> <a href="/tags/%E9%80%BB%E8%BE%91%E8%B7%AF%E5%BE%84/" style="font-size: 14px; color: #999">逻辑路径</a> <a href="/tags/%E9%81%8D%E5%8E%86%E6%89%80%E6%9C%89%E5%8F%AF%E8%83%BD%E6%80%A7/" style="font-size: 14px; color: #999">遍历所有可能性</a> <a href="/tags/%E9%82%BB%E6%8E%A5%E8%A1%A8/" style="font-size: 14px; color: #999">邻接表</a> <a href="/tags/%E9%A3%9F%E7%89%A9%E9%93%BE/" style="font-size: 14px; color: #999">食物链</a> <a href="/tags/%E9%AB%98%E7%BA%A7dfs/" style="font-size: 14px; color: #999">高级dfs</a> <a href="/tags/%E9%AB%98%E9%98%B601%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">高阶01背包</a> <a href="/tags/%E9%BB%91%E7%99%BD%E5%AD%90/" style="font-size: 14px; color: #999">黑白子</a> <a href="/tags/%E9%BE%9F%E5%85%94%E8%B5%9B%E8%B7%91/" style="font-size: 14px; color: #999">龟兔赛跑</a>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+
+
+  <section class='widget music'>
+    
+<header class='pure'>
+  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_blank"
+    
+    href="https://music.163.com/#/user/home?id=539552053"
+    title="https://music.163.com/#/user/home?id=539552053">
+    <i class="far fa-heart fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <div class="aplayer"
+    data-theme="#1BCDFC"
+    
+    
+    data-mode="circulation"
+    data-server="netease"
+    data-type="playlist"
+    data-id="2596786915"
+    data-volume="0.7">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+
+    </div>
+  </section>
+
+
+            
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=936035285&amp;site=qq&amp;menu=yes"
+            class="social fab fa-qq flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:me@xaoxuu.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/donghuangzhong"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://music.163.com/#/user/home?id=539552053"
+            class="social fas fa-headphones-alt flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+  <div>
+    Use
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    as theme
+    
+      , 
+      total visits
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      times
+    
+    . 
+                              <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+                          <script>
+                              var now = new Date(); 
+                              function createtime() { 
+                                  var grt= new Date("08/10/2018 17:38:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+                                  now.setTime(now.getTime()+250); 
+                                  days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+                                  hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+                                  if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+                                  mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+                                  seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+                                  snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+                                  document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+                                  document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+                              } 
+                          setInterval("createtime()",250);
+                          </script>
+
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('') {
+          $('').backstretch(
+          ["/img/bg.jpg", "https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["/img/bg.jpg", "https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      
+<script src="/js/volantis.js"></script>
+
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "i7ukzCbxEznD4q69fiEJWYkt-gzGzoHsz",
+    appKey: "7cFEE2XMUgHyMFGgvPNqcHrU",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    highlight:'true'
+  })
+  </script>
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="/js/search.js"></script>
+
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+
+
+<!--单击显示文字-->
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+<!--动态线条背景-->
+<script type="text/javascript"
+color="255,255,0" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+<!-- 雪花特效 -->
+<script type="text/javascript" src="\js\snow.js"></script>
+<!-- 雪花特效2 -->
+<script type="text/javascript" src="\js\snow2.js"></script>
+
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
+
+
+</html>
