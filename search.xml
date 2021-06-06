@@ -1021,6 +1021,35 @@
     
     
     <entry>
+      <title>Java_idea生成类和方法注释</title>
+      <link href="2021/01/11/Java-idea%E7%94%9F%E6%88%90%E7%B1%BB%E5%92%8C%E6%96%B9%E6%B3%95%E6%B3%A8%E9%87%8A/"/>
+      <url>2021/01/11/Java-idea%E7%94%9F%E6%88%90%E7%B1%BB%E5%92%8C%E6%96%B9%E6%B3%95%E6%B3%A8%E9%87%8A/</url>
+      
+        <content type="html"><![CDATA[<p>自定义Idea类和方法的内容和快捷键</p><a id="more"></a><p>只演示方法的，类的同样操作即可</p><h1 id="1-Ctrl-Alt-S打开Idea设置-找到Editor-gt-Live-Templates"><a href="#1-Ctrl-Alt-S打开Idea设置-找到Editor-gt-Live-Templates" class="headerlink" title="1.Ctrl+Alt+S打开Idea设置,找到Editor-&gt;Live Templates"></a>1.Ctrl+Alt+S打开Idea设置,找到Editor-&gt;Live Templates</h1><h1 id="2-点右上角加号先添加Template-Group-命名为UserDefine"><a href="#2-点右上角加号先添加Template-Group-命名为UserDefine" class="headerlink" title="2.点右上角加号先添加Template Group(命名为UserDefine)"></a>2.点右上角加号先添加Template Group(命名为UserDefine)</h1><h1 id="3-选中UserDefine再次点加号选Live-Template"><a href="#3-选中UserDefine再次点加号选Live-Template" class="headerlink" title="3.选中UserDefine再次点加号选Live Template"></a>3.选中UserDefine再次点加号选Live Template</h1><h1 id="4-Abbreviation处为快捷键-我设的a-Template-Text如下"><a href="#4-Abbreviation处为快捷键-我设的a-Template-Text如下" class="headerlink" title="4.Abbreviation处为快捷键(我设的a),Template Text如下"></a>4.Abbreviation处为快捷键(我设的a),Template Text如下</h1><ul><li><p>方法注释</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">**</span><br><span class="line">* @Description: $description$</span><br><span class="line">* @Param: $params$</span><br><span class="line">* @return: $returns$</span><br><span class="line">* @Author: 此处改为你自己的名字</span><br><span class="line">* @Date: $date$</span><br><span class="line">**&#x2F;</span><br></pre></td></tr></table></figure></li><li><p>类注释(弄好方法注释之后类的自然也会)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">**</span><br><span class="line">* @ClassName: $params$</span><br><span class="line">* @Description: $description$</span><br><span class="line">* @Author: Zhong ZhenJie</span><br><span class="line">* @Date: $date$</span><br><span class="line">* @Version: 1.0</span><br><span class="line">**&#x2F;</span><br></pre></td></tr></table></figure></li></ul><h1 id="5-Template-Text下方Define处点开全选"><a href="#5-Template-Text下方Define处点开全选" class="headerlink" title="5.Template Text下方Define处点开全选"></a>5.Template Text下方Define处点开全选</h1><h1 id="6-可以点击右侧Edit-Variables点击Expression选择这一项要显示的东西"><a href="#6-可以点击右侧Edit-Variables点击Expression选择这一项要显示的东西" class="headerlink" title="6.可以点击右侧Edit Variables点击Expression选择这一项要显示的东西"></a>6.可以点击右侧Edit Variables点击Expression选择这一项要显示的东西</h1><h1 id="7-最后点OK，最终的快捷键为-a-Abbreviation处设置的键-Tab，类注释一样设置"><a href="#7-最后点OK，最终的快捷键为-a-Abbreviation处设置的键-Tab，类注释一样设置" class="headerlink" title="7.最后点OK，最终的快捷键为/+a(Abbreviation处设置的键)+Tab，类注释一样设置"></a>7.最后点OK，最终的快捷键为/+a(Abbreviation处设置的键)+Tab，类注释一样设置</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> idea </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java_JDBC</title>
       <link href="2021/01/11/Java_JDBC/"/>
       <url>2021/01/11/Java_JDBC/</url>
@@ -1069,35 +1098,6 @@
         <tags>
             
             <tag> MySql </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Java_idea生成类和方法注释</title>
-      <link href="2021/01/11/Java-idea%E7%94%9F%E6%88%90%E7%B1%BB%E5%92%8C%E6%96%B9%E6%B3%95%E6%B3%A8%E9%87%8A/"/>
-      <url>2021/01/11/Java-idea%E7%94%9F%E6%88%90%E7%B1%BB%E5%92%8C%E6%96%B9%E6%B3%95%E6%B3%A8%E9%87%8A/</url>
-      
-        <content type="html"><![CDATA[<p>自定义Idea类和方法的内容和快捷键</p><a id="more"></a><p>只演示方法的，类的同样操作即可</p><h1 id="1-Ctrl-Alt-S打开Idea设置-找到Editor-gt-Live-Templates"><a href="#1-Ctrl-Alt-S打开Idea设置-找到Editor-gt-Live-Templates" class="headerlink" title="1.Ctrl+Alt+S打开Idea设置,找到Editor-&gt;Live Templates"></a>1.Ctrl+Alt+S打开Idea设置,找到Editor-&gt;Live Templates</h1><h1 id="2-点右上角加号先添加Template-Group-命名为UserDefine"><a href="#2-点右上角加号先添加Template-Group-命名为UserDefine" class="headerlink" title="2.点右上角加号先添加Template Group(命名为UserDefine)"></a>2.点右上角加号先添加Template Group(命名为UserDefine)</h1><h1 id="3-选中UserDefine再次点加号选Live-Template"><a href="#3-选中UserDefine再次点加号选Live-Template" class="headerlink" title="3.选中UserDefine再次点加号选Live Template"></a>3.选中UserDefine再次点加号选Live Template</h1><h1 id="4-Abbreviation处为快捷键-我设的a-Template-Text如下"><a href="#4-Abbreviation处为快捷键-我设的a-Template-Text如下" class="headerlink" title="4.Abbreviation处为快捷键(我设的a),Template Text如下"></a>4.Abbreviation处为快捷键(我设的a),Template Text如下</h1><ul><li><p>方法注释</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">**</span><br><span class="line">* @Description: $description$</span><br><span class="line">* @Param: $params$</span><br><span class="line">* @return: $returns$</span><br><span class="line">* @Author: 此处改为你自己的名字</span><br><span class="line">* @Date: $date$</span><br><span class="line">**&#x2F;</span><br></pre></td></tr></table></figure></li><li><p>类注释(弄好方法注释之后类的自然也会)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">**</span><br><span class="line">* @ClassName: $params$</span><br><span class="line">* @Description: $description$</span><br><span class="line">* @Author: Zhong ZhenJie</span><br><span class="line">* @Date: $date$</span><br><span class="line">* @Version: 1.0</span><br><span class="line">**&#x2F;</span><br></pre></td></tr></table></figure></li></ul><h1 id="5-Template-Text下方Define处点开全选"><a href="#5-Template-Text下方Define处点开全选" class="headerlink" title="5.Template Text下方Define处点开全选"></a>5.Template Text下方Define处点开全选</h1><h1 id="6-可以点击右侧Edit-Variables点击Expression选择这一项要显示的东西"><a href="#6-可以点击右侧Edit-Variables点击Expression选择这一项要显示的东西" class="headerlink" title="6.可以点击右侧Edit Variables点击Expression选择这一项要显示的东西"></a>6.可以点击右侧Edit Variables点击Expression选择这一项要显示的东西</h1><h1 id="7-最后点OK，最终的快捷键为-a-Abbreviation处设置的键-Tab，类注释一样设置"><a href="#7-最后点OK，最终的快捷键为-a-Abbreviation处设置的键-Tab，类注释一样设置" class="headerlink" title="7.最后点OK，最终的快捷键为/+a(Abbreviation处设置的键)+Tab，类注释一样设置"></a>7.最后点OK，最终的快捷键为/+a(Abbreviation处设置的键)+Tab，类注释一样设置</h1>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
-          
-          <category> tools </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> java </tag>
-            
-            <tag> idea </tag>
             
         </tags>
       
