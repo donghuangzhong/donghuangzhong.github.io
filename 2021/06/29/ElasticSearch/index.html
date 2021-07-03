@@ -1,0 +1,1895 @@
+<!DOCTYPE html>
+<html>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?9133634925670debc6eb2c4f7da10df1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>ElasticSearch | DHZ&#39;S BLOG</title>
+  
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+
+  
+    
+<link rel="stylesheet" href="/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>DongHuangZhong</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;博文
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/projects/"
+            
+            
+            id="projects">
+            <i class='fas fa-code-branch fa-fw'></i>&nbsp;项目
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/friends/"
+            
+              rel="nofollow"
+            
+            
+            id="friends">
+            <i class='fas fa-link fa-fw'></i>&nbsp;友链
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/about/"
+            
+              rel="nofollow"
+            
+            
+            id="about">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          DHZ'S BLOG
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-home fa-fw'></i>&nbsp;主页
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/categories/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="categories">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/tags/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="tags">
+									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/projects/"
+                
+                
+                id="projects">
+								<i class='fas fa-code-branch fa-fw'></i>&nbsp;开源项目
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/friends/"
+                
+                  rel="nofollow"
+                
+                
+                id="friends">
+								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/"
+                
+                  rel="nofollow"
+                
+                
+                id="https:xaoxuu.comwikimaterial-x">
+								<i class='fas fa-book fa-fw'></i>&nbsp;主题文档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about/"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2021/06/29/ElasticSearch/">
+        ElasticSearch
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://donghuangzhong.github.io" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>东皇钟</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2021-06-29</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/java/search/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>java&nbsp;/&nbsp;search</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item wordcount">
+      <a class='notlink'>
+        <i class="fas fa-keyboard" aria-hidden="true"></i>
+        <p>字数统计:</p>
+        <p>7.8k字</p>
+      </a>
+    </div>
+    <div class="new-meta-item readtime">
+      <a class='notlink'>
+        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+        <p>阅读时长≈</p>
+        <p>33分</p>
+      </a>
+    </div>
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <p>摘要</p>
+<a id="more"></a>
+
+<h2 id="ElasticSearch简介"><a href="#ElasticSearch简介" class="headerlink" title="ElasticSearch简介"></a>ElasticSearch简介</h2><h3 id="什么是ElasticSearch"><a href="#什么是ElasticSearch" class="headerlink" title="什么是ElasticSearch"></a>什么是ElasticSearch</h3><p>Elaticsearch，简称为es， es是一个开源的高扩展的分布式全文检索引擎，它可以近乎实时的存储、检索数据；本身扩展性很好，可以扩展到上百台服务器，处理PB级别的数据。es也使用Java开发并使用Lucene作为其核心来实现所有索引和搜索的功能，但是它的目的是通过简单的RESTful API来隐藏Lucene的复杂性，从而让全文搜索变得简单。</p>
+<h3 id="ElasticSearch的使用案例"><a href="#ElasticSearch的使用案例" class="headerlink" title="ElasticSearch的使用案例"></a>ElasticSearch的使用案例</h3><ul>
+<li>2013年初，GitHub抛弃了Solr，采取ElasticSearch 来做PB级的搜索。 “GitHub使用ElasticSearch搜索20TB的数据，包括13亿文件和1300亿行代码”</li>
+<li>维基百科：启动以elasticsearch为基础的核心搜索架构</li>
+<li>SoundCloud：“SoundCloud使用ElasticSearch为1.8亿用户提供即时而精准的音乐搜索服务”</li>
+<li>百度：百度目前广泛使用ElasticSearch作为文本数据分析，采集百度所有服务器上的各类指标数据及用户自定义数据，通过对各种数据进行多维分析展示，辅助定位分析实例异常或业务层面异常。目前覆盖百度内部20多个业务线（包括casio、云分析、网盟、预测、文库、直达号、钱包、风控等），单集群最大100台机器，200个ES节点，每天导入30TB+数据</li>
+<li>新浪使用ES 分析处理32亿条实时日志</li>
+<li>阿里使用ES 构建挖财自己的日志采集和分析体系</li>
+</ul>
+<h3 id="ElasticSearch对比Solr"><a href="#ElasticSearch对比Solr" class="headerlink" title="ElasticSearch对比Solr"></a>ElasticSearch对比Solr</h3><ul>
+<li>Solr 利用 Zookeeper 进行分布式管理，而 Elasticsearch 自身带有分布式协调管理功能;</li>
+<li>Solr 支持更多格式的数据，而 Elasticsearch 仅支持json文件格式；</li>
+<li>Solr 官方提供的功能更多，而 Elasticsearch 本身更注重于核心功能，高级功能多有第三方插件提供；</li>
+<li>Solr 在传统的搜索应用中表现好于 Elasticsearch，但在处理实时搜索应用时效率明显低于 Elasticsearch</li>
+</ul>
+<h2 id="ElasticSearch安装与启动"><a href="#ElasticSearch安装与启动" class="headerlink" title="ElasticSearch安装与启动"></a>ElasticSearch安装与启动</h2><p>注意：ElasticSearch是使用java开发的，且本版本的es需要的jdk版本要是1.8以上，所以安装ElasticSearch之前保证JDK1.8+安装完毕，并正确的配置好JDK环境变量，否则启动ElasticSearch失败。</p>
+<ol>
+<li><p>下载ES压缩包</p>
+<p>ElasticSearch分为Linux和Window版本，基于我们主要学习的是ElasticSearch的Java客户端的使用，所以我们课程中使用的是安装较为简便的Window版本，项目上线后，公司的运维人员会安装Linux版的ES供我们连接使用。</p>
+<p>ElasticSearch的官方地址： <a href="https://www.elastic.co/products/elasticsearch" target="_blank" rel="noopener">https://www.elastic.co/products/elasticsearch</a> 加压完即可用</p>
+<ul>
+<li>目录结构</li>
+</ul>
+<p><img src="/2021/06/29/ElasticSearch/image-20210629092712338.png" alt="image-20210629092712338"></p>
+</li>
+<li><p>修改一下跨域访问的配置</p>
+<p>修改elasticsearch配置文件：config/elasticsearch.yml，增加以下两句命令：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">http.cors.enabled: true</span><br><span class="line">http.cors.allow-origin: &quot;*&quot;</span><br><span class="line"># 特殊字符需要删除重新输入&#123;冒号，-，引号&#125;</span><br></pre></td></tr></table></figure>
+
+<p>此步为允许elasticsearch跨越访问，如果不安装后面的elasticsearch-head是可以不修改，直接启动。  </p>
+</li>
+<li><p>启动</p>
+<p><img src="/2021/06/29/ElasticSearch/image-20210629093033055.png" alt="image-20210629093033055"></p>
+<p><img src="/2021/06/29/ElasticSearch/image-20210629094047598.png" alt="image-20210629094047598"></p>
+<p>注意：9300是tcp通讯端口，集群间和TCPClient都执行该端口，9200是http协议的RESTful接口 。<br>通过浏览器访问ElasticSearch服务器，看到如下返回的json信息，代表服务启动成功：</p>
+<p><a href="http://localhost:9200/" target="_blank" rel="noopener">http://localhost:9200/</a></p>
+<p><img src="/2021/06/29/ElasticSearch/image-20210629094149085.png" alt="image-20210629094149085">  </p>
+</li>
+</ol>
+<h3 id="安装ES的图形化界面插件"><a href="#安装ES的图形化界面插件" class="headerlink" title="安装ES的图形化界面插件"></a>安装ES的图形化界面插件</h3><p>ElasticSearch不同于Solr自带图形化界面，我们可以通过安装ElasticSearch的head插件，完成图形化界面的效果，完成索引数据的查看。安装插件的方式有两种，在线安装和本地安装。本文档采用本地安装方式进行head插件的安装。elasticsearch-5-*以上版本安装head需要安装node和grunt</p>
+<ol>
+<li><p>下载head插件：<a href="https://github.com/mobz/elasticsearch-head" target="_blank" rel="noopener">https://github.com/mobz/elasticsearch-head</a>  </p>
+<p>将elasticsearch-head-master压缩包解压到任意目录，但是要和elasticsearch的安装目录区别开</p>
+</li>
+<li><p>安装nodejs，在nodejs中安装grunt</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g grunt-cli</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入elasticsearch-head-master目录启动head，在命令提示符下输入命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">grunt server &#x2F;&#x2F;启动命令</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开浏览器，输入 <a href="http://localhost:9100，看到如下页面：">http://localhost:9100，看到如下页面：</a></p>
+<p><img src="/2021/06/29/ElasticSearch/image-20210629095520349.png" alt="image-20210629095520349"></p>
+</li>
+</ol>
+<h2 id="第三章-ElasticSearch相关概念-术语"><a href="#第三章-ElasticSearch相关概念-术语" class="headerlink" title="第三章 ElasticSearch相关概念(术语)"></a>第三章 ElasticSearch相关概念(术语)</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>Elasticsearch是面向文档(document oriented)的，这意味着它可以存储整个对象或文档(document)。然而它不仅仅是存储，还会索引(index)每个文档的内容使之可以被搜索。在Elasticsearch中，你可以对文档（而非成行成列的数据）进行索引、搜索、排序、过滤。Elasticsearch比传统关系型数据库如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Relational DB -&gt; Databases -&gt; Tables -&gt; Rows -&gt; Columns</span><br><span class="line">Elasticsearch -&gt; Indices   -&gt; Types  -&gt; Documents -&gt; Fields</span><br></pre></td></tr></table></figure>
+
+<h3 id="Elasticsearch核心概念"><a href="#Elasticsearch核心概念" class="headerlink" title="Elasticsearch核心概念"></a><strong>Elasticsearch核心概念</strong></h3><h4 id="索引-index"><a href="#索引-index" class="headerlink" title="索引 index"></a>索引 index</h4><p>一个索引就是一个拥有几分相似特征的文档的集合。比如说，你可以有一个客户数据的索引，另一个产品目录的索引，还有一个订单数据的索引。一个索引由一个名字来标识（必须全部是小写字母的），并且当我们要对对应于这个索引中的文档进行索引、搜索、更新和删除的时候，都要使用到这个名字。在一个集群中，可以定义任意多的索引。</p>
+<h4 id="类型-type"><a href="#类型-type" class="headerlink" title="类型 type"></a>类型 type</h4><p>在一个索引中，你可以定义一种或多种类型。一个类型是你的索引的一个逻辑上的分类/分区，其语义完全由你来定。通常，会为具有一组共同字段的文档定义一个类型。比如说，我们假设你运营一个博客平台并且将你所有的数据存储到一个索引中。在这个索引中，你可以为用户数据定义一个类型，为博客数据定义另一个类型，当然，也可以为评论数据定义另一个类型。</p>
+<h4 id="字段Field"><a href="#字段Field" class="headerlink" title="字段Field"></a>字段Field</h4><p>相当于是数据表的字段，对文档数据根据不同属性进行的分类标识</p>
+<h4 id="映射-mapping"><a href="#映射-mapping" class="headerlink" title="映射 mapping"></a>映射 mapping</h4><p>mapping是处理数据的方式和规则方面做一些限制，如某个字段的数据类型、默认值、分析器、是否被索引等等，这些都是映射里面可以设置的，其它就是处理es里面数据的一些使用规则设置也叫做映射，按着最优规则处理数据对性能提高很大，因此才需要建立映射，并且需要思考如何建立映射才能对性能更好。</p>
+<h4 id="文档-document"><a href="#文档-document" class="headerlink" title="文档 document"></a>文档 document</h4><p>一个文档是一个可被索引的基础信息单元。比如，你可以拥有某一个客户的文档，某一个产品的一个文档，当然，也可以拥有某个订单的一个文档。文档以JSON（Javascript Object Notation）格式来表示，而JSON是一个到处存在的互联网数据交互格式。</p>
+<p>在一个index/type里面，你可以存储任意多的文档。注意，尽管一个文档，物理上存在于一个索引之中，文档必须被索引/赋予一个索引的type。</p>
+<h4 id="接近实时-NRT"><a href="#接近实时-NRT" class="headerlink" title="接近实时 NRT"></a>接近实时 NRT</h4><p>Elasticsearch是一个接近实时的搜索平台。这意味着，从索引一个文档直到这个文档能够被搜索到有一个轻微的延迟（通常是1秒以内）</p>
+<h4 id="集群-cluster"><a href="#集群-cluster" class="headerlink" title="集群 cluster"></a>集群 cluster</h4><p>一个集群就是由一个或多个节点组织在一起，它们共同持有整个的数据，并一起提供索引和搜索功能。一个集群由一个唯一的名字标识，这个名字默认就是“elasticsearch”。这个名字是重要的，因为一个节点只能通过指定某个集群的名字，来加入这个集群</p>
+<h4 id="节点-node"><a href="#节点-node" class="headerlink" title="节点 node"></a>节点 node</h4><p>一个节点是集群中的一个服务器，作为集群的一部分，它存储数据，参与集群的索引和搜索功能。和集群类似，一个节点也是由一个名字来标识的，默认情况下，这个名字是一个随机的漫威漫画角色的名字，这个名字会在启动的时候赋予节点。这个名字对于管理工作来说挺重要的，因为在这个管理过程中，你会去确定网络中的哪些服务器对应于Elasticsearch集群中的哪些节点。</p>
+<p>一个节点可以通过配置集群名称的方式来加入一个指定的集群。默认情况下，每个节点都会被安排加入到一个叫做“elasticsearch”的集群中，这意味着，如果你在你的网络中启动了若干个节点，并假定它们能够相互发现彼此，它们将会自动地形成并加入到一个叫做“elasticsearch”的集群中。</p>
+<p>在一个集群里，只要你想，可以拥有任意多个节点。而且，如果当前你的网络中没有运行任何Elasticsearch节点，这时启动一个节点，会默认创建并加入一个叫做“elasticsearch”的集群。</p>
+<h4 id="分片和复制-shards-amp-replicas"><a href="#分片和复制-shards-amp-replicas" class="headerlink" title="分片和复制 shards&amp;replicas"></a>分片和复制 shards&amp;replicas</h4><p>一个索引可以存储超出单个结点硬件限制的大量数据。比如，一个具有10亿文档的索引占据1TB的磁盘空间，而任一节点都没有这样大的磁盘空间；或者单个节点处理搜索请求，响应太慢。为了解决这个问题，Elasticsearch提供了将索引划分成多份的能力，这些份就叫做分片。当你创建一个索引的时候，你可以指定你想要的分片的数量。每个分片本身也是一个功能完善并且独立的“索引”，这个“索引”可以被放置到集群中的任何节点上。分片很重要，主要有两方面的原因：<br>1）允许你水平分割/扩展你的内容容量。<br>2）允许你在分片（潜在地，位于多个节点上）之上进行分布式的、并行的操作，进而提高性能/吞吐量。</p>
+<p>至于一个分片怎样分布，它的文档怎样聚合回搜索请求，是完全由Elasticsearch管理的，对于作为用户的你来说，这些都是透明的。</p>
+<p>在一个网络/云的环境里，失败随时都可能发生，在某个分片/节点不知怎么的就处于离线状态，或者由于任何原因消失了，这种情况下，有一个故障转移机制是非常有用并且是强烈推荐的。为此目的，Elasticsearch允许你创建分片的一份或多份拷贝，这些拷贝叫做复制分片，或者直接叫复制。</p>
+<p>复制之所以重要，有两个主要原因： 在分片/节点失败的情况下，提供了高可用性。因为这个原因，注意到复制分片从不与原/主要（original/primary）分片置于同一节点上是非常重要的。扩展你的搜索量/吞吐量，因为搜索可以在所有的复制上并行运行。总之，每个索引可以被分成多个分片。一个索引也可以被复制0次（意思是没有复制）或多次。一旦复制了，每个索引就有了主分片（作为复制源的原来的分片）和复制分片（主分片的拷贝）之别。分片和复制的数量可以在索引创建的时候指定。在索引创建之后，你可以在任何时候动态地改变复制的数量，但是你事后不能改变分片的数量。</p>
+<p>默认情况下，Elasticsearch中的每个索引被分片5个主分片和1个复制，这意味着，如果你的集群中至少有两个节点，你的索引将会有5个主分片和另外5个复制分片（1个完全拷贝），这样的话每个索引总共就有10个分片。</p>
+<h2 id="ElasticSearch的客户端操作"><a href="#ElasticSearch的客户端操作" class="headerlink" title="ElasticSearch的客户端操作"></a>ElasticSearch的客户端操作</h2><p>实际开发中，主要有三种方式可以作为elasticsearch服务的客户端：</p>
+<ul>
+<li>第一种，elasticsearch-head插件</li>
+<li>第二种，使用elasticsearch提供的Restful接口直接访问，配合postman</li>
+<li>第三种，使用elasticsearch提供的API进行访问</li>
+</ul>
+<h3 id="安装Postman工具"><a href="#安装Postman工具" class="headerlink" title="安装Postman工具"></a>安装Postman工具</h3><p>Postman官网：<a href="https://www.getpostman.com" target="_blank" rel="noopener">https://www.getpostman.com</a></p>
+<p>Postman中文版是postman这款强大网页调试工具的windows客户端，提供功能强大的Web API &amp; HTTP 请求调试。软件功能非常强大，界面简洁明晰、操作方便快捷，设计得很人性化。Postman中文版能够发送任何类型的HTTP 请求 (GET, HEAD, POST, PUT..)，且可以附带任何数量的参数。</p>
+<p><img src="/2021/06/29/ElasticSearch/image-20210629152204296.png" alt="image-20210629152204296"></p>
+<p><strong>双击即可以使用</strong></p>
+<h3 id="创建索引index和映射mapping"><a href="#创建索引index和映射mapping" class="headerlink" title="创建索引index和映射mapping"></a>创建索引index和映射mapping</h3><p><strong>创建一个索引blog1，其中有一个名为article的types，article下又有各种属性的字段</strong></p>
+<p>请求url：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PUT		localhost:9200/blog1</span><br></pre></td></tr></table></figure>
+
+<p>请求体：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"mappings"</span>: &#123;</span><br><span class="line">        <span class="attr">"article"</span>: &#123;</span><br><span class="line">            <span class="attr">"properties"</span>: &#123;</span><br><span class="line">                <span class="attr">"id"</span>: &#123;</span><br><span class="line">                	<span class="attr">"type"</span>: <span class="string">"long"</span>,</span><br><span class="line">                    <span class="attr">"store"</span>: <span class="literal">true</span>,</span><br><span class="line">                    <span class="attr">"index"</span>:<span class="string">"not_analyzed"</span></span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="attr">"title"</span>: &#123;</span><br><span class="line">                	<span class="attr">"type"</span>: <span class="string">"text"</span>,</span><br><span class="line">                    <span class="attr">"store"</span>: <span class="literal">true</span>,</span><br><span class="line">                    <span class="attr">"index"</span>:<span class="string">"analyzed"</span>,</span><br><span class="line">                    <span class="attr">"analyzer"</span>:<span class="string">"standard"</span></span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="attr">"content"</span>: &#123;</span><br><span class="line">                	<span class="attr">"type"</span>: <span class="string">"text"</span>,</span><br><span class="line">                    <span class="attr">"store"</span>: <span class="literal">true</span>,</span><br><span class="line">                    <span class="attr">"index"</span>:<span class="string">"analyzed"</span>,</span><br><span class="line">                    <span class="attr">"analyzer"</span>:<span class="string">"standard"</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>postman</li>
+</ul>
+<p><img src="/2021/06/29/ElasticSearch/image-20210629153858389.png" alt="image-20210629153858389"></p>
+<ul>
+<li>elasticsearch-head查看：  </li>
+</ul>
+<p><img src="/2021/06/29/ElasticSearch/image-20210629153933144.png" alt="image-20210629153933144"></p>
+<h3 id="创建索引后设置Mapping"><a href="#创建索引后设置Mapping" class="headerlink" title="创建索引后设置Mapping"></a>创建索引后设置Mapping</h3><p>创建索引时没有设置mapping信息(在postman中不设置PUT的请求body)，也可用postman设置，例如向已经存在的blog2索引中，添加名为hello的types，并设置其中字段的各种属性</p>
+<p>请求的url：(修改一般用post)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST	http:&#x2F;&#x2F;127.0.0.1:9200&#x2F;blog2&#x2F;hello&#x2F;_mapping</span><br></pre></td></tr></table></figure>
+
+<p>请求体：（已经没有mapping关键字，hello表示的是同有一个名为hello的types）</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"hello"</span>: &#123;</span><br><span class="line">            <span class="attr">"properties"</span>: &#123;</span><br><span class="line">                <span class="attr">"id"</span>:&#123;</span><br><span class="line">                	<span class="attr">"type"</span>:<span class="string">"long"</span>,</span><br><span class="line">                	<span class="attr">"store"</span>:<span class="literal">true</span></span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="attr">"title"</span>:&#123;</span><br><span class="line">                	<span class="attr">"type"</span>:<span class="string">"text"</span>,</span><br><span class="line">                	<span class="attr">"store"</span>:<span class="literal">true</span>,</span><br><span class="line">                	<span class="attr">"index"</span>:<span class="literal">true</span>,</span><br><span class="line">                	<span class="attr">"analyzer"</span>:<span class="string">"standard"</span></span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="attr">"content"</span>:&#123;</span><br><span class="line">                	<span class="attr">"type"</span>:<span class="string">"text"</span>,</span><br><span class="line">                	<span class="attr">"store"</span>:<span class="literal">true</span>,</span><br><span class="line">                	<span class="attr">"index"</span>:<span class="literal">true</span>,</span><br><span class="line">                	<span class="attr">"analyzer"</span>:<span class="string">"standard"</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除索引index"><a href="#删除索引index" class="headerlink" title="删除索引index"></a>删除索引index</h3><p>请求url：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE		localhost:9200/blog1</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建文档document"><a href="#创建文档document" class="headerlink" title="创建文档document"></a>创建文档document</h3><p>请求url：localhost:9200/索引名/type/真的id</p>
+<p>真ID如果不加的话，会自动生成一个UUID</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST	localhost:9200/blog1/article/1</span><br></pre></td></tr></table></figure>
+
+<p>请求体：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">"id"</span>:<span class="number">1</span>,</span><br><span class="line">	<span class="attr">"title"</span>:<span class="string">"ElasticSearch是一个基于Lucene的搜索服务器"</span>,</span><br><span class="line">	<span class="attr">"content"</span>:<span class="string">"它提供了一个分布式多用户能力的全文搜索引擎，基于RESTful web接口。Elasticsearch是用Java开发的，并作为Apache许可条款下的开放源码发布，是当前流行的企业级搜索引擎。设计用于云计算中，能够达到实时搜索，稳定，可靠，快速，安装使用方便。"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2021/06/29/ElasticSearch/image-20210629160447590.png" alt="image-20210629160447590"></p>
+<h3 id="修改文档document"><a href="#修改文档document" class="headerlink" title="修改文档document"></a>修改文档document</h3><p>请求url：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST	localhost:9200/blog1/article/1</span><br></pre></td></tr></table></figure>
+
+<p>请求体：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">"id"</span>:<span class="number">1</span>,</span><br><span class="line">	<span class="attr">"title"</span>:<span class="string">"【修改】ElasticSearch是一个基于Lucene的搜索服务器"</span>,</span><br><span class="line">	<span class="attr">"content"</span>:<span class="string">"【修改】它提供了一个分布式多用户能力的全文搜索引擎，基于RESTful web接口。Elasticsearch是用Java开发的，并作为Apache许可条款下的开放源码发布，是当前流行的企业级搜索引擎。设计用于云计算中，能够达到实时搜索，稳定，可靠，快速，安装使用方便。"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除文档document"><a href="#删除文档document" class="headerlink" title="删除文档document"></a>删除文档document</h3><p>请求url：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE	localhost:9200/blog1/article/1</span><br></pre></td></tr></table></figure>
+
+<h3 id="查询文档-根据id查询"><a href="#查询文档-根据id查询" class="headerlink" title="查询文档-根据id查询"></a>查询文档-根据id查询</h3><p>请求url：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET	localhost:9200/blog1/article/1</span><br></pre></td></tr></table></figure>
+
+<h3 id="查询文档-querystring查询"><a href="#查询文档-querystring查询" class="headerlink" title="查询文档-querystring查询"></a>查询文档-querystring查询</h3><p>请求url：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST	localhost:9200/blog1/article/_search</span><br></pre></td></tr></table></figure>
+
+<p>请求体：query_string是查询方式；default_field是查询的字段名；query是查询的“句子”(多个关键词的集合)。</p>
+<p>查询的时候会先对query进行分词，然后再进行匹配。注意和关键词查询的区别。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"query"</span>: &#123;</span><br><span class="line">        <span class="attr">"query_string"</span>: &#123;</span><br><span class="line">            <span class="attr">"default_field"</span>: <span class="string">"title"</span>,</span><br><span class="line">            <span class="attr">"query"</span>: <span class="string">"搜NM"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查询文档-term查询"><a href="#查询文档-term查询" class="headerlink" title="查询文档-term查询"></a>查询文档-term查询</h3><p>请求url：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST	localhost:9200/blog1/article/_search</span><br></pre></td></tr></table></figure>
+
+<p>请求体：其中query和term都是固定的，title：要查询的字段名；搜：是查询的关键字</p>
+<p>关键字和分词器有关，其中标准分词器是一个汉字作为一个词，所以查询两个字的词语是查不出来的</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"query"</span>: &#123;</span><br><span class="line">        <span class="attr">"term"</span>: &#123;</span><br><span class="line">            <span class="attr">"title"</span>: <span class="string">"搜"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="IK-分词器和ElasticSearch集成使用"><a href="#IK-分词器和ElasticSearch集成使用" class="headerlink" title="IK 分词器和ElasticSearch集成使用"></a>IK 分词器和ElasticSearch集成使用</h2><p>默认的standard分词器对汉语不友好，一个汉字一个词。因此我们可以使用IK分词器</p>
+<p>standard对中文分词的测试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET		http:&#x2F;&#x2F;127.0.0.1:9200&#x2F;_analyze?analyzer&#x3D;standard&amp;pretty&#x3D;true&amp;text&#x3D;我是程序员</span><br></pre></td></tr></table></figure>
+
+<p>结果：一个汉字一个词。{“我”，“是”，“程”，“序”，“员”}</p>
+<h3 id="ElasticSearch集成IK分词器"><a href="#ElasticSearch集成IK分词器" class="headerlink" title="ElasticSearch集成IK分词器"></a>ElasticSearch集成IK分词器</h3><ol>
+<li><p>下载地址：<a href="https://github.com/medcl/elasticsearch-analysis-ik/releases" target="_blank" rel="noopener">https://github.com/medcl/elasticsearch-analysis-ik/releases</a>  </p>
+<p><img src="/2021/06/29/ElasticSearch/image-20210629164234930.png" alt="image-20210629164234930"></p>
+</li>
+<li><p>将此文件解压至elasticsearch-5.6.8\plugins  目录下</p>
+</li>
+<li><p>重启ElasticSearch</p>
+</li>
+<li><p>测试</p>
+<ul>
+<li>最小切分ik_smart</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET		http:&#x2F;&#x2F;127.0.0.1:9200&#x2F;_analyze?analyzer&#x3D;ik_smart&amp;pretty&#x3D;true&amp;text&#x3D;我是程序员</span><br></pre></td></tr></table></figure>
+
+<p>分词效果：{“我”，“是”，“程序员”}</p>
+<ul>
+<li>最大切分ik_max_word</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET		http:&#x2F;&#x2F;127.0.0.1:9200&#x2F;_analyze?analyzer&#x3D;ik_max_word&amp;pretty&#x3D;true&amp;text&#x3D;我是程序员</span><br></pre></td></tr></table></figure>
+
+<p>分词效果：{“我”，“是”，“程序员”，“程序”，“员”}</p>
+</li>
+<li><p>创建索引时可以直接指定IK分词方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;mappings&quot;: &#123;</span><br><span class="line">        &quot;article&quot;: &#123;</span><br><span class="line">            &quot;properties&quot;: &#123;</span><br><span class="line">                &quot;id&quot;: &#123;</span><br><span class="line">                	&quot;type&quot;: &quot;long&quot;,</span><br><span class="line">                    &quot;store&quot;: true,</span><br><span class="line">                    &quot;index&quot;:&quot;not_analyzed&quot;</span><br><span class="line">                &#125;,</span><br><span class="line">                &quot;title&quot;: &#123;</span><br><span class="line">                	&quot;type&quot;: &quot;text&quot;,</span><br><span class="line">                    &quot;store&quot;: true,</span><br><span class="line">                    &quot;index&quot;:&quot;analyzed&quot;,</span><br><span class="line">                    &quot;analyzer&quot;:&quot;ik_max_word&quot;</span><br><span class="line">                &#125;,</span><br><span class="line">                &quot;content&quot;: &#123;</span><br><span class="line">                	&quot;type&quot;: &quot;text&quot;,</span><br><span class="line">                    &quot;store&quot;: true,</span><br><span class="line">                    &quot;index&quot;:&quot;analyzed&quot;,</span><br><span class="line">                    &quot;analyzer&quot;:&quot;ik_smart&quot;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="ElasticSearch集群"><a href="#ElasticSearch集群" class="headerlink" title="ElasticSearch集群"></a>ElasticSearch集群</h2><ul>
+<li><p>ES集群是一个 P2P类型(使用 gossip 协议)的分布式系统</p>
+</li>
+<li><p>节点Node：一个节点就是集群中一个单独的服务器</p>
+</li>
+<li><p>分片：一个ES可以被分为若干个片，默认5个片。这5个片分散分布在不同的节点上</p>
+</li>
+<li><p>复制：就是备份的意思，默认有一个备份，每个分片都有一个复制的片，并且复制的片和原本的片不在一个服务器上</p>
+</li>
+</ul>
+<h3 id="集群的搭建-单机多实例"><a href="#集群的搭建-单机多实例" class="headerlink" title="集群的搭建(单机多实例)"></a>集群的搭建(单机多实例)</h3><p>多个实例的文件夹下的data目录必须为空(也可以直接删除data目录)，不然数据会不一致</p>
+<ol>
+<li><p>删除data目录后复制3份文件夹</p>
+<p><img src="/2021/06/29/ElasticSearch/image-20210629173753900.png" alt="image-20210629173753900"></p>
+</li>
+<li><p>修改每个节点文件夹下config\elasticsearch.yml配置文件  </p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#集群名称，保证唯一</span></span><br><span class="line"><span class="attr">cluster.name:</span> <span class="string">es-cluster</span></span><br><span class="line"><span class="comment">#节点名称，必须不一样</span></span><br><span class="line"><span class="attr">node.name:</span> <span class="string">node-1</span>   <span class="comment"># 1、2、3节点对应1、2、3</span></span><br><span class="line"><span class="comment">#必须为本机的ip地址</span></span><br><span class="line"><span class="attr">network.host:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line"><span class="comment">#服务端口号，在同一机器下必须不一样</span></span><br><span class="line"><span class="attr">http.port:</span> <span class="number">9201</span> <span class="comment"># 1、2、3节点对应1、2、3</span></span><br><span class="line"><span class="comment">#集群间通信端口号，在同一机器下必须不一样</span></span><br><span class="line"><span class="attr">transport.tcp.port:</span> <span class="number">9301</span> <span class="comment"># 1、2、3节点对应1、2、3</span></span><br><span class="line"><span class="comment">#设置集群自动发现机器ip集合</span></span><br><span class="line"><span class="attr">discovery.zen.ping.unicast.hosts:</span> <span class="string">["127.0.0.1:9301","127.0.0.1:9302","127.0.0.1:9303"]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动三个节点，用三个节点中的任意节点都可访问集群</p>
+</li>
+</ol>
+<ul>
+<li><p>使用和使用单个节点的操作一样</p>
+</li>
+<li><p>在ES磁盘分配分片控制策略中，为了保护数据节点的安全，ES对磁盘进行了限额，并会定时检查各节点数据目录的使用情况：磁盘占用超过85%，新索引分片就不会分配到这个节点上了。</p>
+</li>
+</ul>
+<h2 id="ElasticSearch原始java客户端"><a href="#ElasticSearch原始java客户端" class="headerlink" title="ElasticSearch原始java客户端"></a>ElasticSearch原始java客户端</h2><h3 id="创建工程引入坐标"><a href="#创建工程引入坐标" class="headerlink" title="创建工程引入坐标"></a>创建工程引入坐标</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.elasticsearch<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>elasticsearch<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.6.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.elasticsearch.client<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>transport<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.6.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.logging.log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j-to-slf4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>slf4j-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.7.24<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>slf4j-simple<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.7.21<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="创建索引-不指定mapping"><a href="#创建索引-不指定mapping" class="headerlink" title="创建索引(不指定mapping)"></a>创建索引(不指定mapping)</h3><ul>
+<li>这里可以创建的时候指定mapping</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">client.admin().indices().prepareCreate(&quot;java-elasticsearch&quot;).addMapping().get();</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">createIndice</span><span class="params">()</span> <span class="keyword">throws</span> UnknownHostException </span>&#123;</span><br><span class="line">    <span class="comment">// 1、创建一个Settings对象，相当于是一个配置信息。主要配置集群的名称。</span></span><br><span class="line">    Settings settings = Settings.builder().put(<span class="string">"cluster.name"</span>, <span class="string">"elasticsearch"</span>).build();</span><br><span class="line">    <span class="comment">// 2、创建一个客户端Client对象</span></span><br><span class="line">    TransportClient client = <span class="keyword">new</span> PreBuiltTransportClient(settings)</span><br><span class="line">            <span class="comment">//可以添加多个addTransportAddress，保证集群的高可用</span></span><br><span class="line">            .addTransportAddress(<span class="keyword">new</span> InetSocketTransportAddress(InetAddress.getByName(<span class="string">"127.0.0.1"</span>), <span class="number">9300</span>));</span><br><span class="line">    <span class="comment">// 3、使用client对象创建一个索引库</span></span><br><span class="line">    <span class="comment">//get表示执行的意思</span></span><br><span class="line">    client.admin().indices().prepareCreate(<span class="string">"java-elasticsearch"</span>).get();</span><br><span class="line">    <span class="comment">// 4、关闭client对象</span></span><br><span class="line">    client.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="对已经创建索引添加mapping"><a href="#对已经创建索引添加mapping" class="headerlink" title="对已经创建索引添加mapping"></a>对已经创建索引添加mapping</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addMapping</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">       <span class="comment">// 1、创建一个Settings对象，相当于是一个配置信息。主要配置集群的名称。</span></span><br><span class="line">       Settings settings = Settings.builder().put(<span class="string">"cluster.name"</span>, <span class="string">"elasticsearch"</span>).build();</span><br><span class="line">       <span class="comment">// 2、创建一个客户端Client对象</span></span><br><span class="line">       TransportClient client = <span class="keyword">new</span> PreBuiltTransportClient(settings)</span><br><span class="line">               <span class="comment">//可以添加多个addTransportAddress，保证集群的高可用</span></span><br><span class="line">               .addTransportAddress(<span class="keyword">new</span> InetSocketTransportAddress(InetAddress.getByName(<span class="string">"127.0.0.1"</span>), <span class="number">9300</span>));</span><br><span class="line">       <span class="comment">// 3、创建一个json格式的字符串，或者使用XContentBuilder</span></span><br><span class="line">       XContentBuilder builder = XContentFactory.jsonBuilder()</span><br><span class="line">               .startObject()</span><br><span class="line">                   .startObject(<span class="string">"article"</span>)</span><br><span class="line">                       .startObject(<span class="string">"properties"</span>)</span><br><span class="line">                           .startObject(<span class="string">"id"</span>)</span><br><span class="line">                               .field(<span class="string">"type"</span>, <span class="string">"integer"</span>)</span><br><span class="line">                               .field(<span class="string">"store"</span>, <span class="string">"yes"</span>)</span><br><span class="line">                           .endObject()</span><br><span class="line">                           .startObject(<span class="string">"title"</span>)</span><br><span class="line">                               .field(<span class="string">"type"</span>, <span class="string">"string"</span>)</span><br><span class="line">                               .field(<span class="string">"store"</span>, <span class="string">"yes"</span>)</span><br><span class="line">                               .field(<span class="string">"analyzer"</span>, <span class="string">"ik_smart"</span>)</span><br><span class="line">                           .endObject()</span><br><span class="line">                           .startObject(<span class="string">"content"</span>)</span><br><span class="line">                               .field(<span class="string">"type"</span>, <span class="string">"string"</span>)</span><br><span class="line">                               .field(<span class="string">"store"</span>, <span class="string">"yes"</span>)</span><br><span class="line">                               .field(<span class="string">"analyzer"</span>, <span class="string">"ik_smart"</span>)</span><br><span class="line">                           .endObject()</span><br><span class="line">                       .endObject()</span><br><span class="line">                   .endObject()</span><br><span class="line">               .endObject();</span><br><span class="line">       <span class="comment">//4、使用Client对象把mapping添加到索引库中</span></span><br><span class="line">       client.admin().indices()</span><br><span class="line">               <span class="comment">//设置要添加到哪个索引的名称</span></span><br><span class="line">               .preparePutMapping(<span class="string">"java-elasticsearch"</span>)</span><br><span class="line">               <span class="comment">//设置type的名称</span></span><br><span class="line">               .setType(<span class="string">"article"</span>)</span><br><span class="line">               <span class="comment">//mapping信息可以是String也可以是XContentBuilder</span></span><br><span class="line">               .setSource(builder)</span><br><span class="line">               .get();</span><br><span class="line">       <span class="comment">// 5、关闭client对象</span></span><br><span class="line">       client.close();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建文档document-1"><a href="#创建文档document-1" class="headerlink" title="创建文档document"></a>创建文档document</h3><h4 id="通过XContentBuilder"><a href="#通过XContentBuilder" class="headerlink" title="通过XContentBuilder"></a>通过XContentBuilder</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addDocument</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">    <span class="comment">// 1、创建一个Settings对象，相当于是一个配置信息。主要配置集群的名称。</span></span><br><span class="line">    Settings settings = Settings.builder().put(<span class="string">"cluster.name"</span>, <span class="string">"elasticsearch"</span>).build();</span><br><span class="line">    <span class="comment">// 2、创建一个客户端Client对象</span></span><br><span class="line">    TransportClient client = <span class="keyword">new</span> PreBuiltTransportClient(settings)</span><br><span class="line">            <span class="comment">//可以添加多个addTransportAddress，保证集群的高可用</span></span><br><span class="line">            .addTransportAddress(<span class="keyword">new</span> InetSocketTransportAddress(InetAddress.getByName(<span class="string">"127.0.0.1"</span>), <span class="number">9300</span>));</span><br><span class="line">    <span class="comment">// 3、创建一个文档</span></span><br><span class="line">    XContentBuilder builder = XContentFactory.jsonBuilder()</span><br><span class="line">            .startObject()</span><br><span class="line">            .field(<span class="string">"id"</span>, <span class="number">1</span>)</span><br><span class="line">            .field(<span class="string">"title"</span>, <span class="string">"ElasticSearch是一个基于Lucene的搜索服务器"</span>)</span><br><span class="line">            .field(<span class="string">"content"</span>,</span><br><span class="line">                    <span class="string">"它提供了一个分布式多用户能力的全文搜索引擎，基于RESTful web接口。Elasticsearch是用Java开发的，并作为Apache许可条款下的开放源码发布，是当前流行的企业级搜索引擎。设计用于云计算中，能够达到实时搜索，稳定，可靠，快速，安装使用方便。"</span>)</span><br><span class="line">            .endObject();</span><br><span class="line">    <span class="comment">//4、添加文档到索引库</span></span><br><span class="line">    <span class="comment">//参数：index,type,id</span></span><br><span class="line">    client.prepareIndex(<span class="string">"java-elasticsearch"</span>,<span class="string">"article"</span>,<span class="string">"1"</span>)</span><br><span class="line">            .setSource(builder).get();</span><br><span class="line">    <span class="comment">// 5、关闭client对象</span></span><br><span class="line">    client.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>也可以通过空参的prepareIndex一阵set</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">client.prepareIndex().setId().setType().setId().setSource()</span><br></pre></td></tr></table></figure>
+
+<h4 id="通过jackson"><a href="#通过jackson" class="headerlink" title="通过jackson"></a>通过jackson</h4><ul>
+<li><strong>ObjectMapper().writeValueAsString(article)要求实体类必须有get方法</strong></li>
+</ul>
+<ol>
+<li><p>导入jackson坐标</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jackson-databind<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.11.4<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jackson-annotations<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.11.4<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>以json格式添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 3、创建json的String</span><br><span class="line">  Article article &#x3D; new Article(&quot;2&quot;, &quot;title2&quot;, &quot;content2&quot;);</span><br><span class="line">  String arcticleStr &#x3D; new ObjectMapper().writeValueAsString(article);</span><br><span class="line">   </span><br><span class="line">  &#x2F;&#x2F;4、添加文档到索引库</span><br><span class="line">  &#x2F;&#x2F;参数：index,type,id</span><br><span class="line">  client.prepareIndex(&quot;java-elasticsearch&quot;,&quot;article&quot;,&quot;1&quot;)</span><br><span class="line">          .setSource(arcticleStr, XContentType.JSON).get();</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="根据ID查询"><a href="#根据ID查询" class="headerlink" title="根据ID查询"></a>根据ID查询</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">searchById</span><span class="params">()</span> <span class="keyword">throws</span> UnknownHostException </span>&#123;</span><br><span class="line">        <span class="comment">//1、创建一个Settings对象，相当于是一个配置信息。主要配置集群的名称。</span></span><br><span class="line">        Settings settings = Settings.builder().put(<span class="string">"cluster.name"</span>, <span class="string">"elasticsearch"</span>).build();</span><br><span class="line">        <span class="comment">//2、创建一个客户端Client对象</span></span><br><span class="line">        TransportClient client = <span class="keyword">new</span> PreBuiltTransportClient(settings)</span><br><span class="line">                <span class="comment">//可以添加多个addTransportAddress，保证集群的高可用</span></span><br><span class="line">                .addTransportAddress(<span class="keyword">new</span> InetSocketTransportAddress(InetAddress.getByName(<span class="string">"127.0.0.1"</span>), <span class="number">9300</span>));</span><br><span class="line">        <span class="comment">//3、创建一个查询对象</span></span><br><span class="line">        QueryBuilder queryBuilder = QueryBuilders.idsQuery().addIds(<span class="string">"1"</span>, <span class="string">"2"</span>);</span><br><span class="line">        <span class="comment">//4、执行查询。表明在哪个indice和type</span></span><br><span class="line">        SearchResponse searchResponse = client.prepareSearch(<span class="string">"java-elasticsearch"</span>).setTypes(<span class="string">"article"</span>)</span><br><span class="line">                .setQuery(queryBuilder).get();</span><br><span class="line">        <span class="comment">//5、遍历结果</span></span><br><span class="line">        <span class="comment">//获取命中的结果</span></span><br><span class="line">        SearchHits hits = searchResponse.getHits();</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"查询结果的总记录数:"</span>+hits.getTotalHits());</span><br><span class="line">        <span class="comment">//获取查询结果数组</span></span><br><span class="line">        SearchHit[] hitsArray = hits.getHits();</span><br><span class="line">        <span class="keyword">for</span> (SearchHit hitItem : hitsArray) &#123;</span><br><span class="line">            <span class="comment">//以json格式打印命中的一条数据</span></span><br><span class="line">            System.out.println(<span class="string">"命中数据的json格式："</span>+hitItem.getSourceAsString());</span><br><span class="line">            <span class="comment">//以map形式获取命中的一条数据</span></span><br><span class="line">            Map&lt;String, Object&gt; hitMap = hitItem.getSource();</span><br><span class="line">            System.out.println(hitMap.get(<span class="string">"id"</span>));</span><br><span class="line">            System.out.println(hitMap.get(<span class="string">"title"</span>));</span><br><span class="line">            System.out.println(hitMap.get(<span class="string">"content"</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//6、关闭client对象</span></span><br><span class="line">        client.close();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="根据term查询"><a href="#根据term查询" class="headerlink" title="根据term查询"></a>根据term查询</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//参数：【查询的字段，查询的关键词】</span></span><br><span class="line">        QueryBuilder queryBuilder = QueryBuilders.termQuery(<span class="string">"content"</span>,<span class="string">"编程"</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="queryString查询"><a href="#queryString查询" class="headerlink" title="queryString查询"></a>queryString查询</h3><p>先分词后匹配，是或者的关系</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;参数：【搜索的字符串，默认的搜索字段】不指定默认的搜索字段的话会在所有字段中查询</span><br><span class="line">QueryBuilder queryBuilder &#x3D; QueryBuilders.queryStringQuery(&quot;让编程改变世界&quot;).defaultField(&quot;content&quot;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h3><p>在cilent查询时指定，默认的查询数量是10条</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;4、执行查询。from:起始行号。size：一次查多少数据</span><br><span class="line">SearchResponse searchResponse &#x3D; client.prepareSearch(&quot;java-elasticsearch&quot;).setTypes(&quot;article&quot;)</span><br><span class="line">                .setQuery(queryBuilder)</span><br><span class="line">                .setFrom(0).setSize(5).get();</span><br></pre></td></tr></table></figure>
+
+<h3 id="高亮显示"><a href="#高亮显示" class="headerlink" title="高亮显示"></a>高亮显示</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">searchByQueryStringWithHighLight</span><span class="params">()</span> <span class="keyword">throws</span> UnknownHostException </span>&#123;</span><br><span class="line">    <span class="comment">//1、创建一个Settings对象，相当于是一个配置信息。主要配置集群的名称。</span></span><br><span class="line">    Settings settings = Settings.builder().put(<span class="string">"cluster.name"</span>, <span class="string">"elasticsearch"</span>).build();</span><br><span class="line">    <span class="comment">//2、创建一个客户端Client对象</span></span><br><span class="line">    TransportClient client = <span class="keyword">new</span> PreBuiltTransportClient(settings)</span><br><span class="line">            <span class="comment">//可以添加多个addTransportAddress，保证集群的高可用</span></span><br><span class="line">            .addTransportAddress(<span class="keyword">new</span> InetSocketTransportAddress(InetAddress.getByName(<span class="string">"127.0.0.1"</span>), <span class="number">9300</span>));</span><br><span class="line">    <span class="comment">//3、创建一个查询对象</span></span><br><span class="line">    <span class="comment">//参数：【搜索的字符串，默认的搜索字段】不指定默认的搜索字段的话会在所有字段中查询</span></span><br><span class="line">    QueryBuilder queryBuilder = QueryBuilders.queryStringQuery(<span class="string">"让编程改变世界"</span>).defaultField(<span class="string">"content"</span>);</span><br><span class="line">    <span class="comment">//4、设置高亮</span></span><br><span class="line">    HighlightBuilder hiBuilder=<span class="keyword">new</span> HighlightBuilder();</span><br><span class="line">    hiBuilder.field(<span class="string">"content"</span>);</span><br><span class="line">    hiBuilder.preTags(<span class="string">"&lt;em&gt;"</span>);</span><br><span class="line">    hiBuilder.postTags(<span class="string">"&lt;/em&gt;"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//5、执行查询。设置高亮</span></span><br><span class="line">    SearchResponse searchResponse = client.prepareSearch(<span class="string">"java-elasticsearch"</span>).setTypes(<span class="string">"article"</span>)</span><br><span class="line">            .setQuery(queryBuilder).highlighter(hiBuilder)</span><br><span class="line">            .get();</span><br><span class="line">    <span class="comment">//6、遍历结果</span></span><br><span class="line">    <span class="comment">//获取命中的结果</span></span><br><span class="line">    SearchHits hits = searchResponse.getHits();</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">"查询结果的总记录数:"</span>+hits.getTotalHits());</span><br><span class="line">    <span class="comment">//获取查询结果数组</span></span><br><span class="line">    SearchHit[] hitsArray = hits.getHits();</span><br><span class="line">    <span class="keyword">for</span> (SearchHit hitItem : hitsArray) &#123;</span><br><span class="line">        <span class="comment">//以json格式打印命中的一条数据</span></span><br><span class="line">        System.out.println(<span class="string">"命中数据的json格式："</span>+hitItem.getSourceAsString());</span><br><span class="line">        <span class="comment">//以map形式获取命中的一条数据</span></span><br><span class="line">        Map&lt;String, Object&gt; hitMap = hitItem.getSource();</span><br><span class="line">        System.out.println(hitMap.get(<span class="string">"id"</span>));</span><br><span class="line">        System.out.println(hitMap.get(<span class="string">"title"</span>));</span><br><span class="line">        System.out.println(hitMap.get(<span class="string">"content"</span>));</span><br><span class="line">        <span class="comment">//获取高亮的结果</span></span><br><span class="line">        System.out.println(<span class="string">"-------------------高亮显示-------------"</span>);</span><br><span class="line">        System.out.println(hitItem.getHighlightFields());</span><br><span class="line">        System.out.println(<span class="string">"name:"</span>+hitItem.getHighlightFields().get(<span class="string">"content"</span>).getName());</span><br><span class="line">        Text[] texts = hitItem.getHighlightFields().get(<span class="string">"content"</span>).getFragments();</span><br><span class="line">        <span class="keyword">for</span> (Text text : texts) &#123;</span><br><span class="line">            System.out.println(text);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//7、关闭client对象</span></span><br><span class="line">    client.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="spring整合elasticsearch"><a href="#spring整合elasticsearch" class="headerlink" title="spring整合elasticsearch"></a>spring整合elasticsearch</h2><ol>
+<li><p>创建maven工程</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.elasticsearch<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>elasticsearch<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.6.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.elasticsearch.client<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>transport<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.6.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.data<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-data-elasticsearch<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.0.5.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.13.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.13.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.13.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.18.18<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编写配置文件applicationContext.xml</p>
+<ul>
+<li>Autowired的bean也需要id</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:context</span>=<span class="string">"http://www.springframework.org/schema/context"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:elasticsearch</span>=<span class="string">"http://www.springframework.org/schema/data/elasticsearch"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">"</span></span></span><br><span class="line"><span class="tag"><span class="string">       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">       http://www.springframework.org/schema/data/elasticsearch http://www.springframework.org/schema/data/elasticsearch/spring-elasticsearch.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--配置包扫描继承关系、接口自动代理、加入spring--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">elasticsearch:repositories</span> <span class="attr">base-package</span>=<span class="string">"com.dhz.es.repositories"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--配置es集群的连接--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">elasticsearch:transport-client</span> <span class="attr">id</span>=<span class="string">"cilent"</span> <span class="attr">cluster-nodes</span>=<span class="string">"127.0.0.1:9301,127.0.0.1:9302"</span>  <span class="attr">cluster-name</span>=<span class="string">"es-cluster"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--配置ElasticsearchTemplate--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"elasticsearchTemplate"</span> <span class="attr">class</span>=<span class="string">"org.springframework.data.elasticsearch.core.ElasticsearchTemplate"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">"client"</span> <span class="attr">ref</span>=<span class="string">"cilent"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建与document对应的实体类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@Document(indexName &#x3D; &quot;spring_es&quot;,type &#x3D; &quot;article&quot;)</span><br><span class="line">表明此类和document一一对应，indexName：索引名，type：类型名</span><br><span class="line"></span><br><span class="line">@Id 文档主键 唯一标识</span><br><span class="line"></span><br><span class="line">@Field(type &#x3D; FieldType.String,store &#x3D; true,analyzer &#x3D; &quot;ik_smart&quot;)</span><br><span class="line">每个文档的字段配置（类型、是否存储、分词器 ）</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Document</span>(indexName = <span class="string">"spring_es"</span>,type = <span class="string">"article"</span>)</span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Article</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="meta">@Field</span>(type = FieldType.Long,store = <span class="keyword">true</span>)</span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line">    <span class="meta">@Field</span>(type = FieldType.String,store = <span class="keyword">true</span>,analyzer = <span class="string">"ik_smart"</span>)</span><br><span class="line">    <span class="keyword">private</span> String title;</span><br><span class="line">    <span class="meta">@Field</span>(type = FieldType.String,store = <span class="keyword">true</span>,analyzer = <span class="string">"ik_smart"</span>)</span><br><span class="line">    <span class="keyword">private</span> String content;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编写ArticleRepository接口、继承ElasticsearchRepository</p>
+<p>泛型：1：实体类。2：实体主键的类型</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Repository</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ArticleRepository</span> <span class="keyword">extends</span> <span class="title">ElasticsearchRepository</span>&lt;<span class="title">Article</span>, <span class="title">Long</span>&gt; </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith</span>(SpringJUnit4ClassRunner<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">@<span class="title">ContextConfiguration</span>(<span class="title">locations</span> </span>= <span class="string">"classpath:applicationContext.xml"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ESTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    ElasticsearchTemplate elasticsearchTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">createIndiceWithMapping</span><span class="params">()</span></span>&#123;</span><br><span class="line">        elasticsearchTemplate.createIndex(Article<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<h3 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">elasticsearchTemplate.createIndex(Article<span class="class">.<span class="keyword">class</span>)</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建document"><a href="#创建document" class="headerlink" title="创建document"></a>创建document</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line">ArticleRepository articleRepository;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addDocument</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Article article = <span class="keyword">new</span> Article();</span><br><span class="line">    article.setId(<span class="number">1L</span>);</span><br><span class="line">    article.setTitle(<span class="string">"article_title"</span>);</span><br><span class="line">    article.setContent(<span class="string">"article_content"</span>);</span><br><span class="line">    articleRepository.save(article);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除document"><a href="#删除document" class="headerlink" title="删除document"></a>删除document</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line">ArticleRepository articleRepository;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteDocument</span><span class="params">()</span></span>&#123;</span><br><span class="line">    articleRepository.deleteById(<span class="number">1L</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改document"><a href="#修改document" class="headerlink" title="修改document"></a>修改document</h3><p>修改也是用save，save方法如果没有数据则添加。如果有数据则先删除后添加</p>
+<h3 id="查询document"><a href="#查询document" class="headerlink" title="查询document"></a>查询document</h3><ul>
+<li><pre><code class="java">articleRepository.findById(<span class="number">1L</span>);
+&lt;!--￼<span class="number">46</span>--&gt;
+</code></pre>
+</li>
+</ul>
+<h4 id="根据自带的查询规则"><a href="#根据自带的查询规则" class="headerlink" title="根据自带的查询规则"></a>根据自带的查询规则</h4><ul>
+<li><p>需要在ArticleRepository中声明(不需要实现)</p>
+</li>
+<li><p>自带分词效果，默认的是分词后全匹配的and关系</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">articleRepository.findByContent(&quot;填写内容和题目&quot;).forEach(a-&gt; System.out.println(a));</span><br><span class="line">&#x2F;&#x2F;先分词：【“填写”、“内容”、“和”，“题目”】</span><br><span class="line">&#x2F;&#x2F;必须全部含有分析结果才算匹配成功</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数名中有几个字段，函数的参数中就有几个字段，并且一一对应，通过逻辑词实现逻辑</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> &#x2F;&#x2F;查询Content中含有测试，并且Title含有测试的记录</span><br><span class="line">articleRepository.findByContentAndTitle(&quot;测试&quot;, &quot;测试&quot;);</span><br><span class="line"> &#x2F;&#x2F;查询Content中含有测试，或者Title含有测试的记录</span><br><span class="line">articleRepository.findByContentOrTitle(&quot;测试&quot;, &quot;测试&quot;);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>命名规则</th>
+<th>解释</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>and</td>
+<td>findByField1AndField2</td>
+<td>根据Field1和Field2获得数据</td>
+<td>findByTitleAndContent</td>
+</tr>
+<tr>
+<td>or</td>
+<td>findByField1OrField2</td>
+<td>根据Field1或Field2获得数据</td>
+<td>findByTitleOrContent</td>
+</tr>
+<tr>
+<td>is</td>
+<td>findByField</td>
+<td>根据Field获得数据</td>
+<td>findByTitle</td>
+</tr>
+<tr>
+<td>not</td>
+<td>findByFieldNot</td>
+<td>根据Field获得补集数据</td>
+<td>findByTitleNot</td>
+</tr>
+<tr>
+<td>between</td>
+<td>findByFieldBetween</td>
+<td>获得指定范围的数据</td>
+<td>findByPriceBetween</td>
+</tr>
+<tr>
+<td>lessThanEqual</td>
+<td>findByFieldLessThan</td>
+<td>获得小于等于指定值的数据</td>
+<td>findByPriceLessThan</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>设置分页(默认从第0页开始)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Repository</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ArticleRepository</span> <span class="keyword">extends</span> <span class="title">ElasticsearchRepository</span>&lt;<span class="title">Article</span>,<span class="title">Long</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function">List&lt;Article&gt; <span class="title">findByContentOrTitle</span><span class="params">(String content, String title, Pageable p)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">page</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Pageable pageable= PageRequest.of(<span class="number">0</span>,<span class="number">15</span>);</span><br><span class="line">    List&lt;Article&gt; articles = articleRepository.findByContentOrTitle(<span class="string">"内容"</span>, <span class="string">"题目"</span>, pageable);</span><br><span class="line">    articles.forEach(a-&gt; System.out.println(a));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="使用Elasticsearch的原生查询对象进行查询"><a href="#使用Elasticsearch的原生查询对象进行查询" class="headerlink" title="使用Elasticsearch的原生查询对象进行查询"></a>使用Elasticsearch的原生查询对象进行查询</h4><p>elasticsearchTemplate.queryForList(query, Article.class);</p>
+<p>参数：【SearchQuery对象，查询结果的类】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void yaunsheng()&#123;</span><br><span class="line">    NativeSearchQuery query &#x3D; new NativeSearchQueryBuilder()</span><br><span class="line">        .withQuery(QueryBuilders.queryStringQuery(&quot;填写内容和题目&quot;).defaultField(&quot;content&quot;))</span><br><span class="line">        .withPageable(PageRequest.of(0, 15))</span><br><span class="line">        .build();</span><br><span class="line">    List&lt;Article&gt; articles &#x3D; elasticsearchTemplate.queryForList(query, Article.class);</span><br><span class="line">    System.out.println(articles);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="spring-boot整合elasticsearch"><a href="#spring-boot整合elasticsearch" class="headerlink" title="spring boot整合elasticsearch"></a>spring boot整合elasticsearch</h2><ol>
+<li><p>创建maven项目</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.4.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line">   </span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-elasticsearch<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成启动类和application.yml</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">data:</span></span><br><span class="line">    <span class="attr">elasticsearch:</span></span><br><span class="line">      <span class="attr">cluster-name:</span> <span class="string">es-cluster</span></span><br><span class="line">      <span class="attr">cluster-nodes:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span><span class="string">:9301,127.0.0.1:9302</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建entity，repository，运行测试即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">@RunWith(SpringRunner.class)</span><br><span class="line">@SpringBootTest</span><br><span class="line">public class ESTest &#123;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    ElasticsearchTemplate elasticsearchTemplate;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    ArticleRepository articleRepository;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    public void findAll()&#123;</span><br><span class="line">        Iterable&lt;Article&gt; articles &#x3D; articleRepository.findAll();</span><br><span class="line">        articles.forEach(a-&gt; System.out.println(a));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    public void addDocuemnt()&#123;</span><br><span class="line">        Article article &#x3D; new Article();</span><br><span class="line">        article.setId(1L);</span><br><span class="line">        article.setTitle(&quot;title1&quot;);</span><br><span class="line">        article.setContent(&quot;content1&quot;);</span><br><span class="line">        articleRepository.save(article);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    public void addIndice()&#123;</span><br><span class="line">        elasticsearchTemplate.createIndex(Article.class);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+      </div>
+      
+      
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-03T08:32:32+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>updated at Jul 3, 2021</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://donghuangzhong.github.io/2021/06/29/ElasticSearch/&title=ElasticSearch | DHZ'S BLOG&summary=摘要"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://donghuangzhong.github.io/2021/06/29/ElasticSearch/&title=ElasticSearch | DHZ'S BLOG&summary=摘要"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://donghuangzhong.github.io/2021/06/29/ElasticSearch/&title=ElasticSearch | DHZ'S BLOG&summary=摘要"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/2021/06/24/springCloud/" rel="prev" title="springCloud">
+                                  
+                                      springCloud
+                                  
+                              </a>
+                          </h4>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Comments</h4>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'ElasticSearch',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+      
+        
+          
+          
+            
+              <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png'/>
+      </div>
+    
+    
+      <div class='text'>
+        
+        
+        
+          <!-- <p><span id="jinrishici-sentence">DHZ'S BLOG</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script> -->
+          <p><span id="jinrishici-sentence">
+                <div id="binft" style="text-align: center;"></div>
+                <script>
+                  var binft = function (r) {
+                    function t() {
+                      return b[Math.floor(Math.random() * b.length)]
+                    }  
+                    function e() {
+                      return String.fromCharCode(94 * Math.random() + 33)
+                    }
+                    function n(r) {
+                      for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {
+                        var l = document.createElement("span");
+                        l.textContent = e(), l.style.color = t(), n.appendChild(l)
+                      }
+                      return n
+                    }
+                    function i() {
+                      var t = o[c.skillI];
+                      c.step ? c.step-- : (c.step = g, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = "backward", c.delay = a) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)
+                    }
+                    var l = "",
+                    o = ["青青陵上柏，磊磊涧中石。", "人生天地间，忽如远行客。","斗酒相娱乐，聊厚不为薄。", "驱车策驽马，游戏宛与洛。","洛中何郁郁，冠带自相索。","长衢罗夹巷，王侯多第宅。","两宫遥相望，双阙百余尺。","极宴娱心意，戚戚何所迫？"].map(function (r) {
+                    return r + ""
+                    }),
+                    a = 2,
+                    g = 1,
+                    s = 5,
+                    d = 75,
+                    b = ["rgb(110,64,170)", "rgb(150,61,179)", "rgb(191,60,175)", "rgb(228,65,157)", "rgb(254,75,131)", "rgb(255,94,99)", "rgb(255,120,71)", "rgb(251,150,51)", "rgb(226,183,47)", "rgb(198,214,60)", "rgb(175,240,91)", "rgb(127,246,88)", "rgb(82,246,103)", "rgb(48,239,130)", "rgb(29,223,163)", "rgb(26,199,194)", "rgb(35,171,216)", "rgb(54,140,225)", "rgb(76,110,219)", "rgb(96,84,200)"],
+                    c = {
+                      text: "",
+                      prefixP: -s,
+                      skillI: 0,
+                      skillP: 0,
+                      direction: "forward",
+                      delay: a,
+                      step: g
+                    };
+                    i()
+                    };
+                    binft(document.getElementById('binft'));
+                </script>
+            </span></p>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=936035285&site=qq&menu=yes"
+              class="social fab fa-qq flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:me@xaoxuu.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/donghuangzhong"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=539552053"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ElasticSearch简介"><span class="toc-text">ElasticSearch简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是ElasticSearch"><span class="toc-text">什么是ElasticSearch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ElasticSearch的使用案例"><span class="toc-text">ElasticSearch的使用案例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ElasticSearch对比Solr"><span class="toc-text">ElasticSearch对比Solr</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ElasticSearch安装与启动"><span class="toc-text">ElasticSearch安装与启动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装ES的图形化界面插件"><span class="toc-text">安装ES的图形化界面插件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三章-ElasticSearch相关概念-术语"><span class="toc-text">第三章 ElasticSearch相关概念(术语)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Elasticsearch核心概念"><span class="toc-text">Elasticsearch核心概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#索引-index"><span class="toc-text">索引 index</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#类型-type"><span class="toc-text">类型 type</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字段Field"><span class="toc-text">字段Field</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#映射-mapping"><span class="toc-text">映射 mapping</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文档-document"><span class="toc-text">文档 document</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#接近实时-NRT"><span class="toc-text">接近实时 NRT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#集群-cluster"><span class="toc-text">集群 cluster</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#节点-node"><span class="toc-text">节点 node</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分片和复制-shards-amp-replicas"><span class="toc-text">分片和复制 shards&amp;replicas</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ElasticSearch的客户端操作"><span class="toc-text">ElasticSearch的客户端操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Postman工具"><span class="toc-text">安装Postman工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建索引index和映射mapping"><span class="toc-text">创建索引index和映射mapping</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建索引后设置Mapping"><span class="toc-text">创建索引后设置Mapping</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除索引index"><span class="toc-text">删除索引index</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建文档document"><span class="toc-text">创建文档document</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改文档document"><span class="toc-text">修改文档document</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除文档document"><span class="toc-text">删除文档document</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查询文档-根据id查询"><span class="toc-text">查询文档-根据id查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查询文档-querystring查询"><span class="toc-text">查询文档-querystring查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查询文档-term查询"><span class="toc-text">查询文档-term查询</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IK-分词器和ElasticSearch集成使用"><span class="toc-text">IK 分词器和ElasticSearch集成使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ElasticSearch集成IK分词器"><span class="toc-text">ElasticSearch集成IK分词器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ElasticSearch集群"><span class="toc-text">ElasticSearch集群</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#集群的搭建-单机多实例"><span class="toc-text">集群的搭建(单机多实例)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ElasticSearch原始java客户端"><span class="toc-text">ElasticSearch原始java客户端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建工程引入坐标"><span class="toc-text">创建工程引入坐标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建索引-不指定mapping"><span class="toc-text">创建索引(不指定mapping)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对已经创建索引添加mapping"><span class="toc-text">对已经创建索引添加mapping</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建文档document-1"><span class="toc-text">创建文档document</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#通过XContentBuilder"><span class="toc-text">通过XContentBuilder</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#通过jackson"><span class="toc-text">通过jackson</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#根据ID查询"><span class="toc-text">根据ID查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#根据term查询"><span class="toc-text">根据term查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#queryString查询"><span class="toc-text">queryString查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分页查询"><span class="toc-text">分页查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#高亮显示"><span class="toc-text">高亮显示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#spring整合elasticsearch"><span class="toc-text">spring整合elasticsearch</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建索引"><span class="toc-text">创建索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建document"><span class="toc-text">创建document</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除document"><span class="toc-text">删除document</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改document"><span class="toc-text">修改document</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查询document"><span class="toc-text">查询document</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#根据自带的查询规则"><span class="toc-text">根据自带的查询规则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用Elasticsearch的原生查询对象进行查询"><span class="toc-text">使用Elasticsearch的原生查询对象进行查询</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#spring-boot整合elasticsearch"><span class="toc-text">spring boot整合elasticsearch</span></a></li></ol>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget grid'>
+  
+<header class='pure'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="grid navgation">
+      
+        <li><a class="flat-box" title="/" href="/"
+          
+          
+          id="home">
+          
+            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
+          
+          近期文章
+        </a></li>
+      
+        <li><a class="flat-box" title="/archives/" href="/archives/"
+          
+            rel="nofollow"
+          
+          
+          id="archives">
+          
+            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
+          
+          文章归档
+        </a></li>
+      
+        <li><a class="flat-box" title="/projects/" href="/projects/"
+          
+          
+          id="projects">
+          
+            <i class="fas fa-code-branch fa-fw" aria-hidden="true"></i>
+          
+          开源项目
+        </a></li>
+      
+        <li><a class="flat-box" title="/friends/" href="/friends/"
+          
+            rel="nofollow"
+          
+          
+          id="friends">
+          
+            <i class="fas fa-link fa-fw" aria-hidden="true"></i>
+          
+          我的友链
+        </a></li>
+      
+        <li><a class="flat-box" title="https://xaoxuu.com/wiki/material-x/" href="https://xaoxuu.com/wiki/material-x/"
+          
+            rel="nofollow"
+          
+          
+          id="https:xaoxuu.comwikimaterial-x">
+          
+            <i class="fas fa-book fa-fw" aria-hidden="true"></i>
+          
+          主题文档
+        </a></li>
+      
+        <li><a class="flat-box" title="/about/" href="/about/"
+          
+            rel="nofollow"
+          
+          
+          id="about">
+          
+            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
+          
+          关于小站
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Categories</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/ACM/" href="/categories/ACM/"><div class='name'>ACM</div><div class='badge'>(83)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/BFS/" href="/categories/ACM/BFS/"><div class='name'>BFS</div><div class='badge'>(9)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/Bellman/" href="/categories/ACM/Bellman/"><div class='name'>Bellman</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/DFS/" href="/categories/ACM/DFS/"><div class='name'>DFS</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/DP/" href="/categories/ACM/DP/"><div class='name'>DP</div><div class='badge'>(17)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/Floyd/" href="/categories/ACM/Floyd/"><div class='name'>Floyd</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/Huffuman/" href="/categories/ACM/Huffuman/"><div class='name'>Huffuman</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/RMQ/" href="/categories/ACM/RMQ/"><div class='name'>RMQ</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/SPFA/" href="/categories/ACM/SPFA/"><div class='name'>SPFA</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/category2/" href="/categories/ACM/category2/"><div class='name'>category2</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/dfs/" href="/categories/ACM/dfs/"><div class='name'>dfs</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/dij/" href="/categories/ACM/dij/"><div class='name'>dij</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E4%BA%8C%E8%BF%9B%E5%88%B6/" href="/categories/ACM/%E4%BA%8C%E8%BF%9B%E5%88%B6/"><div class='name'>二进制</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/" href="/categories/ACM/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/"><div class='name'>双向链表</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E5%9B%9E%E6%96%87/" href="/categories/ACM/%E5%9B%9E%E6%96%87/"><div class='name'>回文</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E5%9B%A0%E6%95%B0/" href="/categories/ACM/%E5%9B%A0%E6%95%B0/"><div class='name'>因数</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E5%A4%A7%E6%95%B0/" href="/categories/ACM/%E5%A4%A7%E6%95%B0/"><div class='name'>大数</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E5%A4%A7%E6%95%B0%E5%8A%A8%E6%80%81%E5%91%A8%E6%9C%9F/" href="/categories/ACM/%E5%A4%A7%E6%95%B0%E5%8A%A8%E6%80%81%E5%91%A8%E6%9C%9F/"><div class='name'>大数动态周期</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E5%AD%97%E5%85%B8/" href="/categories/ACM/%E5%AD%97%E5%85%B8/"><div class='name'>字典</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E5%AD%97%E7%AC%A6%E4%B8%B2/" href="/categories/ACM/%E5%AD%97%E7%AC%A6%E4%B8%B2/"><div class='name'>字符串</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E5%BC%80%E5%85%B3/" href="/categories/ACM/%E5%BC%80%E5%85%B3/"><div class='name'>开关</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E5%BF%AB%E9%80%9F%E5%B9%82/" href="/categories/ACM/%E5%BF%AB%E9%80%9F%E5%B9%82/"><div class='name'>快速幂</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E6%98%93%E9%94%99%E9%A2%98/" href="/categories/ACM/%E6%98%93%E9%94%99%E9%A2%98/"><div class='name'>易错题</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E6%B0%B4%E9%A2%98/" href="/categories/ACM/%E6%B0%B4%E9%A2%98/"><div class='name'>水题</div><div class='badge'>(10)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E7%9B%B2%E9%9B%86%E5%90%88%E6%B1%82%E4%BA%A4/" href="/categories/ACM/%E7%9B%B2%E9%9B%86%E5%90%88%E6%B1%82%E4%BA%A4/"><div class='name'>盲集合求交</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95/" href="/categories/ACM/%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95/"><div class='name'>矩阵乘法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E7%BA%BF%E6%AE%B5%E4%BA%A4/" href="/categories/ACM/%E7%BA%BF%E6%AE%B5%E4%BA%A4/"><div class='name'>线段交</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" href="/categories/ACM/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/"><div class='name'>解题报告</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E8%B4%A8%E5%9B%A0%E6%95%B0/" href="/categories/ACM/%E8%B4%A8%E5%9B%A0%E6%95%B0/"><div class='name'>质因数</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E8%B4%AA%E5%BF%83/" href="/categories/ACM/%E8%B4%AA%E5%BF%83/"><div class='name'>贪心</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E8%BF%9B%E5%88%B6/" href="/categories/ACM/%E8%BF%9B%E5%88%B6/"><div class='name'>进制</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E9%80%92%E5%BD%92/" href="/categories/ACM/%E9%80%92%E5%BD%92/"><div class='name'>递归</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E9%80%BB%E8%BE%91/" href="/categories/ACM/%E9%80%BB%E8%BE%91/"><div class='name'>逻辑</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/ACM/%E9%AB%98%E7%BA%A7dfs/" href="/categories/ACM/%E9%AB%98%E7%BA%A7dfs/"><div class='name'>高级dfs</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Dubbo/" href="/categories/Dubbo/"><div class='name'>Dubbo</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Hexo/" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/TersorFlow/" href="/categories/TersorFlow/"><div class='name'>TersorFlow</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/VM/" href="/categories/VM/"><div class='name'>VM</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/blog/" href="/categories/blog/"><div class='name'>blog</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/category1/" href="/categories/category1/"><div class='name'>category1</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/category1/category2/" href="/categories/category1/category2/"><div class='name'>category2</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/hexo/" href="/categories/hexo/"><div class='name'>hexo</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/java/" href="/categories/java/"><div class='name'>java</div><div class='badge'>(27)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/java/RabbitMQ/" href="/categories/java/RabbitMQ/"><div class='name'>RabbitMQ</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/java/SQL/" href="/categories/java/SQL/"><div class='name'>SQL</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/java/idea/" href="/categories/java/idea/"><div class='name'>idea</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/java/maven/" href="/categories/java/maven/"><div class='name'>maven</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/java/search/" href="/categories/java/search/"><div class='name'>search</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/java/spring/" href="/categories/java/spring/"><div class='name'>spring</div><div class='badge'>(9)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/java/springCloud/" href="/categories/java/springCloud/"><div class='name'>springCloud</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/java/tools/" href="/categories/java/tools/"><div class='name'>tools</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/java/web%E7%9B%B8%E5%85%B3/" href="/categories/java/web%E7%9B%B8%E5%85%B3/"><div class='name'>web相关</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/java/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" href="/categories/java/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"><div class='name'>配置文件</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/js/" href="/categories/js/"><div class='name'>js</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/js/%E5%B8%B8%E7%94%A8js/" href="/categories/js/%E5%B8%B8%E7%94%A8js/"><div class='name'>常用js</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/linux/" href="/categories/linux/"><div class='name'>linux</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/python/" href="/categories/python/"><div class='name'>python</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/python/%E7%88%AC%E8%99%AB/" href="/categories/python/%E7%88%AC%E8%99%AB/"><div class='name'>爬虫</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/sublime/" href="/categories/sublime/"><div class='name'>sublime</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/sublime/js/" href="/categories/sublime/js/"><div class='name'>js</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/tools/" href="/categories/tools/"><div class='name'>tools</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/tools/C/" href="/categories/tools/C/"><div class='name'>C++</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"><div class='name'>个人博客</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"><div class='name'>博客搭建</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E5%89%8D%E7%AB%AF/" href="/categories/%E5%89%8D%E7%AB%AF/"><div class='name'>前端</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E5%B7%A5%E5%85%B7/" href="/categories/%E5%B7%A5%E5%85%B7/"><div class='name'>工具</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"><div class='name'>深度学习</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" href="/categories/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"><div class='name'>目标检测</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/"><div class='name'>计算机图形学</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/%E5%A4%9A%E8%BE%B9%E5%BD%A2%E5%A1%AB%E5%85%85/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/%E5%A4%9A%E8%BE%B9%E5%BD%A2%E5%A1%AB%E5%85%85/"><div class='name'>多边形填充</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/tags/01%E5%8F%AF%E4%B8%8D%E6%BB%A1%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">01可不满背包</a> <a href="/tags/AlexNet/" style="font-size: 14px; color: #999">AlexNet</a> <a href="/tags/BFS/" style="font-size: 14px; color: #999">BFS</a> <a href="/tags/C-%E6%96%87%E4%BB%B6%E4%BB%A3%E6%9B%BF%E6%89%8B%E5%B7%A5%E8%BE%93%E5%85%A5/" style="font-size: 14px; color: #999">C++文件代替手工输入</a> <a href="/tags/DFS/" style="font-size: 14px; color: #999">DFS</a> <a href="/tags/Dilworth%E5%AE%9A%E7%90%86/" style="font-size: 14px; color: #999">Dilworth定理</a> <a href="/tags/EL-JSTL/" style="font-size: 14px; color: #999">EL&JSTL</a> <a href="/tags/EOF/" style="font-size: 14px; color: #999">EOF</a> <a href="/tags/GeForce940MX/" style="font-size: 14px; color: #999">GeForce940MX</a> <a href="/tags/JDBC/" style="font-size: 14px; color: #999">JDBC</a> <a href="/tags/Java/" style="font-size: 14px; color: #999">Java</a> <a href="/tags/MFC/" style="font-size: 14px; color: #999">MFC</a> <a href="/tags/MySql/" style="font-size: 14px; color: #999">MySql</a> <a href="/tags/Mybatis/" style="font-size: 16.5px; color: #888">Mybatis</a> <a href="/tags/Properties/" style="font-size: 14px; color: #999">Properties</a> <a href="/tags/RPC/" style="font-size: 14px; color: #999">RPC</a> <a href="/tags/ST/" style="font-size: 14px; color: #999">ST</a> <a href="/tags/STL/" style="font-size: 14px; color: #999">STL</a> <a href="/tags/SpringTemplate/" style="font-size: 14px; color: #999">SpringTemplate</a> <a href="/tags/VM/" style="font-size: 14px; color: #999">VM</a> <a href="/tags/W/" style="font-size: 14px; color: #999">W</a> <a href="/tags/WSL/" style="font-size: 14px; color: #999">WSL</a> <a href="/tags/keras/" style="font-size: 14px; color: #999">_keras</a> <a href="/tags/cookie/" style="font-size: 14px; color: #999">cookie</a> <a href="/tags/github-pages/" style="font-size: 14px; color: #999">github_pages</a> <a href="/tags/hexo/" style="font-size: 16.5px; color: #888">hexo</a> <a href="/tags/idea/" style="font-size: 16.5px; color: #888">idea</a> <a href="/tags/java/" style="font-size: 19px; color: #777">java</a> <a href="/tags/jdbctemplate/" style="font-size: 14px; color: #999">jdbctemplate</a> <a href="/tags/js/" style="font-size: 16.5px; color: #888">js</a> <a href="/tags/jupyter/" style="font-size: 14px; color: #999">jupyter</a> <a href="/tags/map/" style="font-size: 16.5px; color: #888">map</a> <a href="/tags/maven/" style="font-size: 14px; color: #999">maven</a> <a href="/tags/mybatis/" style="font-size: 14px; color: #999">mybatis</a> <a href="/tags/numpy/" style="font-size: 14px; color: #999">numpy</a> <a href="/tags/n%E7%BB%B4%E4%BA%A4/" style="font-size: 14px; color: #999">n维交</a> <a href="/tags/pandas/" style="font-size: 14px; color: #999">pandas</a> <a href="/tags/pyplot/" style="font-size: 14px; color: #999">pyplot</a> <a href="/tags/redis/" style="font-size: 14px; color: #999">redis</a> <a href="/tags/response/" style="font-size: 14px; color: #999">response</a> <a href="/tags/session/" style="font-size: 14px; color: #999">session</a> <a href="/tags/spring/" style="font-size: 21.5px; color: #666">spring</a> <a href="/tags/spring-web/" style="font-size: 14px; color: #999">spring+web</a> <a href="/tags/spring-boot/" style="font-size: 14px; color: #999">spring_boot</a> <a href="/tags/springmvc/" style="font-size: 14px; color: #999">springmvc</a> <a href="/tags/ssm/" style="font-size: 14px; color: #999">ssm</a> <a href="/tags/sublime/" style="font-size: 14px; color: #999">sublime</a> <a href="/tags/tag1/" style="font-size: 24px; color: #555">tag1</a> <a href="/tags/tag2/" style="font-size: 24px; color: #555">tag2</a> <a href="/tags/vector/" style="font-size: 14px; color: #999">vector</a> <a href="/tags/vue/" style="font-size: 14px; color: #999">vue</a> <a href="/tags/wallpapers/" style="font-size: 14px; color: #999">wallpapers</a> <a href="/tags/web/" style="font-size: 14px; color: #999">web</a> <a href="/tags/%E4%B8%A4%E4%B8%AA%E6%9C%80%E5%B0%8F%E5%80%BC/" style="font-size: 14px; color: #999">两个最小值</a> <a href="/tags/%E4%B8%A4%E6%AC%A1BFS/" style="font-size: 14px; color: #999">两次BFS</a> <a href="/tags/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/" style="font-size: 14px; color: #999">中序遍历</a> <a href="/tags/%E4%B8%B4%E7%95%8C%E6%9C%80%E4%BC%98/" style="font-size: 14px; color: #999">临界最优</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE-%E5%A4%A7%E5%B0%8F%E4%BA%8E/" style="font-size: 16.5px; color: #888">二分查找(大小于)</a> <a href="/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">二进制优化</a> <a href="/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E5%8D%81%E8%BF%9B%E5%88%B6/" style="font-size: 14px; color: #999">二进制表示十进制</a> <a href="/tags/%E4%BB%A3%E6%95%B0%E5%BC%8F%E6%9C%80%E5%A4%A7%E5%8C%96%E9%83%A8%E5%88%86%E6%BA%A2%E5%87%BA/" style="font-size: 14px; color: #999">代数式最大化部分溢出</a> <a href="/tags/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/" style="font-size: 14px; color: #999">优先队列</a> <a href="/tags/%E5%80%92%E6%B0%B4/" style="font-size: 14px; color: #999">倒水</a> <a href="/tags/%E5%85%94%E5%AD%90%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">兔子问题</a> <a href="/tags/%E5%85%AB%E7%9A%87%E5%90%8E%E7%AE%80%E5%8C%96%E7%89%88/" style="font-size: 14px; color: #999">八皇后简化版</a> <a href="/tags/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">八皇后问题</a> <a href="/tags/%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6/" style="font-size: 14px; color: #999">共享文件</a> <a href="/tags/%E5%87%BD%E6%95%B0%E6%95%B0%E7%BB%84%E5%BD%A2%E5%8F%82/" style="font-size: 14px; color: #999">函数数组形参</a> <a href="/tags/%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF/" style="font-size: 14px; color: #999">函数模板</a> <a href="/tags/%E5%88%86%E8%A7%A3%E8%B4%A8%E5%9B%A0%E6%95%B0/" style="font-size: 14px; color: #999">分解质因数</a> <a href="/tags/%E5%88%A4%E6%96%AD%E6%9D%A1%E4%BB%B6%E7%9A%84%E5%85%88%E5%90%8E/" style="font-size: 14px; color: #999">判断条件的先后</a> <a href="/tags/%E5%8A%A8%E6%80%81%E4%BA%8C%E8%BF%9B%E5%88%B6/" style="font-size: 14px; color: #999">动态二进制</a> <a href="/tags/%E5%8A%A8%E6%80%81%E5%91%A8%E6%9C%9F/" style="font-size: 14px; color: #999">动态周期</a> <a href="/tags/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/" style="font-size: 14px; color: #999">双向链表</a> <a href="/tags/%E5%90%8C%E4%BD%99%E5%AE%9A%E7%90%86/" style="font-size: 14px; color: #999">同余定理</a> <a href="/tags/%E5%9B%9E%E5%BD%A2%E5%8F%96%E6%95%B0/" style="font-size: 14px; color: #999">回形取数</a> <a href="/tags/%E5%9B%9E%E6%BA%AF/" style="font-size: 14px; color: #999">回溯</a> <a href="/tags/%E5%9B%BE%E7%89%87/" style="font-size: 14px; color: #999">图片</a> <a href="/tags/%E5%9B%BE%E7%9A%84%E8%BF%9E%E9%80%9A%E5%8C%BA%E5%9F%9F/" style="font-size: 14px; color: #999">图的连通区域</a> <a href="/tags/%E5%A3%81%E7%BA%B8/" style="font-size: 14px; color: #999">壁纸</a> <a href="/tags/%E5%A4%9A%E5%85%A5%E5%8F%A3BFS/" style="font-size: 14px; color: #999">多入口BFS</a> <a href="/tags/%E5%A4%9A%E6%95%B0%E7%BB%84DP/" style="font-size: 14px; color: #999">多数组DP</a> <a href="/tags/%E5%A4%A7%E6%95%B0/" style="font-size: 14px; color: #999">大数</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E5%8A%A0%E6%B3%95/" style="font-size: 14px; color: #999">大数加法</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E9%98%B6%E4%B9%98/" style="font-size: 14px; color: #999">大数阶乘</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E9%99%B7%E9%98%B1/" style="font-size: 16.5px; color: #888">大数陷阱</a> <a href="/tags/%E5%A6%99%E7%94%A8%E4%B8%8B%E6%A0%87%E5%92%8C/" style="font-size: 14px; color: #999">妙用下标和</a> <a href="/tags/%E5%A6%99%E7%94%A8%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84/" style="font-size: 16.5px; color: #888">妙用标志数组</a> <a href="/tags/%E5%AD%97%E5%85%B8/" style="font-size: 16.5px; color: #888">字典</a> <a href="/tags/%E5%AD%97%E6%AF%8D/" style="font-size: 14px; color: #999">字母</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">字符串数组</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83/" style="font-size: 14px; color: #999">字符串比较</a> <a href="/tags/%E5%B1%8F%E8%94%BD%E7%BB%86%E8%8A%82/" style="font-size: 14px; color: #999">屏蔽细节</a> <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">微服务</a> <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" style="font-size: 14px; color: #999">拓扑排序</a> <a href="/tags/%E6%8C%89%E5%BA%8F%E5%88%97%E7%B4%AF%E9%99%A4/" style="font-size: 14px; color: #999">按序列累除</a> <a href="/tags/%E6%8E%92%E5%90%8D/" style="font-size: 14px; color: #999">排名</a> <a href="/tags/%E6%91%84%E6%B0%8F%E5%8D%8E%E6%B0%8F%E6%B8%A9%E5%BA%A6%E8%BD%AC%E6%8D%A2/" style="font-size: 14px; color: #999">摄氏华氏温度转换</a> <a href="/tags/%E6%95%B0%E5%A1%94/" style="font-size: 14px; color: #999">数塔</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/" style="font-size: 14px; color: #999">数据库连接池</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E8%A7%84%E6%A8%A1/" style="font-size: 14px; color: #999">数据规模</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 14px; color: #999">数论</a> <a href="/tags/%E6%95%B4%E9%99%A42/" style="font-size: 14px; color: #999">整除2</a> <a href="/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91/" style="font-size: 14px; color: #999">斐波那契</a> <a href="/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%8F%96%E4%BD%99%E7%89%88/" style="font-size: 14px; color: #999">斐波那契取余版</a> <a href="/tags/%E6%97%A0%E9%99%90%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">无限背包</a> <a href="/tags/%E6%98%93%E9%94%99%E9%A2%98/" style="font-size: 14px; color: #999">易错题</a> <a href="/tags/%E6%9C%80%E5%A4%A7%E6%9C%80%E5%B0%8F%E8%B7%9D%E7%A6%BB/" style="font-size: 14px; color: #999">最大最小距离</a> <a href="/tags/%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最大连续子序列</a> <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" style="font-size: 16.5px; color: #888">最短路径</a> <a href="/tags/%E6%9C%80%E9%95%BF-%E9%9D%9E-%E5%8D%95%E8%B0%83%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最长(非)单调子序列</a> <a href="/tags/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最长上升子序列</a> <a href="/tags/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最长公共子序列</a> <a href="/tags/%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%9B%A0%E6%95%B0/" style="font-size: 14px; color: #999">最长连续因数</a> <a href="/tags/%E6%9C%89%E5%90%91%E5%9B%BE%E7%BB%95%E5%9C%88/" style="font-size: 14px; color: #999">有向图绕圈</a> <a href="/tags/%E6%9D%A5%E5%9B%9E%E6%80%BB%E5%92%8C%E6%9C%80%E7%9F%AD/" style="font-size: 14px; color: #999">来回总和最短</a> <a href="/tags/%E6%9E%81%E5%BA%A6%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">极度优化</a> <a href="/tags/%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84%E5%81%9A%E8%AE%B0%E5%BD%95/" style="font-size: 14px; color: #999">标志数组做记录</a> <a href="/tags/%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84%E5%A6%99%E7%94%A8/" style="font-size: 16.5px; color: #888">标志数组妙用</a> <a href="/tags/%E6%AD%A3%E5%8F%8D%E5%90%91%E6%80%9D%E8%80%83/" style="font-size: 14px; color: #999">正反向思考</a> <a href="/tags/%E6%AD%A3%E5%90%91DP/" style="font-size: 14px; color: #999">正向DP</a> <a href="/tags/%E6%AD%A3%E7%8E%AF/" style="font-size: 16.5px; color: #888">正环</a> <a href="/tags/%E6%B0%B4%E9%A2%98/" style="font-size: 19px; color: #777">水题</a> <a href="/tags/%E6%B2%99%E6%BC%8F/" style="font-size: 14px; color: #999">沙漏</a> <a href="/tags/%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">泛型编程</a> <a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" style="font-size: 14px; color: #999">消息队列</a> <a href="/tags/%E6%BA%A2%E5%87%BA%E9%99%B7%E9%98%B1/" style="font-size: 14px; color: #999">溢出陷阱</a> <a href="/tags/%E6%BB%9A%E5%8A%A8%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">滚动数组</a> <a href="/tags/%E7%81%AB%E5%9C%BA%E9%80%83%E7%94%9F/" style="font-size: 14px; color: #999">火场逃生</a> <a href="/tags/%E7%89%B9%E6%AE%8A%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">特殊标志数组</a> <a href="/tags/%E7%94%B5%E6%A2%AF/" style="font-size: 14px; color: #999">电梯</a> <a href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" style="font-size: 14px; color: #999">目标检测</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E6%88%90%E5%9B%9E%E6%96%87%E6%9C%80%E7%9F%AD/" style="font-size: 14px; color: #999">移动成回文最短</a> <a href="/tags/%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97/" style="font-size: 14px; color: #999">等差数列</a> <a href="/tags/%E7%AE%80%E5%8D%95DP/" style="font-size: 14px; color: #999">简单DP</a> <a href="/tags/%E7%B4%A0%E6%95%B0%E6%89%93%E8%A1%A8/" style="font-size: 14px; color: #999">素数打表</a> <a href="/tags/%E7%B4%A0%E6%95%B0%E7%8E%AF/" style="font-size: 14px; color: #999">素数环</a> <a href="/tags/%E7%B4%A2%E5%BC%95%E8%A1%A8/" style="font-size: 14px; color: #999">索引表</a> <a href="/tags/%E7%BB%84%E5%86%85%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" style="font-size: 14px; color: #999">组内最短路径</a> <a href="/tags/%E7%BB%9F%E8%AE%A1%E6%95%B0%E5%AD%97%E7%9A%84%E4%B8%AA%E6%95%B0/" style="font-size: 14px; color: #999">统计数字的个数</a> <a href="/tags/%E7%BC%96%E7%A0%81/" style="font-size: 14px; color: #999">编码</a> <a href="/tags/%E7%BF%BB%E8%BD%AC%E6%B8%B8%E6%88%8F/" style="font-size: 14px; color: #999">翻转游戏</a> <a href="/tags/%E7%BF%BB%E8%BD%AC%E7%9F%A9%E9%98%B5/" style="font-size: 14px; color: #999">翻转矩阵</a> <a href="/tags/%E7%BF%BB%E8%BD%AC%E8%BE%B9/" style="font-size: 14px; color: #999">翻转边</a> <a href="/tags/%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">背包</a> <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF2020%E6%A8%A1%E6%8B%9F%E8%B5%9B/" style="font-size: 14px; color: #999">蓝桥杯2020模拟赛</a> <a href="/tags/%E8%A1%A5%E7%A0%81/" style="font-size: 14px; color: #999">补码</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E8%BF%90%E7%AE%97%E8%BF%87%E7%A8%8B/" style="font-size: 14px; color: #999">计算机中运算过程</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" style="font-size: 14px; color: #999">计算机图形学</a> <a href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96dfs/" style="font-size: 14px; color: #999">记忆化dfs</a> <a href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96%E9%80%92%E5%BD%92/" style="font-size: 14px; color: #999">记忆化递归</a> <a href="/tags/%E8%AE%BE%E7%8A%B6%E6%80%81/" style="font-size: 14px; color: #999">设状态</a> <a href="/tags/%E8%AF%BB%E6%95%B0%E5%AD%97/" style="font-size: 14px; color: #999">读数字</a> <a href="/tags/%E8%B4%9F%E7%8E%AF/" style="font-size: 14px; color: #999">负环</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 14px; color: #999">贪心</a> <a href="/tags/%E8%BD%AC%E7%A7%BB%E6%96%B9%E7%A8%8B%E7%9A%84%E6%9E%84%E9%80%A0/" style="font-size: 14px; color: #999">转移方程的构造</a> <a href="/tags/%E8%BE%93%E5%87%BA%E8%B7%AF%E5%BE%84/" style="font-size: 14px; color: #999">输出路径</a> <a href="/tags/%E9%80%92%E5%BD%92%E8%8C%83%E5%9B%B4/" style="font-size: 14px; color: #999">递归范围</a> <a href="/tags/%E9%80%BB%E8%BE%91/" style="font-size: 16.5px; color: #888">逻辑</a> <a href="/tags/%E9%80%BB%E8%BE%91%E7%9B%B8%E5%8A%A0%E5%A6%99%E7%94%A8/" style="font-size: 14px; color: #999">逻辑相加妙用</a> <a href="/tags/%E9%80%BB%E8%BE%91%E8%B7%AF%E5%BE%84/" style="font-size: 14px; color: #999">逻辑路径</a> <a href="/tags/%E9%81%8D%E5%8E%86%E6%89%80%E6%9C%89%E5%8F%AF%E8%83%BD%E6%80%A7/" style="font-size: 14px; color: #999">遍历所有可能性</a> <a href="/tags/%E9%82%BB%E6%8E%A5%E8%A1%A8/" style="font-size: 14px; color: #999">邻接表</a> <a href="/tags/%E9%A3%9F%E7%89%A9%E9%93%BE/" style="font-size: 14px; color: #999">食物链</a> <a href="/tags/%E9%AB%98%E7%BA%A7dfs/" style="font-size: 14px; color: #999">高级dfs</a> <a href="/tags/%E9%AB%98%E9%98%B601%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">高阶01背包</a> <a href="/tags/%E9%BB%91%E7%99%BD%E5%AD%90/" style="font-size: 14px; color: #999">黑白子</a> <a href="/tags/%E9%BE%9F%E5%85%94%E8%B5%9B%E8%B7%91/" style="font-size: 14px; color: #999">龟兔赛跑</a>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+
+
+  <section class='widget music'>
+    
+<header class='pure'>
+  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_blank"
+    
+    href="https://music.163.com/#/user/home?id=539552053"
+    title="https://music.163.com/#/user/home?id=539552053">
+    <i class="far fa-heart fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <div class="aplayer"
+    data-theme="#1BCDFC"
+    
+    
+    data-mode="circulation"
+    data-server="netease"
+    data-type="playlist"
+    data-id="2596786915"
+    data-volume="0.7">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+
+    </div>
+  </section>
+
+
+            
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=936035285&amp;site=qq&amp;menu=yes"
+            class="social fab fa-qq flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:me@xaoxuu.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/donghuangzhong"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://music.163.com/#/user/home?id=539552053"
+            class="social fas fa-headphones-alt flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+  <div>
+    Use
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    as theme
+    
+      , 
+      total visits
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      times
+    
+    . 
+                              <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+                          <script>
+                              var now = new Date(); 
+                              function createtime() { 
+                                  var grt= new Date("08/10/2018 17:38:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+                                  now.setTime(now.getTime()+250); 
+                                  days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+                                  hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+                                  if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+                                  mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+                                  seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+                                  snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+                                  document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+                                  document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+                              } 
+                          setInterval("createtime()",250);
+                          </script>
+
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('') {
+          $('').backstretch(
+          ["/img/bg.jpg", "https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["/img/bg.jpg", "https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      
+<script src="/js/volantis.js"></script>
+
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "i7ukzCbxEznD4q69fiEJWYkt-gzGzoHsz",
+    appKey: "7cFEE2XMUgHyMFGgvPNqcHrU",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    highlight:'true'
+  })
+  </script>
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="/js/search.js"></script>
+
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+
+
+<!--单击显示文字-->
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+<!--动态线条背景-->
+<script type="text/javascript"
+color="255,255,0" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+<!-- 雪花特效 -->
+<script type="text/javascript" src="\js\snow.js"></script>
+<!-- 雪花特效2 -->
+<script type="text/javascript" src="\js\snow2.js"></script>
+
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
+
+
+</html>
