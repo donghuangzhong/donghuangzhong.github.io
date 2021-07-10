@@ -441,6 +441,12 @@ var _hmt = _hmt || [];
 </ul>
 <h2 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. 官网：https:&#x2F;&#x2F;redis.io</span><br><span class="line">2. 中文网：http:&#x2F;&#x2F;www.redis.net.cn&#x2F;</span><br><span class="line">3. 解压直接可以使用：</span><br><span class="line">    * redis.windows.conf：配置文件</span><br><span class="line">    * redis-cli.exe：redis的客户端</span><br><span class="line">    * redis-server.exe：redis服务器端</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li><p>注册为系统服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">注册服务   redis-server --service-install redis.windows.conf</span><br><span class="line"></span><br><span class="line">删除服务   redis-server --service-uninstall</span><br><span class="line"></span><br><span class="line">开启服务   redis-server --service-start</span><br><span class="line"></span><br><span class="line">停止服务   redis-server --service-stop</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
 <h2 id="命令操作"><a href="#命令操作" class="headerlink" title="命令操作"></a>命令操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">redis的数据结构：</span><br><span class="line">* redis存储的是：key,value格式的数据，其中key都是字符串，value有5种不同的数据结构</span><br><span class="line">    * value的数据结构：</span><br><span class="line">        1) 字符串类型 string</span><br><span class="line">        2) 哈希类型 hash ： map格式  </span><br><span class="line">        3) 列表类型 list ： linkedlist格式。支持重复元素</span><br><span class="line">        4) 集合类型 set  ： 不允许重复元素</span><br><span class="line">        5) 有序集合类型 sortedset：不允许重复元素，且元素有顺序</span><br></pre></td></tr></table></figure>
 
 <h3 id="字符串类型-string"><a href="#字符串类型-string" class="headerlink" title="字符串类型 string"></a>字符串类型 string</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. 存储： set key value</span><br><span class="line">	127.0.0.1:6379&gt; set username zhangsan</span><br><span class="line">	OK</span><br><span class="line">2. 获取： get key</span><br><span class="line">	127.0.0.1:6379&gt; get username</span><br><span class="line">	&quot;zhangsan&quot;</span><br><span class="line">3. 删除： del key</span><br><span class="line">	127.0.0.1:6379&gt; del age</span><br><span class="line">	(integer) 1</span><br></pre></td></tr></table></figure>
@@ -527,10 +533,10 @@ jedis.close();</code></pre><h2 id="jedis连接池：-JedisPool"><a href="#jedis�
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-04T16:58:18+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-10T09:12:50+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>updated at Mar 4, 2021</p>
+    <p>updated at Jul 10, 2021</p>
   </a>
 </div>
 
@@ -1128,6 +1134,8 @@ redis
           <li><a class="flat-box" title="/categories/category1/" href="/categories/category1/"><div class='name'>category1</div><div class='badge'>(6)</div></a></li>
         
           <li><a class="flat-box child" title="/categories/category1/category2/" href="/categories/category1/category2/"><div class='name'>category2</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/docker/" href="/categories/docker/"><div class='name'>docker</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box" title="/categories/hexo/" href="/categories/hexo/"><div class='name'>hexo</div><div class='badge'>(1)</div></a></li>
         

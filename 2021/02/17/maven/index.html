@@ -379,7 +379,7 @@ var _hmt = _hmt || [];
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>431字</p>
+        <p>475字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
@@ -411,6 +411,23 @@ var _hmt = _hmt || [];
         <p>maven基本jar包、插件、配置</p>
 <a id="more"></a>
 
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
+<li><p>下载</p>
+<p>进入官网点download</p>
+<p><a href="https://maven.apache.org/" target="_blank" rel="noopener">https://maven.apache.org/</a></p>
+<p>下载解压，去掉多余的目录</p>
+<p><img src="/2021/02/17/maven/image-20210708121152243.png" alt="image-20210708121152243"></p>
+</li>
+<li><p>配置环境变量</p>
+<p>新增MAVEN_HOME  </p>
+<p><img src="/2021/02/17/maven/image-20210708130104389.png" alt="image-20210708130104389"></p>
+</li>
+<li><p>测试（cmd）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn -v</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>改本地仓库</p>
+</li>
+</ol>
 <h2 id="安装配置相关"><a href="#安装配置相关" class="headerlink" title="安装配置相关"></a>安装配置相关</h2><h3 id="Idea卡在Resolving-Maven-dependencies"><a href="#Idea卡在Resolving-Maven-dependencies" class="headerlink" title="Idea卡在Resolving Maven dependencies"></a>Idea卡在Resolving Maven dependencies</h3><ol>
 <li><p>更换阿里云镜像</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;修改apache-maven-3.5.2-bin\apache-maven-3.5.2\conf\settings.xml</span><br><span class="line">&#x2F;&#x2F;在镜像位置增加如下内容</span><br><span class="line"></span><br><span class="line">	 &lt;mirror&gt;</span><br><span class="line">            &lt;id&gt;aliyunmaven&lt;&#x2F;id&gt;</span><br><span class="line">            &lt;mirrorOf&gt;*&lt;&#x2F;mirrorOf&gt;</span><br><span class="line">            &lt;name&gt;阿里云公共仓库&lt;&#x2F;name&gt;</span><br><span class="line">            &lt;url&gt;https:&#x2F;&#x2F;maven.aliyun.com&#x2F;repository&#x2F;public&lt;&#x2F;url&gt;</span><br><span class="line">        &lt;&#x2F;mirror&gt;</span><br><span class="line">        &lt;mirror&gt;</span><br><span class="line">            &lt;id&gt;aliyunmaven&lt;&#x2F;id&gt;</span><br><span class="line">            &lt;mirrorOf&gt;*&lt;&#x2F;mirrorOf&gt;</span><br><span class="line">            &lt;name&gt;阿里云谷歌仓库&lt;&#x2F;name&gt;</span><br><span class="line">            &lt;url&gt;https:&#x2F;&#x2F;maven.aliyun.com&#x2F;repository&#x2F;google&lt;&#x2F;url&gt;</span><br><span class="line">        &lt;&#x2F;mirror&gt;</span><br><span class="line">        &lt;mirror&gt;</span><br><span class="line">            &lt;id&gt;aliyunmaven&lt;&#x2F;id&gt;</span><br><span class="line">            &lt;mirrorOf&gt;*&lt;&#x2F;mirrorOf&gt;</span><br><span class="line">            &lt;name&gt;阿里云阿帕奇仓库&lt;&#x2F;name&gt;</span><br><span class="line">            &lt;url&gt;https:&#x2F;&#x2F;maven.aliyun.com&#x2F;repository&#x2F;apache-snapshots&lt;&#x2F;url&gt;</span><br><span class="line">        &lt;&#x2F;mirror&gt;</span><br></pre></td></tr></table></figure>
@@ -439,10 +456,10 @@ var _hmt = _hmt || [];
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-04T17:00:51+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-10T09:12:57+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>updated at Mar 4, 2021</p>
+    <p>updated at Jul 10, 2021</p>
   </a>
 </div>
 
@@ -764,7 +781,7 @@ var _hmt = _hmt || [];
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装配置相关"><span class="toc-text">安装配置相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Idea卡在Resolving-Maven-dependencies"><span class="toc-text">Idea卡在Resolving Maven dependencies</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pom-xml相关"><span class="toc-text">pom.xml相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#jar包"><span class="toc-text">jar包</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#servlet"><span class="toc-text">servlet</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插件"><span class="toc-text">插件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#tomcat7"><span class="toc-text">tomcat7</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装配置相关"><span class="toc-text">安装配置相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Idea卡在Resolving-Maven-dependencies"><span class="toc-text">Idea卡在Resolving Maven dependencies</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pom-xml相关"><span class="toc-text">pom.xml相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#jar包"><span class="toc-text">jar包</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#servlet"><span class="toc-text">servlet</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插件"><span class="toc-text">插件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#tomcat7"><span class="toc-text">tomcat7</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
@@ -1004,6 +1021,8 @@ var _hmt = _hmt || [];
           <li><a class="flat-box" title="/categories/category1/" href="/categories/category1/"><div class='name'>category1</div><div class='badge'>(6)</div></a></li>
         
           <li><a class="flat-box child" title="/categories/category1/category2/" href="/categories/category1/category2/"><div class='name'>category2</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/docker/" href="/categories/docker/"><div class='name'>docker</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box" title="/categories/hexo/" href="/categories/hexo/"><div class='name'>hexo</div><div class='badge'>(1)</div></a></li>
         
