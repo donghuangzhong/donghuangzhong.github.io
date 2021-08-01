@@ -379,14 +379,14 @@ var _hmt = _hmt || [];
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>295字</p>
+        <p>3.6k字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>1分</p>
+        <p>14分</p>
       </a>
     </div>
   
@@ -424,9 +424,15 @@ var _hmt = _hmt || [];
 <li><p>容器性能开销极低。</p>
 </li>
 </ul>
+<h2 id="docker架构"><a href="#docker架构" class="headerlink" title="docker架构"></a>docker架构</h2><p><img src="/2021/07/04/docker/image-20210728191325163.png" alt="image-20210728191325163"></p>
+<ul>
+<li>镜像（Image）：Docker 镜像（Image），就相当于是一个 root 文件系统。比如官方镜像 ubuntu:16.04 就包含了完整的一套 Ubuntu16.04 最小系统的 root 文件系统。</li>
+<li>容器（Container）：镜像（Image）和容器（Container）的关系，就像是面向对象程序设计中的类和对象一样，镜像是静态的定义，容器是镜像运行时的实体。容器可以被创建、启动、停止、删除、暂停等。</li>
+<li>仓库（Repository）：仓库可看成一个代码控制中心，用来保存镜像。</li>
+</ul>
 <h2 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1、yum 包更新到最新 </span></span><br><span class="line">yum update</span><br><span class="line"><span class="comment"># 2、安装需要的软件包， yum-util 提供yum-config-manager功能，另外两个是devicemapper驱动依赖的 </span></span><br><span class="line">yum install -y yum-utils device-mapper-persistent-data lvm2</span><br><span class="line"><span class="comment"># 3、 设置yum源</span></span><br><span class="line">yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br><span class="line"> <span class="comment"># 失败的话安装阿里的yum源</span></span><br><span class="line">yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br><span class="line"><span class="comment"># 4、 安装docker，出现输入的界面都按 y </span></span><br><span class="line">yum install -y docker-ce</span><br><span class="line"><span class="comment"># 5、 查看docker版本，验证是否验证成功</span></span><br><span class="line">docker -v</span><br></pre></td></tr></table></figure>
 
-<h2 id="Docker-进程相关命令"><a href="#Docker-进程相关命令" class="headerlink" title="Docker 进程相关命令"></a>Docker 进程相关命令</h2><ul>
+<h2 id="Docker-进程-daemon-相关命令"><a href="#Docker-进程-daemon-相关命令" class="headerlink" title="Docker 进程(daemon)相关命令"></a>Docker 进程(daemon)相关命令</h2><ul>
 <li>启动docker服务</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure>
@@ -451,7 +457,411 @@ var _hmt = _hmt || [];
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> docker</span><br></pre></td></tr></table></figure>
 
+<h2 id="镜像相关命令"><a href="#镜像相关命令" class="headerlink" title="镜像相关命令"></a>镜像相关命令</h2><ul>
+<li>查看镜像: 查看本地所有的镜像</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br><span class="line">docker images –q <span class="comment"># 查看所有镜像的id(仅有id)</span></span><br></pre></td></tr></table></figure>
 
+<ul>
+<li>搜索镜像:从网络中查找需要的镜像</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search 镜像名称</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>拉取镜像:从Docker仓库下载镜像到本地，镜像名称格式为 名称:版本号，如果版本号不指定则是最新的版本。如果不知道镜像版本，可以去docker hub 搜索对应镜像查看。</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull 镜像名称</span><br><span class="line">docker pull 镜像名称：版本号</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除镜像: 删除本地镜像</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker rmi 镜像id <span class="comment"># 删除指定本地镜像</span></span><br><span class="line">docker rmi `docker images -q`  <span class="comment"># 删除所有本地镜像</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="容器相关命令"><a href="#容器相关命令" class="headerlink" title="容器相关命令"></a>容器相关命令</h2><ul>
+<li>查看容器</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker ps <span class="comment"># 查看正在运行的容器</span></span><br><span class="line">docker ps –a <span class="comment"># 查看所有容器</span></span><br><span class="line">docker ps -aq <span class="comment">#查看所有容器的id(仅有id、可作为删除的参数)</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建并启动容器</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run 参数</span><br></pre></td></tr></table></figure>
+
+<p>参数说明：</p>
+<p>•-i：保持容器运行。通常与 -t 同时使用。加入it这两个参数后，容器创建后自动进入容器中，退出容器后，容器自动关闭。</p>
+<p>•-t：为容器重新分配一个伪输入终端，通常与 -i 同时使用。</p>
+<p>•-d：以守护（后台）模式运行容器。创建一个容器在后台运行，需要使用docker exec 进入容器。退出后，容器不会关闭。</p>
+<p>•-it 创建的容器一般称为交互式容器，-id 创建的容器一般称为守护式容器</p>
+<ul>
+<li>-it会立刻进入容器、-id运行容器但是不进入（需要使用exec进入）</li>
+</ul>
+<p>•–name：为创建的容器命名。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --name=centos1 centos:7</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>进入运行的容器</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> 参数 <span class="comment"># 退出容器，容器不会关闭</span></span><br><span class="line">docker <span class="built_in">exec</span> -it centosid /bin/bash</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>停止容器</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop 容器名称</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>启动容器</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start 容器名称</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除容器：如果容器是运行状态则删除失败，需要停止容器才能删除</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm 容器名称</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看容器信息</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker inspect 容器名称</span><br></pre></td></tr></table></figure>
+
+<h2 id="数据卷"><a href="#数据卷" class="headerlink" title="数据卷"></a>数据卷</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>数据卷是宿主机中的<strong>被容器使用的</strong>一个目录或文件</p>
+<ol>
+<li>特性<ul>
+<li>当容器目录和数据卷目录绑定后，对方的修改会立即同步</li>
+<li>一个数据卷可以被多个容器同时挂载</li>
+<li>一个容器也可以被挂载多个数据卷</li>
+</ul>
+</li>
+<li>作用<ul>
+<li>容器数据持久化</li>
+<li>外部机器和容器间接通信</li>
+<li>容器之间数据交换（两个容器挂在同一个数据卷）</li>
+</ul>
+</li>
+</ol>
+<h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><ul>
+<li><p>创建启动容器时，使用 –v 参数 设置数据卷</p>
+<p><img src="/2021/07/04/docker/image-20210731083218988.png" alt="image-20210731083218988"></p>
+</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run ... –v 宿主机目录(文件):容器内目录(文件) ... </span><br><span class="line">docker run -it --name=c1 -v /root/data:/root/data_container centos:7</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>目录必须是绝对路径</li>
+<li>如果目录不存在，会自动创建</li>
+<li>可以挂载多个数据卷</li>
+</ol>
+<h3 id="数据卷容器"><a href="#数据卷容器" class="headerlink" title="数据卷容器"></a>数据卷容器</h3><ul>
+<li>作用：方便快捷实现共享的数据卷配置</li>
+</ul>
+<ol>
+<li><p>创建启动c3数据卷容器，使用 –v 参数 设置数据卷</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run –it --name=c3 –v /volume centos:7 /bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>如果不指定宿主机的目录(没有冒号)，会在宿主机的docker目录下分配一个UUID名字类型的目录</p>
+</li>
+<li><p>创建启动 c1 c2 容器，使用 –-volumes-from 参数 设置数据卷</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker run –it --name=c1 --volumes-from c3 centos:7 /bin/bash</span><br><span class="line"></span><br><span class="line">docker run –it --name=c2 --volumes-from c3 centos:7 /bin/bash</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="Docker-应用部署"><a href="#Docker-应用部署" class="headerlink" title="Docker 应用部署"></a>Docker 应用部署</h2><h3 id="部署MySQL"><a href="#部署MySQL" class="headerlink" title="部署MySQL"></a>部署MySQL</h3><ol>
+<li>搜索mysql镜像</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search mysql</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>拉取mysql镜像</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull mysql:5.6</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>创建容器，设置端口映射、目录映射</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 在/root目录下创建mysql目录用于存储mysql数据信息</span></span><br><span class="line">mkdir ~/mysql</span><br><span class="line">cd ~/mysql</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker run -id \</span><br><span class="line">-p 3307:3306 \</span><br><span class="line">--name=c_mysql \</span><br><span class="line">-v $PWD/conf:/etc/mysql/conf.d \</span><br><span class="line">-v $PWD/logs:/logs \</span><br><span class="line">-v $PWD/data:/var/lib/mysql \</span><br><span class="line">-e MYSQL_ROOT_PASSWORD=123456 \</span><br><span class="line">mysql:5.6</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>参数说明：<ul>
+<li><strong>-p 3307:3306</strong>：将容器的 3306 端口映射到宿主机的 3307 端口。映射的端口可以相同</li>
+<li><strong>-v $PWD/conf:/etc/mysql/conf.d</strong>：将主机当前目录下的 conf/my.cnf 挂载到容器的 /etc/mysql/my.cnf。配置目录</li>
+<li><strong>-v $PWD/logs:/logs</strong>：将主机当前目录下的 logs 目录挂载到容器的 /logs。日志目录</li>
+<li><strong>-v $PWD/data:/var/lib/mysql</strong> ：将主机当前目录下的data目录挂载到容器的 /var/lib/mysql 。数据目录</li>
+<li><strong>-e MYSQL_ROOT_PASSWORD=123456：</strong>初始化 root 用户的密码。</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>进入容器，操作mysql</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it c_mysql /bin/bash</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>使用外部机器连接容器中的mysql</li>
+</ol>
+<p><img src="/2021/07/04/docker/1573636765632.png" alt="1573636765632"></p>
+<h3 id="部署Tomcat"><a href="#部署Tomcat" class="headerlink" title="部署Tomcat"></a>部署Tomcat</h3><ol>
+<li>搜索tomcat镜像</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search tomcat</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>拉取tomcat镜像</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull tomcat</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>创建容器，设置端口映射、目录映射</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 在/root目录下创建tomcat目录用于存储tomcat数据信息</span></span><br><span class="line">mkdir ~/tomcat</span><br><span class="line">cd ~/tomcat</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -id --name=c_tomcat \</span><br><span class="line">-p 8080:8080 \</span><br><span class="line">-v $PWD:/usr/local/tomcat/webapps \</span><br><span class="line">tomcat</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>参数说明：</p>
+<ul>
+<li><p><strong>-p 8080:8080：</strong>将容器的8080端口映射到主机的8080端口</p>
+<p><strong>-v $PWD:/usr/local/tomcat/webapps：</strong>将主机中当前目录挂载到容器的webapps</p>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>使用外部机器访问tomcat</li>
+</ol>
+<p><img src="/2021/07/04/docker/1573649804623.png" alt="1573649804623"></p>
+<h3 id="部署Nginx"><a href="#部署Nginx" class="headerlink" title="部署Nginx"></a>部署Nginx</h3><ol>
+<li>搜索nginx镜像</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search nginx</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>拉取nginx镜像</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull nginx</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>创建容器，设置端口映射、目录映射</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 在/root目录下创建nginx目录用于存储nginx数据信息</span></span><br><span class="line">mkdir ~/nginx</span><br><span class="line">cd ~/nginx</span><br><span class="line">mkdir conf</span><br><span class="line">cd conf</span><br><span class="line"><span class="meta">#</span><span class="bash"> 在~/nginx/conf/下创建nginx.conf文件,粘贴下面内容</span></span><br><span class="line">vim nginx.conf</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">user  nginx;</span><br><span class="line">worker_processes  1;</span><br><span class="line"></span><br><span class="line">error_log  /var/log/nginx/error.log warn;</span><br><span class="line">pid        /var/run/nginx.pid;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    include       /etc/nginx/mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '</span><br><span class="line">                      '$status $body_bytes_sent "$http_referer" '</span><br><span class="line">                      '"$http_user_agent" "$http_x_forwarded_for"';</span><br><span class="line"></span><br><span class="line">    access_log  /var/log/nginx/access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    #tcp_nopush     on;</span><br><span class="line"></span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    #gzip  on;</span><br><span class="line"></span><br><span class="line">    include /etc/nginx/conf.d/*.conf;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run -id --name=c_nginx \</span><br><span class="line">-p 80:80 \</span><br><span class="line">-v $PWD/conf/nginx.conf:/etc/nginx/nginx.conf \</span><br><span class="line">-v $PWD/logs:/var/log/nginx \</span><br><span class="line">-v $PWD/html:/usr/share/nginx/html \</span><br><span class="line">nginx</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>参数说明：<ul>
+<li><strong>-p 80:80</strong>：将容器的 80端口映射到宿主机的 80 端口。</li>
+<li><strong>-v $PWD/conf/nginx.conf:/etc/nginx/nginx.conf</strong>：将主机当前目录下的 /conf/nginx.conf 挂载到容器的 :/etc/nginx/nginx.conf。配置目录</li>
+<li><strong>-v $PWD/logs:/var/log/nginx</strong>：将主机当前目录下的 logs 目录挂载到容器的/var/log/nginx。日志目录</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>使用外部机器访问nginx</li>
+</ol>
+<p><img src="/2021/07/04/docker/1573652396669.png" alt="1573652396669"></p>
+<h3 id="部署Redis"><a href="#部署Redis" class="headerlink" title="部署Redis"></a>部署Redis</h3><ol>
+<li>搜索redis镜像</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search redis</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>拉取redis镜像</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull redis:5.0</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>创建容器，设置端口映射</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -id --name=c_redis -p 6379:6379 redis:5.0</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>使用外部机器连接redis</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./redis-cli.exe -h 192.168.149.135 -p 6379</span><br></pre></td></tr></table></figure>
+
+<h2 id="docker镜像原理"><a href="#docker镜像原理" class="headerlink" title="docker镜像原理"></a>docker镜像原理</h2><p>Linux文件系统由bootfs和rootfs两部分组成</p>
+<ul>
+<li><p>bootfs：包含bootloader（引导加载程序）和 kernel（内核）</p>
+</li>
+<li><p>rootfs： root文件系统，包含的就是典型 Linux 系统中的/dev，/proc，/bin，/etc等标准目录和文件</p>
+</li>
+<li><p>不同的linux发行版，bootfs基本一样，而rootfs不同，如ubuntu</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Docker镜像是由特殊的文件系统叠加而成</span><br><span class="line">最底端是 bootfs，并使用宿主机的bootfs </span><br><span class="line">第二层是 root文件系统rootfs,称为base image</span><br><span class="line">然后再往上可以叠加其他的镜像文件</span><br><span class="line"></span><br><span class="line">docker镜像本质就是一个分层文件系统</span><br></pre></td></tr></table></figure>
+
+<h3 id="镜像制作"><a href="#镜像制作" class="headerlink" title="镜像制作"></a>镜像制作</h3><ul>
+<li>容器转为镜像</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker commit 容器id 镜像名称:版本号</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>镜像转为压缩包</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker save -o 压缩文件名称 镜像名称:版本号</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>压缩包还原为镜像</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker load –i 压缩文件名称</span><br></pre></td></tr></table></figure>
+
+<h2 id="dockerfile"><a href="#dockerfile" class="headerlink" title="dockerfile"></a>dockerfile</h2><p>Dockerfile 是一个文本文件,包含了一条条的指令,每一条指令构建一层，基于基础镜像，最终构建出一个新的镜像。</p>
+<h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><ul>
+<li>构建镜像的命令</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker bulid –f dockerfile文件路径 –t 镜像名称:版本</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>作用</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FROM</td>
+<td>指定父镜像</td>
+<td>指定dockerfile基于那个image构建</td>
+</tr>
+<tr>
+<td>MAINTAINER</td>
+<td>作者信息</td>
+<td>用来标明这个dockerfile谁写的</td>
+</tr>
+<tr>
+<td>LABEL</td>
+<td>标签</td>
+<td>用来标明dockerfile的标签 可以使用Label代替Maintainer 最终都是在docker image基本信息中可以查看</td>
+</tr>
+<tr>
+<td>RUN</td>
+<td>执行命令</td>
+<td>执行一段命令 默认是/bin/sh 格式: RUN command 或者 RUN [“command” , “param1”,”param2”]</td>
+</tr>
+<tr>
+<td>CMD</td>
+<td>容器启动命令</td>
+<td>提供启动容器时候的默认命令 和ENTRYPOINT配合使用.格式 CMD command param1 param2 或者 CMD [“command” , “param1”,”param2”]</td>
+</tr>
+<tr>
+<td>ENTRYPOINT</td>
+<td>入口</td>
+<td>一般在制作一些执行就关闭的容器中会使用</td>
+</tr>
+<tr>
+<td>COPY</td>
+<td>复制文件</td>
+<td>build的时候复制文件到image中</td>
+</tr>
+<tr>
+<td>ADD</td>
+<td>添加文件</td>
+<td>build的时候添加文件到image中 不仅仅局限于当前build上下文 可以来源于远程服务</td>
+</tr>
+<tr>
+<td>ENV</td>
+<td>环境变量</td>
+<td>指定build时候的环境变量 可以在启动的容器的时候 通过-e覆盖 格式ENV name=value</td>
+</tr>
+<tr>
+<td>ARG</td>
+<td>构建参数</td>
+<td>构建参数 只在构建的时候使用的参数 如果有ENV 那么ENV的相同名字的值始终覆盖arg的参数</td>
+</tr>
+<tr>
+<td>VOLUME</td>
+<td>定义外部可以挂载的数据卷</td>
+<td>指定build的image那些目录可以启动的时候挂载到文件系统中 启动容器的时候使用 -v 绑定 格式 VOLUME [“目录”]</td>
+</tr>
+<tr>
+<td>EXPOSE</td>
+<td>暴露端口</td>
+<td>定义容器运行的时候监听的端口 启动容器的使用-p来绑定暴露端口 格式: EXPOSE 8080 或者 EXPOSE 8080/udp</td>
+</tr>
+<tr>
+<td>WORKDIR</td>
+<td>工作目录</td>
+<td>指定容器内部的工作目录 如果没有创建则自动创建 如果指定/ 使用的是绝对地址 如果不是/开头那么是在上一条workdir的路径的相对路径</td>
+</tr>
+<tr>
+<td>USER</td>
+<td>指定执行用户</td>
+<td>指定build或者启动的时候 用户 在RUN CMD ENTRYPONT执行的时候的用户</td>
+</tr>
+<tr>
+<td>HEALTHCHECK</td>
+<td>健康检查</td>
+<td>指定监测当前容器的健康监测的命令 基本上没用 因为很多时候 应用本身有健康监测机制</td>
+</tr>
+<tr>
+<td>ONBUILD</td>
+<td>触发器</td>
+<td>当存在ONBUILD关键字的镜像作为基础镜像的时候 当执行FROM完成之后 会执行 ONBUILD的命令 但是不影响当前镜像 用处也不怎么大</td>
+</tr>
+<tr>
+<td>STOPSIGNAL</td>
+<td>发送信号量到宿主机</td>
+<td>该STOPSIGNAL指令设置将发送到容器的系统调用信号以退出。</td>
+</tr>
+<tr>
+<td>SHELL</td>
+<td>指定执行脚本的shell</td>
+<td>指定RUN CMD ENTRYPOINT 执行命令的时候 使用的shell</td>
+</tr>
+</tbody></table>
+<h3 id="构建自己的centos7"><a href="#构建自己的centos7" class="headerlink" title="构建自己的centos7"></a>构建自己的centos7</h3><h4 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">自定义centos7镜像。要求：</span><br><span class="line">1. 默认登录路径为 &#x2F;usr</span><br><span class="line">2. 可以使用vim</span><br></pre></td></tr></table></figure>
+
+<h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">定义父镜像：FROM centos:7</span><br><span class="line">定义作者信息：MAINTAINER  itheima &lt;itheima@itcast.cn&gt;</span><br><span class="line">执行安装vim命令： RUN yum install -y vim</span><br><span class="line">定义默认的工作目录：WORKDIR &#x2F;usr</span><br><span class="line">定义容器启动执行的命令：CMD &#x2F;bin&#x2F;bash</span><br><span class="line">通过dockerfile构建镜像：docker bulid –f dockerfile文件路径 –t 镜像名称:版本</span><br></pre></td></tr></table></figure>
+
+<h3 id="构建自己的额springboot项目镜像"><a href="#构建自己的额springboot项目镜像" class="headerlink" title="构建自己的额springboot项目镜像"></a>构建自己的额springboot项目镜像</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">定义父镜像：FROM java:8</span><br><span class="line">定义作者信息：MAINTAINER  itheima &lt;itheima@itcast.cn&gt;</span><br><span class="line">将jar包添加到容器： ADD springboot.jar app.jar</span><br><span class="line">定义容器启动执行的命令：CMD java–jar app.jar</span><br><span class="line">通过dockerfile构建镜像：docker bulid –f dockerfile文件路径 –t 镜像名称:版本</span><br></pre></td></tr></table></figure>
+
+<h2 id="Docker-Compose"><a href="#Docker-Compose" class="headerlink" title="Docker Compose"></a>Docker Compose</h2><h3 id="安装Docker-Compose"><a href="#安装Docker-Compose" class="headerlink" title="安装Docker Compose"></a>安装Docker Compose</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Compose目前已经完全支持Linux、Mac OS和Windows，在我们安装Compose之前，需要先安装Docker。下面我 们以编译好的二进制包方式安装在Linux系统中。 </span></span><br><span class="line">curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose</span><br><span class="line"><span class="meta">#</span><span class="bash"> 设置文件可执行权限 </span></span><br><span class="line">chmod +x /usr/local/bin/docker-compose</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看版本信息 </span></span><br><span class="line">docker-compose -version</span><br></pre></td></tr></table></figure>
+
+<h3 id="卸载Docker-Compose"><a href="#卸载Docker-Compose" class="headerlink" title="卸载Docker Compose"></a>卸载Docker Compose</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 二进制包方式安装的，删除二进制文件即可</span></span><br><span class="line">rm /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用docker-compose编排nginx-springboot项目"><a href="#使用docker-compose编排nginx-springboot项目" class="headerlink" title="使用docker compose编排nginx+springboot项目"></a>使用docker compose编排nginx+springboot项目</h3><ol>
+<li>创建docker-compose目录</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/docker-compose</span><br><span class="line">cd ~/docker-compose</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>编写 docker-compose.yml 文件</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">version: '3'</span><br><span class="line">services:</span><br><span class="line">  nginx:</span><br><span class="line">   image: nginx</span><br><span class="line">   ports:</span><br><span class="line">    - 80:80</span><br><span class="line">   links:</span><br><span class="line">    - app</span><br><span class="line">   volumes:</span><br><span class="line">    - ./nginx/conf.d:/etc/nginx/conf.d</span><br><span class="line">  app:</span><br><span class="line">    image: app</span><br><span class="line">    expose:</span><br><span class="line">      - "8080"</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>创建./nginx/conf.d目录</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p ./nginx/conf.d</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="4">
+<li>在./nginx/conf.d目录下 编写itheima.conf文件</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    access_log off;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass http://app:8080;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>在~/docker-compose 目录下 使用docker-compose 启动容器</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>测试访问</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.149.135/hello</span><br></pre></td></tr></table></figure>
+
+<h2 id="Docker-私有仓库"><a href="#Docker-私有仓库" class="headerlink" title="Docker 私有仓库"></a>Docker 私有仓库</h2><h3 id="私有仓库搭建"><a href="#私有仓库搭建" class="headerlink" title="私有仓库搭建"></a>私有仓库搭建</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 1、拉取私有仓库镜像 </span></span><br><span class="line">docker pull registry</span><br><span class="line"><span class="meta">#</span><span class="bash"> 2、启动私有仓库容器 </span></span><br><span class="line">docker run -id --name=registry -p 5000:5000 registry</span><br><span class="line"><span class="meta">#</span><span class="bash"> 3、打开浏览器 输入地址http://私有仓库服务器ip:5000/v2/_catalog，看到&#123;<span class="string">"repositories"</span>:[]&#125; 表示私有仓库 搭建成功</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 4、修改daemon.json   </span></span><br><span class="line">vim /etc/docker/daemon.json    </span><br><span class="line"><span class="meta">#</span><span class="bash"> 在上述文件中添加一个key，保存退出。此步用于让 docker 信任私有仓库地址；注意将私有仓库服务器ip修改为自己私有仓库服务器真实ip </span></span><br><span class="line">&#123;"insecure-registries":["私有仓库服务器ip:5000"]&#125; </span><br><span class="line"><span class="meta">#</span><span class="bash"> 5、重启docker 服务 </span></span><br><span class="line">systemctl restart docker</span><br><span class="line">docker start registry</span><br></pre></td></tr></table></figure>
+
+<h3 id="将镜像上传至私有仓库"><a href="#将镜像上传至私有仓库" class="headerlink" title="将镜像上传至私有仓库"></a>将镜像上传至私有仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 1、标记镜像为私有仓库的镜像     </span></span><br><span class="line">docker tag centos:7 私有仓库服务器IP:5000/centos:7</span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span><span class="bash"> 2、上传标记的镜像     </span></span><br><span class="line">docker push 私有仓库服务器IP:5000/centos:7</span><br></pre></td></tr></table></figure>
+
+<h3 id="从私有仓库拉取镜像"><a href="#从私有仓库拉取镜像" class="headerlink" title="从私有仓库拉取镜像"></a>从私有仓库拉取镜像</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">拉取镜像 </span></span><br><span class="line">docker pull 私有仓库服务器ip:5000/centos:7</span><br></pre></td></tr></table></figure>
       </div>
       
       
@@ -463,10 +873,10 @@ var _hmt = _hmt || [];
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-04T08:31:06+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-31T19:29:42+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>updated at Jul 4, 2021</p>
+    <p>updated at Jul 31, 2021</p>
   </a>
 </div>
 
@@ -532,6 +942,25 @@ var _hmt = _hmt || [];
       
       
           <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
+                          <h4>
+                              <a href="/2021/07/10/pgsql/" rel="prev" title="pgsql">
+                                
+                                    pgsql
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/tags/tag1/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> tag1</a> <a class="tag" href="/tags/tag2/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> tag2</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
               
               
                   <section class="next">
@@ -766,7 +1195,7 @@ var _hmt = _hmt || [];
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#docker概述"><span class="toc-text">docker概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Docker"><span class="toc-text">安装Docker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker-进程相关命令"><span class="toc-text">Docker 进程相关命令</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#docker概述"><span class="toc-text">docker概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker架构"><span class="toc-text">docker架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Docker"><span class="toc-text">安装Docker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker-进程-daemon-相关命令"><span class="toc-text">Docker 进程(daemon)相关命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#镜像相关命令"><span class="toc-text">镜像相关命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#容器相关命令"><span class="toc-text">容器相关命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据卷"><span class="toc-text">数据卷</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作"><span class="toc-text">操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据卷容器"><span class="toc-text">数据卷容器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker-应用部署"><span class="toc-text">Docker 应用部署</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#部署MySQL"><span class="toc-text">部署MySQL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署Tomcat"><span class="toc-text">部署Tomcat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署Nginx"><span class="toc-text">部署Nginx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署Redis"><span class="toc-text">部署Redis</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker镜像原理"><span class="toc-text">docker镜像原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#镜像制作"><span class="toc-text">镜像制作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dockerfile"><span class="toc-text">dockerfile</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关键字"><span class="toc-text">关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构建自己的centos7"><span class="toc-text">构建自己的centos7</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#需求"><span class="toc-text">需求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#步骤"><span class="toc-text">步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构建自己的额springboot项目镜像"><span class="toc-text">构建自己的额springboot项目镜像</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker-Compose"><span class="toc-text">Docker Compose</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Docker-Compose"><span class="toc-text">安装Docker Compose</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#卸载Docker-Compose"><span class="toc-text">卸载Docker Compose</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用docker-compose编排nginx-springboot项目"><span class="toc-text">使用docker compose编排nginx+springboot项目</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker-私有仓库"><span class="toc-text">Docker 私有仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#私有仓库搭建"><span class="toc-text">私有仓库搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将镜像上传至私有仓库"><span class="toc-text">将镜像上传至私有仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从私有仓库拉取镜像"><span class="toc-text">从私有仓库拉取镜像</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -1003,13 +1432,17 @@ var _hmt = _hmt || [];
         
           <li><a class="flat-box" title="/categories/blog/" href="/categories/blog/"><div class='name'>blog</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/category1/" href="/categories/category1/"><div class='name'>category1</div><div class='badge'>(6)</div></a></li>
+          <li><a class="flat-box" title="/categories/category1/" href="/categories/category1/"><div class='name'>category1</div><div class='badge'>(7)</div></a></li>
         
-          <li><a class="flat-box child" title="/categories/category1/category2/" href="/categories/category1/category2/"><div class='name'>category2</div><div class='badge'>(6)</div></a></li>
+          <li><a class="flat-box child" title="/categories/category1/category2/" href="/categories/category1/category2/"><div class='name'>category2</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/dao/" href="/categories/dao/"><div class='name'>dao</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box" title="/categories/docker/" href="/categories/docker/"><div class='name'>docker</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box" title="/categories/hexo/" href="/categories/hexo/"><div class='name'>hexo</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/igix/" href="/categories/igix/"><div class='name'>igix</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box" title="/categories/java/" href="/categories/java/"><div class='name'>java</div><div class='badge'>(27)</div></a></li>
         
@@ -1037,7 +1470,9 @@ var _hmt = _hmt || [];
         
           <li><a class="flat-box child" title="/categories/js/%E5%B8%B8%E7%94%A8js/" href="/categories/js/%E5%B8%B8%E7%94%A8js/"><div class='name'>常用js</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/linux/" href="/categories/linux/"><div class='name'>linux</div><div class='badge'>(3)</div></a></li>
+          <li><a class="flat-box" title="/categories/linux/" href="/categories/linux/"><div class='name'>linux</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/md/" href="/categories/md/"><div class='name'>md</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box" title="/categories/nodejs/" href="/categories/nodejs/"><div class='name'>nodejs</div><div class='badge'>(1)</div></a></li>
         
@@ -1118,7 +1553,7 @@ var _hmt = _hmt || [];
 </header>
 
     <div class='content pure'>
-      <a href="/tags/01%E5%8F%AF%E4%B8%8D%E6%BB%A1%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">01可不满背包</a> <a href="/tags/AlexNet/" style="font-size: 14px; color: #999">AlexNet</a> <a href="/tags/BFS/" style="font-size: 14px; color: #999">BFS</a> <a href="/tags/C-%E6%96%87%E4%BB%B6%E4%BB%A3%E6%9B%BF%E6%89%8B%E5%B7%A5%E8%BE%93%E5%85%A5/" style="font-size: 14px; color: #999">C++文件代替手工输入</a> <a href="/tags/DFS/" style="font-size: 14px; color: #999">DFS</a> <a href="/tags/Dilworth%E5%AE%9A%E7%90%86/" style="font-size: 14px; color: #999">Dilworth定理</a> <a href="/tags/EL-JSTL/" style="font-size: 14px; color: #999">EL&JSTL</a> <a href="/tags/EOF/" style="font-size: 14px; color: #999">EOF</a> <a href="/tags/ES6/" style="font-size: 14px; color: #999">ES6</a> <a href="/tags/GeForce940MX/" style="font-size: 14px; color: #999">GeForce940MX</a> <a href="/tags/JDBC/" style="font-size: 14px; color: #999">JDBC</a> <a href="/tags/Java/" style="font-size: 14px; color: #999">Java</a> <a href="/tags/MFC/" style="font-size: 14px; color: #999">MFC</a> <a href="/tags/MySql/" style="font-size: 14px; color: #999">MySql</a> <a href="/tags/Mybatis/" style="font-size: 16.5px; color: #888">Mybatis</a> <a href="/tags/Properties/" style="font-size: 14px; color: #999">Properties</a> <a href="/tags/RPC/" style="font-size: 14px; color: #999">RPC</a> <a href="/tags/ST/" style="font-size: 14px; color: #999">ST</a> <a href="/tags/STL/" style="font-size: 14px; color: #999">STL</a> <a href="/tags/SpringTemplate/" style="font-size: 14px; color: #999">SpringTemplate</a> <a href="/tags/VM/" style="font-size: 14px; color: #999">VM</a> <a href="/tags/W/" style="font-size: 14px; color: #999">W</a> <a href="/tags/WSL/" style="font-size: 14px; color: #999">WSL</a> <a href="/tags/keras/" style="font-size: 14px; color: #999">_keras</a> <a href="/tags/cookie/" style="font-size: 14px; color: #999">cookie</a> <a href="/tags/github-pages/" style="font-size: 14px; color: #999">github_pages</a> <a href="/tags/hexo/" style="font-size: 16.5px; color: #888">hexo</a> <a href="/tags/idea/" style="font-size: 16.5px; color: #888">idea</a> <a href="/tags/java/" style="font-size: 19px; color: #777">java</a> <a href="/tags/jdbctemplate/" style="font-size: 14px; color: #999">jdbctemplate</a> <a href="/tags/js/" style="font-size: 16.5px; color: #888">js</a> <a href="/tags/jupyter/" style="font-size: 14px; color: #999">jupyter</a> <a href="/tags/map/" style="font-size: 16.5px; color: #888">map</a> <a href="/tags/maven/" style="font-size: 14px; color: #999">maven</a> <a href="/tags/mybatis/" style="font-size: 14px; color: #999">mybatis</a> <a href="/tags/numpy/" style="font-size: 14px; color: #999">numpy</a> <a href="/tags/n%E7%BB%B4%E4%BA%A4/" style="font-size: 14px; color: #999">n维交</a> <a href="/tags/pandas/" style="font-size: 14px; color: #999">pandas</a> <a href="/tags/pyplot/" style="font-size: 14px; color: #999">pyplot</a> <a href="/tags/redis/" style="font-size: 14px; color: #999">redis</a> <a href="/tags/response/" style="font-size: 14px; color: #999">response</a> <a href="/tags/session/" style="font-size: 14px; color: #999">session</a> <a href="/tags/spring/" style="font-size: 21.5px; color: #666">spring</a> <a href="/tags/spring-web/" style="font-size: 14px; color: #999">spring+web</a> <a href="/tags/spring-boot/" style="font-size: 14px; color: #999">spring_boot</a> <a href="/tags/springmvc/" style="font-size: 14px; color: #999">springmvc</a> <a href="/tags/ssm/" style="font-size: 14px; color: #999">ssm</a> <a href="/tags/sublime/" style="font-size: 14px; color: #999">sublime</a> <a href="/tags/tag1/" style="font-size: 24px; color: #555">tag1</a> <a href="/tags/tag2/" style="font-size: 24px; color: #555">tag2</a> <a href="/tags/vector/" style="font-size: 14px; color: #999">vector</a> <a href="/tags/vue/" style="font-size: 14px; color: #999">vue</a> <a href="/tags/wallpapers/" style="font-size: 14px; color: #999">wallpapers</a> <a href="/tags/web/" style="font-size: 14px; color: #999">web</a> <a href="/tags/%E4%B8%A4%E4%B8%AA%E6%9C%80%E5%B0%8F%E5%80%BC/" style="font-size: 14px; color: #999">两个最小值</a> <a href="/tags/%E4%B8%A4%E6%AC%A1BFS/" style="font-size: 14px; color: #999">两次BFS</a> <a href="/tags/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/" style="font-size: 14px; color: #999">中序遍历</a> <a href="/tags/%E4%B8%B4%E7%95%8C%E6%9C%80%E4%BC%98/" style="font-size: 14px; color: #999">临界最优</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE-%E5%A4%A7%E5%B0%8F%E4%BA%8E/" style="font-size: 16.5px; color: #888">二分查找(大小于)</a> <a href="/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">二进制优化</a> <a href="/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E5%8D%81%E8%BF%9B%E5%88%B6/" style="font-size: 14px; color: #999">二进制表示十进制</a> <a href="/tags/%E4%BB%A3%E6%95%B0%E5%BC%8F%E6%9C%80%E5%A4%A7%E5%8C%96%E9%83%A8%E5%88%86%E6%BA%A2%E5%87%BA/" style="font-size: 14px; color: #999">代数式最大化部分溢出</a> <a href="/tags/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/" style="font-size: 14px; color: #999">优先队列</a> <a href="/tags/%E5%80%92%E6%B0%B4/" style="font-size: 14px; color: #999">倒水</a> <a href="/tags/%E5%85%94%E5%AD%90%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">兔子问题</a> <a href="/tags/%E5%85%AB%E7%9A%87%E5%90%8E%E7%AE%80%E5%8C%96%E7%89%88/" style="font-size: 14px; color: #999">八皇后简化版</a> <a href="/tags/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">八皇后问题</a> <a href="/tags/%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6/" style="font-size: 14px; color: #999">共享文件</a> <a href="/tags/%E5%87%BD%E6%95%B0%E6%95%B0%E7%BB%84%E5%BD%A2%E5%8F%82/" style="font-size: 14px; color: #999">函数数组形参</a> <a href="/tags/%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF/" style="font-size: 14px; color: #999">函数模板</a> <a href="/tags/%E5%88%86%E8%A7%A3%E8%B4%A8%E5%9B%A0%E6%95%B0/" style="font-size: 14px; color: #999">分解质因数</a> <a href="/tags/%E5%88%A4%E6%96%AD%E6%9D%A1%E4%BB%B6%E7%9A%84%E5%85%88%E5%90%8E/" style="font-size: 14px; color: #999">判断条件的先后</a> <a href="/tags/%E5%8A%A8%E6%80%81%E4%BA%8C%E8%BF%9B%E5%88%B6/" style="font-size: 14px; color: #999">动态二进制</a> <a href="/tags/%E5%8A%A8%E6%80%81%E5%91%A8%E6%9C%9F/" style="font-size: 14px; color: #999">动态周期</a> <a href="/tags/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/" style="font-size: 14px; color: #999">双向链表</a> <a href="/tags/%E5%90%8C%E4%BD%99%E5%AE%9A%E7%90%86/" style="font-size: 14px; color: #999">同余定理</a> <a href="/tags/%E5%9B%9E%E5%BD%A2%E5%8F%96%E6%95%B0/" style="font-size: 14px; color: #999">回形取数</a> <a href="/tags/%E5%9B%9E%E6%BA%AF/" style="font-size: 14px; color: #999">回溯</a> <a href="/tags/%E5%9B%BE%E7%89%87/" style="font-size: 14px; color: #999">图片</a> <a href="/tags/%E5%9B%BE%E7%9A%84%E8%BF%9E%E9%80%9A%E5%8C%BA%E5%9F%9F/" style="font-size: 14px; color: #999">图的连通区域</a> <a href="/tags/%E5%A3%81%E7%BA%B8/" style="font-size: 14px; color: #999">壁纸</a> <a href="/tags/%E5%A4%9A%E5%85%A5%E5%8F%A3BFS/" style="font-size: 14px; color: #999">多入口BFS</a> <a href="/tags/%E5%A4%9A%E6%95%B0%E7%BB%84DP/" style="font-size: 14px; color: #999">多数组DP</a> <a href="/tags/%E5%A4%A7%E6%95%B0/" style="font-size: 14px; color: #999">大数</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E5%8A%A0%E6%B3%95/" style="font-size: 14px; color: #999">大数加法</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E9%98%B6%E4%B9%98/" style="font-size: 14px; color: #999">大数阶乘</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E9%99%B7%E9%98%B1/" style="font-size: 16.5px; color: #888">大数陷阱</a> <a href="/tags/%E5%A6%99%E7%94%A8%E4%B8%8B%E6%A0%87%E5%92%8C/" style="font-size: 14px; color: #999">妙用下标和</a> <a href="/tags/%E5%A6%99%E7%94%A8%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84/" style="font-size: 16.5px; color: #888">妙用标志数组</a> <a href="/tags/%E5%AD%97%E5%85%B8/" style="font-size: 16.5px; color: #888">字典</a> <a href="/tags/%E5%AD%97%E6%AF%8D/" style="font-size: 14px; color: #999">字母</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">字符串数组</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83/" style="font-size: 14px; color: #999">字符串比较</a> <a href="/tags/%E5%B1%8F%E8%94%BD%E7%BB%86%E8%8A%82/" style="font-size: 14px; color: #999">屏蔽细节</a> <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">微服务</a> <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" style="font-size: 14px; color: #999">拓扑排序</a> <a href="/tags/%E6%8C%89%E5%BA%8F%E5%88%97%E7%B4%AF%E9%99%A4/" style="font-size: 14px; color: #999">按序列累除</a> <a href="/tags/%E6%8E%92%E5%90%8D/" style="font-size: 14px; color: #999">排名</a> <a href="/tags/%E6%91%84%E6%B0%8F%E5%8D%8E%E6%B0%8F%E6%B8%A9%E5%BA%A6%E8%BD%AC%E6%8D%A2/" style="font-size: 14px; color: #999">摄氏华氏温度转换</a> <a href="/tags/%E6%95%B0%E5%A1%94/" style="font-size: 14px; color: #999">数塔</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/" style="font-size: 14px; color: #999">数据库连接池</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E8%A7%84%E6%A8%A1/" style="font-size: 14px; color: #999">数据规模</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 14px; color: #999">数论</a> <a href="/tags/%E6%95%B4%E9%99%A42/" style="font-size: 14px; color: #999">整除2</a> <a href="/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91/" style="font-size: 14px; color: #999">斐波那契</a> <a href="/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%8F%96%E4%BD%99%E7%89%88/" style="font-size: 14px; color: #999">斐波那契取余版</a> <a href="/tags/%E6%97%A0%E9%99%90%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">无限背包</a> <a href="/tags/%E6%98%93%E9%94%99%E9%A2%98/" style="font-size: 14px; color: #999">易错题</a> <a href="/tags/%E6%9C%80%E5%A4%A7%E6%9C%80%E5%B0%8F%E8%B7%9D%E7%A6%BB/" style="font-size: 14px; color: #999">最大最小距离</a> <a href="/tags/%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最大连续子序列</a> <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" style="font-size: 16.5px; color: #888">最短路径</a> <a href="/tags/%E6%9C%80%E9%95%BF-%E9%9D%9E-%E5%8D%95%E8%B0%83%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最长(非)单调子序列</a> <a href="/tags/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最长上升子序列</a> <a href="/tags/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最长公共子序列</a> <a href="/tags/%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%9B%A0%E6%95%B0/" style="font-size: 14px; color: #999">最长连续因数</a> <a href="/tags/%E6%9C%89%E5%90%91%E5%9B%BE%E7%BB%95%E5%9C%88/" style="font-size: 14px; color: #999">有向图绕圈</a> <a href="/tags/%E6%9D%A5%E5%9B%9E%E6%80%BB%E5%92%8C%E6%9C%80%E7%9F%AD/" style="font-size: 14px; color: #999">来回总和最短</a> <a href="/tags/%E6%9E%81%E5%BA%A6%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">极度优化</a> <a href="/tags/%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84%E5%81%9A%E8%AE%B0%E5%BD%95/" style="font-size: 14px; color: #999">标志数组做记录</a> <a href="/tags/%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84%E5%A6%99%E7%94%A8/" style="font-size: 16.5px; color: #888">标志数组妙用</a> <a href="/tags/%E6%AD%A3%E5%8F%8D%E5%90%91%E6%80%9D%E8%80%83/" style="font-size: 14px; color: #999">正反向思考</a> <a href="/tags/%E6%AD%A3%E5%90%91DP/" style="font-size: 14px; color: #999">正向DP</a> <a href="/tags/%E6%AD%A3%E7%8E%AF/" style="font-size: 16.5px; color: #888">正环</a> <a href="/tags/%E6%B0%B4%E9%A2%98/" style="font-size: 19px; color: #777">水题</a> <a href="/tags/%E6%B2%99%E6%BC%8F/" style="font-size: 14px; color: #999">沙漏</a> <a href="/tags/%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">泛型编程</a> <a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" style="font-size: 14px; color: #999">消息队列</a> <a href="/tags/%E6%BA%A2%E5%87%BA%E9%99%B7%E9%98%B1/" style="font-size: 14px; color: #999">溢出陷阱</a> <a href="/tags/%E6%BB%9A%E5%8A%A8%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">滚动数组</a> <a href="/tags/%E7%81%AB%E5%9C%BA%E9%80%83%E7%94%9F/" style="font-size: 14px; color: #999">火场逃生</a> <a href="/tags/%E7%89%B9%E6%AE%8A%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">特殊标志数组</a> <a href="/tags/%E7%94%B5%E6%A2%AF/" style="font-size: 14px; color: #999">电梯</a> <a href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" style="font-size: 14px; color: #999">目标检测</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E6%88%90%E5%9B%9E%E6%96%87%E6%9C%80%E7%9F%AD/" style="font-size: 14px; color: #999">移动成回文最短</a> <a href="/tags/%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97/" style="font-size: 14px; color: #999">等差数列</a> <a href="/tags/%E7%AE%80%E5%8D%95DP/" style="font-size: 14px; color: #999">简单DP</a> <a href="/tags/%E7%B4%A0%E6%95%B0%E6%89%93%E8%A1%A8/" style="font-size: 14px; color: #999">素数打表</a> <a href="/tags/%E7%B4%A0%E6%95%B0%E7%8E%AF/" style="font-size: 14px; color: #999">素数环</a> <a href="/tags/%E7%B4%A2%E5%BC%95%E8%A1%A8/" style="font-size: 14px; color: #999">索引表</a> <a href="/tags/%E7%BB%84%E5%86%85%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" style="font-size: 14px; color: #999">组内最短路径</a> <a href="/tags/%E7%BB%9F%E8%AE%A1%E6%95%B0%E5%AD%97%E7%9A%84%E4%B8%AA%E6%95%B0/" style="font-size: 14px; color: #999">统计数字的个数</a> <a href="/tags/%E7%BC%96%E7%A0%81/" style="font-size: 14px; color: #999">编码</a> <a href="/tags/%E7%BF%BB%E8%BD%AC%E6%B8%B8%E6%88%8F/" style="font-size: 14px; color: #999">翻转游戏</a> <a href="/tags/%E7%BF%BB%E8%BD%AC%E7%9F%A9%E9%98%B5/" style="font-size: 14px; color: #999">翻转矩阵</a> <a href="/tags/%E7%BF%BB%E8%BD%AC%E8%BE%B9/" style="font-size: 14px; color: #999">翻转边</a> <a href="/tags/%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">背包</a> <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF2020%E6%A8%A1%E6%8B%9F%E8%B5%9B/" style="font-size: 14px; color: #999">蓝桥杯2020模拟赛</a> <a href="/tags/%E8%A1%A5%E7%A0%81/" style="font-size: 14px; color: #999">补码</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E8%BF%90%E7%AE%97%E8%BF%87%E7%A8%8B/" style="font-size: 14px; color: #999">计算机中运算过程</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" style="font-size: 14px; color: #999">计算机图形学</a> <a href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96dfs/" style="font-size: 14px; color: #999">记忆化dfs</a> <a href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96%E9%80%92%E5%BD%92/" style="font-size: 14px; color: #999">记忆化递归</a> <a href="/tags/%E8%AE%BE%E7%8A%B6%E6%80%81/" style="font-size: 14px; color: #999">设状态</a> <a href="/tags/%E8%AF%BB%E6%95%B0%E5%AD%97/" style="font-size: 14px; color: #999">读数字</a> <a href="/tags/%E8%B4%9F%E7%8E%AF/" style="font-size: 14px; color: #999">负环</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 14px; color: #999">贪心</a> <a href="/tags/%E8%BD%AC%E7%A7%BB%E6%96%B9%E7%A8%8B%E7%9A%84%E6%9E%84%E9%80%A0/" style="font-size: 14px; color: #999">转移方程的构造</a> <a href="/tags/%E8%BE%93%E5%87%BA%E8%B7%AF%E5%BE%84/" style="font-size: 14px; color: #999">输出路径</a> <a href="/tags/%E9%80%92%E5%BD%92%E8%8C%83%E5%9B%B4/" style="font-size: 14px; color: #999">递归范围</a> <a href="/tags/%E9%80%BB%E8%BE%91/" style="font-size: 16.5px; color: #888">逻辑</a> <a href="/tags/%E9%80%BB%E8%BE%91%E7%9B%B8%E5%8A%A0%E5%A6%99%E7%94%A8/" style="font-size: 14px; color: #999">逻辑相加妙用</a> <a href="/tags/%E9%80%BB%E8%BE%91%E8%B7%AF%E5%BE%84/" style="font-size: 14px; color: #999">逻辑路径</a> <a href="/tags/%E9%81%8D%E5%8E%86%E6%89%80%E6%9C%89%E5%8F%AF%E8%83%BD%E6%80%A7/" style="font-size: 14px; color: #999">遍历所有可能性</a> <a href="/tags/%E9%82%BB%E6%8E%A5%E8%A1%A8/" style="font-size: 14px; color: #999">邻接表</a> <a href="/tags/%E9%A3%9F%E7%89%A9%E9%93%BE/" style="font-size: 14px; color: #999">食物链</a> <a href="/tags/%E9%AB%98%E7%BA%A7dfs/" style="font-size: 14px; color: #999">高级dfs</a> <a href="/tags/%E9%AB%98%E9%98%B601%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">高阶01背包</a> <a href="/tags/%E9%BB%91%E7%99%BD%E5%AD%90/" style="font-size: 14px; color: #999">黑白子</a> <a href="/tags/%E9%BE%9F%E5%85%94%E8%B5%9B%E8%B7%91/" style="font-size: 14px; color: #999">龟兔赛跑</a>
+      <a href="/tags/01%E5%8F%AF%E4%B8%8D%E6%BB%A1%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">01可不满背包</a> <a href="/tags/AlexNet/" style="font-size: 14px; color: #999">AlexNet</a> <a href="/tags/BFS/" style="font-size: 14px; color: #999">BFS</a> <a href="/tags/C-%E6%96%87%E4%BB%B6%E4%BB%A3%E6%9B%BF%E6%89%8B%E5%B7%A5%E8%BE%93%E5%85%A5/" style="font-size: 14px; color: #999">C++文件代替手工输入</a> <a href="/tags/DFS/" style="font-size: 14px; color: #999">DFS</a> <a href="/tags/Dilworth%E5%AE%9A%E7%90%86/" style="font-size: 14px; color: #999">Dilworth定理</a> <a href="/tags/EL-JSTL/" style="font-size: 14px; color: #999">EL&JSTL</a> <a href="/tags/EOF/" style="font-size: 14px; color: #999">EOF</a> <a href="/tags/ES6/" style="font-size: 14px; color: #999">ES6</a> <a href="/tags/GeForce940MX/" style="font-size: 14px; color: #999">GeForce940MX</a> <a href="/tags/JDBC/" style="font-size: 14px; color: #999">JDBC</a> <a href="/tags/Java/" style="font-size: 14px; color: #999">Java</a> <a href="/tags/MFC/" style="font-size: 14px; color: #999">MFC</a> <a href="/tags/MySql/" style="font-size: 14px; color: #999">MySql</a> <a href="/tags/Mybatis/" style="font-size: 16px; color: #8b8b8b">Mybatis</a> <a href="/tags/Properties/" style="font-size: 14px; color: #999">Properties</a> <a href="/tags/RPC/" style="font-size: 14px; color: #999">RPC</a> <a href="/tags/ST/" style="font-size: 14px; color: #999">ST</a> <a href="/tags/STL/" style="font-size: 14px; color: #999">STL</a> <a href="/tags/SpringTemplate/" style="font-size: 14px; color: #999">SpringTemplate</a> <a href="/tags/VM/" style="font-size: 14px; color: #999">VM</a> <a href="/tags/W/" style="font-size: 14px; color: #999">W</a> <a href="/tags/WSL/" style="font-size: 14px; color: #999">WSL</a> <a href="/tags/keras/" style="font-size: 14px; color: #999">_keras</a> <a href="/tags/centos/" style="font-size: 14px; color: #999">centos</a> <a href="/tags/cookie/" style="font-size: 14px; color: #999">cookie</a> <a href="/tags/github-pages/" style="font-size: 14px; color: #999">github_pages</a> <a href="/tags/hexo/" style="font-size: 16px; color: #8b8b8b">hexo</a> <a href="/tags/idea/" style="font-size: 16px; color: #8b8b8b">idea</a> <a href="/tags/java/" style="font-size: 18px; color: #7e7e7e">java</a> <a href="/tags/jdbctemplate/" style="font-size: 14px; color: #999">jdbctemplate</a> <a href="/tags/js/" style="font-size: 16px; color: #8b8b8b">js</a> <a href="/tags/jupyter/" style="font-size: 14px; color: #999">jupyter</a> <a href="/tags/map/" style="font-size: 16px; color: #8b8b8b">map</a> <a href="/tags/maven/" style="font-size: 14px; color: #999">maven</a> <a href="/tags/mybatis/" style="font-size: 14px; color: #999">mybatis</a> <a href="/tags/numpy/" style="font-size: 14px; color: #999">numpy</a> <a href="/tags/n%E7%BB%B4%E4%BA%A4/" style="font-size: 14px; color: #999">n维交</a> <a href="/tags/pandas/" style="font-size: 14px; color: #999">pandas</a> <a href="/tags/pyplot/" style="font-size: 14px; color: #999">pyplot</a> <a href="/tags/redis/" style="font-size: 14px; color: #999">redis</a> <a href="/tags/response/" style="font-size: 14px; color: #999">response</a> <a href="/tags/session/" style="font-size: 14px; color: #999">session</a> <a href="/tags/spring/" style="font-size: 20px; color: #707070">spring</a> <a href="/tags/spring-web/" style="font-size: 14px; color: #999">spring+web</a> <a href="/tags/spring-boot/" style="font-size: 14px; color: #999">spring_boot</a> <a href="/tags/springmvc/" style="font-size: 14px; color: #999">springmvc</a> <a href="/tags/ssm/" style="font-size: 14px; color: #999">ssm</a> <a href="/tags/sublime/" style="font-size: 14px; color: #999">sublime</a> <a href="/tags/tag1/" style="font-size: 24px; color: #555">tag1</a> <a href="/tags/tag2/" style="font-size: 22px; color: #636363">tag2</a> <a href="/tags/vector/" style="font-size: 14px; color: #999">vector</a> <a href="/tags/vue/" style="font-size: 14px; color: #999">vue</a> <a href="/tags/wallpapers/" style="font-size: 14px; color: #999">wallpapers</a> <a href="/tags/web/" style="font-size: 14px; color: #999">web</a> <a href="/tags/%E4%B8%A4%E4%B8%AA%E6%9C%80%E5%B0%8F%E5%80%BC/" style="font-size: 14px; color: #999">两个最小值</a> <a href="/tags/%E4%B8%A4%E6%AC%A1BFS/" style="font-size: 14px; color: #999">两次BFS</a> <a href="/tags/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/" style="font-size: 14px; color: #999">中序遍历</a> <a href="/tags/%E4%B8%B4%E7%95%8C%E6%9C%80%E4%BC%98/" style="font-size: 14px; color: #999">临界最优</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE-%E5%A4%A7%E5%B0%8F%E4%BA%8E/" style="font-size: 16px; color: #8b8b8b">二分查找(大小于)</a> <a href="/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">二进制优化</a> <a href="/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E5%8D%81%E8%BF%9B%E5%88%B6/" style="font-size: 14px; color: #999">二进制表示十进制</a> <a href="/tags/%E4%BB%A3%E6%95%B0%E5%BC%8F%E6%9C%80%E5%A4%A7%E5%8C%96%E9%83%A8%E5%88%86%E6%BA%A2%E5%87%BA/" style="font-size: 14px; color: #999">代数式最大化部分溢出</a> <a href="/tags/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/" style="font-size: 14px; color: #999">优先队列</a> <a href="/tags/%E5%80%92%E6%B0%B4/" style="font-size: 14px; color: #999">倒水</a> <a href="/tags/%E5%85%94%E5%AD%90%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">兔子问题</a> <a href="/tags/%E5%85%AB%E7%9A%87%E5%90%8E%E7%AE%80%E5%8C%96%E7%89%88/" style="font-size: 14px; color: #999">八皇后简化版</a> <a href="/tags/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">八皇后问题</a> <a href="/tags/%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6/" style="font-size: 14px; color: #999">共享文件</a> <a href="/tags/%E5%87%BD%E6%95%B0%E6%95%B0%E7%BB%84%E5%BD%A2%E5%8F%82/" style="font-size: 14px; color: #999">函数数组形参</a> <a href="/tags/%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF/" style="font-size: 14px; color: #999">函数模板</a> <a href="/tags/%E5%88%86%E8%A7%A3%E8%B4%A8%E5%9B%A0%E6%95%B0/" style="font-size: 14px; color: #999">分解质因数</a> <a href="/tags/%E5%88%A4%E6%96%AD%E6%9D%A1%E4%BB%B6%E7%9A%84%E5%85%88%E5%90%8E/" style="font-size: 14px; color: #999">判断条件的先后</a> <a href="/tags/%E5%8A%A8%E6%80%81%E4%BA%8C%E8%BF%9B%E5%88%B6/" style="font-size: 14px; color: #999">动态二进制</a> <a href="/tags/%E5%8A%A8%E6%80%81%E5%91%A8%E6%9C%9F/" style="font-size: 14px; color: #999">动态周期</a> <a href="/tags/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/" style="font-size: 14px; color: #999">双向链表</a> <a href="/tags/%E5%90%8C%E4%BD%99%E5%AE%9A%E7%90%86/" style="font-size: 14px; color: #999">同余定理</a> <a href="/tags/%E5%9B%9E%E5%BD%A2%E5%8F%96%E6%95%B0/" style="font-size: 14px; color: #999">回形取数</a> <a href="/tags/%E5%9B%9E%E6%BA%AF/" style="font-size: 14px; color: #999">回溯</a> <a href="/tags/%E5%9B%BE%E7%89%87/" style="font-size: 14px; color: #999">图片</a> <a href="/tags/%E5%9B%BE%E7%9A%84%E8%BF%9E%E9%80%9A%E5%8C%BA%E5%9F%9F/" style="font-size: 14px; color: #999">图的连通区域</a> <a href="/tags/%E5%A3%81%E7%BA%B8/" style="font-size: 14px; color: #999">壁纸</a> <a href="/tags/%E5%A4%9A%E5%85%A5%E5%8F%A3BFS/" style="font-size: 14px; color: #999">多入口BFS</a> <a href="/tags/%E5%A4%9A%E6%95%B0%E7%BB%84DP/" style="font-size: 14px; color: #999">多数组DP</a> <a href="/tags/%E5%A4%A7%E6%95%B0/" style="font-size: 14px; color: #999">大数</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E5%8A%A0%E6%B3%95/" style="font-size: 14px; color: #999">大数加法</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E9%98%B6%E4%B9%98/" style="font-size: 14px; color: #999">大数阶乘</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E9%99%B7%E9%98%B1/" style="font-size: 16px; color: #8b8b8b">大数陷阱</a> <a href="/tags/%E5%A6%99%E7%94%A8%E4%B8%8B%E6%A0%87%E5%92%8C/" style="font-size: 14px; color: #999">妙用下标和</a> <a href="/tags/%E5%A6%99%E7%94%A8%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84/" style="font-size: 16px; color: #8b8b8b">妙用标志数组</a> <a href="/tags/%E5%AD%97%E5%85%B8/" style="font-size: 16px; color: #8b8b8b">字典</a> <a href="/tags/%E5%AD%97%E6%AF%8D/" style="font-size: 14px; color: #999">字母</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">字符串数组</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83/" style="font-size: 14px; color: #999">字符串比较</a> <a href="/tags/%E5%B1%8F%E8%94%BD%E7%BB%86%E8%8A%82/" style="font-size: 14px; color: #999">屏蔽细节</a> <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">微服务</a> <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" style="font-size: 14px; color: #999">拓扑排序</a> <a href="/tags/%E6%8C%89%E5%BA%8F%E5%88%97%E7%B4%AF%E9%99%A4/" style="font-size: 14px; color: #999">按序列累除</a> <a href="/tags/%E6%8E%92%E5%90%8D/" style="font-size: 14px; color: #999">排名</a> <a href="/tags/%E6%91%84%E6%B0%8F%E5%8D%8E%E6%B0%8F%E6%B8%A9%E5%BA%A6%E8%BD%AC%E6%8D%A2/" style="font-size: 14px; color: #999">摄氏华氏温度转换</a> <a href="/tags/%E6%95%B0%E5%A1%94/" style="font-size: 14px; color: #999">数塔</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/" style="font-size: 14px; color: #999">数据库连接池</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E8%A7%84%E6%A8%A1/" style="font-size: 14px; color: #999">数据规模</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 14px; color: #999">数论</a> <a href="/tags/%E6%95%B4%E9%99%A42/" style="font-size: 14px; color: #999">整除2</a> <a href="/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91/" style="font-size: 14px; color: #999">斐波那契</a> <a href="/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%8F%96%E4%BD%99%E7%89%88/" style="font-size: 14px; color: #999">斐波那契取余版</a> <a href="/tags/%E6%97%A0%E9%99%90%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">无限背包</a> <a href="/tags/%E6%98%93%E9%94%99%E9%A2%98/" style="font-size: 14px; color: #999">易错题</a> <a href="/tags/%E6%9C%80%E5%A4%A7%E6%9C%80%E5%B0%8F%E8%B7%9D%E7%A6%BB/" style="font-size: 14px; color: #999">最大最小距离</a> <a href="/tags/%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最大连续子序列</a> <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" style="font-size: 16px; color: #8b8b8b">最短路径</a> <a href="/tags/%E6%9C%80%E9%95%BF-%E9%9D%9E-%E5%8D%95%E8%B0%83%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最长(非)单调子序列</a> <a href="/tags/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最长上升子序列</a> <a href="/tags/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 14px; color: #999">最长公共子序列</a> <a href="/tags/%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%9B%A0%E6%95%B0/" style="font-size: 14px; color: #999">最长连续因数</a> <a href="/tags/%E6%9C%89%E5%90%91%E5%9B%BE%E7%BB%95%E5%9C%88/" style="font-size: 14px; color: #999">有向图绕圈</a> <a href="/tags/%E6%9D%A5%E5%9B%9E%E6%80%BB%E5%92%8C%E6%9C%80%E7%9F%AD/" style="font-size: 14px; color: #999">来回总和最短</a> <a href="/tags/%E6%9E%81%E5%BA%A6%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">极度优化</a> <a href="/tags/%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84%E5%81%9A%E8%AE%B0%E5%BD%95/" style="font-size: 14px; color: #999">标志数组做记录</a> <a href="/tags/%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84%E5%A6%99%E7%94%A8/" style="font-size: 16px; color: #8b8b8b">标志数组妙用</a> <a href="/tags/%E6%AD%A3%E5%8F%8D%E5%90%91%E6%80%9D%E8%80%83/" style="font-size: 14px; color: #999">正反向思考</a> <a href="/tags/%E6%AD%A3%E5%90%91DP/" style="font-size: 14px; color: #999">正向DP</a> <a href="/tags/%E6%AD%A3%E7%8E%AF/" style="font-size: 16px; color: #8b8b8b">正环</a> <a href="/tags/%E6%B0%B4%E9%A2%98/" style="font-size: 18px; color: #7e7e7e">水题</a> <a href="/tags/%E6%B2%99%E6%BC%8F/" style="font-size: 14px; color: #999">沙漏</a> <a href="/tags/%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">泛型编程</a> <a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" style="font-size: 14px; color: #999">消息队列</a> <a href="/tags/%E6%BA%A2%E5%87%BA%E9%99%B7%E9%98%B1/" style="font-size: 14px; color: #999">溢出陷阱</a> <a href="/tags/%E6%BB%9A%E5%8A%A8%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">滚动数组</a> <a href="/tags/%E7%81%AB%E5%9C%BA%E9%80%83%E7%94%9F/" style="font-size: 14px; color: #999">火场逃生</a> <a href="/tags/%E7%89%B9%E6%AE%8A%E6%A0%87%E5%BF%97%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">特殊标志数组</a> <a href="/tags/%E7%94%B5%E6%A2%AF/" style="font-size: 14px; color: #999">电梯</a> <a href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" style="font-size: 14px; color: #999">目标检测</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E6%88%90%E5%9B%9E%E6%96%87%E6%9C%80%E7%9F%AD/" style="font-size: 14px; color: #999">移动成回文最短</a> <a href="/tags/%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97/" style="font-size: 14px; color: #999">等差数列</a> <a href="/tags/%E7%AE%80%E5%8D%95DP/" style="font-size: 14px; color: #999">简单DP</a> <a href="/tags/%E7%B4%A0%E6%95%B0%E6%89%93%E8%A1%A8/" style="font-size: 14px; color: #999">素数打表</a> <a href="/tags/%E7%B4%A0%E6%95%B0%E7%8E%AF/" style="font-size: 14px; color: #999">素数环</a> <a href="/tags/%E7%B4%A2%E5%BC%95%E8%A1%A8/" style="font-size: 14px; color: #999">索引表</a> <a href="/tags/%E7%BB%84%E5%86%85%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" style="font-size: 14px; color: #999">组内最短路径</a> <a href="/tags/%E7%BB%9F%E8%AE%A1%E6%95%B0%E5%AD%97%E7%9A%84%E4%B8%AA%E6%95%B0/" style="font-size: 14px; color: #999">统计数字的个数</a> <a href="/tags/%E7%BC%96%E7%A0%81/" style="font-size: 14px; color: #999">编码</a> <a href="/tags/%E7%BF%BB%E8%BD%AC%E6%B8%B8%E6%88%8F/" style="font-size: 14px; color: #999">翻转游戏</a> <a href="/tags/%E7%BF%BB%E8%BD%AC%E7%9F%A9%E9%98%B5/" style="font-size: 14px; color: #999">翻转矩阵</a> <a href="/tags/%E7%BF%BB%E8%BD%AC%E8%BE%B9/" style="font-size: 14px; color: #999">翻转边</a> <a href="/tags/%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">背包</a> <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF2020%E6%A8%A1%E6%8B%9F%E8%B5%9B/" style="font-size: 14px; color: #999">蓝桥杯2020模拟赛</a> <a href="/tags/%E8%A1%A5%E7%A0%81/" style="font-size: 14px; color: #999">补码</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E8%BF%90%E7%AE%97%E8%BF%87%E7%A8%8B/" style="font-size: 14px; color: #999">计算机中运算过程</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" style="font-size: 14px; color: #999">计算机图形学</a> <a href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96dfs/" style="font-size: 14px; color: #999">记忆化dfs</a> <a href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96%E9%80%92%E5%BD%92/" style="font-size: 14px; color: #999">记忆化递归</a> <a href="/tags/%E8%AE%BE%E7%8A%B6%E6%80%81/" style="font-size: 14px; color: #999">设状态</a> <a href="/tags/%E8%AF%BB%E6%95%B0%E5%AD%97/" style="font-size: 14px; color: #999">读数字</a> <a href="/tags/%E8%B4%9F%E7%8E%AF/" style="font-size: 14px; color: #999">负环</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 14px; color: #999">贪心</a> <a href="/tags/%E8%BD%AC%E7%A7%BB%E6%96%B9%E7%A8%8B%E7%9A%84%E6%9E%84%E9%80%A0/" style="font-size: 14px; color: #999">转移方程的构造</a> <a href="/tags/%E8%BE%93%E5%87%BA%E8%B7%AF%E5%BE%84/" style="font-size: 14px; color: #999">输出路径</a> <a href="/tags/%E9%80%92%E5%BD%92%E8%8C%83%E5%9B%B4/" style="font-size: 14px; color: #999">递归范围</a> <a href="/tags/%E9%80%BB%E8%BE%91/" style="font-size: 16px; color: #8b8b8b">逻辑</a> <a href="/tags/%E9%80%BB%E8%BE%91%E7%9B%B8%E5%8A%A0%E5%A6%99%E7%94%A8/" style="font-size: 14px; color: #999">逻辑相加妙用</a> <a href="/tags/%E9%80%BB%E8%BE%91%E8%B7%AF%E5%BE%84/" style="font-size: 14px; color: #999">逻辑路径</a> <a href="/tags/%E9%81%8D%E5%8E%86%E6%89%80%E6%9C%89%E5%8F%AF%E8%83%BD%E6%80%A7/" style="font-size: 14px; color: #999">遍历所有可能性</a> <a href="/tags/%E9%82%BB%E6%8E%A5%E8%A1%A8/" style="font-size: 14px; color: #999">邻接表</a> <a href="/tags/%E9%A3%9F%E7%89%A9%E9%93%BE/" style="font-size: 14px; color: #999">食物链</a> <a href="/tags/%E9%AB%98%E7%BA%A7dfs/" style="font-size: 14px; color: #999">高级dfs</a> <a href="/tags/%E9%AB%98%E9%98%B601%E8%83%8C%E5%8C%85/" style="font-size: 14px; color: #999">高阶01背包</a> <a href="/tags/%E9%BB%91%E7%99%BD%E5%AD%90/" style="font-size: 14px; color: #999">黑白子</a> <a href="/tags/%E9%BE%9F%E5%85%94%E8%B5%9B%E8%B7%91/" style="font-size: 14px; color: #999">龟兔赛跑</a>
     </div>
   </section>
 
