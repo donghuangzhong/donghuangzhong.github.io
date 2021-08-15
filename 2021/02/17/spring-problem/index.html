@@ -379,7 +379,7 @@ var _hmt = _hmt || [];
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>511字</p>
+        <p>577字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
@@ -411,7 +411,10 @@ var _hmt = _hmt || [];
         <p>摘要</p>
 <a id="more"></a>
 
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="类存在，但报找不到的错误"><a href="#类存在，但报找不到的错误" class="headerlink" title="类存在，但报找不到的错误"></a>类存在，但报找不到的错误</h3><p><img src="/2021/02/17/spring-problem/image-20210217175451474.png" alt="image-20210217175451474"></p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="注解是全类名"><a href="#注解是全类名" class="headerlink" title="注解是全类名"></a>注解是全类名</h3><blockquote>
+<p>因为当前的有同名的类</p>
+</blockquote>
+<h3 id="类存在，但报找不到的错误"><a href="#类存在，但报找不到的错误" class="headerlink" title="类存在，但报找不到的错误"></a>类存在，但报找不到的错误</h3><p><img src="/2021/02/17/spring-problem/image-20210217175451474.png" alt="image-20210217175451474"></p>
 <ul>
 <li>原因：target-&gt;classes目录下没有该文件</li>
 <li>解决方法：手动进行maven编译</li>
@@ -459,6 +462,10 @@ var _hmt = _hmt || [];
 <li><p>解决版本后，刷新一下maven依赖</p>
 </li>
 </ul>
+<h3 id="Caused-by-java-lang-NoClassDefFoundError-org-springframework-dao-support-DaoSupport"><a href="#Caused-by-java-lang-NoClassDefFoundError-org-springframework-dao-support-DaoSupport" class="headerlink" title="Caused by: java.lang.NoClassDefFoundError: org/springframework/dao/support/DaoSupport"></a>Caused by: java.lang.NoClassDefFoundError: org/springframework/dao/support/DaoSupport</h3><p>未引入spring-jdbc,引入即可</p>
+<h3 id="java-lang-IllegalStateException-Unable-to-find-a-SpringBootConfiguration-you-need-to-use-ContextConfiguration-or-SpringBootTest"><a href="#java-lang-IllegalStateException-Unable-to-find-a-SpringBootConfiguration-you-need-to-use-ContextConfiguration-or-SpringBootTest" class="headerlink" title="java.lang.IllegalStateException: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration or @SpringBootTest"></a>java.lang.IllegalStateException: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration or @SpringBootTest</h3><blockquote>
+<p>测试类要和启动类在同一个目录结构下</p>
+</blockquote>
 
       </div>
       
@@ -471,10 +478,10 @@ var _hmt = _hmt || [];
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-25T15:57:50+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-08T16:56:36+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>updated at Jun 25, 2021</p>
+    <p>updated at Aug 8, 2021</p>
   </a>
 </div>
 
@@ -796,7 +803,7 @@ var _hmt = _hmt || [];
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#常见问题"><span class="toc-text">常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#类存在，但报找不到的错误"><span class="toc-text">类存在，但报找不到的错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jsp无法解析EL表达式-username"><span class="toc-text">jsp无法解析EL表达式(${username})</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#spring-mvc导入jackson报错"><span class="toc-text">spring mvc导入jackson报错</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#maven项目没有webapp文件夹"><span class="toc-text">maven项目没有webapp文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomat-Deployment-没有Artifact选择"><span class="toc-text">Tomat Deployment 没有Artifact选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Eureka：No-qualifying-bean-of-type-javax-servlet-Filter-available"><span class="toc-text">Eureka：No qualifying bean of type javax.servlet.Filter available</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#常见问题"><span class="toc-text">常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#注解是全类名"><span class="toc-text">注解是全类名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类存在，但报找不到的错误"><span class="toc-text">类存在，但报找不到的错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jsp无法解析EL表达式-username"><span class="toc-text">jsp无法解析EL表达式(${username})</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#spring-mvc导入jackson报错"><span class="toc-text">spring mvc导入jackson报错</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#maven项目没有webapp文件夹"><span class="toc-text">maven项目没有webapp文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomat-Deployment-没有Artifact选择"><span class="toc-text">Tomat Deployment 没有Artifact选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Eureka：No-qualifying-bean-of-type-javax-servlet-Filter-available"><span class="toc-text">Eureka：No qualifying bean of type javax.servlet.Filter available</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Caused-by-java-lang-NoClassDefFoundError-org-springframework-dao-support-DaoSupport"><span class="toc-text">Caused by: java.lang.NoClassDefFoundError: org&#x2F;springframework&#x2F;dao&#x2F;support&#x2F;DaoSupport</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#java-lang-IllegalStateException-Unable-to-find-a-SpringBootConfiguration-you-need-to-use-ContextConfiguration-or-SpringBootTest"><span class="toc-text">java.lang.IllegalStateException: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration or @SpringBootTest</span></a></li></ol></li></ol>
     </div>
   </section>
 
